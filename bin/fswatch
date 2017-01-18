@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Automatically detects if binary with the same name is installed in the system
+# or can be found in the same directory.
+#
+# by Alexander Zolotarev <me@alex.bio> from Minsk, Belarus.
+#
+# Useful debug options:
+# -e aborts if any command has failed.
+# -u aborts on using unset variable.
+# -x prints all executed commands.
+# -o pipefail aborts if on any failed pipe operation.
+set -euo pipefail
+
+SCRIPT_DIR=`dirname $BASH_SOURCE`
+
+. "$SCRIPT_DIR/_detect_binary.bash"

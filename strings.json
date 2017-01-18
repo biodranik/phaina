@@ -1,0 +1,14 @@
+{
+  "titleOfIndexPage":{
+    "en":"VibroBox Condition Monitoring and Vibration Diagnostics",
+    "ru":"VibroBox — мониторинг и вибрационная диагностика состояния оборудования"
+  },
+  "titleOf404Page":{
+    "en":"VibroBox: Error 404 Page Not Found",
+    "ru":"VibroBox: Ошибка 404 Страница не найдена"
+  },
+  "404pageText":{
+    "en":"Error 404: The page you are looking for is not here.",
+    "ru":"Ошибка 404: Страница, которую вы ищете, не найдена."
+  }
+}
