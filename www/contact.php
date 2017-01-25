@@ -1,9 +1,10 @@
-<?php require("../includes/globals.php"); ?>
+<?php require(dirname(__FILE__)."/../main.php"); ?>
 <!DOCTYPE html>
 <html lang="<?php echo LANG; ?>">
 <head>
 <title><?php T("titleOfIndexPage"); ?></title>
 <?php HTML_HEAD(); ?>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css">
 </head>
 <body>
 
