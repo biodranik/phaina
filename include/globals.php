@@ -3,7 +3,7 @@
 ini_set('default_charset', 'UTF-8');
 
 // TODO: It can be calculated
-define("BASE_URL", "http://www.vibrobox.local:8888/");
+define("BASE_URL", "https://deathbaba.github.io/landing-php/");
 define("LANG", "ru");
 
 require("translations.php");
