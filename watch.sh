@@ -24,6 +24,8 @@ OUTPUT_CSS_FORMAT="nested"
 # or take version from the bin folder itself.
 SASSC_BINARY="bin/sassc"
 FSWATCH_BINARY="bin/fswatch"
+# Use PHP from the PATH.
+PHP_BINARY="php"
 
 # Simple sound in case of error.
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -34,6 +36,8 @@ fi
 
 # Kill all background processes in the current process group on exit (ctrl+C).
 trap 'kill 0' EXIT
+
+"$PHP_BINARY" -S localhost:8888 -t www &
 
 # Small helper.
 rebuildCSS() {
