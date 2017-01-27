@@ -26,8 +26,7 @@ function HTML_FOOTER() {
 }
 
 function MenuLink($uri) {
-  // TODO: take into an account absolute/relative urls?
-  return BASE_URL . $uri;
+  return BASE_URL . "${uri}/";
 }
 
 function MainMenu() {
