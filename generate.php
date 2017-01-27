@@ -19,18 +19,29 @@ function IsPhp($fileName) {
   return ($pos === false) ? false : strlen($fileName) - $pos == strlen(kPhpExtension);
 }
 
-// Does not delete $dir itself, only everything inside. Stops on any error.
-// TODO: Print errors.
-function RemoveFilesAndSubdirs($dir) {
-  if (file_exists($dir) === false or $dir == "/") return;
+// Does not delete $dir itself, only everything (except .git folder) inside. Does not stop execution on errors.
+// .git folder is used in deployment scripts. On Windows it can have read only attributes set on some files. As a result
+// not all files will be deleted and deployment scripts go crazy.
+function RemoveFilesAndSubdirs($dir, $excludeDirs = array(".git")) {
+  if (file_exists($dir) === false) return;
+  // Simple sanity check.
+  if ($dir == "/" or substr($dir, -2) == ":\\") {
+    echo "Do you really want to delete " . $dir . "?";
+    return;
+  }
 
-  $iter = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir,
-      RecursiveDirectoryIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST);
-  foreach ($iter as $fileInfo) {
+  $filter = function ($file, $key, $iterator) use ($excludeDirs) {
+    if ($iterator->hasChildren() && !in_array($file->getFilename(), $excludeDirs)) return true;
+    return $file->isFile();
+  };
+  $innerIterator = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
+  $iterator = new RecursiveIteratorIterator(new RecursiveCallbackFilterIterator($innerIterator, $filter), RecursiveIteratorIterator::CHILD_FIRST); 
+  foreach ($iterator as $fileInfo) {
+    $realPath = $fileInfo->getRealPath();
     if ($fileInfo->isDir()) {
-      if (rmdir($fileInfo->getRealPath()) === false) return;
+      if (rmdir($realPath) === false) echo "Error while rmdir " . $realPath . "\n";
     } else {
-      if (unlink($fileInfo->getRealPath()) === false) return;
+      if (unlink($realPath) === false) echo "Error while unlink " . $realPath . "\n";
     }
   }
 }
