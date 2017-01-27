@@ -44,7 +44,7 @@ rebuildCSS() {
 echo "Rebuilding $SASSC_OUTPUT_CSS"
 rebuildCSS
 
-"$FSWATCH_BINARY" -0 -r -l 0.1 "$SCSS_DIR" | while IFS= read -r -d '' CHANGED_FILE
+"$FSWATCH_BINARY" -0 -r -l 0.1 --event=Renamed --event=Removed --event=Updated --event=Created "$SCSS_DIR" | while IFS= read -r -d '' CHANGED_FILE
 do
   # Display relative path instead of absolute one.
   CHANGED_FILE=${CHANGED_FILE#$PWD/}
