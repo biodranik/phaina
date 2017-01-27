@@ -3,7 +3,8 @@
 ini_set('default_charset', 'UTF-8');
 
 # Trick for easier development.
-if (array_key_exists("REMOTE_ADDR", $_SERVER) and $_SERVER['REMOTE_ADDR'] == "127.0.0.1") {
+if (array_key_exists("REMOTE_ADDR", $_SERVER) and
+    ($_SERVER['REMOTE_ADDR'] == "127.0.0.1" or $_SERVER['REMOTE_ADDR'] == "::1")) {
   $scheme = (isset($_SERVER['HTTPS']) and !empty($_SERVER['HTTPS'])) ? "https" : "http";
   define("BASE_URL", "${scheme}://${_SERVER['HTTP_HOST']}/");
 } else {
