@@ -5,6 +5,8 @@ REM Created by Alexander Zolotarev <me@alex.bio> from Minsk, Belarus.
 
 SETLOCAL
 
+REM Use PHP binary from the PATH.
+SET php=php.exe
 for %%f in (bin\sassc*%PROCESSOR_ARCHITECTURE%.exe) do SET sassc=%%f
 for %%f in (bin\*fswatch*%PROCESSOR_ARCHITECTURE%.exe) do SET fswatch=%%f
 
@@ -14,6 +16,9 @@ REM One of: nested, expanded, compact, compressed
 SET sassc_style=nested
 
 SET watch_folder=scss
+
+REM Launch local php web server in background.
+START "" /B %php% -S localhost:8888 -t www || ECHO ERROR while launching %php% web server. && EXIT /B 1
 
 REM Rebuild scss on the launch once and watch for any scss folder changes indefinitely.
 :loop
