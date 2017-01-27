@@ -2,8 +2,13 @@
 
 ini_set('default_charset', 'UTF-8');
 
-// TODO: It can be calculated
-define("BASE_URL", "https://deathbaba.github.io/landing-php/");
+# Trick for easier development.
+if (array_key_exists("REMOTE_ADDR", $_SERVER) and $_SERVER['REMOTE_ADDR'] == "127.0.0.1") {
+  $scheme = (isset($_SERVER['HTTPS']) and !empty($_SERVER['HTTPS'])) ? "https" : "http";
+  define("BASE_URL", "${scheme}://${_SERVER['HTTP_HOST']}/");
+} else {
+  define("BASE_URL", "https://deathbaba.github.io/landing-php/");
+}
 define("LANG", "ru");
 
 require("translations.php");
