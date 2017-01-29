@@ -10,10 +10,29 @@ if (array_key_exists("REMOTE_ADDR", $_SERVER) and
 } else {
   define("BASE_URL", "https://deathbaba.github.io/landing-php/");
 }
-define("LANG", "ru");
-define("TEAM_PAGE", "team");
-define("CONTACT_PAGE", "contact");
-define("TECHNOLOGY_PAGE", "technology");
+define('LANG', 'ru');
+
+function CurrentPage() {
+  global $PAGES;
+  $includes = get_included_files();
+  $isIndexPage = false;
+  foreach ($includes as $path) {
+    $path = basename($path);
+    foreach ($PAGES as $page => $properties) {
+      if ($page == $path) {
+        // Special case: index page can route to other pages (or can not).
+        if ($page == 'index.php') {
+          $isIndexPage = true;
+          break;
+        } else {
+          return $page;
+        }
+      }
+    }
+  }
+  if ($isIndexPage) return 'index.php';
+  exit('ERROR: Please add your page to $PAGES in config.php.');
+}
 
 require("translations.php");
 
@@ -34,13 +53,14 @@ function MenuLink($uri) {
 }
 
 function MainMenu() {
-  $currentPage = strtolower(basename($_SERVER['REQUEST_URI']));
-  
-  $menu = array();
-  $menu[0] = new MenuItem(MenuLink(TECHNOLOGY_PAGE), Translate("menuTechnologyPage"),($currentPage == TECHNOLOGY_PAGE ? true : false));
-  $menu[1] = new MenuItem(MenuLink(TEAM_PAGE), Translate("menuTeamPage"), ($currentPage == TEAM_PAGE ? true : false));
-  $menu[2] = new MenuItem(MenuLink(CONTACT_PAGE), Translate("menuContactPage"), ($currentPage == CONTACT_PAGE ? true : false));
-  
+  global $PAGES;
+  // TODO: support empty menu?
+  $currentPage = CurrentPage();
+  foreach ($PAGES as $page => $props) {
+    if (array_key_exists('menu', $props)) {
+      $menu[] = new MenuItem(/*MenuLink*/$props['link'], Translate($props['menu']), $currentPage == $page);
+    }
+  }
   return $menu;
 }
 
