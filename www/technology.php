@@ -1,4 +1,4 @@
-<?php require(dirname(__FILE__)."/../main.php"); ?>
+<?php require(dirname(__FILE__)."/../config.php"); ?>
 <!DOCTYPE html>
 <html lang="<?php echo LANG; ?>">
 <head>

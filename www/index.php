@@ -6,9 +6,9 @@
 //    # Serve static content first, use php as a last resort.
 //    try_files $uri $uri/ /index.php$is_args$args;
 //  }
-// TODO: Probably it can be moved to the main.php.
+// TODO: Probably it can be moved to the config.php.
 require(dirname(__FILE__)."/../include/uri_routing.php");
-require(dirname(__FILE__)."/../main.php");
+require(dirname(__FILE__)."/../config.php");
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo LANG; ?>">
