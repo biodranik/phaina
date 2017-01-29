@@ -1,6 +1,5 @@
 <?php
 
-ini_set('default_charset', 'UTF-8');
 function BaseURL() {
   // Replace BaseURL when developing on localhost.
   if (array_key_exists('REMOTE_ADDR', $_SERVER) and ($_SERVER['REMOTE_ADDR'] == '127.0.0.1'
