@@ -36,21 +36,21 @@ function CurrentPage() {
   exit('ERROR: Please add your page to $PAGES in config.php.');
 }
 
-require("translations.php");
+require_once('translations.php');
 
 // Page title for <title> tag is taken from $PAGES in config.php.
 // Some pages need custom <head> block tags, here is the solution:
 // $HEAD_TAGS can optionally contain anly valid HTML tag like <link …> or <meta …>,
 function HTML_HEAD($HEAD_TAGS = []) {
-  return require("head.php");
+  return require_once('head.php');
 }
 
 function HTML_HEADER() {
-  return require("header.php");
+  return require_once('header.php');
 }
 
 function HTML_FOOTER() {
-  return require("footer.php");
+  return require_once('footer.php');
 }
 
 function MainMenu() {

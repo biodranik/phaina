@@ -1,5 +1,5 @@
 <?php
-  require(dirname(__FILE__).'/../config.php');
+  require_once(dirname(__FILE__).'/../config.php');
   HTML_HEAD(['<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css">']);
 ?>
 
