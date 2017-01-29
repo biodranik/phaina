@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  margin-top: 5px;
 }
 
 .logo {
@@ -12,15 +13,10 @@
   width: 181px;
 }
 
-
-.nav {
-  display: flex;
-  text-transform: uppercase;
-}
-
 .menu {
   display: flex;
   list-style: none;
+  text-transform: uppercase;
   padding: 0;
 
   &__item {
@@ -44,6 +40,11 @@
 
     &--login {
       color: $linkColor;
+
+      &:hover {
+        background-color: #008fd3;
+        color: $whiteColor;
+      }
     }
 
     &--selected {
