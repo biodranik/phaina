@@ -1,14 +1,20 @@
-<base href="<?= BaseURL() ?>">
+<!DOCTYPE html>
+<html lang="<?= LANG ?>">
+<head>
+  <title><?php global $PAGES; T($PAGES[CurrentPage()]['title']); ?></title>
+  <base href="<?= BaseURL() ?>">
+  <?php require_once("meta.php"); ?>
 
-<?php require_once("meta.php"); ?>
+  <!-- TODO create CDN link to FontAwesome from vb account -->
+  <script src="https://use.fontawesome.com/998e59ad4f.js"></script>
 
-<!-- TODO create CDN link to FontAwesome from vb account -->
-<script src="https://use.fontawesome.com/998e59ad4f.js"></script>
+  <link rel="icon" type="image/x-icon" href="<?= URL('favicon.ico') ?>?">
+  <link rel="stylesheet" type="text/css" href="<?= URL('css/style.css') ?>">
 
-<link rel="icon" type="image/x-icon" href="<?= URL('favicon.ico') ?>?">
-<link rel="stylesheet" type="text/css" href="<?= URL('css/style.css') ?>">
-
-<!-- TODO: Generate hreflang links for every language.
-  <link href="" rel="alternate" hreflang="">
--->
-
+  <!-- TODO: Generate hreflang links for every language.
+    <link href="" rel="alternate" hreflang="">
+  -->
+  <?php
+    foreach ($HEAD_TAGS as $tag) echo "$tag\n";
+  ?>
+</head>
