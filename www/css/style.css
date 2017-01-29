@@ -71,4 +71,18 @@ main {
   flex: 1; }
 
 footer {
-  margin: auto; }
+  margin: 0 auto; }
+
+.footer__copyright {
+  display: inline-block; }
+  .footer__copyright--separated {
+    padding-right: 10px;
+    border-right: 1px solid #a2a2a2; }
+
+.footer__link {
+  display: inline-block;
+  text-decoration: none;
+  color: #a2a2a2;
+  margin-left: 10px; }
+  .footer__link:hover {
+    text-decoration: underline; }
