@@ -1,5 +1,5 @@
 <?php
-/* Must be included by inserting <?php require("../main.php"); ?> at the top of every page in www folder. */
+/* Must be included by inserting <?php require("../config.php"); ?> at the top of every page in www folder. */
 
 $PAGES = [
   'index.php' => [

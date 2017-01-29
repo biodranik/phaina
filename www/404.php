@@ -1,6 +1,6 @@
-<?php require(dirname(__FILE__)."/../main.php");
+<?php require(dirname(__FILE__)."/../config.php");
 // Set HTTP "404 Not found" code for this page.
-// TODO: Probably it can be moved to the main.php.
+// TODO: Probably it can be moved to the config.php.
 http_response_code(404);
 ?>
 <!DOCTYPE html>
