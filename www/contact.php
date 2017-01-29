@@ -1,11 +1,8 @@
-<?php require(dirname(__FILE__)."/../config.php"); ?>
-<!DOCTYPE html>
-<html lang="<?php echo LANG; ?>">
-<head>
-<title><?php T("titleContactPage"); ?></title>
-<?php HTML_HEAD(); ?>
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css">
-</head>
+<?php
+  require(dirname(__FILE__).'/../config.php');
+  HTML_HEAD(['<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css">']);
+?>
+
 <body>
 
 <?php HTML_HEADER(); ?>

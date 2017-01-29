@@ -1,14 +1,11 @@
-<?php require(dirname(__FILE__)."/../config.php");
-// Set HTTP "404 Not found" code for this page.
-// TODO: Probably it can be moved to the config.php.
-http_response_code(404);
+<?php
+  require(dirname(__FILE__).'/../config.php');
+  // Set HTTP "404 Not found" code for this page.
+  // TODO: Probably it can be moved to the config.php.
+  http_response_code(404);
+  HTML_HEAD();
 ?>
-<!DOCTYPE html>
-<html lang="<?php echo LANG; ?>">
-<head>
-  <title><?php T("title404Page"); ?></title>
-  <?php HTML_HEAD(); ?>
-</head>
+
 <body>
 <?php HTML_HEADER(); ?>
 

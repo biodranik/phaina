@@ -38,7 +38,10 @@ function CurrentPage() {
 
 require("translations.php");
 
-function HTML_HEAD() {
+// Page title for <title> tag is taken from $PAGES in config.php.
+// Some pages need custom <head> block tags, here is the solution:
+// $HEAD_TAGS can optionally contain anly valid HTML tag like <link …> or <meta …>,
+function HTML_HEAD($HEAD_TAGS = []) {
   return require("head.php");
 }
 

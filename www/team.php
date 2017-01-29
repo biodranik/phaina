@@ -1,10 +1,8 @@
-<?php require(dirname(__FILE__)."/../config.php"); ?>
-<!DOCTYPE html>
-<html lang="<?php echo LANG; ?>">
-<head>
-<title><?php T("titleTeamPage"); ?></title>
-<?php HTML_HEAD(); ?>
-</head>
+<?php
+  require(dirname(__FILE__).'/../config.php');
+  HTML_HEAD();
+?>
+
 <body>
 
 <?php HTML_HEADER(); ?>
