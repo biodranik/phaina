@@ -13,7 +13,7 @@ require(dirname(__FILE__)."/../main.php");
 <!DOCTYPE html>
 <html lang="<?php echo LANG; ?>">
 <head>
-<title><?php T("titleOfIndexPage"); ?></title>
+<title><?php T("titleIndexPage"); ?></title>
 <?php HTML_HEAD(); ?>
 </head>
 <body>
