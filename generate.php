@@ -1,6 +1,8 @@
 <?php
 // Generates static web site pages.
 
+require_once('config.php');
+
 define("kPhpExtension", ".php");
 define("kNewDirPermissions", 0755);
 define("kIndex", "index.php");
@@ -35,7 +37,7 @@ function RemoveFilesAndSubdirs($dir, $excludeDirs = array(".git")) {
     return $file->isFile();
   };
   $innerIterator = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
-  $iterator = new RecursiveIteratorIterator(new RecursiveCallbackFilterIterator($innerIterator, $filter), RecursiveIteratorIterator::CHILD_FIRST); 
+  $iterator = new RecursiveIteratorIterator(new RecursiveCallbackFilterIterator($innerIterator, $filter), RecursiveIteratorIterator::CHILD_FIRST);
   foreach ($iterator as $fileInfo) {
     $realPath = $fileInfo->getRealPath();
     if ($fileInfo->isDir()) {
@@ -47,7 +49,10 @@ function RemoveFilesAndSubdirs($dir, $excludeDirs = array(".git")) {
 }
 
 function Generate($inDir, $outDir) {
+  global $PAGES;
   $staticFilesCopied = 0;
+  $processedPhpFiles = [];
+
   print("Generating pages from php files:\n");
 
   if (file_exists($outDir)) RemoveFilesAndSubdirs($outDir);
@@ -66,6 +71,10 @@ function Generate($inDir, $outDir) {
       continue;
     }
     if (IsPhp($fileName)) {
+      // Warn about not defined pages.
+      if (!array_key_exists($fileName, $PAGES)) {
+        print("WARNING: $fileName is NOT defined in config.php \$PAGES variable.\n");
+      }
       // Remove .php extension.
       $outPath = substr($outPath, 0, -strlen(kPhpExtension));
       // Special cases:
@@ -81,6 +90,7 @@ function Generate($inDir, $outDir) {
       // TODO: Handle errors.
       file_put_contents($outPath, HtmlFromPhp($fileInfo));
       print("+ ".$outPath."\n");
+      $processedPhpFiles[$fileName] = true;
     }
     else {
       copy($fileInfo, $outPath);
@@ -88,6 +98,12 @@ function Generate($inDir, $outDir) {
     }
   }
   if ($staticFilesCopied) print("Also copied ${staticFilesCopied} static resources.\n");
+  // Check for missing pages.
+  foreach($PAGES as $page => $props) {
+    if (!array_key_exists($page, $processedPhpFiles)) {
+      print("WARNING: ${page} is defined in config.php \$PAGES variable but is not found at ${inDir} directory.\n");
+    }
+  }
 }
 
 function Usage($self) {
