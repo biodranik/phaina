@@ -14,8 +14,6 @@ function URL($link) {
   return BaseURL() . $link;
 }
 
-define('LANG', 'ru');
-
 function CurrentPage() {
   global $PAGES;
   $includes = get_included_files();
