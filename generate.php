@@ -47,6 +47,9 @@ function RemoveFilesAndSubdirs($dir, $excludeDirs = array(".git")) {
 }
 
 function Generate($inDir, $outDir) {
+  $staticFilesCopied = 0;
+  print("Generating pages from php files:\n");
+
   if (file_exists($outDir)) RemoveFilesAndSubdirs($outDir);
   else mkdir($outDir, kNewDirPermissions, true);
 
@@ -81,9 +84,10 @@ function Generate($inDir, $outDir) {
     }
     else {
       copy($fileInfo, $outPath);
-      print("= ".$outPath."\n");
+      $staticFilesCopied++;
     }
   }
+  if ($staticFilesCopied) print("Also copied ${staticFilesCopied} static resources.\n");
 }
 
 function Usage($self) {
