@@ -1,6 +1,6 @@
 
 /* Apply a natural box layout model to all elements, but allowing components to change. */
-/*html {
+html {
   box-sizing: border-box;
   height: 100%;
   min-width: 320px;
@@ -19,6 +19,8 @@ body {
   font-size: $baseFontSize;
   font-weight: 300;
   height: 100%;
-//  line-height: 18px;
   width: 100%;
-}*/
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1180px;
+}

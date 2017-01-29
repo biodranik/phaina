@@ -11,6 +11,9 @@ if (array_key_exists("REMOTE_ADDR", $_SERVER) and
   define("BASE_URL", "https://deathbaba.github.io/landing-php/");
 }
 define("LANG", "ru");
+define("TEAM_PAGE", "team");
+define("CONTACT_PAGE", "contact");
+define("TECHNOLOGY_PAGE", "technology");
 
 require("translations.php");
 
@@ -31,9 +34,14 @@ function MenuLink($uri) {
 }
 
 function MainMenu() {
-  return array(
-    MenuLink("technology") => Translate("menuTechnologyPage"),
-    MenuLink("team") => Translate("menuTeamPage"),
-    MenuLink("contact") => Translate("menuContactPage")
-  );
+  $currentPage = strtolower(basename($_SERVER['REQUEST_URI']));
+  
+  $menu = array();
+  $menu[0] = new MenuItem(MenuLink(TECHNOLOGY_PAGE), Translate("menuTechnologyPage"),($currentPage == TECHNOLOGY_PAGE ? true : false));
+  $menu[1] = new MenuItem(MenuLink(TEAM_PAGE), Translate("menuTeamPage"), ($currentPage == TEAM_PAGE ? true : false));
+  $menu[2] = new MenuItem(MenuLink(CONTACT_PAGE), Translate("menuContactPage"), ($currentPage == CONTACT_PAGE ? true : false));
+  
+  return $menu;
 }
+
+?>
