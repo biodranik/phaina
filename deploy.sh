@@ -38,10 +38,7 @@ fi
 
 # Initialize and switch to gh-pages branch in the $OUT_DIR/.git repo.
 pushd "$OUT_DIR"
-git checkout gh-pages > /dev/null 2>&1 || { \
-  git checkout --orphan gh-pages
-  git rm -rf .
-}
+git checkout gh-pages > /dev/null 2>&1 || { git checkout --orphan gh-pages; git rm -rf .; }
 # Clean all untracked files.
 git clean -f
 popd
