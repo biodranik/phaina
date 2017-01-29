@@ -59,7 +59,7 @@ function MainMenu() {
   $currentPage = CurrentPage();
   foreach ($PAGES as $page => $props) {
     if (array_key_exists('menu', $props)) {
-      $menu[] = new MenuItem(URL($props['link']), Translate($props['menu']), $currentPage == $page);
+      $menu[] = new MenuItem(URL($props['link']), T($props['menu']), $currentPage == $page);
     }
   }
   return $menu;
