@@ -7,8 +7,8 @@
   //    try_files $uri $uri/ /index.php$is_args$args;
   //  }
   // TODO: Probably it can be moved to the config.php.
+  require_once(dirname(__FILE__).'/../config.php');
   require(dirname(__FILE__).'/../include/uri_routing.php');
-  require(dirname(__FILE__).'/../config.php');
   HTML_HEAD();
 ?>
 

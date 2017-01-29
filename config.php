@@ -1,5 +1,5 @@
 <?php
-/* Must be included by inserting <?php require("../config.php"); ?> at the top of every page in www folder. */
+/* Must be included by inserting <?php require_once("../config.php"); ?> at the top of every page in www folder. */
 // Global PHP setting. We love UTF-8.
 ini_set('default_charset', 'UTF-8');
 
@@ -39,5 +39,5 @@ $PAGES = [
   ],
 ];
 
-require("include/globals.php");
-require("include/menuItem.php");
+require_once('include/globals.php');
+require_once('include/menuItem.php');
