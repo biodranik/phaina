@@ -7,6 +7,9 @@ ini_set('default_charset', 'UTF-8');
 // Please use BaseURL() function instead of direct access, it makes development easier.
 define('BASE_URL', 'https://deathbaba.github.io/landing-php/');
 
+// Default site language, used in <html lang="…"> attributes and for default translation language.
+define('LANG', 'ru');
+
 $PAGES = [
   'index.php' => [
     // Empty link means the root (index) page.
