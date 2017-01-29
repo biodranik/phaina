@@ -11,7 +11,7 @@
     "en":"Error 404: The page you are looking for is not here.",
     "ru":"Ошибка 404: Страница, которую вы ищете, не найдена."
   },
-  "menuLogin":{
+  "loginButton":{
     "en":"Login",
     "ru":"Вход в систему"
   },
