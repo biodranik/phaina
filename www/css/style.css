@@ -24,7 +24,8 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-top: 5px; }
 
 .logo {
   display: inline-block;
@@ -34,13 +35,10 @@ body {
   height: 50px;
   width: 181px; }
 
-.nav {
-  display: flex;
-  text-transform: uppercase; }
-
 .menu {
   display: flex;
   list-style: none;
+  text-transform: uppercase;
   padding: 0; }
   .menu__item {
     float: left;
@@ -58,6 +56,9 @@ body {
     outline: none; }
     .menu__link--login {
       color: #0188c9; }
+      .menu__link--login:hover {
+        background-color: #008fd3;
+        color: #fff; }
     .menu__link--selected {
       text-decoration: underline; }
 
