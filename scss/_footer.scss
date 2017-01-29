@@ -10,5 +10,27 @@ main {
 
 // Footer styling.
 footer {
-  margin: auto;
+  margin: 0 auto;
+}
+
+.footer {
+  &__copyright {
+    display: inline-block;
+
+    &--separated {
+      padding-right: 10px;
+      border-right: 1px solid $baseColor;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: $baseColor;
+    margin-left: 10px;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
 }
