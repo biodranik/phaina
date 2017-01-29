@@ -6,7 +6,7 @@ http_response_code(404);
 <!DOCTYPE html>
 <html lang="<?php echo LANG; ?>">
 <head>
-  <title><?php T("titleOf404Page"); ?></title>
+  <title><?php T("title404Page"); ?></title>
   <?php HTML_HEAD(); ?>
 </head>
 <body>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="<?php echo LANG; ?>">
 <head>
-<title><?php T("titleOfTechnologyPage"); ?></title>
+<title><?php T("titleTechnologyPage"); ?></title>
 <?php HTML_HEAD(); ?>
 </head>
 <body>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="<?php echo LANG; ?>">
 <head>
-<title><?php T("titleOfTeamPage"); ?></title>
+<title><?php T("titleTeamPage"); ?></title>
 <?php HTML_HEAD(); ?>
 </head>
 <body>
