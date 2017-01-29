@@ -7,7 +7,7 @@
 * Please check nginx config and some vars in include/global.php
 
 To generate static pages in the docs folder:
-```$ php generate.php www docs```
+```$ php generate.php www docs``` or better launch ```build.sh``` (or ```build.cmd``` for Windows). Script also rebuilds css file from sass.
 
 === Notes ===
 * Translations are stored in strings.json (separate folder with mergeable translation files could be better).
