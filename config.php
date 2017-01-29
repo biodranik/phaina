@@ -1,6 +1,10 @@
 <?php
 /* Must be included by inserting <?php require("../config.php"); ?> at the top of every page in www folder. */
 
+// Production base url, also used for static pages generation.
+// Please use BaseURL() function instead of direct access, it makes development easier.
+define('BASE_URL', 'https://deathbaba.github.io/landing-php/');
+
 $PAGES = [
   'index.php' => [
     // Empty link means the root (index) page.

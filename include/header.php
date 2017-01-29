@@ -1,5 +1,5 @@
 <header class="header">
-  <a href="/" class="logo"></a>
+  <a href="<?= BaseURL() ?>" class="logo"></a>
   <nav class="nav">
     <ul class="menu">
       <?php foreach (MainMenu() as $m) : ?>
