@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<?= LANG ?>">
 <head>
-  <title><?php global $PAGES; T($PAGES[CurrentPage()]['title']); ?></title>
+  <title><?php global $PAGES; TR($PAGES[CurrentPage()]['title']); ?></title>
   <base href="<?= BaseURL() ?>">
   <?php require_once("meta.php"); ?>
 

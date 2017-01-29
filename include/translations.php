@@ -17,7 +17,7 @@ if ($translations === NULL || json_last_error() != JSON_ERROR_NONE) exit(json_la
 // Returns translated string if translation is present, otherwise
 // returns translation in default language if translation is absent, otherwise
 // returns the key itself.
-function Translate($key, $lang = LANG) {
+function T($key, $lang = LANG) {
   global $translations;
 
   // Bad: given key is not translated at all. Use it as a translation.
@@ -33,6 +33,6 @@ function Translate($key, $lang = LANG) {
 }
 
 // Prints translated string.
-function T($key) {
-  echo Translate($key);
+function TR($key) {
+  echo T($key);
 }

@@ -9,9 +9,7 @@
       <?php endforeach; ?>
       <li class="menu__item menu__item--login">
         <a class="menu__link menu__link--login" href="https://www.dev.vibrobox.com/site/login">
-          <i class="fa fa-sign-in"></i>
-          <?php T("loginButton"); ?>
-        </a>
+          <i class="fa fa-sign-in"></i><?= T("loginButton") ?></a>
       </li>
     </ul>
   </nav>

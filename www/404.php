@@ -9,7 +9,7 @@
 <body>
 <?php HTML_HEADER(); ?>
 
-<p><?php T("404pageText"); ?></p>
+<p><?= T("404pageText"); ?></p>
 
 <?php HTML_FOOTER(); ?>
 </body>
