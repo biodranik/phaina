@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<title>titleOfTeamPage</title>
-<base href="https://deathbaba.github.io/landing-php/">
+  <title>Наша команда</title>
+  <base href="https://deathbaba.github.io/landing-php/">
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <!-- VERY important string, displayed by Google. Should be 160 chars max. -->
+  <!-- TODO(AlexZ): translate -->
+  <meta name="description" content="Fully automatic online condition monitoring system for industrial equipment.">
+  <!-- TODO(AlexZ): translate -->
+  <meta name="keywords" content="Estimation of a technical condition of the equipment, vibro, vibro diagnostics, vibrodiagnostics, online vibrodiagnostics, vibration, vibration diagnostics, vibration monitoring, online monitoring of the equipment, Condition monitoring, Route-Based Monitoring, Portable Machine Diagnostics, Factory Assurance Test, Online Machine Monitoring, Online Machine Protection, online condition monitoring, online vibrobased damage detection systems, damage detection systems, vibrobox">
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<!-- VERY important string, displayed by Google. Should be 160 chars max. -->
-<!-- TODO(AlexZ): translate -->
-<meta name="description" content="Fully automatic online condition monitoring system for industrial equipment.">
-<!-- TODO(AlexZ): translate -->
-<meta name="keywords" content="Estimation of a technical condition of the equipment, vibro, vibro diagnostics, vibrodiagnostics, online vibrodiagnostics, vibration, vibration diagnostics, vibration monitoring, online monitoring of the equipment, Condition monitoring, Route-Based Monitoring, Portable Machine Diagnostics, Factory Assurance Test, Online Machine Monitoring, Online Machine Protection, online condition monitoring, online vibrobased damage detection systems, damage detection systems, vibrobox">
+  <!-- TODO create CDN link to FontAwesome from vb account -->
+  <script src="https://use.fontawesome.com/998e59ad4f.js"></script>
 
-<link rel="icon" type="image/x-icon" href="favicon.ico?">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="https://deathbaba.github.io/landing-php/favicon.ico?">
+  <link rel="stylesheet" type="text/css" href="https://deathbaba.github.io/landing-php/css/style.css">
 
-<!-- TODO: Generate hreflang links for every language.
-  <link href="" rel="alternate" hreflang="">
--->
-</head>
+  <!-- TODO: Generate hreflang links for every language.
+    <link href="" rel="alternate" hreflang="">
+  -->
+  </head>
+
 <body>
 
 <header class="header">
-  <a href="" class="logo"></a>
+  <a href="https://deathbaba.github.io/landing-php/" class="logo"></a>
   <nav class="nav">
-    <ul>
-      <li><!-- TODO: Support active menu item. -->
-        <a href="https://deathbaba.github.io/landing-php/technology">menuTechnologyPage</a>
+    <ul class="menu">
+            <li class="menu__item">
+        <a class="menu__link" href="https://deathbaba.github.io/landing-php/technology/">Решение</a>
       </li>
-      <li><!-- TODO: Support active menu item. -->
-        <a href="https://deathbaba.github.io/landing-php/team">menuTeamPage</a>
+            <li class="menu__item">
+        <a class="menu__link menu__link--selected" href="https://deathbaba.github.io/landing-php/team/">Команда</a>
       </li>
-      <li><!-- TODO: Support active menu item. -->
-        <a href="https://deathbaba.github.io/landing-php/contact">menuContactPage</a>
+            <li class="menu__item">
+        <a class="menu__link" href="https://deathbaba.github.io/landing-php/contact/">Контакты</a>
+      </li>
+            <li class="menu__item menu__item--login">
+        <a class="menu__link menu__link--login" href="https://www.dev.vibrobox.com/site/login">
+          <i class="fa fa-sign-in"></i>Вход в систему</a>
       </li>
     </ul>
   </nav>
 </header>
+
 
 <main role="main">
 TODO: team.php
