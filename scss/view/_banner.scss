@@ -5,20 +5,14 @@
   color: #fff;
   text-align: center;
 }
-.main-title {
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 48px;
-  padding-bottom: 56px;
-  text-transform: uppercase;
-  margin: 0;
-}
+
 .preface {
   font-size: 18px;
   font-weight: 300;
   line-height: 21px;
   margin: 0 auto;
   max-width: 840px;
+  text-align: center;
 
   &--mod {
 
@@ -45,8 +39,6 @@
   &__custom {
 
   }
-
-
 }
 
 
