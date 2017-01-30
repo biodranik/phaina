@@ -1,30 +1,17 @@
-// TODO: Reuse the same @media approach everywhere.
-$tablet-width: 768px;
+// The code below makes footer sticky at the bottom of the page.
 
-@mixin phablet {
-  @media (max-width: #{$tablet-width}) {
-    @content;
-  }
+// Footer styling.
+footer {
+  margin: 0 auto;
 }
 
-// TODO: Use flexbox instead of floats.
 .footer {
-  border-top: 1px solid $borderColor;
-  @include phablet {
-    text-align: center;
-  }
-
-  &__container {
-    overflow: hidden;
-    padding: 20px;
-    max-width: $maxWidth;
-    margin: 0 auto;
-  }
-
   &__copyright {
     display: inline-block;
-    @include phablet {
-      display: block;
+
+    &--separated {
+      padding-right: 10px;
+      border-right: 1px solid $baseColor;
     }
   }
 
@@ -32,31 +19,10 @@ $tablet-width: 768px;
     display: inline-block;
     text-decoration: none;
     color: $baseColor;
+    margin-left: 10px;
 
     &:hover{
       text-decoration: underline;
-    }
-  }
-}
-.footer__nav {
-  list-style: none;
-  padding: 0;
-  float: right;
-  @include phablet {
-    float: none;
-    margin-bottom: 5px;
-  }
-
-  &-item {
-    float: left;
-    margin-right: 20px;
-    @include phablet {
-      float: none;
-      display: inline;
-    }
-
-    &:last-child {
-      margin-right: 0;
     }
   }
 }
