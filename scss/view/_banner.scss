@@ -1,0 +1,194 @@
+.banner {
+  background-image: url(#{$bg}banner.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  color: #fff;
+  text-align: center;
+}
+.main-title {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 48px;
+  padding-bottom: 56px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.preface {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 21px;
+  margin: 0 auto;
+  max-width: 840px;
+
+  &--mod {
+
+  }
+
+}
+
+.btn {
+  margin: 111px auto 18px;
+  font-size: $baseFontSize + 1;
+  font-weight: 700;
+  padding: 21px 31px;
+  text-transform: uppercase;
+  background-color: #0188c9;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+    background-color: #18a4e7;
+  }
+
+  &__custom {
+
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.banner-section {
+  //align-items: center;
+  //-webkit-box-align: center;
+  //-ms-flex-align: center;
+  //background: url($bgDir + 'banner.jpg') no-repeat top center;
+  color: $whiteColor;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  height: 100vh;
+  min-height: 780px;
+  max-height: 1080px;
+  position: relative;
+
+  .section-cont {
+    box-sizing: border-box;
+    display: block;
+    max-width: 1400px;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .preface {
+
+  }
+
+
+
+
+  @media (max-width: 992px) {
+    display: block;
+    height: auto;
+    min-height: auto;
+
+    .section-cont {
+      padding-bottom: 100px;
+      padding-top: 81px;
+    }
+
+    .main-heading {
+      font-size: 28px;
+      line-height: 42px;
+
+      span {
+        display: inline;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    display: block;
+    height: auto;
+    min-height: auto;
+
+    .section-cont {
+      padding-bottom: 0;
+    }
+
+    .main-heading {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+      padding: 0 5px 45px;
+      text-align: center;
+
+      span {
+        display: inline;
+      }
+    }
+
+    .preface {
+      display: none;
+    }
+
+    .btn-wrap {
+      margin: 0 auto;
+      max-width: 250px;
+      padding: 2px 9px 18px;
+    }
+
+    .btn-custom {
+      display: block;
+      padding: 12px 33px 14px;
+    }
+
+    .slide-down {
+      display: none;
+    }
+  }
+}
+
+.demo-access {
+  color: $whiteColor;
+  margin: 0 auto;
+  max-width: 680px;
+
+  h2 {
+    color: $whiteColor;
+    padding-bottom: 48px;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .preface {
+    color: $whiteColor;
+    font-size: $baseFontSize + 1;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 0 55px;
+    text-align: center;
+  }
+
+  .form {
+    max-width: 380px;
+    padding-top: 62px;
+
+    .form-group {
+      padding-bottom: 14px;
+      width: 100%;
+    }
+
+    textarea {
+      min-height: 102px;
+    }
+
+    .btn-custom {
+      margin-top: 36px;
+      width: 100%;
+    }
+  }
+}
