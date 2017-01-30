@@ -22,7 +22,98 @@ body {
   font-weight: 300;
   height: 100%;
   width: 100%;
-  margin: 0 auto;
   padding: 0;
-  max-width: $maxWidth;
+  margin: 0;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+p,
+ul,
+table {
+  margin: 0;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 65px;
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+    line-height: 40px;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+}
+h2 {
+  color: $baseColor;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 48px;
+  position: relative;
+  text-align: center;
+
+  //&:before {
+  //  background-color: $linkColor;
+  //  content: "";
+  //  display: block;
+  //  height: 5px;
+  //  left: 50%;
+  //  margin-left: -35px;
+  //  position: absolute;
+  //  top: -13px;
+  //  width: 70px;
+  //}
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+h3 {
+
+}
+
+.section {
+  &__container {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media (max-width: 992px) {
+      padding: 0 15px;
+    }
+  }
+}
+
+.title {
+  &__main {
+    padding-bottom: 56px;
+  }
+
+  &__second {
+    margin: 0 auto;
+    max-width: 980px;
+  }
+}
+
+/** icons **/
+//.icon {
+//  background: black url(../www/img/svg/plus-sprite.svg) top left no-repeat;
+//  background-size: 505px 65px;
+//  display: block;
+//  height: 65px;
+//  margin: 0 auto 31px;
+//  width: 64px;
+//}
+/** end icons **/
