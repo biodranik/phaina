@@ -65,4 +65,60 @@ function MainMenu() {
   return $menu;
 }
 
+function GetPlusSectionItems() {
+  // TODO: think about some template engine.
+  $items = [
+    'plusAutomaticSystem' => [
+      'title' => T('plusAutomaticSystemTitle'), 
+      'description' => T('plusAutomaticSystemDescription')
+    ],
+    'plusEconomy' => [
+      'title' => T('plusEconomyTitle'), 
+      'description' => T('plusEconomyDescription')
+    ],
+    'plusAvailability' => [
+      'title' => T('plusAvailabilityTitle'), 
+      'description' => T('plusAvailabilityDescription')
+    ],
+    'plusSimpliticy' => [
+      'title' => T('plusSimpliticyTitle'), 
+      'description' => T('plusSimpliticyDescription')
+    ],
+  ];
+
+  return $items;
+}
+
+function GetSolutionSectionItems(){
+  $items = [
+    'systemEquipment' => [
+      'title' => T('systemEquipmentTitle'), 
+      'description' => T('systemEquipmentDescription'), 
+      'css' => 'system-container__equipment'
+    ],
+    'systemTransfer' => [
+      'title' => T('systemTransferTitle'), 
+      'description' => T('systemTransferDescription'),
+      'css' => 'system-container__transfer'
+    ],
+    'systemProcessing' => [
+      'title' => T('systemProcessingTitle'), 
+      'description' => T('systemProcessingDescription'),
+      'css' => 'system-container__processing'
+    ],
+    'systemGReport' => [
+      'title' => T('systemGReportTitle'), 
+      'description' => T('systemGReportDescription'),
+      'css' => 'system-container__g-report'
+    ],
+    'systemUReport' => [
+      'title' => T('systemUReportTitle'), 
+      'description' => T('systemUReportDescription'), 
+      'css' => 'system-container__u-report'
+    ],
+  ];
+  
+  return $items;
+}
+
 ?>

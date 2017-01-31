@@ -2,22 +2,18 @@
   background-image: url(#{$bg}banner.jpg);
   background-repeat: no-repeat;
   background-position: top center;
-  color: #fff;
+  color: $whiteColor;
   text-align: center;
+  padding: 56px 0px;
 }
 
 .preface {
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 350;
   line-height: 21px;
   margin: 0 auto;
   max-width: 840px;
   text-align: center;
-
-  &--mod {
-
-  }
-
 }
 
 .btn {
@@ -27,7 +23,7 @@
   padding: 21px 31px;
   text-transform: uppercase;
   background-color: #0188c9;
-  color: #fff;
+  color: $whiteColor;
   display: inline-block;
   text-decoration: none;
 
@@ -35,21 +31,9 @@
     color: #fff;
     background-color: #18a4e7;
   }
-
-  &__custom {
-
-  }
 }
 
-
-
-
-
-
-
-
-
-
+///////--------------------------------------------
 
 .banner-section {
   //align-items: center;
