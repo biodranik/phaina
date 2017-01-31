@@ -99,36 +99,213 @@
   }
 }
 
+@media (max-width: 992px) {
+  .system-container {
+    background-position: 20% center;
+    background-size: 50%;
+    min-height: auto;
+    overflow: hidden;
 
+    &__item {
+      max-width: 45%;
+      min-height: 240px;
+      padding-bottom: 50px;
+      position: relative;
 
-//.system-work-section {
+      &:after {
+        background-image: url(#{$bg}arrow.png);
+        background-repeat: no-repeat;
+        content: '';
+        position: absolute;
+        z-index: -1;
+      }
+    }
 
-//  .faq-block {
-//    .faq-item {
-//      border: 1px solid $borderColor;
-//      box-sizing: border-box;
-//      margin-bottom: 19px;
-//      padding: 25px 29px;
-//      width: 49.15%;
-//
-//      .question {
-//        color: #0188c9;
-//        font-size: $baseFontSize - 1;
-//        font-weight: 400;
-//        padding-bottom: 12px;
-//        text-transform: uppercase;
-//      }
-//
-//      h3 {
-//        font-size: 24px;
-//        font-weight: 300;
-//        line-height: 24px;
-//        padding-bottom: 46px;
-//      }
-//
-//      p {
-//        font-weight: 400;
-//      }
-//    }
-//  }
-//}
+    &__title {
+      color: #75787a;
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    &__text {
+      font-weight: 400;
+    }
+
+    &__equipment {
+      float: left;
+      left: 0;
+      max-width: 40%;
+      top: 0;
+
+      &:after {
+        background-position: 0 0;
+        height: 71px;
+        left: auto;
+        right: -35%;
+        top: 35%;
+        transform: rotate(-90deg);
+        width: 21px;
+      }
+    }
+
+    &__transfer {
+      float: right;
+      max-width: 40%;
+      left: 0;
+      top: 0;
+
+      &:after {
+        background-position: 0 0;
+        bottom: 0;
+        height: 71px;
+        left: 48%;
+        top: auto;
+        width: 21px;
+      }
+    }
+
+    &__processing {
+      float: right;
+      left: 0;
+      max-width: 40%;
+      padding-bottom: 80px;
+      top: 0;
+
+      &:after {
+        background-position: 0 0;
+        bottom: 0;
+        height: 71px;
+        left: 48%;
+        top: auto;
+        width: 21px;
+      }
+    }
+
+    &__g-report {
+      clear: both;
+      float: right;
+      max-width: 40%;
+      left: 0;
+      top: 0;
+
+      &:after {
+        background-position: 0 0;
+        height: 71px;
+        left: -35%;
+        top: 35%;
+        transform: rotate(90deg);
+        width: 21px;
+      }
+    }
+
+    &__u-report {
+      float: left;
+      left: 0;
+      max-width: 40%;
+      top: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .system-container {
+    background: url(#{$bg}device-543.png) no-repeat;
+    background-position: 50% 97.75%;
+    margin-bottom: 11px;
+    margin-top: 19px;
+    padding-bottom: 239px;
+
+    &__item {
+      left: 0;
+      min-height: auto;
+      min-width: none;
+      position: relative;
+      padding-bottom: 66px;
+      top: 0;
+
+      &:after {
+        background-image: url(#{$bg}arrow.png);
+        background-repeat: no-repeat;
+        content: '';
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+      font-weight: 300;
+      padding-bottom: 21px;
+    }
+
+    &__text {
+      font-size: $baseFontSize;
+      padding: 0 23px;
+    }
+
+    &__equipment {
+      left: 0;
+      max-width: none;
+
+      &:after {
+        bottom: 8px;
+        height: 43px;
+        left: 50%;
+        margin-left: -8px;
+        top: auto;
+        transform: rotate(0);
+        width: 17px;
+      }
+    }
+
+    &__transfer {
+      max-width: none;
+      left: 0;
+
+      &:after {
+        bottom: 8px;
+        height: 43px;
+        left: 50%;
+        margin-left: -8px;
+        width: 17px;
+      }
+    }
+
+    &__processing {
+      left: 0;
+      max-width: none;
+
+      &:after {
+        bottom: 8px;
+        height: 43px;
+        left: 50%;
+        margin-left: -8px;
+        top: auto;
+        width: 17px;
+      }
+    }
+
+    &__g-report {
+      left: 0;
+      max-width: none;
+
+      &:after {
+        bottom: 8px;
+        height: 43px;
+        left: 50%;
+        margin-left: -8px;
+        top: auto;
+        transform: rotate(0);
+        width: 17px;
+      }
+    }
+
+    &__u-report {
+      max-width: none;
+    }
+  }
+}

@@ -11,5 +11,8 @@
         <a class="menu__link menu__link--login" href="https://www.dev.vibrobox.com/site/login"><?= T("loginButton") ?></a>
       </li>
     </ul>
+
+    <a href="#" class="nav-bar-btn navBarBtn"><!-- --></a>
+
   </div>
 </header>

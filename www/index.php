@@ -36,8 +36,7 @@
       <div class="plus-container">
         <?php foreach (GetPlusSectionItems() as $item) : ?>
           <div class="plus-container__item">
-            <h3 class="plus-container__title">
-              <i class="icon automatic-icon"></i>
+            <h3 class="plus-container__title plus-icon <?php echo $item['icon'] ?>">
               <span><?= $item['title'] ?></span>
             </h3>
             <p class="plus-container__text"><?= $item['description'] ?></p>
@@ -55,9 +54,8 @@
       </p>
       <div class="system-container">
         <?php foreach (GetSolutionSectionItems() as $item) : ?>
-          <div class="system-container__item  <?php echo $item['css'] ?>">
-            <h3 class="system-container__title">
-              <i class="icon equipment-icon"></i>
+          <div class="system-container__item  <?php echo $item['css'] ?> ">
+            <h3 class="system-container__title system-icon <?php echo $item['icon'] ?>">
               <?= $item['title'] ?>
             </h3>
             <p class="system-container__text"><?= $item['description'] ?></p>

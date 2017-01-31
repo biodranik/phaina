@@ -1,0 +1,119 @@
+.plus-icon {
+  &:before {
+    background-image: url('#{$ico}sprite.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    content: '';
+    position: relative;
+    display: block;
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 30px;
+  }
+
+  &__automatic {
+    &:before {
+      background-position: 0 0;
+    }
+  }
+
+  &__economy {
+    &:before {
+      background-position: -149px 0;
+    }
+  }
+
+  &__availability {
+    &:before {
+      background-position: -300px 0;
+    }
+  }
+
+  &__simpliticy {
+    &:before {
+      background-position: -447px 0;
+    }
+  }
+}
+@media (max-width: 543px) {
+  .plus-icon {
+    &:before {
+      height: 35px;
+      left: 19px;
+      position: absolute;
+      top: 0;
+      width: 43px;
+      margin: 0;
+      background-size: 353px;
+    }
+
+    &__automatic {
+      &:before {
+        background-position: 0 0;
+      }
+    }
+
+    &__economy {
+      &:before {
+        background-position: -83px 0;
+      }
+    }
+
+    &__availability {
+      &:before {
+        background-position: -171px 0;
+      }
+    }
+
+    &__simpliticy {
+      &:before {
+        background-position: -254px 0;
+      }
+    }
+  }
+}
+
+
+.system-icon {
+  &:before {
+    background-image: url('#{$ico}sprite.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    content: '';
+    position: relative;
+    display: block;
+    width: 84px;
+    height: 83px;
+    margin: 0 auto 20px;
+  }
+
+  &__equipment {
+    &:before {
+      background-position: 1px -100px;
+    }
+  }
+
+  &__transfer {
+    &:before {
+      background-position: -134px -100px;
+    }
+  }
+
+  &__processing {
+    &:before {
+      background-position: -267px -100px;
+    }
+  }
+
+  &__g-report {
+    &:before {
+      background-position: -406px -100px;
+    }
+  }
+
+  &__u-report {
+    &:before {
+      background-position: -546px -100px;
+    }
+  }
+}

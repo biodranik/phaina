@@ -70,19 +70,23 @@ function GetPlusSectionItems() {
   $items = [
     'plusAutomaticSystem' => [
       'title' => T('plusAutomaticSystemTitle'), 
-      'description' => T('plusAutomaticSystemDescription')
+      'description' => T('plusAutomaticSystemDescription'),
+      'icon' => 'plus-icon__automatic'
     ],
     'plusEconomy' => [
       'title' => T('plusEconomyTitle'), 
-      'description' => T('plusEconomyDescription')
+      'description' => T('plusEconomyDescription'),
+      'icon' => 'plus-icon__economy'
     ],
     'plusAvailability' => [
       'title' => T('plusAvailabilityTitle'), 
-      'description' => T('plusAvailabilityDescription')
+      'description' => T('plusAvailabilityDescription'),
+      'icon' => 'plus-icon__availability'
     ],
     'plusSimpliticy' => [
       'title' => T('plusSimpliticyTitle'), 
-      'description' => T('plusSimpliticyDescription')
+      'description' => T('plusSimpliticyDescription'),
+      'icon' => 'plus-icon__simpliticy'
     ],
   ];
 
@@ -94,27 +98,32 @@ function GetSolutionSectionItems(){
     'systemEquipment' => [
       'title' => T('systemEquipmentTitle'), 
       'description' => T('systemEquipmentDescription'), 
-      'css' => 'system-container__equipment'
+      'css' => 'system-container__equipment',
+      'icon' => 'system-icon__equipment'
     ],
     'systemTransfer' => [
       'title' => T('systemTransferTitle'), 
       'description' => T('systemTransferDescription'),
-      'css' => 'system-container__transfer'
+      'css' => 'system-container__transfer',
+      'icon' => 'system-icon__transfer'
     ],
     'systemProcessing' => [
       'title' => T('systemProcessingTitle'), 
       'description' => T('systemProcessingDescription'),
-      'css' => 'system-container__processing'
+      'css' => 'system-container__processing',
+      'icon' => 'system-icon__processing'
     ],
     'systemGReport' => [
       'title' => T('systemGReportTitle'), 
       'description' => T('systemGReportDescription'),
-      'css' => 'system-container__g-report'
+      'css' => 'system-container__g-report',
+      'icon' => 'system-icon__g-report'
     ],
     'systemUReport' => [
       'title' => T('systemUReportTitle'), 
       'description' => T('systemUReportDescription'), 
-      'css' => 'system-container__u-report'
+      'css' => 'system-container__u-report',
+      'icon' => 'system-icon__u-report'
     ],
   ];
   
