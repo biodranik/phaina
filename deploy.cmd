@@ -57,9 +57,12 @@ POPD
 
 REM Build/generate static web site.
 REM Build script can delete everything in %out_dir% so %out_dir%\.git folder should be backed up and restored.
+REM Move does not work with hidden directories.
+ATTRIB -h %out_dir%\.git
 MOVE %out_dir%\.git .git.backup || ECHO ERROR while move to .git.backup && EXIT /B 1
 CALL %~dp0\build.cmd || ECHO ERROR while calling build.cmd && EXIT /B 1
 MOVE .git.backup %out_dir%\.git || ECHO ERROR while move from .git.backup && EXIT /B 1
+ATTRIB +h %out_dir%\.git
 
 REM Check if there are any changes to publish.
 PUSHD %out_dir% || ECHO ERROR with PUSHD %out_dir% && EXIT /B 1
