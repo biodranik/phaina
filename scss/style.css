@@ -427,7 +427,6 @@ h2 {
 
 .title__main {
   padding-bottom: 56px; }
-
 .title__second {
   margin: 0 auto;
   max-width: 980px; }
@@ -496,11 +495,12 @@ h2 {
     height: 30px;
     width: 95px;
     float: left; }
+
   .menu {
     display: none; }
+
   .nav-bar-btn {
     display: block; } }
-
 .footer {
   border-top: 1px solid #d1d1d1; }
   .footer__container {
@@ -532,13 +532,13 @@ h2 {
     text-align: center; }
     .footer__copyright {
       display: block; }
+
   .footer-nav {
     float: none;
     margin-bottom: 5px; }
     .footer-nav__item {
       float: none;
       display: inline; } }
-
 .banner {
   background-image: url(../img/bg/banner.jpg);
   background-repeat: no-repeat;
@@ -853,7 +853,6 @@ h2 {
       top: 0; }
       .system-container__u-report:after {
         display: none; } }
-
 @media (max-width: 768px) {
   .system-container {
     background: url(../img/bg/device-543.png) no-repeat;
@@ -924,7 +923,6 @@ h2 {
         width: 17px; }
     .system-container__u-report {
       max-width: none; } }
-
 .plus-icon:before {
   background-image: url("../img/ico/sprite.png");
   background-repeat: no-repeat;
@@ -935,16 +933,12 @@ h2 {
   width: 62px;
   height: 62px;
   margin: 0 auto 30px; }
-
 .plus-icon__automatic:before {
   background-position: 0 0; }
-
 .plus-icon__economy:before {
   background-position: -149px 0; }
-
 .plus-icon__availability:before {
   background-position: -300px 0; }
-
 .plus-icon__simpliticy:before {
   background-position: -447px 0; }
 
@@ -965,7 +959,6 @@ h2 {
     background-position: -171px 0; }
   .plus-icon__simpliticy:before {
     background-position: -254px 0; } }
-
 .system-icon:before {
   background-image: url("../img/ico/sprite.png");
   background-repeat: no-repeat;
@@ -976,18 +969,15 @@ h2 {
   width: 84px;
   height: 83px;
   margin: 0 auto 20px; }
-
 .system-icon__equipment:before {
   background-position: 1px -100px; }
-
 .system-icon__transfer:before {
   background-position: -134px -100px; }
-
 .system-icon__processing:before {
   background-position: -267px -100px; }
-
 .system-icon__g-report:before {
   background-position: -406px -100px; }
-
 .system-icon__u-report:before {
   background-position: -546px -100px; }
+
+/*# sourceMappingURL=style.css.map */
