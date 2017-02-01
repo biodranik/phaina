@@ -501,22 +501,43 @@ h2 {
   .nav-bar-btn {
     display: block; } }
 
-footer {
-  margin: 0 auto; }
+.footer {
+  border-top: 1px solid #d1d1d1; }
+  .footer__container {
+    overflow: hidden;
+    padding: 20px;
+    max-width: 1180px;
+    margin: 0 auto; }
+  .footer__copyright {
+    display: inline-block; }
+  .footer__link {
+    display: inline-block;
+    text-decoration: none;
+    color: #a2a2a2; }
+    .footer__link:hover {
+      text-decoration: underline; }
 
-.footer__copyright {
-  display: inline-block; }
-  .footer__copyright--separated {
-    padding-right: 10px;
-    border-right: 1px solid #a2a2a2; }
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  float: right; }
+  .footer-nav__item {
+    float: left;
+    margin-right: 20px; }
+    .footer-nav__item:last-child {
+      margin-right: 0; }
 
-.footer__link {
-  display: inline-block;
-  text-decoration: none;
-  color: #a2a2a2;
-  margin-left: 10px; }
-  .footer__link:hover {
-    text-decoration: underline; }
+@media (max-width: 768px) {
+  .footer {
+    text-align: center; }
+    .footer__copyright {
+      display: block; }
+  .footer-nav {
+    float: none;
+    margin-bottom: 5px; }
+    .footer-nav__item {
+      float: none;
+      display: inline; } }
 
 .banner {
   background-image: url(../img/bg/banner.jpg);
