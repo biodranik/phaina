@@ -503,6 +503,9 @@ h2 {
 
 .footer {
   border-top: 1px solid #d1d1d1; }
+  @media (max-width: 768px) {
+    .footer {
+      text-align: center; } }
   .footer__container {
     overflow: hidden;
     padding: 20px;
@@ -510,6 +513,9 @@ h2 {
     margin: 0 auto; }
   .footer__copyright {
     display: inline-block; }
+    @media (max-width: 768px) {
+      .footer__copyright {
+        display: block; } }
   .footer__link {
     display: inline-block;
     text-decoration: none;
@@ -517,27 +523,23 @@ h2 {
     .footer__link:hover {
       text-decoration: underline; }
 
-.footer-nav {
+.footer__nav {
   list-style: none;
   padding: 0;
   float: right; }
-  .footer-nav__item {
+  @media (max-width: 768px) {
+    .footer__nav {
+      float: none;
+      margin-bottom: 5px; } }
+  .footer__nav-item {
     float: left;
     margin-right: 20px; }
-    .footer-nav__item:last-child {
+    @media (max-width: 768px) {
+      .footer__nav-item {
+        float: none;
+        display: inline; } }
+    .footer__nav-item:last-child {
       margin-right: 0; }
-
-@media (max-width: 768px) {
-  .footer {
-    text-align: center; }
-    .footer__copyright {
-      display: block; }
-  .footer-nav {
-    float: none;
-    margin-bottom: 5px; }
-    .footer-nav__item {
-      float: none;
-      display: inline; } }
 
 .banner {
   background-image: url(../img/bg/banner.jpg);
