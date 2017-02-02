@@ -7,6 +7,7 @@ $tablet-width: 768px;
   }
 }
 
+// TODO: Use flexbox instead of floats.
 .footer {
   border-top: 1px solid $borderColor;
   @include phablet {
@@ -37,7 +38,7 @@ $tablet-width: 768px;
     }
   }
 }
-.footer-nav {
+.footer__nav {
   list-style: none;
   padding: 0;
   float: right;
@@ -46,7 +47,7 @@ $tablet-width: 768px;
     margin-bottom: 5px;
   }
 
-  &__item {
+  &-item {
     float: left;
     margin-right: 20px;
     @include phablet {

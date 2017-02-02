@@ -1,8 +1,8 @@
 <footer class="footer">
   <div class="footer__container">
-    <ul class="footer-nav">
+    <ul class="footer__nav">
       <?php foreach (MainMenu() as $m) : ?>
-      <li class="footer-nav__item">
+      <li class="footer__nav-item">
         <a class="footer__link" href="<?= $m->url ?>"><?= $m->title ?></a>
       </li>
       <?php endforeach; ?>
