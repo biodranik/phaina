@@ -1,9 +1,17 @@
-// The code below makes footer sticky at the bottom of the page.
+// TODO: Reuse the same @media approach everywhere.
+$tablet-width: 768px;
 
-// Footer styling.
+@mixin phablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
 
 .footer {
   border-top: 1px solid $borderColor;
+  @include phablet {
+    text-align: center;
+  }
 
   &__container {
     overflow: hidden;
@@ -14,11 +22,9 @@
 
   &__copyright {
     display: inline-block;
-
-    //&--separated {
-    //  padding-right: 10px;
-    //  border-right: 1px solid $baseColor;
-    //}
+    @include phablet {
+      display: block;
+    }
   }
 
   &__link {
@@ -35,32 +41,21 @@
   list-style: none;
   padding: 0;
   float: right;
+  @include phablet {
+    float: none;
+    margin-bottom: 5px;
+  }
 
   &__item {
     float: left;
     margin-right: 20px;
+    @include phablet {
+      float: none;
+      display: inline;
+    }
 
     &:last-child {
       margin-right: 0;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    text-align: center;
-
-    &__copyright {
-      display: block;
-    }
-  }
-  .footer-nav {
-    float: none;
-    margin-bottom: 5px;
-
-    &__item {
-      float: none;
-      display: inline;
     }
   }
 }
