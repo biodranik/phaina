@@ -62,6 +62,33 @@
           </div>
         <?php endforeach; ?>
       </div>
+
+      <div class="faq">
+        <div class="faq__item">
+          <div class="faq__question"><?= T("faqQuestion1") ?></div>
+          <div class="faq__title"><?= T("faqTitle1") ?></div>
+          <p class="faq__answer"><?= T("faqAnswer1") ?></p>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question"><?= T("faqQuestion2") ?></div>
+          <div class="faq__title"><?= T("faqTitle2") ?></div>
+          <p class="faq__answer"><?= T("faqAnswer2") ?></p>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question"><?= T("faqQuestion3") ?></div>
+          <div class="faq__title"><?= T("faqTitle3") ?></div>
+          <p class="faq__answer"><?= T("faqAnswer3") ?></p>
+        </div>
+
+        <div class="faq__item">
+          <div class="faq__question"><?= T("faqQuestion4") ?></div>
+          <div class="faq__title"><?= T("faqTitle4") ?></div>
+          <p class="faq__answer"><?= T("faqAnswer4") ?></p>
+        </div>
+      </div>
+
     </div>
   </section>
 
