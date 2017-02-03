@@ -30,14 +30,13 @@ IF NOT EXIST .git (
   EXIT /B 1
 )
 
-REM Repo should be up-to-date.
-git remote update || ECHO ERROR with git remote update && EXIT /B 1
-
 REM Setup cloned git repo in the generated folder.
 IF NOT EXIST %out_dir%\.git (
   ECHO Initializing %out_dir% folder and binding it to gh-pages branch of the same repository.
   IF EXIST %out_dir% RMDIR /S /Q %out_dir%
   MKDIR %out_dir%
+  REM Repo should be up-to-date before copying it.
+  git remote update || ECHO ERROR with git remote update && EXIT /B 1
   ROBOCOPY /E /NJH /NJS /NP /NS /NC /NFL /NDL .git %out_dir%\.git
   IF %ERRORLEVEL% GTR 7 (
     ECHO ERROR with robocopy
@@ -47,7 +46,7 @@ IF NOT EXIST %out_dir%\.git (
 
 REM Initialize and switch to gh-pages branch in the docs/.git repo.
 PUSHD %out_dir% || ECHO ERROR with PUSHD %out_dir% && EXIT /B 1
-git checkout gh-pages > nul 2>&1 || (
+git checkout gh-pages > nul 2>&1 && git pull || (
   git checkout --orphan gh-pages || ECHO ERROR with git checkout --orphan gh-pages && EXIT /B 1
   git rm -rf . || ECHO ERROR with git rm && EXIT /B 1
 )

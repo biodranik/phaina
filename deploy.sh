@@ -22,9 +22,6 @@ git check-ignore -q $OUT_DIR || { echo "ERROR: Please git rm $OUT_DIR; git commi
 # Sanity check.
 [[ "$OUT_DIR" != "/" ]] || { echo "Invalid OUT_DIR? $OUT_DIR"; exit 1; }
 
-# Repo should be up-to-date.
-git remote update
-
 # Setup cloned git repo in the generated folder.
 if [ ! -d "$OUT_DIR/.git" ]; then
   echo "Initializing $OUT_DIR folder and binding it to gh-pages branch of the same repository."
@@ -33,12 +30,14 @@ if [ ! -d "$OUT_DIR/.git" ]; then
   else
     rm -rf "$OUT_DIR/*"
   fi
+  # Repo should be up-to-date before copying it.
+  git remote update
   cp -r .git "$OUT_DIR/.git"
 fi
 
 # Initialize and switch to gh-pages branch in the $OUT_DIR/.git repo.
 pushd "$OUT_DIR"
-git checkout gh-pages > /dev/null 2>&1 || { git checkout --orphan gh-pages; git rm -rf .; }
+git checkout gh-pages > /dev/null 2>&1 && git pull || { git checkout --orphan gh-pages; git rm -rf .; }
 # Clean all untracked files.
 git clean -f
 popd
