@@ -1,12 +1,3 @@
-// TODO: Reuse the same @media approach everywhere.
-$tablet-width: 768px;
-
-@mixin phablet {
-  @media (max-width: #{$tablet-width}) {
-    @content;
-  }
-}
-
 // TODO: Use flexbox instead of floats.
 .footer {
   border-top: 1px solid $borderColor;

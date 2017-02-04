@@ -1,4 +1,8 @@
 {
+  "Menu":{
+    "en":"Menu",
+    "ru":"Меню"
+  },
   "titleIndexPage":{
     "en":"VibroBox Condition Monitoring and Vibration Diagnostics",
     "ru":"VibroBox — мониторинг и вибрационная диагностика состояния оборудования"
