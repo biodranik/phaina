@@ -497,6 +497,7 @@ input.menu__trigger {
     position: absolute;
     margin: 0;
     padding: 0;
+    z-index: 999;
     background-color: #008dd0; }
     input.menu__trigger:checked ~ .menu .menu__item {
       text-align: center;
