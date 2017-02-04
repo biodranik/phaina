@@ -1,5 +1,10 @@
 <header class="header">
   <a href="<?= BaseURL() ?>" class="logo"></a>
+
+  <!-- Hidden checkbox is used for pure CSS toggle menu. -->
+  <input type="checkbox" id="menu__trigger" class="menu__trigger" />
+  <label for="menu__trigger"><?= T('Menu') ?></label>
+
   <ul class="menu">
     <?php foreach (MainMenu() as $m) : ?>
     <li class="menu__item">

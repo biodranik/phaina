@@ -1,54 +1,133 @@
+$headerAndLogoHeight: 65px;
+$headerPadding: 10px;
+
+@mixin MenuItemsTextStyling {
+  color: $logoColor;
+  font-size: $baseFontSize + 1;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  // All menu texts should be in one line.
+  white-space: nowrap;
+}
+
+@mixin MenuItemButtonBorder {
+  border: 1px solid $logoColor;
+  padding: 7px;
+}
+
+@mixin MenuItemInvertedButton {
+  color: $baseBgColor;
+  background-color: $logoColor;
+}
+
 .header {
+  // Stick logo to the left, stick menu to the right.
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
+  align-items: center;
+
+  height: $headerAndLogoHeight;
+  // padding: 30px;
+  padding: $headerPadding;
+  box-shadow: 0 4px 6px -6px $logoColor;
 }
 
 .logo {
-  display: inline-block;
-  text-decoration: none;
-  background: url(#{$bg}blue-logo.svg);
-  background-size: 181px 50px;
-  height: 50px;
-  width: 181px;
+  background-image: url(#{$bg}blue-logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  // Do not fill padding and border area with background.
+  background-origin: content-box;
+
+  height: $headerAndLogoHeight;
+  width: 180px;
+  padding: $headerPadding;
 }
 
 .menu {
   display: flex;
-  list-style: none;
-  text-transform: uppercase;
+  width: 60%;
+  // It's a list, so remove list padding (where bullets are usually drawn).
   padding: 0;
+  list-style: none;
+
+  @include phablet {
+    display: none;
+  }
 
   &__item {
-    float: left;
-    margin-left: 54px;
-    
+    // Stretch/shrink all menu items proportionally.
+    flex: 1 1 auto;
+
     &--login {
-      border: 1px solid $linkColor;
+      // To move right menu button close to the right edge.
+      flex-basis: 0;
     }
   }
 
   &__link {
-    color: $blackColor; 
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 10px 10px 11px;
+    @include MenuItemsTextStyling;
+    // Remove underline for links.
     text-decoration: none;
-    text-transform: uppercase;
-    outline: none;
 
     &--login {
-      color: $linkColor;
+      @include MenuItemButtonBorder;
 
       &:hover {
-        background-color: #008fd3;
-        color: $whiteColor;
+        @include MenuItemInvertedButton;
       }
     }
 
-    &--selected {
+    &:hover, &--selected {
       text-decoration: underline;
     }
   }
+}
+
+input.menu__trigger {
+  // Hide input checkbox, label is used for touch events instead.
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+
+  // Show mobile menu on checkbox click.
+  &:checked ~ .menu {
+    // Turn flexbox ul again into a block and reset it's properties.
+    display: block;
+    top: $headerAndLogoHeight;
+    left: 0px;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+
+    background-color: $logoColor;
+
+    .menu__item {
+      text-align: center;
+      margin: 1em;
+    }
+
+    .menu__link {
+      color: $baseBgColor;
+    }
+  }
+
+  &:checked ~ label {
+    @include MenuItemInvertedButton;
+  }
+}
+
+// Mobile menu button (breadcrumb).
+label[for="menu__trigger"] {
+  display: none;
+  @include phablet {
+    display: block;
+  }
+
+  @include MenuItemsTextStyling;
+  @include MenuItemButtonBorder;
 }

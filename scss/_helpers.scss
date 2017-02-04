@@ -1,0 +1,7 @@
+$phablet-width: 768px;
+
+@mixin phablet {
+  @media (max-width: #{$phablet-width}) {
+    @content;
+  }
+}

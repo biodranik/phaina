@@ -12,6 +12,8 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+/* Special exception to images to avoid unnecessary resiging when they have a border. */
+img { box-sizing: content-box; }
 
 body {
   color: $baseColor;
