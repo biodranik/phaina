@@ -65,21 +65,3 @@ h2 {
     font-size: 22px;
   }
 }
-h3 {
-
-}
-
-.preface {
-  font-size: $baseFontSize + 7;
-  font-weight: 300;
-  line-height: 21px;
-  margin: 0 auto;
-  max-width: 840px;
-  text-align: center;
-
-  &--system {
-    font-size: $baseFontSize;
-    line-height: 18px;
-    max-width: 790px;
-  }
-}
