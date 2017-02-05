@@ -88,32 +88,51 @@
   }
 
   &__equipment {
+    margin-bottom: 18px;
+
     &:before {
       background-position: 1px -100px;
+      height: 70px;
+      margin-bottom: 8px;
     }
   }
 
   &__transfer {
+    margin-bottom: 18px;
+
     &:before {
       background-position: -134px -100px;
+      height: 70px;
+      margin-bottom: 1px;
     }
   }
 
   &__processing {
+    margin-bottom: 18px;
+
     &:before {
       background-position: -267px -100px;
+      height: 66px;
+      margin-bottom: 6px;
     }
   }
 
   &__g-report {
+    margin-bottom: 18px;
+
     &:before {
       background-position: -406px -100px;
+      height: 69px;
+      margin-bottom: 2px;
     }
   }
 
   &__u-report {
+    margin-bottom: 18px;
+
     &:before {
       background-position: -546px -100px;
+      margin-bottom: 2px;
     }
   }
 }

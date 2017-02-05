@@ -59,6 +59,7 @@ h2 {
   font-weight: 300;
   position: relative;
   text-align: center;
+  padding-bottom: 17px;
 
   @media (max-width: 768px) {
     font-size: 22px;
@@ -66,4 +67,19 @@ h2 {
 }
 h3 {
 
+}
+
+.preface {
+  font-size: $baseFontSize + 7;
+  font-weight: 300;
+  line-height: 21px;
+  margin: 0 auto;
+  max-width: 840px;
+  text-align: center;
+
+  &--system {
+    font-size: $baseFontSize;
+    line-height: 18px;
+    max-width: 790px;
+  }
 }

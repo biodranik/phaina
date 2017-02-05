@@ -111,7 +111,7 @@ $faqSectionItems = [[
 
   <section class="section section__container system">
     <h2 class="title title__second"><?= T("systemItem") ?></h2>
-    <p class="preface"><?= T("systemPreface") ?></p>
+    <p class="preface preface--system"><?= T("systemPreface") ?></p>
     <div class="system-container">
       <?php foreach ($solutionSectionItems as $item) : ?>
       <div class="system-container__item  <?= $item['css'] ?> ">
