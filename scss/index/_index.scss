@@ -1,0 +1,24 @@
+// This file holds "global" page rules, not related to any specific block.
+
+.section {
+  &__container {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media (max-width: 992px) {
+      padding: 0 15px;
+    }
+  }
+}
+
+.title {
+  &__main {
+    padding-bottom: 56px;
+  }
+
+  &__second {
+    margin: 0 auto;
+    max-width: 980px;
+  }
+}
