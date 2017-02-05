@@ -31,7 +31,7 @@ PHP_BINARY="php"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   SASSC_FAILED_COMMAND="say CSS compilation error"
 else
-  SASSC_FAILED_COMMAND="echo -ne \a\a\a"  # 3 beeps/bells in case of error.
+  SASSC_FAILED_COMMAND="echo -ne \a\a"  # 2 beeps/bells in case of error.
 fi
 
 # Kill all background processes in the current process group on exit (ctrl+C).
