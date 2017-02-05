@@ -84,36 +84,3 @@ h3 {
 
 }
 
-.section {
-  &__container {
-    max-width: $maxWidth;
-    margin: 0 auto;
-    padding: 0 20px;
-
-    @media (max-width: 992px) {
-      padding: 0 15px;
-    }
-  }
-}
-
-.title {
-  &__main {
-    padding-bottom: 56px;
-  }
-
-  &__second {
-    margin: 0 auto;
-    max-width: 980px;
-  }
-}
-
-/** icons **/
-//.icon {
-//  background: black url(../www/img/svg/plus-sprite.svg) top left no-repeat;
-//  background-size: 505px 65px;
-//  display: block;
-//  height: 65px;
-//  margin: 0 auto 31px;
-//  width: 64px;
-//}
-/** end icons **/
