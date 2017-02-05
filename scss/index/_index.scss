@@ -15,11 +15,29 @@
 .title {
   &__main {
     padding-bottom: 56px;
+    font-size: 48px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @media (max-width: 768px) {
+      font-size: 25px;
+      max-width: 460px;
+      margin: 0 auto;
+    }
   }
 
   &__second {
     margin: 0 auto;
     max-width: 980px;
+    font-size: 40px;
+    font-weight: 300;
+    position: relative;
+    text-align: center;
+    padding-bottom: 17px;
+
+    @media (max-width: 768px) {
+      font-size: 22px;
+    }
   }
 }
 
@@ -33,7 +51,6 @@
 
   &--system {
     font-size: $baseFontSize;
-    line-height: 18px;
     max-width: 790px;
   }
 }

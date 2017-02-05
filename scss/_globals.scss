@@ -42,26 +42,3 @@ ul,
 table {
   margin: 0;
 }
-
-h1 {
-  font-size: 48px;
-  font-weight: 600;
-  text-transform: uppercase;
-
-  @media (max-width: 768px) {
-    font-size: 25px;
-    max-width: 460px;
-    margin: 0 auto;
-  }
-}
-h2 {
-  font-size: 40px;
-  font-weight: 300;
-  position: relative;
-  text-align: center;
-  padding-bottom: 17px;
-
-  @media (max-width: 768px) {
-    font-size: 22px;
-  }
-}
