@@ -103,7 +103,7 @@
 <main role="main">
 
   <section class="section banner">
-    <div class="section__container section__container--banner">
+    <div class="section__container">
       <h1 class="title title__main">
         <?= T("indexMainTitle") ?>
       </h1>
@@ -114,49 +114,46 @@
     </div>
   </section>
 
-  <section class="section plus">
-    <div class="section__container">
-      <h2 class="title title__second"><?= T("plusTitle") ?></h2>
-      <div class="plus-container">
-        <?php foreach ($plusSectionItems as $item) : ?>
-          <div class="plus-container__item">
-            <h3 class="plus-container__title plus-icon <?php echo $item['icon'] ?>">
-              <span><?= $item['title'] ?></span>
-            </h3>
-            <p class="plus-container__text"><?= $item['description'] ?></p>
-          </div>
-        <?php endforeach; ?>
-      </div>
+  <section class="section section__container plus">
+    <h2 class="title title__second"><?= T("plusTitle") ?></h2>
+    <div class="plus-container">
+      <?php foreach ($plusSectionItems as $item) : ?>
+        <div class="plus-container__item">
+          <h3 class="plus-container__title plus-icon <?php echo $item['icon'] ?>">
+            <span><?= $item['title'] ?></span>
+          </h3>
+          <p class="plus-container__text"><?= $item['description'] ?></p>
+        </div>
+      <?php endforeach; ?>
     </div>
   </section>
 
-  <section class="section system">
-    <div class="section__container">
-      <h2 class="title title__second"><?= T("systemItem") ?></h2>
-      <p class="preface">
-        <?= T("systemPreface") ?>
-      </p>
-      <div class="system-container">
-        <?php foreach ($solutionSectionItems as $item) : ?>
-          <div class="system-container__item  <?php echo $item['css'] ?> ">
-            <h3 class="system-container__title system-icon <?php echo $item['icon'] ?>">
-              <?= $item['title'] ?>
-            </h3>
-            <p class="system-container__text"><?= $item['description'] ?></p>
-          </div>
-        <?php endforeach; ?>
-      </div>
+  <section class="section section__container system">
+    <h2 class="title title__second"><?= T("systemItem") ?></h2>
+    <p class="preface">
+      <?= T("systemPreface") ?>
+    </p>
+    <div class="system-container">
+      <?php foreach ($solutionSectionItems as $item) : ?>
+        <div class="system-container__item  <?php echo $item['css'] ?> ">
+          <h3 class="system-container__title system-icon <?php echo $item['icon'] ?>">
+            <?= $item['title'] ?>
+          </h3>
+          <p class="system-container__text"><?= $item['description'] ?></p>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </section>
 
-      <div class="faq">
-        <?php foreach($faqSectionItems as $item) : ?>
-          <div class="faq__item">
-            <div class="faq__question"><?= $item['question'] ?></div>
-            <div class="faq__title"><?= $item['title'] ?></div>
-            <p class="faq__answer"><?= $item['answer'] ?></p>
-          </div>
-        <?php endforeach; ?>
-      </div>
-
+  <section class="section section__container faq">
+    <div class="faq">
+      <?php foreach($faqSectionItems as $item) : ?>
+        <div class="faq__item">
+          <div class="faq__question"><?= $item['question'] ?></div>
+          <div class="faq__title"><?= $item['title'] ?></div>
+          <p class="faq__answer"><?= $item['answer'] ?></p>
+        </div>
+      <?php endforeach; ?>
     </div>
   </section>
 

@@ -63,17 +63,17 @@ h2 {
   position: relative;
   text-align: center;
 
-  //&:before {
-  //  background-color: $linkColor;
-  //  content: "";
-  //  display: block;
-  //  height: 5px;
-  //  left: 50%;
-  //  margin-left: -35px;
-  //  position: absolute;
-  //  top: -13px;
-  //  width: 70px;
-  //}
+  &:before {
+    background-color: $linkColor;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 50%;
+    margin-left: -35px;
+    position: absolute;
+    top: -13px;
+    width: 70px;
+  }
 
   @media (max-width: 768px) {
     font-size: 22px;

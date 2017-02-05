@@ -14,7 +14,7 @@ $headerPadding: 10px;
 
 @mixin MenuItemButtonBorder {
   border: 1px solid $logoColor;
-  padding: 7px;
+  padding: 7px 15px;
 }
 
 @mixin MenuItemInvertedButton {
@@ -49,7 +49,6 @@ $headerPadding: 10px;
 
 .menu {
   display: flex;
-  width: 60%;
   // It's a list, so remove list padding (where bullets are usually drawn).
   padding: 0;
   list-style: none;
@@ -61,6 +60,11 @@ $headerPadding: 10px;
   &__item {
     // Stretch/shrink all menu items proportionally.
     flex: 1 1 auto;
+    margin-left: 35px;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     &--login {
       // To move right menu button close to the right edge.
@@ -97,13 +101,12 @@ input.menu__trigger {
     // Turn flexbox ul again into a block and reset it's properties.
     display: block;
     top: $headerAndLogoHeight;
-    left: 0px;
+    left: 0;
     width: 100%;
     position: absolute;
     margin: 0;
     padding: 0;
     z-index: 999;
-
     background-color: $logoColor;
 
     .menu__item {
