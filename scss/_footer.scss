@@ -1,53 +1,41 @@
-// TODO: Use flexbox instead of floats.
 .footer {
-  border-top: 1px solid $borderColor;
-  @include phablet {
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
-  &__container {
-    overflow: hidden;
-    padding: 20px;
-    max-width: $maxWidth;
-    margin: 0 auto;
-  }
+  // Similar to the header.
+  box-shadow: 0 -4px 6px -6px $logoColor;
+
+  margin-bottom: 1em;
 
   &__copyright {
-    display: inline-block;
-    @include phablet {
-      display: block;
-    }
+    text-align: center;
+    padding: 0;
+    margin: 1em 2em 0 2em;
   }
 
   &__link {
+    white-space: nowrap;
     display: inline-block;
     text-decoration: none;
-    color: $baseColor;
 
     &:hover{
       text-decoration: underline;
     }
   }
 }
+
 .footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   list-style: none;
   padding: 0;
-  float: right;
-  @include phablet {
-    float: none;
-    margin-bottom: 5px;
-  }
+  margin: 1em 0 0 0;
 
   &-item {
-    float: left;
-    margin-right: 20px;
-    @include phablet {
-      float: none;
-      display: inline;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
+   margin: 0 0.5em 0 0.5em;
   }
 }
