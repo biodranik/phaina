@@ -10,6 +10,8 @@ define('BASE_URL', 'https://deathbaba.github.io/landing-php/');
 // Default site language, used in <html lang="…"> attributes and for default translation language.
 define('LANG', 'ru');
 
+define('DEMO_URL', 'https://www.dev.vibrobox.com/site/login');
+
 $PAGES = [
   'index.php' => [
     // Empty link means the root (index) page.

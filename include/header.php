@@ -12,7 +12,7 @@
     </li>
     <?php endforeach; ?>
     <li class="menu__item menu__item--login">
-      <a class="menu__link menu__link--login" href="https://www.dev.vibrobox.com/site/login"><?= T("loginButton") ?></a>
+      <a class="menu__link menu__link--login" href="<?= DEMO_URL ?>"><?= T("loginButton") ?></a>
     </li>
   </ul>
 </header>
