@@ -14,4 +14,7 @@ $hoverLinkColor:        #18a4e7;
 $borderColor:           #d1d1d1;
 
 // The main fill color of the logo.
-$logoColor: #008dd0;
+$logoColor:             #008dd0;
+
+// TODO: Move all global width variables here and calculate others relatively.
+$phabletWidth:          768px;
