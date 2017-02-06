@@ -1,0 +1,10 @@
+#leaflet-map {
+  width: 50vw;
+  height: 40vw;
+  @include smartphone {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  margin-bottom: 1rem;
+}

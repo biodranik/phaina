@@ -1,0 +1,38 @@
+.contacts-h1 {
+  text-align: center;
+  margin: 1rem;
+}
+
+.contacts-intro {
+  text-align: center;
+  margin: 1rem;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include smartphone {
+    justify-content: flex-start;
+  }
+}
+
+.contacts__offices {
+  margin-right: 1rem;
+  @include smartphone {
+    margin-left: 5%;
+  }
+}
+
+.contacts__h2 {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.contacts__h3 {
+  margin-bottom: 0.3rem;
+}
+
+.contacts__address {
+  margin-bottom: 1rem;
+}

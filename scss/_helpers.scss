@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@mixin smartphone {
+  @media (max-width: #{$smartphoneWidth}) {
+    @content;
+  }
+}
