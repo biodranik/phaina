@@ -35,13 +35,11 @@
   }
 
   &__img {
-    width: 100px;
-
     img {
         max-width: 100px;
 
         @include mobile {
-            width: 70px;
+            max-width: 70px;
         }
     }
   }
