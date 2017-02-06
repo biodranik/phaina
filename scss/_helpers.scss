@@ -6,6 +6,12 @@
 
 @mixin mobile {
   @media (max-width: #{$mobileWidth}) {
+   @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: #{$smartphoneWidth}) {
     @content;
   }
 }
