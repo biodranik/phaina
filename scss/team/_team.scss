@@ -3,14 +3,12 @@
 }
 
 .preface--team {
-    font-size: $baseFontSize;
-    max-width: 790px;
-
+  font-size: $baseFontSize;
 }
 
 // TODO move to separate file.
 .preface__link {
-    color: $logoColor;
+  color: $logoColor;
 }
 
 .team-container {
@@ -36,28 +34,28 @@
 
   &__img {
     img {
-        max-width: 100px;
+      max-width: 100px;
 
-        @include mobile {
-            max-width: 70px;
-        }
+      @include mobile {
+        max-width: 70px;
+      }
     }
   }
 
   &__description {
-      margin-left: 20px;
+    margin-left: 20px;
       
-      @include mobile {
-        margin-left: 10px;
-      }
+    @include mobile {
+      margin-left: 10px;
+    }
   }
 
   &__name {
-      margin-bottom: 10px;
-      color: $logoColor;
+    margin-bottom: 10px;
+    color: $logoColor;
   }
 
   &__title {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 }

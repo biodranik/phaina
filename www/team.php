@@ -3,52 +3,52 @@
   HTML_HEAD();
 
   $team = [[
-      'img' => "/img/team/maniuk.png",
+      'img' => "img/team/maniuk.png",
       'name' => T("maniukName"),
       'title' => T("maniukTitle"),
       'description' => T("maniukDescription")],
     [
-      'img' => "/img/team/zolotarev.png",
+      'img' => "img/team/zolotarev.png",
       'name' => T("zolotarevName"),
       'title' => T("zolotarevTitle"),
       'description' => T("zolotarevDescription")],
     [
-      'img' => "/img/team/maniuk.png",
+      'img' => "img/team/maniuk.png",
       'name' => T("maniukName"),
       'title' => T("maniukTitle"),
       'description' => T("maniukDescription")],
     [
-      'img' => "/img/team/zolotarev.png",
+      'img' => "img/team/zolotarev.png",
       'name' => T("zolotarevName"),
       'title' => T("zolotarevTitle"),
       'description' => T("zolotarevDescription")],
     [
-      'img' => "/img/team/maniuk.png",
+      'img' => "img/team/maniuk.png",
       'name' => T("maniukName"),
       'title' => T("maniukTitle"),
       'description' => T("maniukDescription")],
     [
-      'img' => "/img/team/zolotarev.png",
+      'img' => "img/team/zolotarev.png",
       'name' => T("zolotarevName"),
       'title' => T("zolotarevTitle"),
       'description' => T("zolotarevDescription")],
     [
-      'img' => "/img/team/maniuk.png",
+      'img' => "img/team/maniuk.png",
       'name' => T("maniukName"),
       'title' => T("maniukTitle"),
       'description' => T("maniukDescription")],
     [
-      'img' => "/img/team/zolotarev.png",
+      'img' => "img/team/zolotarev.png",
       'name' => T("zolotarevName"),
       'title' => T("zolotarevTitle"),
       'description' => T("zolotarevDescription")],
     [
-      'img' => "/img/team/maniuk.png",
+      'img' => "img/team/maniuk.png",
       'name' => T("maniukName"),
       'title' => T("maniukTitle"),
       'description' => T("maniukDescription")],
     [
-      'img' => "/img/team/zolotarev.png",
+      'img' => "img/team/zolotarev.png",
       'name' => T("zolotarevName"),
       'title' => T("zolotarevTitle"),
       'description' => T("zolotarevDescription")]
