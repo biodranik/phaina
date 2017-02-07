@@ -1,0 +1,56 @@
+.team {
+  padding: 1rem 0.5rem;
+}
+
+.preface--team {
+  font-size: $baseFontSize;
+}
+
+.team-container {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  display: flex;
+  width: 50%;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+
+  @include phablet {
+    width: 100%;
+  }
+
+  @include smartphone {
+    padding: 0;
+  }
+
+  &__img {
+    img {
+      max-width: 100px;
+
+      @include smartphone {
+        max-width: 70px;
+      }
+    }
+  }
+
+  &__description {
+    margin-left: 1.5rem;
+      
+    @include smartphone {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__name {
+    margin-bottom: 0.5rem;
+    color: $logoColor;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+  }
+}
