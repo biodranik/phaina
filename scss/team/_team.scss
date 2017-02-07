@@ -1,0 +1,61 @@
+.team {
+  padding: 30px 15px;
+}
+
+.preface--team {
+  font-size: $baseFontSize;
+}
+
+// TODO move to separate file.
+.preface__link {
+  color: $logoColor;
+}
+
+.team-container {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  display: flex;
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  @include phablet {
+    width: 100%;
+  }
+
+  @include mobile {
+    padding: 0;
+  }
+
+  &__img {
+    img {
+      max-width: 100px;
+
+      @include mobile {
+        max-width: 70px;
+      }
+    }
+  }
+
+  &__description {
+    margin-left: 20px;
+      
+    @include mobile {
+      margin-left: 10px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    color: $logoColor;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+}
