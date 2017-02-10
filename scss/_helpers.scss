@@ -1,3 +1,6 @@
+$phabletWidth:          768px;
+$smartphoneWidth:       425px;
+
 @mixin phablet {
   @media (max-width: #{$phabletWidth}) {
     @content;

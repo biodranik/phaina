@@ -60,11 +60,9 @@
 <?php HTML_HEADER(); ?>
 
 <main role="main">
-  <section class="section section__container team">
-    <h1 class="title__second"><?= T("teamTitle") ?></h1>
-    <p class="preface preface--team">
-      <?= T("teamPreface") ?>
-    </p>
+  <section class="section team">
+    <h1 class="title-team"><?= T("teamTitle") ?></h1>
+    <p class="preface-team"><?= T("teamPreface") ?></p>
     <div class="team-container">
       <?php foreach ($team as $m) : ?>
         <div class="team-member">

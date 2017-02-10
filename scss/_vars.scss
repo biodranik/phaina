@@ -6,8 +6,8 @@ $ico: "#{$img}ico/";
 $whiteColor:            #fff;
 $blackColor:            #000;
 $baseBgColor:           $whiteColor;
-$baseColor:             #a2a2a2;
-$titleColor:            #6b6e70;
+$baseColor:             #6b6e70;
+$titleColor:            #3A3F42;
 $linkColor:             #0188c9;
 $hoverLinkColor:        #18a4e7;
 $borderColor:           #d1d1d1;
@@ -16,9 +16,6 @@ $logoColor:             #008dd0;
 
 $baseFontSize:          16px;
 
+// TODO: Move all global width variables here and calculate others relatively.
 $minWidth:              320px;
 $maxWidth:              1180px;
-
-// TODO: Move all global width variables here and calculate others relatively.
-$phabletWidth:          768px;
-$smartphoneWidth:       425px;

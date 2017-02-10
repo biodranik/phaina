@@ -45,4 +45,20 @@ table {
 
 a {
   color: $linkColor;
+
+  &:hover {
+    text-decoration: underline;
+    color: $hoverLinkColor;
+  }
+}
+
+.section {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: 992px) {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }

@@ -7,19 +7,19 @@
   padding: 56px 0;
 }
 
-.btn {
+.request-demo-btn {
   margin: 111px auto 18px;
   font-size: $baseFontSize;
   font-weight: 700;
   padding: 21px 31px;
   text-transform: uppercase;
-  background-color: #0188c9;
+  background-color: $linkColor;
   color: $whiteColor;
   display: inline-block;
   text-decoration: none;
 
   &:hover {
     color: #fff;
-    background-color: #18a4e7;
+    background-color: $logoColor;
   }
 }

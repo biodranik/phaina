@@ -74,7 +74,6 @@ $headerPadding: 10px;
 
   &__link {
     @include MenuItemsTextStyling;
-    // Remove underline for links.
     text-decoration: none;
 
     &--login {
@@ -85,7 +84,7 @@ $headerPadding: 10px;
       }
     }
 
-    &:hover, &--selected {
+    &--selected {
       text-decoration: underline;
     }
   }

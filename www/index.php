@@ -83,20 +83,16 @@ $faqSectionItems = [[
 
 <main role="main">
 
-  <section class="section banner">
-    <div class="section__container">
-      <h1 class="title title__main">
-        <?= T("indexMainTitle") ?>
-      </h1>
-      <p class="preface">
-        <?= T("indexPreface") ?>
-      </p>
-      <a class="btn" href="#"><?= T("indexButton") ?></a>
+  <section class="banner">
+    <div class="section">
+      <h1 class="title-index__main"><?= T("indexMainTitle") ?></h1>
+      <p class="preface-index"><?= T("indexPreface") ?></p>
+      <a class="request-demo-btn" href="#"><?= T("indexButton") ?></a>
     </div>
   </section>
 
-  <section class="section section__container plus">
-    <h2 class="title title__second"><?= T("plusTitle") ?></h2>
+  <section class="section plus">
+    <h2 class="title-index__second"><?= T("plusTitle") ?></h2>
     <div class="plus-container">
       <?php foreach ($plusSectionItems as $item) : ?>
       <div class="plus-container__item">
@@ -109,9 +105,9 @@ $faqSectionItems = [[
     </div>
   </section>
 
-  <section class="section section__container system">
-    <h2 class="title title__second"><?= T("systemItem") ?></h2>
-    <p class="preface preface--system"><?= T("systemPreface") ?></p>
+  <section class="section system">
+    <h2 class="title-index__second"><?= T("systemItem") ?></h2>
+    <p class="preface-index"><?= T("systemPreface") ?></p>
     <div class="system-container">
       <?php foreach ($solutionSectionItems as $item) : ?>
       <div class="system-container__item  <?= $item['css'] ?> ">
@@ -124,7 +120,7 @@ $faqSectionItems = [[
     </div>
   </section>
 
-  <section class="section section__container faq">
+  <section class="section faq">
     <div class="faq">
       <?php foreach($faqSectionItems as $item) : ?>
       <div class="faq__item">

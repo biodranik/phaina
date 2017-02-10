@@ -23,9 +23,9 @@
   }
 
   &__title {
-    color: #75787a;
+    color: $titleColor;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 600;
   }
 
   &__text {
@@ -122,9 +122,9 @@
     }
 
     &__title {
-      color: #75787a;
+      color: $titleColor;
       font-size: 18px;
-      font-weight: 300;
+      font-weight: 600;
     }
 
     &__text {
@@ -238,7 +238,7 @@
 
     &__title {
       font-size: 18px;
-      font-weight: 300;
+      font-weight: 600;
       padding-bottom: 21px;
     }
 

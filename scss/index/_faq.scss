@@ -10,6 +10,10 @@
     margin-bottom: 19px;
     padding: 25px 29px;
     width: 49.15%;
+
+    @include phablet {
+      width: auto;
+    }
   }
 
   &__question {
@@ -29,13 +33,5 @@
 
   &__answer {
     font-weight: 400;
-  }
-}
-
-@media (max-width: 768px) {
-  .faq {
-    &__item {
-      width: auto;
-    }
   }
 }
