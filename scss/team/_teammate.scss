@@ -1,0 +1,42 @@
+.team-member {
+  display: flex;
+  width: 50%;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+
+  @include phablet {
+    width: 100%;
+  }
+
+  @include smartphone {
+    padding: 0;
+  }
+
+  &__img {
+    img {
+      width: 100px;
+      height: 100px;
+
+      @include smartphone {
+        height: 70px;
+        width: 70px;
+      }
+    }
+  }
+
+  &__description {
+    margin-left: 1.5rem;
+      
+    @include smartphone {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__name {
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    margin-bottom: 0.5rem;
+  }
+}

@@ -1,9 +1,13 @@
 .team {
-  padding: 1rem 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.preface--team {
-  font-size: $baseFontSize;
+.title-team {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+  padding-bottom: 1rem;
 }
 
 .team-container {
@@ -13,44 +17,12 @@
   flex-wrap: wrap;
 }
 
-.team-member {
-  display: flex;
-  width: 50%;
-  padding: 0.5rem;
-  margin-bottom: 1.5rem;
+.preface-team {
+  font-size: $baseFontSize + 8;
+  font-weight: 300;
+  text-align: center;
 
   @include phablet {
-    width: 100%;
-  }
-
-  @include smartphone {
-    padding: 0;
-  }
-
-  &__img {
-    img {
-      max-width: 100px;
-
-      @include smartphone {
-        max-width: 70px;
-      }
-    }
-  }
-
-  &__description {
-    margin-left: 1.5rem;
-      
-    @include smartphone {
-      margin-left: 0.5rem;
-    }
-  }
-
-  &__name {
-    margin-bottom: 0.5rem;
-    color: $logoColor;
-  }
-
-  &__title {
-    margin-bottom: 0.5rem;
+      font-size: 1.1rem;
   }
 }

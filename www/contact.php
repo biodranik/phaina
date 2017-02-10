@@ -8,34 +8,28 @@
 <?php HTML_HEADER(); ?>
 
 <h1 class="contacts-h1"><?= T('ourContacts') ?></h1>
-
-<p class="contacts-intro">
-  <?= T('contactsIntro') ?>
-</p>
+<p class="preface-contacts"><?= T('contactsIntro') ?></p>
 
 <main role="main" class="contacts">
+  <section class="contacts__offices">
+    <div class="contacts__office">
+      <h2 class="contacts__h2"><?= T('headquarters') ?>:</h2>
+      <h3 class="contacts__h3">VibroBox OÜ</h3>
+      <address class="contacts__address">
+        <?= T('addressEstonia') ?>
+      </address>
+    </div>
+    <div class="contacts__office">
+      <h2 class="contacts__h2"><?= T('developmentOffice') ?>:</h2>
+      <h3 class="contacts__h3"><?= T('sitel') ?></h3>
+      <address class="contacts__address">
+        <?= T('addressBelarus') ?>
+      </address>
+    </div>
+  </section>
 
-<section class="contacts__offices">
-  <div class="contacts__office">
-    <h2 class="contacts__h2"><?= T('headquarters') ?>:</h2>
-    <h3 class="contacts__h3">VibroBox OÜ</h3>
-    <address class="contacts__address">
-      <?= T('addressEstonia') ?>
-    </address>
-  </div>
-  <div class="contacts__office">
-    <h2 class="contacts__h2"><?= T('developmentOffice') ?>:</h2>
-    <h3 class="contacts__h3"><?= T('sitel') ?></h3>
-    <address class="contacts__address">
-      <?= T('addressBelarus') ?>
-    </address>
-  </div>
-</section>
-
-<!-- Map is rendered here by leaflet and our js code below. -->
-<section id="leaflet-map" class="leaflet-map">
-</section>
-
+  <!-- Map is rendered here by leaflet and our js code below. -->
+  <section id="leaflet-map" class="leaflet-map"></section>
 </main>
 
 <?php HTML_FOOTER(); ?>
