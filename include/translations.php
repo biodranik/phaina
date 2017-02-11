@@ -11,7 +11,7 @@
 // }
 
 // Load translations from external file to global variable.
-$translations = json_decode(file_get_contents(dirname(__FILE__)."/../strings.json"), true);
+$translations = json_decode(file_get_contents(dirname(__FILE__)."/../translations/strings.json"), true);
 if ($translations === NULL || json_last_error() != JSON_ERROR_NONE) exit(json_last_error_msg() . ": strings.json can not be loaded.");
 
 // Returns translated string if translation is present, otherwise
