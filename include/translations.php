@@ -1,18 +1,33 @@
 <?php
-// Translates interface strings from UTF-8 strings.json file in the following format:
+// Loads strings from files in 'translations' folder. Each file is UTF-8 JSON like this:
 // {
 //   "title":{
 //     "en":"Title in English",
 //     "ru":"Заголовок по-русски"
 //   },
 //   "key":{
-//     "en":"Default English translation with other translations missing."
+//     "en":"Default translation language is set in the config.php."
+//   },
+//   "Valid English String":{
+//     "en_US":"Valid English String above will be used if string in default language is missing."
 //   }
 // }
 
 // Load all strings to the global variable $TRANSLATIONS.
-$TRANSLATIONS = json_decode(file_get_contents(dirname(__FILE__)."/../translations/strings.json"), true);
-if ($TRANSLATIONS === NULL || json_last_error() != JSON_ERROR_NONE) exit(json_last_error_msg() . ": strings.json can not be loaded.");
+$TRANSLATIONS = LoadTranslations(dirname(__FILE__).'/../translations/');
+
+// TODO: Warn about duplicated translation keys.
+function LoadTranslations($fromDir) {
+  $allTranslations = [];
+  foreach (glob($fromDir . '*.json') as $file) {
+    $arr = json_decode(file_get_contents($file), true);
+    if ($arr === NULL || json_last_error() != JSON_ERROR_NONE) {
+      exit("Error loading $file: " . json_last_error_msg());
+    }
+    $allTranslations = array_merge($allTranslations, $arr);
+  }
+  return $allTranslations;
+}
 
 // Returns translated string if translation is present, otherwise
 // returns translation in default language if translation is absent, otherwise
