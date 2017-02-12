@@ -89,7 +89,7 @@
   }
 
   &__u-report {
-    bottom: 14.6%;
+    bottom: 14.5%;
     max-width: 260px;
     right: 0;
 
@@ -101,15 +101,14 @@
 
 @media (max-width: 1199px) {
   .system-container {
-    background-position: 20% center;
+    background-position: 20% 45%;
     background-size: 50%;
-    min-height: auto;
+    min-height: inherit;
     overflow: hidden;
 
     &__item {
       max-width: 45%;
-      min-height: 240px;
-      padding-bottom: 50px;
+      padding-bottom: 100px;
       position: relative;
 
       &:after {
@@ -156,8 +155,8 @@
 
       &:after {
         background-position: 0 0;
-        bottom: 0;
-        height: 71px;
+        bottom: 40px;
+        height: 43px;
         left: 48%;
         top: auto;
         width: 21px;
@@ -168,13 +167,12 @@
       float: right;
       left: 0;
       max-width: 40%;
-      padding-bottom: 80px;
       top: 0;
 
       &:after {
         background-position: 0 0;
-        bottom: 0;
-        height: 71px;
+        bottom: 40px;
+        height: 43px;
         left: 48%;
         top: auto;
         width: 21px;
@@ -216,13 +214,14 @@
     background: url(#{$bg}device-543.png) no-repeat;
     background-position: 50% 97.75%;
     margin-bottom: 11px;
-    margin-top: 19px;
+    margin-top: 50px;
     padding-bottom: 239px;
 
     &__item {
       left: 0;
-      min-height: auto;
-      min-width: none;
+      margin-bottom: 20px;
+      min-height: inherit;
+      min-width: inherit;
       position: relative;
       padding-bottom: 66px;
       top: 0;
@@ -239,7 +238,6 @@
     &__title {
       font-size: 18px;
       font-weight: 600;
-      padding-bottom: 21px;
     }
 
     &__text {
