@@ -35,6 +35,12 @@ h6 {
   padding: 0;
   margin: 0; }
 
+h1 {
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  margin: 1rem; }
+
 p,
 ul,
 table {
@@ -54,6 +60,13 @@ a {
     .section {
       padding-left: 5px;
       padding-right: 5px; } }
+
+.preface {
+  font-size: 24px;
+  text-align: center; }
+  @media (max-width: 768px) {
+    .preface {
+      font-size: 18px; } }
 
 .footer {
   display: flex;
@@ -169,20 +182,8 @@ label[for="menu__trigger"] {
     label[for="menu__trigger"] {
       display: block; } }
 
-.contacts-h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 400;
+.preface--contacts {
   margin: 1rem; }
-
-.preface-contacts {
-  font-size: 24px;
-  font-weight: 300;
-  text-align: center;
-  margin: 1rem; }
-  @media (max-width: 768px) {
-    .preface-contacts {
-      font-size: 1.1rem; } }
 
 .contacts {
   display: flex;
@@ -356,31 +357,23 @@ label[for="menu__trigger"] {
 
 .title-index__main {
   padding-bottom: 56px;
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: 600;
   text-transform: uppercase; }
   @media (max-width: 768px) {
     .title-index__main {
-      font-size: 1.6rem;
+      font-size: 25.6px;
       max-width: 460px;
       margin: 0 auto; } }
 
 .title-index__second {
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 300;
   text-align: center;
   padding-bottom: 1rem; }
   @media (max-width: 768px) {
     .title-index__second {
-      font-size: 1.5rem; } }
-
-.preface-index {
-  font-size: 24px;
-  font-weight: 300;
-  text-align: center; }
-  @media (max-width: 768px) {
-    .preface-index {
-      font-size: 1.1rem; } }
+      font-size: 24px; } }
 
 .plus {
   padding-top: 56px;
@@ -660,25 +653,11 @@ label[for="menu__trigger"] {
   padding-top: 1rem;
   padding-bottom: 1rem; }
 
-.title-team {
-  font-size: 2.5rem;
-  font-weight: 400;
-  text-align: center;
-  padding-bottom: 1rem; }
-
 .team-container {
   padding-top: 3rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; }
-
-.preface-team {
-  font-size: 24px;
-  font-weight: 300;
-  text-align: center; }
-  @media (max-width: 768px) {
-    .preface-team {
-      font-size: 1.1rem; } }
 
 .team-member {
   display: flex;
