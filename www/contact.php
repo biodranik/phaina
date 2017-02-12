@@ -7,7 +7,7 @@
 
 <?php HTML_HEADER(); ?>
 
-<h1 class="contacts-h1"><?= T('ourContacts') ?></h1>
+<h1><?= T('ourContacts') ?></h1>
 <p class="preface preface--contacts"><?= T('contactsIntro') ?></p>
 
 <main role="main" class="contacts">
