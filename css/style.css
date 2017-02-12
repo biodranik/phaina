@@ -125,8 +125,6 @@ a {
     margin-left: 35px; }
     .menu__item:first-child {
       margin-left: 0; }
-    .menu__item--login {
-      flex-basis: 0; }
   .menu__link {
     color: #008dd0;
     font-size: 16px;
