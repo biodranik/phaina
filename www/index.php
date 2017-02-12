@@ -87,7 +87,7 @@ $faqSectionItems = [[
     <div class="section">
       <h1 class="title-index__main"><?= T("indexMainTitle") ?></h1>
       <p class="preface"><?= T("indexPreface") ?></p>
-      <a class="request-demo-btn" href="#"><?= T("indexButton") ?></a>
+      <a class="request-demo-btn" href="mailto:demo@vibrobox.com"><?= T("indexButton") ?></a>
     </div>
   </section>
 
