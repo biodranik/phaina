@@ -3,25 +3,25 @@
 .title-index {
   &__main {
     padding-bottom: 56px;
-    font-size: 3rem;
+    font-size: 3 * $baseFontSize;
     font-weight: 600;
     text-transform: uppercase;
 
     @include phablet {
-      font-size: 1.6rem;
+      font-size: 1.6 * $baseFontSize;
       max-width: 460px;
       margin: 0 auto;
     }
   }
 
   &__second {
-    font-size: 2.5rem;
+    font-size: 2.5 * $baseFontSize;
     font-weight: 300;
     text-align: center;
     padding-bottom: 1rem;
 
     @include phablet {
-      font-size: 1.5rem;
+      font-size: 1.5 * $baseFontSize;
     }
   }
 }

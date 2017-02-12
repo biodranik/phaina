@@ -37,6 +37,13 @@ h6 {
   margin: 0;
 }
 
+h1 {
+  font-size: 2.5 * $baseFontSize;
+  font-weight: 400;
+  text-align: center;
+  margin: 1rem;
+}
+
 p,
 ul,
 table {

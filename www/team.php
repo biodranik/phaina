@@ -61,7 +61,7 @@
 
 <main role="main">
   <section class="section team">
-    <h1 class="title-team"><?= T("teamTitle") ?></h1>
+    <h1><?= T("teamTitle") ?></h1>
     <p class="preface"><?= T("teamPreface") ?></p>
     <div class="team-container">
       <?php foreach ($team as $m) : ?>
