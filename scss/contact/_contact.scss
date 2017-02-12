@@ -5,15 +5,8 @@
   margin: 1rem;
 }
 
-.preface-contacts {
-  font-size: $baseFontSize + 8;
-  font-weight: 300;
-  text-align: center;
+.preface--contacts {
   margin: 1rem;
-  
-  @include phablet {
-      font-size: 1.1rem;
-  }
 }
 
 .contacts {

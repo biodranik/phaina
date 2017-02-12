@@ -62,3 +62,12 @@ a {
     padding-right: 5px;
   }
 }
+
+.preface {
+  font-size: $baseFontSize + 8;
+  text-align: center;
+
+  @include phablet {
+      font-size: $baseFontSize + 2;
+  }
+}
