@@ -16,13 +16,3 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
-.preface-team {
-  font-size: $baseFontSize + 8;
-  font-weight: 300;
-  text-align: center;
-
-  @include phablet {
-      font-size: 1.1rem;
-  }
-}

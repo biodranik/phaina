@@ -86,7 +86,7 @@ $faqSectionItems = [[
   <section class="banner">
     <div class="section">
       <h1 class="title-index__main"><?= T("indexMainTitle") ?></h1>
-      <p class="preface-index"><?= T("indexPreface") ?></p>
+      <p class="preface"><?= T("indexPreface") ?></p>
       <a class="request-demo-btn" href="#"><?= T("indexButton") ?></a>
     </div>
   </section>
