@@ -37,7 +37,7 @@
 <!-- Code which renders leaflet map with #leaflet-map id above. It's here for localization. -->
 <script type="text/javascript" src=https://unpkg.com/leaflet@1.0.2/dist/leaflet.js></script>
 <script type="text/javascript">
-  var map = L.map('leaflet-map', {scrollWheelZoom: false, zoomControl: false, dragging: false, touchZoom: false, doubleClickZoom: false, tap: false, boxZoom: false, keyboard: false, zoomSnap: 0.1}).setView([57.717, 24.840], 4.8);
+  var map = L.map('leaflet-map', {scrollWheelZoom: false, zoomControl: false, dragging: false, touchZoom: false, doubleClickZoom: false, tap: false, boxZoom: false, keyboard: false, zoomSnap: 0.1});//.setView([57.717, 24.840], 4.8);
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoidmlicm9ib3giLCJhIjoiY2l3Njhib2tqMDAwbzJ5czAxYTN4ZWt6dyJ9.1CqJcnto4oJNbHLvwzxc5A', {
     attribution: 'Map data © <a href="http://openstreetmap.org/">OpenStreetMap</a> | Imagery © <a href="http://mapbox.com/">Mapbox</a>',
     maxZoom: 19,
@@ -50,6 +50,8 @@
   tallinn.bindPopup("<p>" + strHeadquarters + "</p>");
   var minsk = L.marker([53.94678, 27.61623], {title: strDevelopmentOffice, alt: strDevelopmentOffice}).addTo(map);
   minsk.bindPopup("<p>" + strDevelopmentOffice + "</p>");
+  var allMarkers = new L.featureGroup([minsk, tallinn, ]);
+  map.fitBounds(allMarkers.getBounds().pad(0.5));
 </script>
 
 </body>
