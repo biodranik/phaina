@@ -191,7 +191,6 @@ label[for="menu__trigger"] {
       justify-content: center; } }
 
 .contacts__office {
-  display: inline-block;
   margin: 1rem; }
 
 .contacts__h2 {
