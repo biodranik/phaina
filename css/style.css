@@ -268,8 +268,7 @@ label[for="menu__trigger"] {
     font-weight: 400; }
 
 .plus-icon:before {
-  background-image: url("../img/ico/sprite2.svg");
-  background-size: 262px;
+  background-image: url("../img/ico/sprite.png");
   background-repeat: no-repeat;
   background-position: 0 0;
   content: '';
@@ -283,65 +282,75 @@ label[for="menu__trigger"] {
   background-position: 0 0; }
 
 .plus-icon__economy:before {
-  background-position: -70px 0; }
+  background-position: -149px 0; }
 
 .plus-icon__availability:before {
-  background-position: -140px 0; }
+  background-position: -300px 0; }
 
 .plus-icon__simpliticy:before {
-  background-position: -210px 0; }
+  background-position: -447px 0; }
 
 @media (max-width: 543px) {
   .plus-icon:before {
+    height: 35px;
     left: 19px;
     position: absolute;
     top: 0;
-    margin: 0; } }
+    width: 43px;
+    margin: 0;
+    background-size: 353px; }
+  .plus-icon__automatic:before {
+    background-position: 0 0; }
+  .plus-icon__economy:before {
+    background-position: -83px 0; }
+  .plus-icon__availability:before {
+    background-position: -171px 0; }
+  .plus-icon__simpliticy:before {
+    background-position: -254px 0; } }
 
 .system-icon:before {
-  background-image: url("../img/ico/sprite.svg");
+  background-image: url("../img/ico/sprite.png");
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-size: 505px;
   content: '';
   position: relative;
   display: block;
   width: 84px;
-  height: 84px;
+  height: 83px;
   margin: 0 auto 20px; }
 
 .system-icon__equipment {
   margin-bottom: 18px; }
   .system-icon__equipment:before {
-    background-position: -8px 0;
+    background-position: 1px -100px;
     height: 70px;
     margin-bottom: 8px; }
 
 .system-icon__transfer {
   margin-bottom: 18px; }
   .system-icon__transfer:before {
-    background-position: -106px 0;
-    height: 72px;
+    background-position: -134px -100px;
+    height: 70px;
     margin-bottom: 1px; }
 
 .system-icon__processing {
   margin-bottom: 18px; }
   .system-icon__processing:before {
-    background-position: -211px 0;
-    height: 67px;
+    background-position: -267px -100px;
+    height: 66px;
     margin-bottom: 6px; }
 
 .system-icon__g-report {
   margin-bottom: 18px; }
   .system-icon__g-report:before {
-    background-position: -313px 0;
+    background-position: -406px -100px;
     height: 69px;
     margin-bottom: 2px; }
 
 .system-icon__u-report {
   margin-bottom: 18px; }
   .system-icon__u-report:before {
-    background-position: -413px 0;
+    background-position: -546px -100px;
     margin-bottom: 2px; }
 
 .title-index__main {
@@ -403,14 +412,14 @@ label[for="menu__trigger"] {
         font-size: 16px;
         line-height: 18px;
         padding-bottom: 22px;
-        padding-left: 95px;
+        padding-left: 75px;
         position: relative;
         text-align: left; }
         .plus-container .plus-container__title span {
           display: inline; }
       .plus-container .plus-container__text {
         font-weight: 400;
-        padding: 0 15px 20px 95px;
+        padding: 0 15px 20px 76px;
         text-align: left; } }
 
 .system-container {
@@ -479,7 +488,7 @@ label[for="menu__trigger"] {
       top: 107%;
       width: 20px; }
   .system-container__u-report {
-    bottom: 14.5%;
+    bottom: 14.6%;
     max-width: 260px;
     right: 0; }
     .system-container__u-report:after {
@@ -487,13 +496,14 @@ label[for="menu__trigger"] {
 
 @media (max-width: 1199px) {
   .system-container {
-    background-position: 20% 45%;
+    background-position: 20% center;
     background-size: 50%;
-    min-height: inherit;
+    min-height: auto;
     overflow: hidden; }
     .system-container__item {
       max-width: 45%;
-      padding-bottom: 100px;
+      min-height: 240px;
+      padding-bottom: 50px;
       position: relative; }
       .system-container__item:after {
         background-image: url(../img/bg/arrow.png);
@@ -527,8 +537,8 @@ label[for="menu__trigger"] {
       top: 0; }
       .system-container__transfer:after {
         background-position: 0 0;
-        bottom: 40px;
-        height: 43px;
+        bottom: 0;
+        height: 71px;
         left: 48%;
         top: auto;
         width: 21px; }
@@ -536,11 +546,12 @@ label[for="menu__trigger"] {
       float: right;
       left: 0;
       max-width: 40%;
+      padding-bottom: 80px;
       top: 0; }
       .system-container__processing:after {
         background-position: 0 0;
-        bottom: 40px;
-        height: 43px;
+        bottom: 0;
+        height: 71px;
         left: 48%;
         top: auto;
         width: 21px; }
@@ -570,13 +581,12 @@ label[for="menu__trigger"] {
     background: url(../img/bg/device-543.png) no-repeat;
     background-position: 50% 97.75%;
     margin-bottom: 11px;
-    margin-top: 50px;
+    margin-top: 19px;
     padding-bottom: 239px; }
     .system-container__item {
       left: 0;
-      margin-bottom: 20px;
-      min-height: inherit;
-      min-width: inherit;
+      min-height: auto;
+      min-width: none;
       position: relative;
       padding-bottom: 66px;
       top: 0; }
@@ -588,7 +598,8 @@ label[for="menu__trigger"] {
         z-index: -1; }
     .system-container__title {
       font-size: 18px;
-      font-weight: 600; }
+      font-weight: 600;
+      padding-bottom: 21px; }
     .system-container__text {
       font-size: 16px;
       padding: 0 23px; }
@@ -673,3 +684,27 @@ label[for="menu__trigger"] {
     margin-bottom: 0.5rem; }
   .team-member__title {
     margin-bottom: 0.5rem; }
+
+.faq-section {
+  margin: 2rem 0; }
+  .faq-section__h2 {
+    font-weight: 400;
+    margin-bottom: 1rem; }
+  .faq-section__list {
+    list-style: none; }
+  .faq-section__question {
+    margin-bottom: 0.5rem; }
+
+.faq-main__h2 {
+  border-top: 2px solid #eee;
+  padding-top: 1rem; }
+
+.faq-main__block {
+  margin: 1rem 0; }
+
+.faq-main__answer {
+  margin-bottom: 1.5rem; }
+  .faq-main__answer h3 {
+    margin-bottom: 0.5rem; }
+  .faq-main__answer h4 {
+    margin-bottom: 0.2rem; }

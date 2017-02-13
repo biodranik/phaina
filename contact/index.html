@@ -37,6 +37,9 @@
       <a class="menu__link" href="https://deathbaba.github.io/landing-php/team/">Команда</a>
     </li>
         <li class="menu__item">
+      <a class="menu__link" href="https://deathbaba.github.io/landing-php/faq/">Вопросы</a>
+    </li>
+        <li class="menu__item">
       <a class="menu__link menu__link--selected" href="https://deathbaba.github.io/landing-php/contact/">Контакты</a>
     </li>
         <li class="menu__item menu__item--login">
@@ -76,6 +79,9 @@
       <a class="footer__link" href="https://deathbaba.github.io/landing-php/team/">Команда</a>
     </li>
         <li class="footer__nav-item">
+      <a class="footer__link" href="https://deathbaba.github.io/landing-php/faq/">Вопросы</a>
+    </li>
+        <li class="footer__nav-item">
       <a class="footer__link" href="https://deathbaba.github.io/landing-php/contact/">Контакты</a>
     </li>
         <li class="footer__nav-item footer__nav-item--login">
@@ -88,21 +94,19 @@
 <!-- Code which renders leaflet map with #leaflet-map id above. It's here for localization. -->
 <script type="text/javascript" src=https://unpkg.com/leaflet@1.0.2/dist/leaflet.js></script>
 <script type="text/javascript">
-  var map = L.map('leaflet-map', {scrollWheelZoom: false, zoomControl: false, dragging: false, touchZoom: false, doubleClickZoom: false, tap: false, boxZoom: false, keyboard: false, zoomSnap: 0.1});//.setView([57.717, 24.840], 4.8);
-  L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoidmlicm9ib3giLCJhIjoiY2l3Njhib2tqMDAwbzJ5czAxYTN4ZWt6dyJ9.1CqJcnto4oJNbHLvwzxc5A", {
-    attribution: "Данные карты © <a href='http://openstreetmap.org/'>OpenStreetMap</a> | Изображения © <a href='http://mapbox.com/'>Mapbox</a>",
+  var map = L.map('leaflet-map', {scrollWheelZoom: false, zoomControl: false, dragging: false, touchZoom: false, doubleClickZoom: false, tap: false, boxZoom: false, keyboard: false, zoomSnap: 0.1}).setView([57.717, 24.840], 4.8);
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoidmlicm9ib3giLCJhIjoiY2l3Njhib2tqMDAwbzJ5czAxYTN4ZWt6dyJ9.1CqJcnto4oJNbHLvwzxc5A', {
+    attribution: 'Map data © <a href="http://openstreetmap.org/">OpenStreetMap</a> | Imagery © <a href="http://mapbox.com/">Mapbox</a>',
     maxZoom: 19,
-    id: "vibrobox.28m6igh7",
-    accessToken: "pk.eyJ1Ijoidmlicm9ib3giLCJhIjoiY2l3Njhib2tqMDAwbzJ5czAxYTN4ZWt6dyJ9.1CqJcnto4oJNbHLvwzxc5A",
+    id: 'vibrobox.28m6igh7',
+    accessToken: 'pk.eyJ1Ijoidmlicm9ib3giLCJhIjoiY2l3Njhib2tqMDAwbzJ5czAxYTN4ZWt6dyJ9.1CqJcnto4oJNbHLvwzxc5A',
     detectRetina: true}).addTo(map);
-  var strHeadquarters = "Главный офис";
+  var strHeadquarters = 'Главный офис';
   var strDevelopmentOffice = 'Центр разработки';
   var tallinn = L.marker([59.43411, 24.75434], {title: strHeadquarters, alt: strHeadquarters}).addTo(map);
   tallinn.bindPopup("<p>" + strHeadquarters + "</p>");
   var minsk = L.marker([53.94678, 27.61623], {title: strDevelopmentOffice, alt: strDevelopmentOffice}).addTo(map);
   minsk.bindPopup("<p>" + strDevelopmentOffice + "</p>");
-  var allMarkers = new L.featureGroup([minsk, tallinn, ]);
-  map.fitBounds(allMarkers.getBounds().pad(0.5));
 </script>
 
 </body>
