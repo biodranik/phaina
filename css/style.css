@@ -694,6 +694,10 @@ label[for="menu__trigger"] {
     list-style: none; }
   .faq-section__question {
     margin-bottom: 0.5rem; }
+  .faq-section a {
+    text-decoration: none; }
+  .faq-section a:hover {
+    text-decoration: underline; }
 
 .faq-main__h2 {
   border-top: 2px solid #eee;
