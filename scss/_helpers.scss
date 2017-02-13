@@ -12,3 +12,9 @@ $smartphoneWidth:       425px;
     @content;
   }
 }
+
+@mixin notSmartphone {
+  @media (min-width: #{$smartphoneWidth} + 1) {
+    @content;
+  }
+}

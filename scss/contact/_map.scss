@@ -1,10 +1,12 @@
-#leaflet-map {
-  width: 50vw;
-  height: 40vw;
-  @include smartphone {
-    width: 100vw;
-    height: 100vw;
-  }
+// Use mobile layout as a base, @media is used for desktop "exceptions".
 
-  margin-bottom: 1rem;
+// Leaflet map SHOULD have some width and length.
+#leaflet-map {
+  width: 100vw;
+  height: 100vw;
+  @include notSmartphone {
+    width: $smartphoneWidth;
+    height: $smartphoneWidth;
+    margin: 1rem;
+  }
 }
