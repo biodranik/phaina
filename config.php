@@ -29,6 +29,11 @@ $PAGES = [
     'menu' => 'menuTeamPage',
     'title' => 'titleTeamPage'
   ],
+  'faq.php' => [
+    'link' => 'faq/',
+    'menu' => 'menuFaqPage',
+    'title' => 'titleFaqPage'
+  ],
   'contact.php' => [
     'link' => 'contact/',
     'menu' => 'menuContactPage',
