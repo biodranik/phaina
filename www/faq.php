@@ -1,54 +1,46 @@
 <?php
-  require_once(dirname(__FILE__).'/../config.php');
-  HTML_HEAD();
+require_once(dirname(__FILE__).'/../config.php');
+HTML_HEAD();
 
-  $sections =[[
-    'sectionName' => T("generalQuestionsTitle"),
-    'anchor' => 'genetal-questions',
-    'questions' => [[
-      'question' => T("general_q1_question"),
-      'anchor' => 'q1',
-      'shortAnswer' => T("general_q1_short_answer"),
-      'detailedAnswer' => T("general_q1_detailed_answer")],
-     [
-      'question' => T("general_q2_question"),
-      'anchor' => 'q2',
-      'shortAnswer' => T("general_q2_short_answer"),
-      'detailedAnswer' => T("general_q2_detailed_answer")], 
-    [
-      'question' => T("general_q3_question"),
-      'anchor' => 'q3',
-      'shortAnswer' => T("general_q3_short_answer"),
-      'detailedAnswer' => T("general_q3_detailed_answer")],
-    [
-      'question' => T("general_q4_question"),
-      'anchor' => 'q4',
-      'shortAnswer' => T("general_q4_short_answer"),
-      'detailedAnswer' => T("general_q4_detailed_answer")]]],
+$sections =[[
+  'sectionName' => T("generalQuestionsTitle"),
+  'anchor' => 'general-questions',
+  'questions' => [[
+    'question' => T("general_q1_question"),
+    'anchor' => 'q1',
+    'detailedAnswer' => T("general_q1_answer")],
   [
-    'sectionName' => T("generalQuestionsTitle"),
-    'anchor' => 'genetal-questions1',
-    'questions' => [[
-      'question' => T("general_q1_question"),
-      'anchor' => 'q11',
-      'shortAnswer' => T("general_q1_short_answer"),
-      'detailedAnswer' => T("general_q1_detailed_answer")],
-     [
-      'question' => T("general_q2_question"),
-      'anchor' => 'q21',
-      'shortAnswer' => T("general_q2_short_answer"),
-      'detailedAnswer' => T("general_q2_detailed_answer")], 
-    [
-      'question' => T("general_q3_question"),
-      'anchor' => 'q31',
-      'shortAnswer' => T("general_q3_short_answer"),
-      'detailedAnswer' => T("general_q3_detailed_answer")],
-    [
-      'question' => T("general_q4_question"),
-      'anchor' => 'q41',
-      'shortAnswer' => T("general_q4_short_answer"),
-      'detailedAnswer' => T("general_q4_detailed_answer")]]]
-  ];
+    'question' => T("general_q2_question"),
+    'anchor' => 'q2',
+    'detailedAnswer' => T("general_q2_answer")], 
+  [
+    'question' => T("general_q3_question"),
+    'anchor' => 'q3',
+    'detailedAnswer' => T("general_q3_answer")],
+  [
+    'question' => T("general_q4_question"),
+    'anchor' => 'q4',
+    'detailedAnswer' => T("general_q4_answer")]]],
+[
+  'sectionName' => T("generalQuestionsTitle"),
+  'anchor' => 'genetal-questions1',
+  'questions' => [[
+    'question' => T("general_q1_question"),
+    'anchor' => 'q11',
+    'detailedAnswer' => T("general_q1_answer")],
+  [
+    'question' => T("general_q2_question"),
+    'anchor' => 'q21',
+    'detailedAnswer' => T("general_q2_answer")], 
+  [
+    'question' => T("general_q3_question"),
+    'anchor' => 'q31',
+    'detailedAnswer' => T("general_q3_answer")],
+  [
+    'question' => T("general_q4_question"),
+    'anchor' => 'q41',
+    'detailedAnswer' => T("general_q4_answer")]]]
+];
 ?>
 
 <body>
@@ -61,15 +53,15 @@
     <p class="preface"><?= T("faqPreface") ?></p>
 
     <?php foreach ($sections as $s) : ?>
-      <div class="faq-section">
-        <h2 class="faq-section__h2">
+      <div class="faq-summary-section">
+        <h2 class="faq-summary-section__h2">
           <a href="javascript:;" onclick="document.location.hash='<?= $s['anchor'] ?>'">
             <?= $s['sectionName'] ?>
           </a>
         </h2>
-        <ul class="faq-section__list">
+        <ul class="faq-summary-section__list">
           <?php foreach ($s['questions'] as $q) : ?>
-            <li class="faq-section__question">
+            <li class="faq-summary-section__question">
               <a href="javascript:;" onclick="document.location.hash='<?= $q['anchor'] ?>'">
                 <?= $q['question'] ?>
               </a>
@@ -87,7 +79,6 @@
         <?php foreach ($s['questions'] as $q) : ?>
           <div class="faq-main__answer">
             <h3 id="<?= $q['anchor'] ?>"><?= $q['question'] ?></h3>
-            <h4><?= $q['shortAnswer'] ?></h4>
             <p><?= $q['detailedAnswer'] ?></p>
           </div>
         <?php endforeach; ?>
