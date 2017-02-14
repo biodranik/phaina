@@ -1,4 +1,4 @@
-.faq-section {
+.faq-summary-section {
   margin:2rem 0;
 
   &__h2 {
@@ -40,8 +40,11 @@
       margin-bottom: 0.5rem;
     }
 
-    h4 {
-      margin-bottom: 0.2rem;
+    p {
+      text-align: justify;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
     }
   }
 }
