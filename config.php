@@ -20,22 +20,22 @@ $PAGES = [
     // Index page does not have 'menu' key so it's not added into the menu.
   ],
   'technology.php' => [
-    'link' => 'technology/',
+    'link' => 'technology',
     'menu' => 'menuTechnologyPage',
     'title' => 'titleTechnologyPage'
   ],
   'team.php' => [
-    'link' => 'team/',
+    'link' => 'team',
     'menu' => 'menuTeamPage',
     'title' => 'titleTeamPage'
   ],
   'faq.php' => [
-    'link' => 'faq/',
+    'link' => 'faq',
     'menu' => 'menuFaqPage',
     'title' => 'titleFaqPage'
   ],
   'contact.php' => [
-    'link' => 'contact/',
+    'link' => 'contact',
     'menu' => 'menuContactPage',
     'title' => 'titleContactPage'
   ],
