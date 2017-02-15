@@ -28,6 +28,11 @@ git clone <this repo url> --recursive
 - Download PHP for your platform from [official repo](http://windows.php.net/download/) (Non Thread Safe version fits well).
 - ```git clone <this repo url> --recursive``` to use pre-compiled fswatch/sassc binaries in the bin folder/submodule.
 
+In case you will not be able to start php, because of the following error:
+>Unable to start the program as VCRUNTIME140.dll is missing on your computer. Try reinstalling the program to fix this problem.
+
+Try to use following thread [php-7-missing-vcruntime140-dll](http://stackoverflow.com/questions/30811668/php-7-missing-vcruntime140-dll) for troubleshooting.
+
 #### Installation: Linux
 You can install *php*, *fswatch* and *sassc* packages in any convenient way or use pre-compiled binaries from the *bin* folder (helper scripts are aware of binaries in the PATH). Don't forget about recursive repo checkout to use binaries from *bin*: ```git clone <this repo url> --recursive```
 
