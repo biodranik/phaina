@@ -36,13 +36,6 @@ function CurrentPage() {
   exit('ERROR: Please add your page to $PAGES in config.php.');
 }
 
-function GetCurrentPageFullPath() {
-  global $PAGES;
-
-  $p = $PAGES[CurrentPage()];
-  return URL($p['link']);
-}
-
 require_once('translations.php');
 
 // Page title for <title> tag is taken from $PAGES in config.php.

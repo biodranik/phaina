@@ -2,7 +2,6 @@
 <html lang="<?= LANG ?>">
 <head>
   <title><?php global $PAGES; TR($PAGES[CurrentPage()]['title']); ?></title>
-  <base href="<?= BaseURL() ?>">
   <?php require_once("meta.php"); ?>
 
   <link rel="icon" type="image/x-icon" href="<?= URL('favicon.ico') ?>?">
