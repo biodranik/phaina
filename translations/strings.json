@@ -27,10 +27,6 @@
     "en":"Technology",
     "ru":"Решение"
   },
-  "titleTeamPage":{
-    "en":"Our Team",
-    "ru":"Наша команда"
-  },
   "menuTeamPage":{
     "en":"Team",
     "ru":"Команда"
@@ -42,10 +38,6 @@
   "menuContactPage":{
     "en":"Contact",
     "ru":"Контакты"
-  },
-  "titleFaqPage":{
-    "en": "FAQ", 
-    "ru": "Вопросы"
   },
   "menuFaqPage": {
     "en":"FAQ", 
