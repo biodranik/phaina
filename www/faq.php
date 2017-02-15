@@ -54,15 +54,15 @@ $sections =[[
 
   <section class="section">
     <?php foreach ($sections as $s) : ?>
-      <h2 class="faq-main__h2" id="<?= $s['anchor'] ?>"><?= $s['sectionName'] ?></h2>
-      <div class="faq-main__block">
-        <?php foreach ($s['questions'] as $q) : ?>
-          <div class="faq-main__answer">
-            <h3 id="<?= $q['anchor'] ?>"><?= $q['question'] ?></h3>
-            <p><?= $q['detailedAnswer'] ?></p>
-          </div>
-        <?php endforeach; ?>
+    <h2 class="faq-main__h2" id="<?= $s['anchor'] ?>"><?= $s['sectionName'] ?></h2>
+    <div class="faq-main__block">
+      <?php foreach ($s['questions'] as $q) : ?>
+      <div class="faq-main__answer">
+        <h3 id="<?= $q['anchor'] ?>"><?= $q['question'] ?></h3>
+        <p><?= $q['detailedAnswer'] ?></p>
       </div>
+      <?php endforeach; ?>
+    </div>
     <?php endforeach; ?>
   <section>
 </main>
