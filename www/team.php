@@ -3,55 +3,30 @@
   HTML_HEAD();
 
   $team = [[
-      'img' => "img/team/maniuk.png",
-      'name' => T("maniukName"),
-      'title' => T("maniukTitle"),
-      'description' => T("maniukDescription")],
+      'img' => 'img/team/Igor_Davydov.png',
+      'name' => T('Igor Davydov'),
+      'title' => T('idavydovTitle'),
+      'description' => T('idavydovDescription')],
     [
-      'img' => "img/team/zolotarev.png",
-      'name' => T("zolotarevName"),
-      'title' => T("zolotarevTitle"),
-      'description' => T("zolotarevDescription")],
+      'img' => 'img/team/Alexander_Zolotarev.png',
+      'name' => T('Alexander Zolotarev'),
+      'title' => T('zolotarevTitle'),
+      'description' => T('zolotarevDescription')],
     [
-      'img' => "img/team/maniuk.png",
-      'name' => T("maniukName"),
-      'title' => T("maniukTitle"),
-      'description' => T("maniukDescription")],
+      'img' => 'img/team/Yury_Aslamov.png',
+      'name' => T('Yury Aslamov'),
+      'title' => T('yaslamovTitle'),
+      'description' => T('yaslamovDescription')],
     [
-      'img' => "img/team/zolotarev.png",
-      'name' => T("zolotarevName"),
-      'title' => T("zolotarevTitle"),
-      'description' => T("zolotarevDescription")],
+      'img' => 'img/team/Sergei_Vasukevich.png',
+      'name' => T('Sergei Vasukevich'),
+      'title' => T('vasukevichTitle'),
+      'description' => T('vasukevichDescription')],
     [
-      'img' => "img/team/maniuk.png",
-      'name' => T("maniukName"),
-      'title' => T("maniukTitle"),
-      'description' => T("maniukDescription")],
-    [
-      'img' => "img/team/zolotarev.png",
-      'name' => T("zolotarevName"),
-      'title' => T("zolotarevTitle"),
-      'description' => T("zolotarevDescription")],
-    [
-      'img' => "img/team/maniuk.png",
-      'name' => T("maniukName"),
-      'title' => T("maniukTitle"),
-      'description' => T("maniukDescription")],
-    [
-      'img' => "img/team/zolotarev.png",
-      'name' => T("zolotarevName"),
-      'title' => T("zolotarevTitle"),
-      'description' => T("zolotarevDescription")],
-    [
-      'img' => "img/team/maniuk.png",
-      'name' => T("maniukName"),
-      'title' => T("maniukTitle"),
-      'description' => T("maniukDescription")],
-    [
-      'img' => "img/team/zolotarev.png",
-      'name' => T("zolotarevName"),
-      'title' => T("zolotarevTitle"),
-      'description' => T("zolotarevDescription")]
+      'img' => 'img/team/Aliaksei_Maniuk.png',
+      'name' => T('Aliaksei Maniuk'),
+      'title' => T('maniukTitle'),
+      'description' => T('maniukDescription')]
   ];
 ?>
 
@@ -61,13 +36,13 @@
 
 <main role="main">
   <section class="section team">
-    <h1><?= T("teamTitle") ?></h1>
-    <p class="preface"><?= T("teamPreface") ?></p>
+    <h1><?= T('teamTitle') ?></h1>
+    <p class="preface"><?= T('teamPreface') ?></p>
     <div class="team-container">
       <?php foreach ($team as $m) : ?>
         <div class="team-member">
           <div class="team-member__img">
-            <img src="<?= $m['img'] ?>" />
+            <img src="<?= URL($m['img']) ?>" alt="<?= $m['name'] ?>" />
           </div>
       	  <div class="team-member__description">
             <h3 class="team-member__name"><?= $m['name'] ?></h3>
