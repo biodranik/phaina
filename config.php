@@ -19,11 +19,12 @@ $PAGES = [
     'title' => 'titleIndexPage'
     // Index page does not have 'menu' key so it's not added into the menu.
   ],
-  'technology.php' => [
-    'link' => 'technology',
-    'menu' => 'menuTechnologyPage',
-    'title' => 'titleTechnologyPage'
-  ],
+  // Temporary remove technology page from menu
+  // 'technology.php' => [
+  //   'link' => 'technology',
+  //   'menu' => 'menuTechnologyPage',
+  //   'title' => 'titleTechnologyPage'
+  // ],
   'team.php' => [
     'link' => 'team',
     'menu' => 'menuTeamPage',
