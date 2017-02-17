@@ -3,27 +3,27 @@
   HTML_HEAD();
 
   $team = [[
-      'img' => 'img/team/Igor_Davydov.png',
+      'img' => 'img/team/Igor_Davydov.jpg',
       'name' => T('Igor Davydov'),
       'title' => T('idavydovTitle'),
       'description' => T('idavydovDescription')],
     [
-      'img' => 'img/team/Alexander_Zolotarev.png',
+      'img' => 'img/team/Alexander_Zolotarev.jpg',
       'name' => T('Alexander Zolotarev'),
       'title' => T('zolotarevTitle'),
       'description' => T('zolotarevDescription')],
     [
-      'img' => 'img/team/Yury_Aslamov.png',
+      'img' => 'img/team/Yury_Aslamov.jpg',
       'name' => T('Yury Aslamov'),
       'title' => T('yaslamovTitle'),
       'description' => T('yaslamovDescription')],
     [
-      'img' => 'img/team/Sergei_Vasukevich.png',
+      'img' => 'img/team/Sergei_Vasukevich.jpg',
       'name' => T('Sergei Vasukevich'),
       'title' => T('vasukevichTitle'),
       'description' => T('vasukevichDescription')],
     [
-      'img' => 'img/team/Aliaksei_Maniuk.png',
+      'img' => 'img/team/Aliaksei_Maniuk.jpg',
       'name' => T('Aliaksei Maniuk'),
       'title' => T('maniukTitle'),
       'description' => T('maniukDescription')]
