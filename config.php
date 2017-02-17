@@ -28,7 +28,7 @@ $PAGES = [
   'team.php' => [
     'link' => 'team',
     'menu' => 'menuTeamPage',
-    'title' => 'titleTeamPage'
+    'title' => 'teamTitle'
   ],
   'faq.php' => [
     'link' => 'faq',
