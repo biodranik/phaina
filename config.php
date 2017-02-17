@@ -33,7 +33,7 @@ $PAGES = [
   'faq.php' => [
     'link' => 'faq',
     'menu' => 'menuFaqPage',
-    'title' => 'titleFaqPage'
+    'title' => 'faqTitle'
   ],
   'contact.php' => [
     'link' => 'contact',
