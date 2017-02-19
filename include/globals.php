@@ -1,9 +1,14 @@
 <?php
 
+// Returns true if site is running on localhost.
+function IsLocalhostDevelopmentMode() {
+  return array_key_exists('REMOTE_ADDR', $_SERVER) and ($_SERVER['REMOTE_ADDR'] == '127.0.0.1'
+      or $_SERVER['REMOTE_ADDR'] == '::1');
+}
+
 function BaseURL() {
   // Replace BaseURL when developing on localhost.
-  if (array_key_exists('REMOTE_ADDR', $_SERVER) and ($_SERVER['REMOTE_ADDR'] == '127.0.0.1'
-      or $_SERVER['REMOTE_ADDR'] == '::1')) {
+  if (IsLocalhostDevelopmentMode()) {
     $scheme = (isset($_SERVER['HTTPS']) and !empty($_SERVER['HTTPS'])) ? 'https' : 'http';
     return "${scheme}://${_SERVER['HTTP_HOST']}/";
   }
