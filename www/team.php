@@ -36,7 +36,7 @@
 
 <main role="main">
   <section class="section team">
-    <h1><?= T('teamTitle') ?></h1>
+    <h1><?= T('teamH1') ?></h1>
     <p class="preface"><?= T('teamPreface') ?></p>
     <div class="team-container">
       <?php foreach ($team as $m) : ?>

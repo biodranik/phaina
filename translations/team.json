@@ -1,6 +1,24 @@
 {
-  "teamTitle": {
-    "ru": "Наша команда"
+  "titleTeamPage":{
+    "en":"VibroBox Team: Scientists and engineers from Minsk, Belarus.",
+    "ru":"Команда VibroBox: Учёные и инженеры из Минска."
+  },
+  "menuTeamPage":{
+    "en":"Team",
+    "ru":"Команда"
+  },
+  "metaDescriptionTeamPage":{
+    "default":"Igor Davydov, Ph.D. in vibration diagnostics, is leading our scientists and hardware engineers. Alexander Zolotarev helps our software engineers to scale world wide with his MAPS.ME experience.",
+    "ru":"Под руководством Игоря Давыдова, кандидата технических наук и эксперта по вибродиагностике, команда VibroBox в Минске занимается наукой, разрабатывает собственные алгоритмы ЦОС и «умные» датчики. Опыт в MAPS.ME Александра Золотарёва помогает масштабироваться на весь мир."
+  },
+  "metaKeywordsTeamPage":{
+    "en":"team, VibroBox, Minsk, Belarus, scientists, engineers, vibrodiagnosts, DSP, hardware",
+    "ru":"команда, VibroBox, Минск, Беларусь, учёные, инженеры, вибродиагносты, ЦОС, датчики"
+  },
+
+  "teamH1":{
+    "en":"Our Team",
+    "ru":"Наша команда"
   },
   "teamPreface": {
     "ru": "В VibroBox работает команда квалифицированных исследователей и инженеров из Беларуси. Если у вас есть опыт в цифровой обработке сигналов и алгоритмах машинного обучения или в вибрационной диагностике, а также желание присоединиться к нашей команде - пишите нам на <a href='mailto:jobs@vibrobox.com'>jobs@vibrobox.com</a>"

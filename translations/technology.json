@@ -1,0 +1,18 @@
+{
+  "titleTechnologyPage":{
+    "en":"VibroBox Technology: precise malfunction prediction with detailed recommendations.",
+    "ru":"Технология VibroBox: упреждение поломки оборудования и детальные рекоммендации по обслуживанию."
+  },
+  "menuTechnologyPage":{
+    "en":"Technology",
+    "ru":"Решение"
+  },
+  "metaDescriptionTechnologyPage":{
+    "default":"TODO 260 chars google description.",
+    "ru":"Описание для поисковиков длиной до 260 символов."
+  },
+  "metaKeywordsTechnologyPage":{
+    "en":"Tech page keywords for bing.",
+    "ru":"Ключевые слова для bing."
+  }
+}
