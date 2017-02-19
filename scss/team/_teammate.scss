@@ -1,7 +1,6 @@
 .team-member {
-  display: flex;
   width: 50%;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   margin-bottom: 1.5rem;
 
   @include phablet {
@@ -13,22 +12,17 @@
   }
 
   &__img {
-    img {
-      width: 120px;
-      height: 120px;
-
-      @include smartphone {
-        height: 70px;
-        width: 70px;
-      }
-    }
+    display: block;
+    width: 140px;
+    height: 140px;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   &__description {
-    margin-left: 1.5rem;
-      
-    @include smartphone {
-      margin-left: 0.5rem;
+    p {
+      text-align: justify;
     }
   }
 
