@@ -9,7 +9,7 @@
       <a class="footer__link footer__link--login" href="<?= DEMO_URL ?>"><?= T('loginButton') ?></a>
     </li>
   </ul>
-  <p class="footer__copyright">© 2017 VibroBox OÜ</p>
+  <p class="footer__copyright"><?= T('copyright') ?></p>
 </footer>
 
 <?php // Do not load Google Analytics when developing on a localhost machine.

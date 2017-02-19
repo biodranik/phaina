@@ -1,5 +1,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="copyright" content="<?= T('copyright') ?>">
   <!-- VERY important string, displayed by Google. Should be 160 chars max. -->
   <!-- TODO(AlexZ): translate -->
   <meta name="description" content="Fully automatic online condition monitoring system for industrial equipment.">
