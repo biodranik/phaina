@@ -57,24 +57,6 @@ $solutionSectionItems = [[
     'css' => 'system-container__u-report',
     'icon' => 'system-icon__u-report']
 ];
-
-$faqSectionItems = [[
-    'question' => T("faqQuestion1"),
-    'title' => T("faqTitle1"),
-    'answer' => T("faqAnswer1")],
-  [
-    'question' => T("faqQuestion2"),
-    'title' => T("faqTitle2"),
-    'answer' => T("faqAnswer2")],
-  [
-    'question' => T("faqQuestion3"),
-    'title' => T("faqTitle3"),
-    'answer' => T("faqAnswer3")],
-  [
-    'question' => T("faqQuestion4"),
-    'title' => T("faqTitle4"),
-    'answer' => T("faqAnswer4")]
-]
 ?>
 
 <body>
@@ -115,18 +97,6 @@ $faqSectionItems = [[
           <?= $item['title'] ?>
         </h3>
         <p class="system-container__text"><?= $item['description'] ?></p>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-
-  <section class="section faq">
-    <div class="faq">
-      <?php foreach($faqSectionItems as $item) : ?>
-      <div class="faq__item">
-        <div class="faq__question"><?= $item['question'] ?></div>
-        <div class="faq__title"><?= $item['title'] ?></div>
-        <p class="faq__answer"><?= $item['answer'] ?></p>
       </div>
       <?php endforeach; ?>
     </div>
