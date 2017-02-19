@@ -10,8 +10,15 @@
 //   },
 //   "Valid English String":{
 //     "en_US":"Valid English String above will be used if string in default language is missing."
+//   },
+//   "copyright":{
+//     "default":"Will be used for every language except be (see next line)",
+//     "be":"© 2017 Мiнск, Беларусь"
 //   }
 // }
+
+// Used if translation for required language is missing.
+define('DEFAULT_LANGUAGE', 'default');
 
 // Load all strings to the global variable $TRANSLATIONS.
 $TRANSLATIONS = LoadTranslations(dirname(__FILE__).'/../translations/');
@@ -40,9 +47,9 @@ function T($key, $lang = LANG) {
   // Good: we have a translation for given language.
   if (array_key_exists($lang, $TRANSLATIONS[$key])) return $TRANSLATIONS[$key][$lang];
   // Bad: default language translation is missing. Key is used by default.
-  if ($lang == $defaultLanguage) return $key;
+  if ($lang == DEFAULT_LANGUAGE) return $key;
   // Not good: translation is missing but at least we have a default one.
-  if (array_key_exists($defaultLanguage, $TRANSLATIONS[$key])) return $TRANSLATIONS[$key][$defaultLanguage];
+  if (array_key_exists(DEFAULT_LANGUAGE, $TRANSLATIONS[$key])) return $TRANSLATIONS[$key][DEFAULT_LANGUAGE];
   // Bad: both target and default language translations are missing. Key is used by default.
   return $key;
 }

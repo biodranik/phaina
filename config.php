@@ -7,7 +7,8 @@ ini_set('default_charset', 'UTF-8');
 // Please use BaseURL() function instead of direct access, it makes development easier.
 define('BASE_URL', 'https://deathbaba.github.io/landing-php/');
 
-// Default site language, used in <html lang="…"> attributes and for default translation language.
+// Site language which is used in <html lang="…"> attributes and for translations.
+// TODO(Alex): Generate all supported languages from one launch, without editing this constant.
 define('LANG', 'ru');
 
 define('DEMO_URL', 'https://www.dev.vibrobox.com/site/login');
