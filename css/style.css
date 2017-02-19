@@ -650,13 +650,17 @@ label[for="menu__trigger"] {
       padding: 0; } }
   .team-member__img {
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     float: left;
     margin-right: 1rem;
     margin-bottom: 0.5rem; }
   .team-member__description p {
-    text-align: justify; }
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
   .team-member__name {
     margin-bottom: 0.5rem; }
   .team-member__title {
@@ -690,5 +694,6 @@ label[for="menu__trigger"] {
   .faq-main__answer p {
     text-align: justify;
     -webkit-hyphens: auto;
+    -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto; }
