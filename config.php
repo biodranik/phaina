@@ -11,6 +11,7 @@ define('BASE_URL', 'https://deathbaba.github.io/landing-php/');
 define('LANG', 'ru');
 
 define('DEMO_URL', 'https://www.dev.vibrobox.com/site/login');
+define('GOOGLE_ANALYTICS_ID', 'UA-79782596-1');
 
 $PAGES = [
   'index.php' => [
