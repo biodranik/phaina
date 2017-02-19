@@ -639,9 +639,8 @@ label[for="menu__trigger"] {
   flex-wrap: wrap; }
 
 .team-member {
-  display: flex;
   width: 50%;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   margin-bottom: 1.5rem; }
   @media (max-width: 768px) {
     .team-member {
@@ -649,18 +648,15 @@ label[for="menu__trigger"] {
   @media (max-width: 425px) {
     .team-member {
       padding: 0; } }
-  .team-member__img img {
+  .team-member__img {
+    display: block;
     width: 120px;
-    height: 120px; }
-    @media (max-width: 425px) {
-      .team-member__img img {
-        height: 70px;
-        width: 70px; } }
-  .team-member__description {
-    margin-left: 1.5rem; }
-    @media (max-width: 425px) {
-      .team-member__description {
-        margin-left: 0.5rem; } }
+    height: 120px;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem; }
+  .team-member__description p {
+    text-align: justify; }
   .team-member__name {
     margin-bottom: 0.5rem; }
   .team-member__title {
