@@ -41,9 +41,7 @@
     <div class="team-container">
       <?php foreach ($team as $m) : ?>
         <div class="team-member">
-          <div class="team-member__img">
-            <img src="<?= URL($m['img']) ?>" alt="<?= $m['name'] ?>" />
-          </div>
+          <img class="team-member__img" src="<?= URL($m['img']) ?>" alt="<?= $m['name'] ?>" />
       	  <div class="team-member__description">
             <h3 class="team-member__name"><?= $m['name'] ?></h3>
             <h4 class="team-member__title"><?= $m['title'] ?></h4>
