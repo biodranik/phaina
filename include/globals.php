@@ -19,8 +19,12 @@ function URL($link) {
   return BaseURL() . $link;
 }
 
-function CurrentPage() {
+// Without parameters returns current page name (e.g. 'page.php').
+// If $property is not empty, returns given property of the page or empty string if it does not exist.
+// See $PAGES in config.php for more details.
+function CurrentPage($property = '') {
   global $PAGES;
+  $INDEX_PAGE = 'index.php';
   $includes = get_included_files();
   $isIndexPage = false;
   foreach ($includes as $path) {
@@ -28,16 +32,20 @@ function CurrentPage() {
     foreach ($PAGES as $page => $properties) {
       if ($page == $path) {
         // Special case: index page can route to other pages (or can not).
-        if ($page == 'index.php') {
+        if ($page == $INDEX_PAGE) {
           $isIndexPage = true;
           break;
         } else {
-          return $page;
+          if (empty($property)) return $page;
+          else return array_key_exists($property, $PAGES[$page]) ? $PAGES[$page][$property] : '';
         }
       }
     }
   }
-  if ($isIndexPage) return 'index.php';
+  if ($isIndexPage) {
+    if (empty($property)) return $INDEX_PAGE;
+    else return array_key_exists($property, $PAGES[$INDEX_PAGE]) ? $PAGES[$INDEX_PAGE][$property] : '';
+  }
   exit('ERROR: Please add your page to $PAGES in config.php.');
 }
 
