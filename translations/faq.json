@@ -1,11 +1,20 @@
 {
+  "titleFaqPage": {
+    "en":"VibroBox: Frequently Asked Questions, help and support.",
+    "ru": "VibroBox: Часто задаваемые вопросы, помощь и справка."
+  },
+  "menuFaqPage": {
+    "en":"FAQ",
+    "ru": "Вопросы"
+  },
+
   "faqTitle": {
     "ru": "Вопросы и ответы.", 
     "en": "Frequently Asked Questions."
   }, 
   "faqPreface": {
-    "ru": "Есть вопросы? Присылайте их нам на <a href=\"mailto:info@vibrobox.com\">info@vibrobox.com</a>.", 
-    "en": "Any questions? Email us at <a href=\"mailto:info@vibrobox.com\">info@vibrobox.com</a>"
+    "ru": "Есть вопросы? Присылайте их нам на <a href='mailto:info@vibrobox.com'>info@vibrobox.com</a>.",
+    "en": "Any questions? Email us at <a href='mailto:info@vibrobox.com'>info@vibrobox.com</a>"
   }, 
   "generalQuestionsTitle": {
     "ru": "Общие вопросы"
