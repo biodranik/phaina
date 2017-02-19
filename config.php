@@ -13,6 +13,9 @@ define('LANG', 'ru');
 
 define('DEMO_URL', 'https://www.dev.vibrobox.com/site/login');
 define('GOOGLE_ANALYTICS_ID', 'UA-79782596-1');
+// Translation defines for meta keywords and description if they are not customized in $PAGES.
+define('DEFAULT_META_DESCRIPTION', 'metaDescriptionIndexPage');
+define('DEFAULT_META_KEYWORDS', 'metaKeywordsIndexPage');
 
 $PAGES = [
   'index.php' => [
@@ -30,17 +33,23 @@ $PAGES = [
   'team.php' => [
     'link' => 'team',
     'menu' => 'menuTeamPage',
-    'title' => 'teamTitle'
+    'title' => 'titleTeamPage',
+    'description' => 'metaDescriptionTeamPage',
+    'keywords' => 'metaKeywordsTeamPage'
   ],
   'faq.php' => [
     'link' => 'faq',
     'menu' => 'menuFaqPage',
-    'title' => 'faqTitle'
+    'title' => 'titleFaqPage',
+    'description' => 'metaDescriptionFaqPage',
+    'keywords' => 'metaKeywordsFaqPage'
   ],
   'contact.php' => [
     'link' => 'contact',
     'menu' => 'menuContactPage',
-    'title' => 'titleContactPage'
+    'title' => 'titleContactPage',
+    'description' => 'metaDescriptionContactPage',
+    'keywords' => 'metaKeywordsContactPage'
   ],
   '404.php' => [
     // Page without a link key is 404 HTTP Not Found page.

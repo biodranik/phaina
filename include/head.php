@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="<?= LANG ?>">
 <head>
-  <title><?php global $PAGES; TR($PAGES[CurrentPage()]['title']); ?></title>
-  <?php require_once("meta.php"); ?>
+  <title><?= T(CurrentPage('title')); ?></title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="copyright" content="<?= T('copyright') ?>">
+  <meta name="description" content="<?= T(PageDescription()) ?>">
+  <meta name="keywords" content="<?= T(PageKeywords()) ?>">
 
   <link rel="icon" type="image/x-icon" href="<?= URL('favicon.ico') ?>?">
   <link rel="stylesheet" type="text/css" href="<?= URL('css/style.css') ?>">
