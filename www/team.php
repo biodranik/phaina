@@ -26,7 +26,12 @@
       'img' => 'img/team/Aliaksei_Maniuk.jpg',
       'name' => T('Aliaksei Maniuk'),
       'title' => T('maniukTitle'),
-      'description' => T('maniukDescription')]
+      'description' => T('maniukDescription')],
+    [
+      'img' => 'img/team/Aleksandr_Tsurko.jpg',
+      'name' => T('Aleksandr Tsurko'),
+      'title' => T('tsurkoTitle'),
+      'description' => T('tsurkoDescription')]
   ];
 ?>
 
