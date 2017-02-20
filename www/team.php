@@ -31,7 +31,12 @@
       'img' => 'img/team/Aleksandr_Tsurko.jpg',
       'name' => T('Aleksandr Tsurko'),
       'title' => T('tsurkoTitle'),
-      'description' => T('tsurkoDescription')]
+      'description' => T('tsurkoDescription')],
+    [
+      'img' => 'img/team/Anatoliy_Shevchenko.jpg',
+      'name' => T('Anatoliy Shevchenko'),
+      'title' => T('shevchenkoTitle'),
+      'description' => T('shevchenkoDescription')]
   ];
 ?>
 
