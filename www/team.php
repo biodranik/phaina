@@ -36,7 +36,42 @@
       'img' => 'img/team/Anatoliy_Shevchenko.jpg',
       'name' => T('Anatoliy Shevchenko'),
       'title' => T('shevchenkoTitle'),
-      'description' => T('shevchenkoDescription')]
+      'description' => T('shevchenkoDescription')],
+    [
+      'img' => 'img/team/Andrey_Aslamov.jpg',
+      'name' => T('Andrey Aslamov'),
+      'title' => T('aslamovTitle'),
+      'description' => T('aslamovDescription')], 
+    [
+      'img' => 'img/team/Mikita_Kasmach.jpg',
+      'name' => T('Mikita Kasmach'),
+      'title' => T('kasmachTitle'),
+      'description' => T('kasmachDescription')],
+    [
+      'img' => 'img/team/Petr_Riabtsev.jpg',
+      'name' => T('Petr Riabtsev'),
+      'title' => T('riabtsevTitle'),
+      'description' => T('riabtsevDescription')],
+    [
+      'img' => 'img/team/Roman_Tolkach.jpg',
+      'name' => T('Roman Tolkach'),
+      'title' => T('tolkachTitle'),
+      'description' => T('tolkachDescription')],
+    [
+      'img' => 'img/team/Oleg_Avsyankin.jpg',
+      'name' => T('Oleg Avsyankin'),
+      'title' => T('avsyankinTitle'),
+      'description' => T('avsyankinDescription')],
+    [
+      'img' => 'img/team/Yaraslava_Herasimuk.jpg',
+      'name' => T('Yaraslava Herasimuk'),
+      'title' => T('herasimukTitle'),
+      'description' => T('herasimukDescription')],
+    [
+      'img' => 'img/team/Mihail_Bogdanec.jpg',
+      'name' => T('Mihail Bogdanec'),
+      'title' => T('bogdanecTitle'),
+      'description' => T('bogdanecDescription')]
   ];
 ?>
 
