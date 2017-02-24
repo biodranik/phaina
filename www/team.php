@@ -71,7 +71,12 @@
       'img' => 'img/team/Mihail_Bogdanec.jpg',
       'name' => T('Mihail Bogdanec'),
       'title' => T('bogdanecTitle'),
-      'description' => T('bogdanecDescription')]
+      'description' => T('bogdanecDescription')],
+    [
+      'img' => 'img/team/Artem_Bourak.jpg',
+      'name' => T('Artem Bourak'),
+      'title' => T('bourakTitle'),
+      'description' => T('bourakDescription')]
   ];
 ?>
 
