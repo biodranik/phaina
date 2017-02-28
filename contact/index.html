@@ -10,7 +10,7 @@
   <meta name="keywords" content="metaKeywordsContactPage">
 
   <link rel="icon" type="image/x-icon" href="https://deathbaba.github.io/landing-php/favicon.ico?">
-  <link rel="stylesheet" type="text/css" href="https://deathbaba.github.io/landing-php/css/style.css">
+  <!--<link rel="stylesheet" type="text/css" href="https://deathbaba.github.io/landing-php/css/style.css">-->
 
   <!-- TODO: Generate hreflang links for every language. -->
   
@@ -97,7 +97,14 @@ ga('create', 'UA-79782596-1', 'auto');
 ga('send', 'pageview');
 </script>
 
-
+<script type="text/javascript">
+var giftofspeed = document.createElement('link');
+giftofspeed.rel = 'stylesheet';
+giftofspeed.href = 'https://deathbaba.github.io/landing-php/css/style.css';
+giftofspeed.type = 'text/css';
+var godefer = document.getElementsByTagName('link')[0];
+godefer.parentNode.insertBefore(giftofspeed, godefer);
+</script>
 <!-- Code which renders leaflet map with #leaflet-map id above. It's here for localization. -->
 <script type="text/javascript" src=https://unpkg.com/leaflet@1.0.2/dist/leaflet.js></script>
 <script type="text/javascript">
