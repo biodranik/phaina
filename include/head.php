@@ -10,11 +10,7 @@
   <meta name="keywords" content="<?= T(PageKeywords()) ?>">
 
   <link rel="icon" type="image/x-icon" href="<?= URL('favicon.ico') ?>?">
-  <style>
-  <?php
-    echo file_get_contents(dirname(__FILE__)."/../www/css/style.css"); // get the contents, and echo it out.
-  ?>
-  </style>
+  <link rel="stylesheet" type="text/css" href="<?= URL('css/style.css') ?>">
   <!-- TODO: Generate hreflang links for every language. -->
   <?php /* $langSites = [
       'https://www.vibrobox.com/' => ['x-default', 'en'],
@@ -30,3 +26,4 @@
     foreach ($HEAD_TAGS as $tag) echo "$tag\n";
   ?>
 </head>
+
