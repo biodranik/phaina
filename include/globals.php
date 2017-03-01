@@ -85,7 +85,23 @@ function MainMenu() {
       $menu[] = new MenuItem(URL($props['link']), T($props['menu']), $currentPage == $page);
     }
   }
+
   return $menu;
+}
+
+function BuildSiteMapXml() {
+  global $PAGES;
+  $siteMap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+  foreach($PAGES as $page => $props) {
+    if (array_key_exists('link', $props)) {
+      $siteMap = $siteMap.'<url><loc>'.URL($props['link']).'</loc></url>';
+    }
+  }
+
+  $siteMap = $siteMap.'</urlset>';
+  
+  return $siteMap;
 }
 
 ?>

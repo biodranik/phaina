@@ -52,12 +52,19 @@ function Generate($inDir, $outDir) {
   global $PAGES;
   $staticFilesCopied = 0;
   $processedPhpFiles = [];
+  
+  if (file_exists($outDir)) {
+    RemoveFilesAndSubdirs($outDir);
+  } else {
+    mkdir($outDir, kNewDirPermissions, true);
+  }
+
+  print("Generating sitemap:\n");
+  $sitemapXml = BuildSiteMapXml();
+  $sitemapFullPath = $outDir . DIRECTORY_SEPARATOR . 'sitemap.xml';
+  file_put_contents($sitemapFullPath, $sitemapXml);
 
   print("Generating pages from php files:\n");
-
-  if (file_exists($outDir)) RemoveFilesAndSubdirs($outDir);
-  else mkdir($outDir, kNewDirPermissions, true);
-
   $iter = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($inDir),
       RecursiveIteratorIterator::SELF_FIRST);
   foreach($iter as $fileName => $fileInfo) {
