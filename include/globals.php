@@ -94,6 +94,7 @@ function BuildSiteMapXml() {
   $siteMap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
   foreach($PAGES as $page => $props) {
+    // Ignoring 404.php page or other pages without link property.
     if (array_key_exists('link', $props)) {
       $siteMap = $siteMap.'<url><loc>'.URL($props['link']).'</loc></url>';
     }
