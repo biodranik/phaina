@@ -53,16 +53,11 @@ function Generate($inDir, $outDir) {
   $staticFilesCopied = 0;
   $processedPhpFiles = [];
   
-  if (file_exists($outDir)) {
-    RemoveFilesAndSubdirs($outDir);
-  } else {
-    mkdir($outDir, kNewDirPermissions, true);
-  }
+  if (file_exists($outDir)) RemoveFilesAndSubdirs($outDir);
+  else mkdir($outDir, kNewDirPermissions, true);
 
   print("Generating sitemap:\n");
-  $sitemapXml = BuildSiteMapXml();
-  $sitemapFullPath = $outDir . DIRECTORY_SEPARATOR . 'sitemap.xml';
-  file_put_contents($sitemapFullPath, $sitemapXml);
+  file_put_contents(FullPathTo($outDir, 'sitemap.xml'), BuildSiteMapXml());
 
   print("Generating pages from php files:\n");
   $iter = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($inDir),
@@ -72,7 +67,7 @@ function Generate($inDir, $outDir) {
     // Skip hidden files and directories, '.' and '..' directories.
     if ($fileName[0] === '.') continue;
     // Generate html from .php files and simply copy everything else into the $outDir.
-    $outPath = $outDir . DIRECTORY_SEPARATOR . $iter->getSubPathName();
+    $outPath = FullPathTo($outDir, $iter->getSubPathName());
     if ($fileInfo->isDir()) {
       mkdir($outPath, kNewDirPermissions);
       continue;
@@ -92,7 +87,7 @@ function Generate($inDir, $outDir) {
       } else {
         // Create directory with index.html inside.
         mkdir($outPath, kNewDirPermissions);
-        $outPath .= DIRECTORY_SEPARATOR . "index.html";
+        $outPath = FullPathTo($outPath, "index.html");
       }
       // TODO: Handle errors.
       file_put_contents($outPath, HtmlFromPhp($fileInfo));
@@ -116,6 +111,10 @@ function Generate($inDir, $outDir) {
 function Usage($self) {
   echo "Usage: php ".$self." <input www dir> <output www dir>\n";
   echo "WARNING: All files in <output www dir> will be deleted!\n";
+}
+
+function FullPathTo($outDir, $fileName) {
+  return $outDir . DIRECTORY_SEPARATOR . $fileName;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
