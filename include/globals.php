@@ -15,7 +15,10 @@ function BaseURL() {
   return BASE_URL;
 }
 
+// $link can be any absolute link without leading slash or .php page name from $PAGES.
 function URL($link) {
+  global $PAGES;
+  if (strlen($link) > 4 and substr_compare($link, '.php', -4) == 0) $link = $PAGES[$link]['link'];
   return BaseURL() . $link;
 }
 
