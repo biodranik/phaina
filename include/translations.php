@@ -23,7 +23,6 @@ define('DEFAULT_LANGUAGE', 'default');
 // Load all strings to the global variable $TRANSLATIONS.
 $TRANSLATIONS = LoadTranslations(dirname(__FILE__).'/../translations/');
 
-// TODO: Warn about duplicated translation keys.
 function LoadTranslations($fromDir) {
   $allTranslations = [];
   foreach (glob($fromDir . '*.json') as $file) {
@@ -31,7 +30,13 @@ function LoadTranslations($fromDir) {
     if ($arr === NULL || json_last_error() != JSON_ERROR_NONE) {
       exit("Error loading $file: " . json_last_error_msg());
     }
-    $allTranslations = array_merge($allTranslations, $arr);
+    // Filter comments and check for duplicates while merging.
+    foreach ($arr as $key => $translations) {
+      if (array_key_exists($key, $allTranslations)) exit("Error: duplicate translation '$key' in $file.");
+      $withoutComment = array_filter($translations, function($lang) { return $lang !== 'comment'; }, ARRAY_FILTER_USE_KEY);
+      if (empty($withoutComment)) continue;
+      $allTranslations[$key] = $withoutComment;
+    }
   }
   return $allTranslations;
 }
