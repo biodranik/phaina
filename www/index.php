@@ -73,20 +73,6 @@ $solutionSectionItems = [[
     </div>
   </section>
 
-  <section class="section plus">
-    <h2 class="title-index__second"><?= T("plusTitle") ?></h2>
-    <div class="plus-container">
-      <?php foreach ($plusSectionItems as $item) : ?>
-      <div class="plus-container__item">
-        <h3 class="plus-container__title plus-icon <?= $item['icon'] ?>">
-          <span><?= $item['title'] ?></span>
-        </h3>
-        <p class="plus-container__text"><?= $item['description'] ?></p>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-
   <section class="section system">
     <h2 class="title-index__second"><?= T("systemItem") ?></h2>
     <p class="preface"><?= T("systemPreface") ?></p>
@@ -97,6 +83,20 @@ $solutionSectionItems = [[
           <?= $item['title'] ?>
         </h3>
         <p class="system-container__text"><?= $item['description'] ?></p>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </section>
+
+  <section class="section plus">
+    <h2 class="title-index__second"><?= T("plusTitle") ?></h2>
+    <div class="plus-container">
+      <?php foreach ($plusSectionItems as $item) : ?>
+      <div class="plus-container__item">
+        <h3 class="plus-container__title plus-icon <?= $item['icon'] ?>">
+          <span><?= $item['title'] ?></span>
+        </h3>
+        <p class="plus-container__text"><?= $item['description'] ?></p>
       </div>
       <?php endforeach; ?>
     </div>
