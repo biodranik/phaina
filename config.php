@@ -21,6 +21,7 @@ $PAGES = [
   'index.php' => [
     // Empty link means the root (index) page.
     'link' => '',
+    'menu' => 'menuIndexPage',
     'title' => 'titleIndexPage'
     // Index page does not have 'menu' key so it's not added into the menu.
   ],

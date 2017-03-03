@@ -53,7 +53,7 @@ $headerPadding: 10px;
   padding: 0;
   list-style: none;
 
-  @include phablet {
+  @include mediumDevices {
     display: none;
   }
 
@@ -121,7 +121,7 @@ input.menu__trigger {
 // Mobile menu button (breadcrumb).
 label[for="menu__trigger"] {
   display: none;
-  @include phablet {
+  @include mediumDevices {
     display: block;
   }
 

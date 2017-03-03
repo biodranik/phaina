@@ -12,6 +12,10 @@
     "en":"Menu",
     "ru":"Меню"
   },
+  "menuIndexPage": {
+    "en": "Home",
+    "ru": "Главная"
+  },
   "titleIndexPage":{
     "en":"VibroBox Condition Monitoring and Vibration Diagnostics",
     "ru":"VibroBox — мониторинг и вибрационная диагностика состояния оборудования"
@@ -102,5 +106,4 @@
   "systemUReportDescription": {
     "ru": "Результаты работы сервиса достаточны для принятия решений по техническому обслуживанию оборудования и могут быть интегрированы через ERP, MES, CMMS и SCADA системы"
   }
-
 }
