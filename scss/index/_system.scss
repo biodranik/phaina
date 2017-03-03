@@ -30,6 +30,7 @@
 
   &__text {
     font-weight: 400;
+    @include hyphens-justify;
   }
 
   &__equipment {
