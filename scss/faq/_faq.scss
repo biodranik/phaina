@@ -41,8 +41,7 @@
     }
 
     p {
-      text-align: justify;
-      @include hyphens;
+      @include hyphens-justify;
     }
   }
 }

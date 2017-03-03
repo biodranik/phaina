@@ -26,9 +26,10 @@ $smartphoneWidth:       425px;
   }
 }
 
-@mixin hyphens {
+@mixin hyphens-justify {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+  text-align: justify;
 }
