@@ -26,9 +26,9 @@ $plusSectionItems = [[
     'description' => T('plusAvailabilityDescription'),
     'icon' => 'plus-icon__availability'],
   [
-    'title' => T('plusSimpliticyTitle'),
-    'description' => T('plusSimpliticyDescription'),
-    'icon' => 'plus-icon__simpliticy']
+    'title' => T('plusSimplicityTitle'),
+    'description' => T('plusSimplicityDescription'),
+    'icon' => 'plus-icon__simplicity']
 ];
 
 $solutionSectionItems = [[

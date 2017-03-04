@@ -76,10 +76,10 @@
   "plusAvailabilityDescription" :{
     "ru" : " Результаты оценки технического состояния вашего оборудования всегда доступны онлайн, а также посредством SMS или E-mail, где бы вы ни находились."
   },
-  "plusSimpliticyTitle" :{
+  "plusSimplicityTitle" :{
     "ru" : "Простота интеграции"
   },
-  "plusSimpliticyDescription" :{
+  "plusSimplicityDescription" :{
     "ru" : "VibroBox легко интегрируется с системами управления предприятием, производственными процессами и техническим обслуживанием (ERP, MES, CMMS, SCADA)."
   },
   "systemItem": {
