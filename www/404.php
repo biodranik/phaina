@@ -9,7 +9,12 @@
 <body>
 <?php HTML_HEADER(); ?>
 
-<p><?= T("404pageText"); ?></p>
+<main role="main">
+  <section class="section page404">
+      <h1><?= T("404pageTitle"); ?></h1>
+      <p class="preface"><?= T("404pageText"); ?></p>
+  </section>
+</main>
 
 <?php HTML_FOOTER(); ?>
 </body>
