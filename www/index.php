@@ -89,7 +89,7 @@ $solutionSectionItems = [[
     </div>
   </section>
 
-  <hr/>
+  <hr class="separator" />
 
   <section class="section plus">
     <h2 class="title-index__second"><?= T("plusTitle") ?></h2>
