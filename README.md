@@ -21,7 +21,7 @@ Let's pick "team" page for example to see how it works. Pages of your site are d
 ],
 ```
 Such configuration indicates that "team" page will have url `yoursite.com/team`, menu `menuTeamPage`, title `titleTeamPage` and also description and keywords. `menuTeamPage`, `titleTeamPage` and other properties are defined in [translations/team.json](https://github.com/deathbaba/landing-php/blob/master/translations/team.json).
-The "team" page itelf is located at [www/team.php](https://github.com/deathbaba/landing-php/blob/master/www/team.php) and it first part contains all the data that page displays:
+The "team" page itself is located at [www/team.php](https://github.com/deathbaba/landing-php/blob/master/www/team.php) and its first part contains all the data that page displays:
 
 ```
 [
