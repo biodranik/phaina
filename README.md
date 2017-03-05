@@ -8,6 +8,48 @@ The main idea is to have very simple but flexible development workflow and deplo
 4. SCSS support is also included (```watch``` script automatically rebuilds your CSS from SCSS after any changes).
 5. Multiple languages are supported, see [strings.json](./strings.json).
 
+## How it works
+You define pages of your site in [config.php](https://github.com/deathbaba/landing-php/blob/master/config.php) by adding entry in `$PAGES`:
+
+```
+'team.php' => [
+  'link' => 'team',
+  'menu' => 'menuTeamPage',
+  'title' => 'titleTeamPage',
+  'description' => 'metaDescriptionTeamPage',
+  'keywords' => 'metaKeywordsTeamPage'
+],
+```
+Such configuration indicates that pages will have url `yoursite.com/team`, will have menu `menuTeamPage`, title `titleTeamPage` and also description and keywords. 
+`menuTeamPage`, `titleTeamPage` and other properties are defined in [translations/team.json](https://github.com/deathbaba/landing-php/blob/master/translations/team.json).
+The "team" page itelf is located at [www/team.php](https://github.com/deathbaba/landing-php/blob/master/www/team.php) and it first part contains all the data that page needs:
+
+```
+[
+  'img' => 'img/team/Igor_Davydov.jpg',
+  'name' => T('Igor Davydov'),
+  'title' => T('idavydovTitle'),
+  'description' => T('idavydovDescription')
+]
+```
+This entry describes team member with image path, name, title and description. Last three properties' content is defined also in [translations/team.json](https://github.com/deathbaba/landing-php/blob/master/translations/team.json).
+"Team" page second part describes how the information should be presented (i.e. contains layout):
+
+```
+<div class="team-container">
+  <?php foreach ($team as $m) : ?>
+    <div class="team-member">
+      <img class="team-member__img" src="<?= URL($m['img']) ?>" alt="<?= $m['name'] ?>" />
+      <div class="team-member__description">
+        <h3 class="team-member__name"><?= $m['name'] ?></h3>
+        <h4 class="team-member__title"><?= $m['title'] ?></h4>
+        <p><?= $m['description'] ?></p>
+      </div>
+    </div>
+  <?php endforeach; ?>
+</div>
+```
+
 ### Requirements
 *PHP* should be installed and available in the PATH.
 - Optional *git* in the PATH is used by ```deploy``` script.
