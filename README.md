@@ -9,7 +9,7 @@ The main idea is to have very simple but flexible development workflow and deplo
 5. Multiple languages are supported, see [strings.json](./strings.json).
 
 ## How it works
-You define pages of your site in [config.php](https://github.com/deathbaba/landing-php/blob/master/config.php) by adding entry in `$PAGES`:
+Let's pick "team" page for example to see how it works. Pages of your site are defined in [config.php](https://github.com/deathbaba/landing-php/blob/master/config.php) `$PAGES` array. There is an entry `team.php` in `$PAGES` that defines "team" page:
 
 ```
 'team.php' => [
@@ -20,9 +20,8 @@ You define pages of your site in [config.php](https://github.com/deathbaba/landi
   'keywords' => 'metaKeywordsTeamPage'
 ],
 ```
-Such configuration indicates that pages will have url `yoursite.com/team`, will have menu `menuTeamPage`, title `titleTeamPage` and also description and keywords. 
-`menuTeamPage`, `titleTeamPage` and other properties are defined in [translations/team.json](https://github.com/deathbaba/landing-php/blob/master/translations/team.json).
-The "team" page itelf is located at [www/team.php](https://github.com/deathbaba/landing-php/blob/master/www/team.php) and it first part contains all the data that page needs:
+Such configuration indicates that "team" page will have url `yoursite.com/team`, menu `menuTeamPage`, title `titleTeamPage` and also description and keywords. `menuTeamPage`, `titleTeamPage` and other properties are defined in [translations/team.json](https://github.com/deathbaba/landing-php/blob/master/translations/team.json).
+The "team" page itelf is located at [www/team.php](https://github.com/deathbaba/landing-php/blob/master/www/team.php) and it first part contains all the data that page displays:
 
 ```
 [
@@ -32,7 +31,21 @@ The "team" page itelf is located at [www/team.php](https://github.com/deathbaba/
   'description' => T('idavydovDescription')
 ]
 ```
-This entry describes team member with image path, name, title and description. Last three properties' content is defined also in [translations/team.json](https://github.com/deathbaba/landing-php/blob/master/translations/team.json).
+This entry describes team member with image path, name, title and description. Last three properties' content is defined also in [translations/team.json](https://github.com/deathbaba/landing-php/blob/master/translations/team.json). Let's take a closer look at these properties:
+```
+"titleTeamPage":{
+  "en":"VibroBox Team: Scientists and engineers from Minsk, Belarus.",
+  "ru":"Команда VibroBox: Учёные и инженеры из Минска."
+},
+"menuTeamPage":{
+  "en":"Team",
+  "ru":"Команда"
+},
+...
+```
+As you can see it's not only content is defined, but it's also defined for two languages (hence `translations` folder name).
+
+This is the example for "team" page, for other pages data structure could be different (e.g. see [index.php](https://github.com/deathbaba/landing-php/blob/master/www/index.php) or absent at all: [404.php](https://github.com/deathbaba/landing-php/blob/master/www/404.php))
 "Team" page second part describes how the information should be presented (i.e. contains layout):
 
 ```
@@ -49,6 +62,7 @@ This entry describes team member with image path, name, title and description. L
   <?php endforeach; ?>
 </div>
 ```
+For more complex example with several sections and different layouts of each section please take a look at [index.php](https://github.com/deathbaba/landing-php/blob/master/www/index.php).
 
 ### Requirements
 *PHP* should be installed and available in the PATH.
