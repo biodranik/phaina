@@ -11,7 +11,7 @@
 
 <main role="main">
   <section class="section">
-      <h1><?= T("404pageTitle"); ?></h1>
+      <h1><?= T("404pageH1"); ?></h1>
       <p class="preface"><?= T("404pageText"); ?></p>
   </section>
 </main>

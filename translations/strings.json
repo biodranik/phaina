@@ -23,11 +23,11 @@
     "en":"VibroBox: Automatic vibration diagnostics and condition monitoring for industrial equipment.",
     "ru":"VibroBox — вибрационная диагностика и мониторинг состояния оборудования. Полностью автоматические рекомендации по техническому обслуживанию механизмов на основе анализа вибрации и кинематической схемы."
   },
-  "title404Page":{
+  "404PageTitle":{
     "en":"VibroBox: Error 404 Page Not Found.",
     "ru":"VibroBox: Ошибка 404 Страница не найдена."
   },
-  "404pageTitle":{
+  "404pageH1":{
     "en":"Error 404:",
     "ru":"Ошибка 404:"
   },

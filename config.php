@@ -54,7 +54,7 @@ $PAGES = [
   '404.php' => [
     // Page without a link key is 404 HTTP Not Found page.
     // It's also (obviously) not present in the menu.
-    'title' => 'title404Page'
+    'title' => '404PageTitle'
   ],
 ];
 
