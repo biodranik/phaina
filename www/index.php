@@ -74,7 +74,7 @@ $solutionSectionItems = [[
     </div>
   </section>
 
-  <section class="section system">
+  <section class="section system separator">
     <h2 class="title-index__second"><?= T("systemItem") ?></h2>
     <p class="preface"><?= T("systemPreface") ?></p>
     <div class="system-container">
@@ -88,8 +88,6 @@ $solutionSectionItems = [[
       <?php endforeach; ?>
     </div>
   </section>
-
-  <hr class="separator" />
 
   <section class="section plus">
     <h2 class="title-index__second"><?= T("plusTitle") ?></h2>
