@@ -1,5 +1,7 @@
 // Use mobile layout as a base, @media is used for desktop "exceptions".
 
+$contactsBlockMargin: 1rem;
+
 .preface--contacts {
   margin: 1rem;
 }
@@ -14,7 +16,7 @@
 }
 
 .contacts__office {
-  margin: 1rem;
+  margin: $contactsBlockMargin;
 }
 
 .contacts__h2 {
@@ -24,4 +26,47 @@
 
 .contacts__h3 {
   margin-bottom: 0.3rem;
+}
+
+.contacts__social {
+  margin: $contactsBlockMargin;
+}
+
+.contacts__social-networks {
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+}
+
+.contacts__icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  // Do not fill padding and border area with background.
+  background-origin: content-box;
+  width: 32px;
+  height: 32px;
+  display: block;
+  outline: none;
+  padding: 0px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.contacts__icon--facebook {
+  background-image: url(#{$ico}facebook.svg);
+}
+
+.contacts__icon--twitter {
+  background-image: url(#{$ico}twitter.svg);
+}
+
+.contacts__icon--linkedin {
+  background-image: url(#{$ico}linkedin.svg);
 }

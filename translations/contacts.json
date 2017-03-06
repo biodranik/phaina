@@ -34,5 +34,9 @@
   "mapCopyright":{
     "en":"Map data © <a href='http://openstreetmap.org/'>OpenStreetMap</a> | Imagery © <a href='http://mapbox.com/'>Mapbox</a>",
     "ru":"Данные карты © <a href='http://openstreetmap.org/'>OpenStreetMap</a> | Изображения © <a href='http://mapbox.com/'>Mapbox</a>"
+  },
+  "contactsSocialNetworks":{
+    "en": "Social networks:",
+    "ru": "Социальные сети:"
   }
 }
