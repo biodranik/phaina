@@ -1,5 +1,3 @@
-$pleasantPadding: 2rem;
-
 .banner {
   background-image: url(#{$bg}banner.jpg);
   background-repeat: no-repeat;
@@ -7,11 +5,11 @@ $pleasantPadding: 2rem;
   background-color: #282e4e;
   color: $whiteColor;
   text-align: center;
-  padding: $pleasantPadding 0;
+  padding: 1rem 0;
 }
 
 .preface {
-  margin: $pleasantPadding;
+  margin: 1rem;
 }
 
 .action-button {
