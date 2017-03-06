@@ -11,7 +11,7 @@
 <p class="preface preface--contacts"><?= T('contactsIntro') ?></p>
 
 <main role="main" class="contacts">
-  <section class="contacts__offices">
+  <section class="contacts__block">
     <div class="contacts__office">
       <h2 class="contacts__h2"><?= T('headquarters') ?>:</h2>
       <h3 class="contacts__h3">VibroBox OÜ</h3>
@@ -26,8 +26,15 @@
         <?= T('addressBelarus') ?>
       </address>
     </div>
+    <div class="contacts__social">
+      <h2 class="contacts__h2"><?= T('contactsSocialNetworks') ?></h2>
+      <ul class="contacts__social-networks">
+        <li><a class="contacts__icon contacts__icon--facebook" href="https://www.facebook.com/" target="_blank"></a></li>
+        <li><a class="contacts__icon contacts__icon--twitter" href="https://twitter.com/" target="_blank"></a></li>
+        <li><a class="contacts__icon contacts__icon--linkedin" href="https://www.linkedin.com/" target="_blank"></a></li>
+      </ul>
+    </div>
   </section>
-
   <!-- Map is rendered here by leaflet and our js code below. -->
   <section id="leaflet-map" class="leaflet-map"></section>
 </main>
