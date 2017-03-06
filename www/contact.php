@@ -11,7 +11,7 @@
 <p class="preface preface--contacts"><?= T('contactsIntro') ?></p>
 
 <main role="main" class="contacts">
-  <section class="contacts__block">
+  <section class="contacts__offices">
     <div class="contacts__office">
       <h2 class="contacts__h2"><?= T('headquarters') ?>:</h2>
       <h3 class="contacts__h3">VibroBox OÜ</h3>
