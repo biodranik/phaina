@@ -4,7 +4,7 @@ $headerPadding: 10px;
 @mixin MenuItemsTextStyling {
   color: $logoColor;
   font-size: $baseFontSize;
-  font-weight: 600;
+  font-weight: normal;
   text-transform: uppercase;
   cursor: pointer;
   text-align: center;
