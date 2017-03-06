@@ -33,3 +33,11 @@ $smartphoneWidth:       425px;
   hyphens: auto;
   text-align: justify;
 }
+
+@mixin separatorOnTheTop {
+  box-shadow: 0 -4px 6px -6px $logoColor;
+}
+
+@mixin separatorOnTheBottom {
+  box-shadow: 0 4px 6px -6px $logoColor;
+}
