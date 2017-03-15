@@ -1,6 +1,9 @@
 <?php
-  require_once(dirname(__FILE__).'/../config.php');
-  HTML_HEAD();
+require_once(dirname(__FILE__).'/../config.php');
+HTML_HEAD([
+    'link' => 'technology',
+//    'menu' => 'menuTechnologyPage',
+    'title' => 'titleTechnologyPage']);
 ?>
 
 <body>

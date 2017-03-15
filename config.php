@@ -22,40 +22,27 @@ $PAGES = [
     // Empty link means the root (index) page.
     'link' => '',
     'menu' => 'menuIndexPage',
-    'title' => 'titleIndexPage'
-    // Index page does not have 'menu' key so it's not added into the menu.
   ],
   'technology.php' => [
     'link' => 'technology',
     'menu' => 'menuTechnologyPage',
-    'title' => 'titleTechnologyPage'
   ],
   'team.php' => [
     'link' => 'team',
     'menu' => 'menuTeamPage',
-    'title' => 'titleTeamPage',
-    'description' => 'metaDescriptionTeamPage',
-    'keywords' => 'metaKeywordsTeamPage'
   ],
   'faq.php' => [
     'link' => 'faq',
     'menu' => 'menuFaqPage',
-    'title' => 'titleFaqPage',
-    'description' => 'metaDescriptionFaqPage',
-    'keywords' => 'metaKeywordsFaqPage'
   ],
   'contact.php' => [
     'link' => 'contact',
     'menu' => 'menuContactPage',
-    'title' => 'titleContactPage',
-    'description' => 'metaDescriptionContactPage',
-    'keywords' => 'metaKeywordsContactPage'
   ],
   '404.php' => [
     // Page without a link key is 404 HTTP Not Found page.
     // It's also (obviously) not present in the menu.
-    'title' => '404pageTitle'
-  ],
+  ]
 ];
 
 require_once('include/globals.php');

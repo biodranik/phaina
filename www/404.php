@@ -3,7 +3,7 @@
   // Set HTTP "404 Not found" code for this page.
   // TODO: Probably it can be moved to the config.php.
   http_response_code(404);
-  HTML_HEAD();
+  HTML_HEAD(['title' => '404pageTitle']);
 ?>
 
 <body>
