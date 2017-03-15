@@ -52,22 +52,9 @@ function CurrentPage($property = '') {
   exit('ERROR: Please add your page to $PAGES in config.php.');
 }
 
-function PageDescription() {
-  $description = CurrentPage('description');
-  return empty($description) ? DEFAULT_META_DESCRIPTION : $description;
-}
-
-function PageKeywords() {
-  $keywords = CurrentPage('keywords');
-  return empty($keywords) ? DEFAULT_META_KEYWORDS : $keywords;
-}
-
 require_once('translations.php');
 
-// Page title for <title> tag is taken from $PAGES in config.php.
-// Some pages need custom <head> block tags, here is the solution:
-// $HEAD_TAGS can optionally contain anly valid HTML tag like <link …> or <meta …>,
-function HTML_HEAD($HEAD_TAGS = []) {
+function HTML_HEAD($PARAMS = []) {
   return require_once('head.php');
 }
 

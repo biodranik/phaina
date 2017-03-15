@@ -1,83 +1,86 @@
 <?php
-  require_once(dirname(__FILE__).'/../config.php');
-  HTML_HEAD();
+require_once(dirname(__FILE__).'/../config.php');
+HTML_HEAD([
+    'title' => 'titleTeamPage',
+    'description' => 'metaDescriptionTeamPage',
+    'keywords' => 'metaKeywordsTeamPage']);
 
-  $team = [[
-      'img' => 'img/team/Igor_Davydov.jpg',
-      'name' => T('Igor Davydov'),
-      'title' => T('idavydovTitle'),
-      'description' => T('idavydovDescription')],
-    [
-      'img' => 'img/team/Alexander_Zolotarev.jpg',
-      'name' => T('Alexander Zolotarev'),
-      'title' => T('zolotarevTitle'),
-      'description' => T('zolotarevDescription')],
-    [
-      'img' => 'img/team/Yury_Aslamov.jpg',
-      'name' => T('Yury Aslamov'),
-      'title' => T('yaslamovTitle'),
-      'description' => T('yaslamovDescription')],
-    [
-      'img' => 'img/team/Sergei_Vasukevich.jpg',
-      'name' => T('Sergei Vasukevich'),
-      'title' => T('vasukevichTitle'),
-      'description' => T('vasukevichDescription')],
-    [
-      'img' => 'img/team/Aliaksei_Maniuk.jpg',
-      'name' => T('Aliaksei Maniuk'),
-      'title' => T('maniukTitle'),
-      'description' => T('maniukDescription')],
-    [
-      'img' => 'img/team/Aleksandr_Tsurko.jpg',
-      'name' => T('Aleksandr Tsurko'),
-      'title' => T('tsurkoTitle'),
-      'description' => T('tsurkoDescription')],
-    [
-      'img' => 'img/team/Anatoliy_Shevchenko.jpg',
-      'name' => T('Anatoliy Shevchenko'),
-      'title' => T('shevchenkoTitle'),
-      'description' => T('shevchenkoDescription')],
-    [
-      'img' => 'img/team/Andrey_Aslamov.jpg',
-      'name' => T('Andrey Aslamov'),
-      'title' => T('aslamovTitle'),
-      'description' => T('aslamovDescription')], 
-    [
-      'img' => 'img/team/Mikita_Kasmach.jpg',
-      'name' => T('Mikita Kasmach'),
-      'title' => T('kasmachTitle'),
-      'description' => T('kasmachDescription')],
-    [
-      'img' => 'img/team/Petr_Riabtsev.jpg',
-      'name' => T('Petr Riabtsev'),
-      'title' => T('riabtsevTitle'),
-      'description' => T('riabtsevDescription')],
-    [
-      'img' => 'img/team/Roman_Tolkach.jpg',
-      'name' => T('Roman Tolkach'),
-      'title' => T('tolkachTitle'),
-      'description' => T('tolkachDescription')],
-    [
-      'img' => 'img/team/Oleg_Avsyankin.jpg',
-      'name' => T('Oleg Avsyankin'),
-      'title' => T('avsyankinTitle'),
-      'description' => T('avsyankinDescription')],
-    [
-      'img' => 'img/team/Yaraslava_Herasimuk.jpg',
-      'name' => T('Yaraslava Herasimuk'),
-      'title' => T('herasimukTitle'),
-      'description' => T('herasimukDescription')],
-    [
-      'img' => 'img/team/Mihail_Bogdanec.jpg',
-      'name' => T('Mihail Bogdanec'),
-      'title' => T('bogdanecTitle'),
-      'description' => T('bogdanecDescription')],
-    [
-      'img' => 'img/team/Artem_Bourak.jpg',
-      'name' => T('Artem Bourak'),
-      'title' => T('bourakTitle'),
-      'description' => T('bourakDescription')]
-  ];
+$team = [[
+    'img' => 'img/team/Igor_Davydov.jpg',
+    'name' => T('Igor Davydov'),
+    'title' => T('idavydovTitle'),
+    'description' => T('idavydovDescription')],
+  [
+    'img' => 'img/team/Alexander_Zolotarev.jpg',
+    'name' => T('Alexander Zolotarev'),
+    'title' => T('zolotarevTitle'),
+    'description' => T('zolotarevDescription')],
+  [
+    'img' => 'img/team/Yury_Aslamov.jpg',
+    'name' => T('Yury Aslamov'),
+    'title' => T('yaslamovTitle'),
+    'description' => T('yaslamovDescription')],
+  [
+    'img' => 'img/team/Sergei_Vasukevich.jpg',
+    'name' => T('Sergei Vasukevich'),
+    'title' => T('vasukevichTitle'),
+    'description' => T('vasukevichDescription')],
+  [
+    'img' => 'img/team/Aliaksei_Maniuk.jpg',
+    'name' => T('Aliaksei Maniuk'),
+    'title' => T('maniukTitle'),
+    'description' => T('maniukDescription')],
+  [
+    'img' => 'img/team/Aleksandr_Tsurko.jpg',
+    'name' => T('Aleksandr Tsurko'),
+    'title' => T('tsurkoTitle'),
+    'description' => T('tsurkoDescription')],
+  [
+    'img' => 'img/team/Anatoliy_Shevchenko.jpg',
+    'name' => T('Anatoliy Shevchenko'),
+    'title' => T('shevchenkoTitle'),
+    'description' => T('shevchenkoDescription')],
+  [
+    'img' => 'img/team/Andrey_Aslamov.jpg',
+    'name' => T('Andrey Aslamov'),
+    'title' => T('aslamovTitle'),
+    'description' => T('aslamovDescription')], 
+  [
+    'img' => 'img/team/Mikita_Kasmach.jpg',
+    'name' => T('Mikita Kasmach'),
+    'title' => T('kasmachTitle'),
+    'description' => T('kasmachDescription')],
+  [
+    'img' => 'img/team/Petr_Riabtsev.jpg',
+    'name' => T('Petr Riabtsev'),
+    'title' => T('riabtsevTitle'),
+    'description' => T('riabtsevDescription')],
+  [
+    'img' => 'img/team/Roman_Tolkach.jpg',
+    'name' => T('Roman Tolkach'),
+    'title' => T('tolkachTitle'),
+    'description' => T('tolkachDescription')],
+  [
+    'img' => 'img/team/Oleg_Avsyankin.jpg',
+    'name' => T('Oleg Avsyankin'),
+    'title' => T('avsyankinTitle'),
+    'description' => T('avsyankinDescription')],
+  [
+    'img' => 'img/team/Yaraslava_Herasimuk.jpg',
+    'name' => T('Yaraslava Herasimuk'),
+    'title' => T('herasimukTitle'),
+    'description' => T('herasimukDescription')],
+  [
+    'img' => 'img/team/Mihail_Bogdanec.jpg',
+    'name' => T('Mihail Bogdanec'),
+    'title' => T('bogdanecTitle'),
+    'description' => T('bogdanecDescription')],
+  [
+    'img' => 'img/team/Artem_Bourak.jpg',
+    'name' => T('Artem Bourak'),
+    'title' => T('bourakTitle'),
+    'description' => T('bourakDescription')]
+];
 ?>
 
 <body>

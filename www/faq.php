@@ -1,6 +1,9 @@
 <?php
 require_once(dirname(__FILE__).'/../config.php');
-HTML_HEAD();
+HTML_HEAD([
+    'title' => 'titleFaqPage',
+    'description' => 'metaDescriptionFaqPage',
+    'keywords' => 'metaKeywordsFaqPage']);
 
 $sections =[[
   'sectionName' => T("generalQuestionsTitle"),

@@ -1,4 +1,5 @@
 <?php
+require_once(dirname(__FILE__).'/../config.php');
 // This include should be used only if you want pretty urls and only if web server
 // routes all requests to index.php.
 // Possible implementation for nginx:
@@ -7,10 +8,9 @@
 //    try_files $uri $uri/ /index.php$is_args$args;
 //  }
 // TODO: Probably it can be moved to the config.php.
-require_once(dirname(__FILE__).'/../config.php');
 require(dirname(__FILE__).'/../include/uri_routing.php');
 
-HTML_HEAD();
+HTML_HEAD(['title' => 'titleIndexPage']);
 
 // Initialization of page data models.
 $plusSectionItems = [[
@@ -60,7 +60,6 @@ $solutionSectionItems = [[
 ?>
 
 <body>
-
 <?php HTML_HEADER(); ?>
 
 <main role="main">
