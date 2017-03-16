@@ -85,7 +85,7 @@ $team = [[
 
 <body>
 
-<?php HTML_HEADER(); ?>
+<?php HTML_HEADER('team.php'); ?>
 
 <main role="main">
   <section class="section team">

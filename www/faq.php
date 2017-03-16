@@ -29,7 +29,7 @@ $sections =[[
 
 <body>
 
-<?php HTML_HEADER(); ?>
+<?php HTML_HEADER('faq.php'); ?>
 
 <main role="main">
   <section class="section">

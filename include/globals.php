@@ -22,57 +22,26 @@ function URL($link) {
   return BaseURL() . $link;
 }
 
-// Without parameters returns current page name (e.g. 'page.php').
-// If $property is not empty, returns given property of the page or empty string if it does not exist.
-// See $PAGES in config.php for more details.
-function CurrentPage($property = '') {
-  global $PAGES;
-  $INDEX_PAGE = 'index.php';
-  $includes = get_included_files();
-  $isIndexPage = false;
-  foreach ($includes as $path) {
-    $path = basename($path);
-    foreach ($PAGES as $page => $properties) {
-      if ($page == $path) {
-        // Special case: index page can route to other pages (or can not).
-        if ($page == $INDEX_PAGE) {
-          $isIndexPage = true;
-          break;
-        } else {
-          if (empty($property)) return $page;
-          else return array_key_exists($property, $PAGES[$page]) ? $PAGES[$page][$property] : '';
-        }
-      }
-    }
-  }
-  if ($isIndexPage) {
-    if (empty($property)) return $INDEX_PAGE;
-    else return array_key_exists($property, $PAGES[$INDEX_PAGE]) ? $PAGES[$INDEX_PAGE][$property] : '';
-  }
-  exit('ERROR: Please add your page to $PAGES in config.php.');
-}
-
 require_once('translations.php');
 
 function HTML_HEAD($PARAMS = []) {
   return require_once('head.php');
 }
 
-function HTML_HEADER() {
+function HTML_HEADER($CURRENT_MENU_ITEM) {
   return require_once('header.php');
 }
 
-function HTML_FOOTER() {
+function HTML_FOOTER($CURRENT_MENU_ITEM = '') {
   return require_once('footer.php');
 }
 
-function MainMenu() {
+function MainMenu($CURRENT_MENU_ITEM) {
   global $PAGES;
   // TODO: support empty menu?
-  $currentPage = CurrentPage();
   foreach ($PAGES as $page => $props) {
     if (array_key_exists('menu', $props)) {
-      $menu[] = new MenuItem(URL($props['link']), T($props['menu']), $currentPage == $page);
+      $menu[] = new MenuItem(URL($props['link']), T($props['menu']), $CURRENT_MENU_ITEM == $page);
     }
   }
 

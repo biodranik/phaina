@@ -9,7 +9,7 @@ HTML_HEAD([
 
 <body>
 
-<?php HTML_HEADER(); ?>
+<?php HTML_HEADER('contact.php'); ?>
 
 <h1><?= T('ourContacts') ?></h1>
 <p class="preface preface--contacts"><?= T('contactsIntro') ?></p>

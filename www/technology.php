@@ -8,7 +8,7 @@ HTML_HEAD([
 
 <body>
 
-<?php HTML_HEADER(); ?>
+<?php HTML_HEADER('technology.php'); ?>
 
 <main role="main">
 TODO: technology.php
