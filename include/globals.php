@@ -28,7 +28,7 @@ function HTML_HEAD($PARAMS = []) {
   return require_once('head.php');
 }
 
-function HTML_HEADER($CURRENT_MENU_ITEM) {
+function HTML_HEADER($CURRENT_MENU_ITEM = '') {
   return require_once('header.php');
 }
 
@@ -36,7 +36,7 @@ function HTML_FOOTER($CURRENT_MENU_ITEM = '') {
   return require_once('footer.php');
 }
 
-function MainMenu($CURRENT_MENU_ITEM) {
+function MainMenu($CURRENT_MENU_ITEM = '') {
   global $PAGES;
   // TODO: support empty menu?
   foreach ($PAGES as $page => $props) {
