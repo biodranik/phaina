@@ -60,7 +60,7 @@ $solutionSectionItems = [[
 ?>
 
 <body>
-<?php HTML_HEADER(); ?>
+<?php HTML_HEADER('index.php'); ?>
 
 <main role="main">
 
