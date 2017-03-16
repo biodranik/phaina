@@ -28,20 +28,20 @@ function HTML_HEAD($PARAMS = []) {
   return require_once('head.php');
 }
 
-function HTML_HEADER($CURRENT_MENU_ITEM = '') {
+function HTML_HEADER($currentMenuItem) {
   return require_once('header.php');
 }
 
-function HTML_FOOTER($CURRENT_MENU_ITEM = '') {
+function HTML_FOOTER($currentMenuItem = '') {
   return require_once('footer.php');
 }
 
-function MainMenu($CURRENT_MENU_ITEM = '') {
+function MainMenu($currentMenuItem = '') {
   global $PAGES;
   // TODO: support empty menu?
   foreach ($PAGES as $page => $props) {
     if (array_key_exists('menu', $props)) {
-      $menu[] = new MenuItem(URL($props['link']), T($props['menu']), $CURRENT_MENU_ITEM == $page);
+      $menu[] = new MenuItem(URL($props['link']), T($props['menu']), $currentMenuItem == $page);
     }
   }
 

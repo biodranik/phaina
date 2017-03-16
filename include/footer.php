@@ -1,6 +1,6 @@
 <footer class="footer">
   <ul class="footer__nav">
-    <?php foreach (MainMenu($CURRENT_MENU_ITEM) as $m) : ?>
+    <?php foreach (MainMenu() as $m) : ?>
     <li class="footer__nav-item">
       <a class="footer__link" href="<?= $m->url ?>"><?= $m->title ?></a>
     </li>
