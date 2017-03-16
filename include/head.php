@@ -1,6 +1,7 @@
 <?php
 function TitleOrFileName($params) {
   if (array_key_exists('title', $params)) return T($params['title']);
+  // TODO: Better default title naming strategy (my-cool_title.php => My Cool Title).
   return T(basename(__FILE__, '.php'));
 }
 function MetaDescription($params) {
