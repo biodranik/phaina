@@ -23,9 +23,30 @@ $PAGES = [
     'link' => '',
     'menu' => 'menuIndexPage',
   ],
-  'technology.php' => [
+  'technology/index.php' => [
     'link' => 'technology',
     'menu' => 'menuTechnologyPage',
+    'childPages' => [
+      'technology/prerequisites/index.php' => [
+        'title' => 'prerequisitesIndexTitle',
+        'childPages' => [
+          'technology/prerequisites/current-state.php' => [
+            'title' => 'prerequisitesCurrentStateTitle'
+          ],
+          'technology/prerequisites/requirements.php' => [
+            'title' => 'prerequisitesRequirementsTitle'
+          ],
+        ]
+      ],
+      'technology/structure/index.php' => [
+        'title' => 'structureIndexTitle',
+        'childPages' => [
+          'technology/structure/sources.php' => [
+            'title' => 'structureSourcesTitle'
+          ],
+        ]
+      ]
+    ]
   ],
   'team.php' => [
     'link' => 'team',

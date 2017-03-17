@@ -14,5 +14,20 @@
   "metaKeywordsTechnologyPage":{
     "en":"Tech page keywords for bing.",
     "ru":"Ключевые слова для bing."
+  },
+  "prerequisitesIndexTitle": {
+    "ru":"Предпосылки для создания технологии"
+  },
+  "prerequisitesCurrentStateTitle": {
+    "ru":"Текущее состояние вибродиагностики. Проблемы, ограничения"
+  },
+  "prerequisitesRequirementsTitle": {
+    "ru":"Требования к вибродиагностике с точки зрения Индустрия 4.0"
+  },
+  "structureIndexTitle": {
+    "ru":"Обобщенная структура сервиса VibroBox"
+  },
+  "structureSourcesTitle": {
+    "ru":"Источники телеметрической информации в системе"
   }
 }

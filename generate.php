@@ -120,7 +120,7 @@ function FullPathTo($outDir, $fileName) {
   return $outDir . DIRECTORY_SEPARATOR . $fileName;
 }
 
-// $haystack - where to seacrh, $needle - what to seacrh. 
+// $haystack - where to search, $needle - what to search. 
 // it seems that each PHP developer understands such declaration for endswith function.
 function EndsWith($haystack, $needle) {
   $length = strlen($needle);

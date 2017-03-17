@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__).'/../config.php');
+require_once(dirname(__FILE__).'/../../../config.php');
 HTML_HEAD([
     'link' => 'technology',
 //    'menu' => 'menuTechnologyPage',
@@ -8,10 +8,10 @@ HTML_HEAD([
 
 <body>
 
-<?php HTML_HEADER('technology.php'); ?>
+<?php HTML_HEADER('technology/index.php'); ?>
 
 <main role="main">
-TODO: technology.php
+TODO: technology/prerequisites/current-state.php
 </main>
 
 <?php HTML_FOOTER(); ?>

@@ -36,6 +36,15 @@ function HTML_FOOTER($currentMenuItem = '') {
   return require_once('footer.php');
 }
 
+function TECHNOLOGY_MENU($currentMenuItem = '') {
+  global $PAGES;
+  return require_once('technology-menu.php');
+}
+
+function FindPageObjectByName($pageName){
+  
+}
+
 function MainMenu($currentMenuItem = '') {
   global $PAGES;
   // TODO: support empty menu?
