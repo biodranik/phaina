@@ -28,17 +28,21 @@ $PAGES = [
     'menu' => 'menuTechnologyPage',
     'childPages' => [
       'technology/prerequisites/index.php' => [
+        'link' => 'technology/prerequisites',
         'title' => 'prerequisitesIndexTitle',
         'childPages' => [
           'technology/prerequisites/current-state.php' => [
+            'link' => 'technology/prerequisites/current-state',
             'title' => 'prerequisitesCurrentStateTitle'
           ],
           'technology/prerequisites/requirements.php' => [
+            'link' => 'technology/prerequisites/requirements',
             'title' => 'prerequisitesRequirementsTitle'
           ],
         ]
       ],
       'technology/structure/index.php' => [
+        'link' => 'technology/structure',
         'title' => 'structureIndexTitle',
         'childPages' => [
           'technology/structure/sources.php' => [

@@ -41,8 +41,25 @@ function TECHNOLOGY_MENU($currentMenuItem = '') {
   return require_once('technology-menu.php');
 }
 
-function FindPageObjectByName($pageName){
-  
+function FindPageObjectByName($pageName) {
+  global $PAGES;
+
+  return SearchChildrenByName($PAGES, $pageName);
+}
+
+function SearchChildrenByName($children, $name) {
+  foreach ($children as $page => $properties) {
+    if ($page === $name) {
+        return $properties;
+    }
+    else {
+      if (array_key_exists('childPages', $properties)) {
+        return SearchChildrenByName($properties['childPages'], $name);
+      }
+    }
+  }
+
+  exit('ERROR: Please add your page to $PAGES in config.php.'); 
 }
 
 function MainMenu($currentMenuItem = '') {
