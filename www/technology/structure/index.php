@@ -1,20 +1,9 @@
-<?php
+<?php 
+$CURRENT_PAGE_NAME = 'technology/structure/index.php';
 require_once(dirname(__FILE__).'/../../../config.php');
-HTML_HEAD([
-    'link' => 'technology',
-//    'menu' => 'menuTechnologyPage',
-    'title' => 'titleTechnologyPage']);
+ob_start(); 
 ?>
 
-<body>
+technology/structure/index.php
 
-<?php HTML_HEADER('technology/index.php'); ?>
-
-<main role="main">
-TODO: technology/structure/index.php
-</main>
-
-<?php HTML_FOOTER(); ?>
-
-</body>
-</html>
+<?php include(dirname(__FILE__)."/../../../include/technology-skeleton.php"); ?>

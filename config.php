@@ -27,9 +27,17 @@ $PAGES = [
     'link' => 'technology',
     'menu' => 'menuTechnologyPage',
     'childPages' => [
+      'technology/intro.php' => [
+        'link' => 'technology/intro',
+        'title' => 'techIntroTitle',
+        'prev' => 'technology/index.php',
+        'next' => 'technology/prerequisites/index.php',
+      ],
       'technology/prerequisites/index.php' => [
         'link' => 'technology/prerequisites',
         'title' => 'prerequisitesIndexTitle',
+        'prev' => 'technology/index.php',
+        'next' => 'technology/prerequisites/current-state.php',
         'childPages' => [
           'technology/prerequisites/current-state.php' => [
             'link' => 'technology/prerequisites/current-state',
@@ -46,7 +54,8 @@ $PAGES = [
         'title' => 'structureIndexTitle',
         'childPages' => [
           'technology/structure/sources.php' => [
-            'title' => 'structureSourcesTitle'
+            'title' => 'structureSourcesTitle',
+            'link' => 'technology/structure/sources'
           ],
         ]
       ]

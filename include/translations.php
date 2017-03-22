@@ -45,18 +45,25 @@ function LoadTranslations($fromDir) {
 // returns translation in default language if translation is absent, otherwise
 // returns the key itself.
 function T($key, $lang = LANG) {
-  global $TRANSLATIONS;
+  if (is_array($key)){
+    if (!array_key_exists($lang, $key)) exit("Error: Translation for language: '$lang' is not found in array.");
+    
+    echo $key[LANG];
+  }
+  else {
+    global $TRANSLATIONS;
 
-  // Bad: given key is not translated at all. Use it as a translation.
-  if (!array_key_exists($key, $TRANSLATIONS)) return $key;
-  // Good: we have a translation for given language.
-  if (array_key_exists($lang, $TRANSLATIONS[$key])) return $TRANSLATIONS[$key][$lang];
-  // Bad: default language translation is missing. Key is used by default.
-  if ($lang == DEFAULT_LANGUAGE) return $key;
-  // Not good: translation is missing but at least we have a default one.
-  if (array_key_exists(DEFAULT_LANGUAGE, $TRANSLATIONS[$key])) return $TRANSLATIONS[$key][DEFAULT_LANGUAGE];
-  // Bad: both target and default language translations are missing. Key is used by default.
-  return $key;
+    // Bad: given key is not translated at all. Use it as a translation.
+    if (!array_key_exists($key, $TRANSLATIONS)) return $key;
+    // Good: we have a translation for given language.
+    if (array_key_exists($lang, $TRANSLATIONS[$key])) return $TRANSLATIONS[$key][$lang];
+    // Bad: default language translation is missing. Key is used by default.
+    if ($lang == DEFAULT_LANGUAGE) return $key;
+    // Not good: translation is missing but at least we have a default one.
+    if (array_key_exists(DEFAULT_LANGUAGE, $TRANSLATIONS[$key])) return $TRANSLATIONS[$key][DEFAULT_LANGUAGE];
+    // Bad: both target and default language translations are missing. Key is used by default.
+    return $key;
+  }
 }
 
 // Prints translated string.

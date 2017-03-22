@@ -1,20 +1,9 @@
-<?php
+<?php 
+$CURRENT_PAGE_NAME = 'technology/prerequisites/requirements.php';
 require_once(dirname(__FILE__).'/../../../config.php');
-HTML_HEAD([
-    'link' => 'technology',
-//    'menu' => 'menuTechnologyPage',
-    'title' => 'titleTechnologyPage']);
+ob_start(); 
 ?>
 
-<body>
+technology/prerequisites/requirements.php
 
-<?php HTML_HEADER('technology/index.php'); ?>
-
-<main role="main">
-TODO: technology/prerequisites/requirements.php
-</main>
-
-<?php HTML_FOOTER(); ?>
-
-</body>
-</html>
+<?php include(dirname(__FILE__)."/../../../include/technology-skeleton.php"); ?>

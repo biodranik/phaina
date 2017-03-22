@@ -28,7 +28,7 @@ function HTML_HEAD($PARAMS = []) {
   return require_once('head.php');
 }
 
-function HTML_HEADER($currentMenuItem) {
+function HTML_HEADER($currentMenuItem = null) {
   return require_once('header.php');
 }
 
@@ -36,33 +36,48 @@ function HTML_FOOTER($currentMenuItem = '') {
   return require_once('footer.php');
 }
 
-function TECHNOLOGY_MENU($currentMenuItem = '') {
+function FindPageObjectByFilter($filter) {
   global $PAGES;
-  return require_once('technology-menu.php');
+  global $___currentPage;
+
+  SearchChildrenByName($PAGES, $filter);
+
+  return $___currentPage;
 }
 
-function FindPageObjectByName($pageName) {
-  global $PAGES;
-
-  return SearchChildrenByName($PAGES, $pageName);
-}
-
-function SearchChildrenByName($children, $name) {
+function SearchChildrenByName($children, $filter) {
+  // Did not find better way how to break recursion and return found page.
+  global $___currentPage;
+  
   foreach ($children as $page => $properties) {
-    if ($page === $name) {
-        return $properties;
-    }
-    else {
-      if (array_key_exists('childPages', $properties)) {
-        return SearchChildrenByName($properties['childPages'], $name);
+    if (array_key_exists('pageName', $filter)) {
+      if ($page === $filter['pageName']) {
+        $___currentPage = $properties;
+      }
+    } else {
+      if (array_key_exists('pageLink', $filter)) {
+        if (array_key_exists('link', $properties)) {
+          if (AreLinksEqual($properties['link'], $filter['pageLink'])) {
+            $___currentPage = [$page => $properties];
+          }
+        }
       }
     }
-  }
 
-  exit('ERROR: Please add your page to $PAGES in config.php.'); 
+    if (array_key_exists('childPages', $properties)) {
+      SearchChildrenByName($properties['childPages'], $filter);
+    }
+  }
 }
 
-function MainMenu($currentMenuItem = '') {
+function AreLinksEqual($link1, $link2) {
+  $link1 = str_replace("/","", $link1);
+  $link2 = str_replace("/","", $link2);
+
+  return $link1 === $link2;
+}
+
+function MainMenu($currentMenuItem = null) {
   global $PAGES;
   // TODO: support empty menu?
   foreach ($PAGES as $page => $props) {
@@ -72,6 +87,11 @@ function MainMenu($currentMenuItem = '') {
   }
 
   return $menu;
+}
+
+function TechnologyMenu($currentMenuItem = '') {
+  global $PAGES;
+  return require_once('technology-menu.php');
 }
 
 function BuildSiteMapXml() {

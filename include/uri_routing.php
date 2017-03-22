@@ -10,15 +10,31 @@ function FileByRequestUri() {
   global $PAGES;
   // urldecode helps to support localized URLs.
   $urlPath = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-  foreach ($PAGES as $page => $props) {
-    if (array_key_exists('link', $props) and strrpos($urlPath, $props['link']) !== false) {
-      return $page;
-    }
-    // TODO: Treat page without a link as 404 or is it better to hard-code it?
+
+  if (strpos($urlPath, '.php') !== false){
+    return $urlPath;
   }
-  return '404.php';
+
+  $filter = ['pageLink'=> $urlPath];
+  $currentPage = FindPageObjectByFilter($filter);
+
+  if (isset($currentPage)) {
+    $path = GetPath(key($currentPage));
+    return $path;
+  }
+
+  // TODO: Treat page without a link as 404 or is it better to hard-code it?
+  return '/404.php';
 }
 
-require_once(FileByRequestUri());
+function GetPath($page) {
+  if (strpos($page, '/') === 0) {
+    return $page;
+  }
+  else {
+    return '/'.$page;
+  }
+}
+
+require_once(dirname(__FILE__).'/../www'.FileByRequestUri());
 // It's important to avoid rendering index.php at the end.
-exit;
