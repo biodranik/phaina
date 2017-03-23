@@ -70,6 +70,7 @@ function SearchChildrenByName($children, $filter) {
   }
 }
 
+// Compare links with ignoring slashes at the end.
 function AreLinksEqual($link1, $link2) {
   $link1 = str_replace("/","", $link1);
   $link2 = str_replace("/","", $link2);

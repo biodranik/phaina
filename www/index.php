@@ -1,5 +1,4 @@
 <?php
-require_once(dirname(__FILE__).'/../config.php');
 // This include should be used only if you want pretty urls and only if web server
 // routes all requests to index.php.
 // Possible implementation for nginx:

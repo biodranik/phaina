@@ -1,7 +1,9 @@
 <?php
+require(dirname(__FILE__).'/../../include/uri_routing.php');
+
 $CURRENT_PAGE_NAME = 'technology/index.php';
-require_once(dirname(__FILE__).'/../../config.php');
 $showNavigation = true; 
+
 ob_start();
 ?>
 

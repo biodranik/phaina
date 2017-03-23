@@ -1,4 +1,5 @@
 <?php
+require_once(dirname(__FILE__).'/../config.php');
 // Correctly routes to specific page if php is invoked via CGI interface.
 // Should be included from index.php.
 
@@ -36,5 +37,8 @@ function GetPath($page) {
   }
 }
 
-require_once(dirname(__FILE__).'/../www'.FileByRequestUri());
+$path = '/../www'.FileByRequestUri();
+require_once(dirname(__FILE__).$path);
+
 // It's important to avoid rendering index.php at the end.
+if (strpos($path, 'index.php') === false) exit;

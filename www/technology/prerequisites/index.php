@@ -1,6 +1,8 @@
 <?php 
+require(dirname(__FILE__).'/../../../include/uri_routing.php');
+
 $CURRENT_PAGE_NAME = 'technology/prerequisites/index.php';
-require_once(dirname(__FILE__).'/../../../config.php');
+
 ob_start(); 
 ?>
 

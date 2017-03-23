@@ -26,6 +26,7 @@ $PAGES = [
   'technology/index.php' => [
     'link' => 'technology',
     'menu' => 'menuTechnologyPage',
+    'title' => 'titleTechnologyPage',
     'childPages' => [
       'technology/intro.php' => [
         'link' => 'technology/intro',
