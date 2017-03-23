@@ -1,5 +1,5 @@
 .footer {
-  display: flex;
+  @include flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: center;
@@ -23,7 +23,7 @@
 }
 
 .footer__nav {
-  display: flex;
+  @include flex;
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;

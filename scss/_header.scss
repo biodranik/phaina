@@ -24,7 +24,7 @@ $headerPadding: 10px;
 
 .header {
   // Stick logo to the left, stick menu to the right.
-  display: flex;
+  @include flex;
   justify-content: space-between;
   align-items: center;
 
@@ -48,7 +48,7 @@ $headerPadding: 10px;
 }
 
 .menu {
-  display: flex;
+  @include flex;
   // It's a list, so remove list padding (where bullets are usually drawn).
   padding: 0;
   list-style: none;

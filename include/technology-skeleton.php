@@ -1,4 +1,5 @@
 <?php
+require_once(dirname(__FILE__).'/../config.php');
 $pageContent = ob_get_contents();
 ob_end_clean();
 

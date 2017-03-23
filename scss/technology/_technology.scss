@@ -1,7 +1,5 @@
 .technology {
-  display: -ms-flex;
-	display: -webkit-flex;
-	display: flex;
+  @include flex;
   flex: 1;
   
   @include phablet {
@@ -33,10 +31,8 @@
 }
 
 .technology-content-nav {
+  @include flex;
   margin: 2rem 0;
-  display: -ms-flex;
-	display: -webkit-flex;
-	display: flex;
   align-items: center;
 
   a {
