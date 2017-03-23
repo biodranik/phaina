@@ -23,9 +23,44 @@ $PAGES = [
     'link' => '',
     'menu' => 'menuIndexPage',
   ],
-  'technology.php' => [
+  'technology/index.php' => [
     'link' => 'technology',
     'menu' => 'menuTechnologyPage',
+    'title' => 'titleTechnologyPage',
+    'childPages' => [
+      'technology/intro.php' => [
+        'link' => 'technology/intro',
+        'title' => 'techIntroTitle',
+        'prev' => 'technology/index.php',
+        'next' => 'technology/prerequisites/index.php',
+      ],
+      'technology/prerequisites/index.php' => [
+        'link' => 'technology/prerequisites',
+        'title' => 'prerequisitesIndexTitle',
+        'prev' => 'technology/index.php',
+        'next' => 'technology/prerequisites/current-state.php',
+        'childPages' => [
+          'technology/prerequisites/current-state.php' => [
+            'link' => 'technology/prerequisites/current-state',
+            'title' => 'prerequisitesCurrentStateTitle'
+          ],
+          'technology/prerequisites/requirements.php' => [
+            'link' => 'technology/prerequisites/requirements',
+            'title' => 'prerequisitesRequirementsTitle'
+          ],
+        ]
+      ],
+      'technology/structure/index.php' => [
+        'link' => 'technology/structure',
+        'title' => 'structureIndexTitle',
+        'childPages' => [
+          'technology/structure/sources.php' => [
+            'title' => 'structureSourcesTitle',
+            'link' => 'technology/structure/sources'
+          ],
+        ]
+      ]
+    ]
   ],
   'team.php' => [
     'link' => 'team',

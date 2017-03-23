@@ -7,7 +7,7 @@ $contactsBlockMargin: 1rem;
 }
 
 .contacts {
-  display: flex;
+  @include flex;
   flex-wrap: wrap;
 
   @include notSmartphone {

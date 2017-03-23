@@ -1,0 +1,45 @@
+.technology {
+  @include flex;
+  flex: 1;
+  
+  @include phablet {
+    display: block;
+  }
+}
+
+.technology-nav {
+  margin: 2rem 2rem 1rem 0;
+  flex: 0 0 15rem;
+
+  @include phablet {
+    width: 100%;
+  }
+}
+
+.technology-content {
+  flex: 1;
+
+  @include hyphens-justify;
+
+  h2 {
+    margin-bottom:1rem;
+  }
+
+  p {
+    margin-bottom:0.5rem;
+  }
+}
+
+.technology-content-nav {
+  @include flex;
+  margin: 2rem 0;
+  align-items: center;
+
+  a {
+    display: block;
+  }
+}
+
+.prev-page {
+  margin-right: auto;
+}

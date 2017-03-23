@@ -34,6 +34,12 @@ $smartphoneWidth:       425px;
   text-align: justify;
 }
 
+@mixin flex {
+  display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+
 @mixin separatorOnTheTop {
   box-shadow: 0 -4px 6px -6px $logoColor;
 }

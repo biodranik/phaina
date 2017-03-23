@@ -1,0 +1,23 @@
+.tech-menu {
+  list-style: none;
+  padding-left: 2rem;
+
+  &--top {
+    li {
+      font-weight: bold;
+    }
+  }
+
+  &--inner {
+    padding-left: 1rem;
+    
+    @include phablet {
+      padding-left: 2rem;
+    }
+
+    li {
+      font-weight: normal;
+      list-style: disc;
+    }
+  }
+}

@@ -11,8 +11,34 @@
     "default":"TODO 260 chars google description.",
     "ru":"Описание для поисковиков длиной до 260 символов."
   },
+  "techNextPage": {
+    "en": "Next page",
+    "ru": "Следующая страница"
+  },
+  "techPrevPage": {
+    "en": "Previous page",
+    "ru": "Предыдущая страница"
+  },
   "metaKeywordsTechnologyPage":{
     "en":"Tech page keywords for bing.",
     "ru":"Ключевые слова для bing."
+  },
+  "prerequisitesIndexTitle": {
+    "ru":"Предпосылки для создания технологии"
+  },
+  "prerequisitesCurrentStateTitle": {
+    "ru":"Текущее состояние вибродиагностики. Проблемы, ограничения"
+  },
+  "prerequisitesRequirementsTitle": {
+    "ru":"Требования к вибродиагностике с точки зрения Индустрия 4.0"
+  },
+  "structureIndexTitle": {
+    "ru":"Обобщенная структура сервиса VibroBox"
+  },
+  "structureSourcesTitle": {
+    "ru":"Источники телеметрической информации в системе"
+  },
+  "techIntroTitle": {
+    "ru": "Вводная часть"
   }
 }
