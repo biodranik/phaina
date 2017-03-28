@@ -160,13 +160,19 @@ ga('send', 'pageview');
 
 <script type="text/javascript">
 function openNav() {
+  // 768 is max screen width on which left menu show be hidden.
+  if (screen.width <= 768) {
     document.getElementById("tech-nav").style.width = "100%";
     document.getElementById("tech-content").style.display = "none";
+  }
 }
 
 function closeNav() {
+  // 768 is max screen width on which left menu show be hidden. 
+  if (screen.width <= 768) {
     document.getElementById("tech-nav").style.width = "0";
     document.getElementById("tech-content").style.display = "block";
+  }
 }
 </script>
 </body>
