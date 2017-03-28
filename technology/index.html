@@ -49,7 +49,7 @@
 
 <main role="main">
   <section class="section technology">
-    <div id="techNav" class="technology-menu" onclick="closeNav()">
+    <div id="tech-nav" class="technology-menu" onclick="closeNav()">
       <a href="javascript:void(0)" class="technology-menu-close">&times;</a>
       <ul>
         <li><a href="#">О чём этот документ/раздел «Технология» на сайте (abstract)</a></li>
@@ -94,7 +94,7 @@
       </ul>
     </div>
 
-    <div class="technology-content">
+    <div id="tech-content" class="technology-content">
       <h1>Технология VibroBox: упреждение поломки оборудования и детальные рекоммендации по обслуживанию.</h1>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam rhoncus lacus, et pharetra lectus. Integer faucibus, tortor sit amet laoreet molestie, ligula magna tincidunt velit, ut sodales mauris ante sed ex. Maecenas varius lorem non diam lobortis laoreet. Maecenas tincidunt, augue quis faucibus ornare, ligula tellus elementum tellus, vitae cursus nisl eros eu erat. Sed nec tincidunt eros, eu faucibus libero. Ut volutpat magna id nulla mattis, vel imperdiet sem eleifend. Sed in nisl a urna elementum luctus vel vitae tellus. Fusce quis neque mattis, imperdiet mi eget, consequat nisl. Sed sed libero vel enim viverra ultrices. Vivamus ac sapien quis erat porttitor mattis a eget sapien. Sed at diam vel velit hendrerit finibus id imperdiet metus. Phasellus semper nulla quis ullamcorper venenatis. Aliquam suscipit diam ac libero facilisis, sit amet elementum mauris posuere. Pellentesque ultricies et massa et interdum.
 
@@ -160,11 +160,13 @@ ga('send', 'pageview');
 
 <script type="text/javascript">
 function openNav() {
-    document.getElementById("techNav").style.width = "100%";
+    document.getElementById("tech-nav").style.width = "100%";
+    document.getElementById("tech-content").style.display = "none";
 }
 
 function closeNav() {
-    document.getElementById("techNav").style.width = "0";
+    document.getElementById("tech-nav").style.width = "0";
+    document.getElementById("tech-content").style.display = "block";
 }
 </script>
 </body>
