@@ -49,8 +49,8 @@
 
 <main role="main">
   <section class="section technology">
-    <div id="techNav" class="technology-menu">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div id="techNav" class="technology-menu" onclick="closeNav()">
+      <a href="javascript:void(0)" class="technology-menu-close">&times;</a>
       <ul>
         <li><a href="#">О чём этот документ/раздел «Технология» на сайте (abstract)</a></li>
         <li><a href="#">Вводная часть</a>
@@ -160,7 +160,7 @@ ga('send', 'pageview');
 
 <script type="text/javascript">
 function openNav() {
-    document.getElementById("techNav").style.width = "60%";
+    document.getElementById("techNav").style.width = "100%";
 }
 
 function closeNav() {
