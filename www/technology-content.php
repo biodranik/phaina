@@ -6,26 +6,31 @@ $html = file_get_contents(dirname(__FILE__).'/../technology-source/VibroBox.html
 $doc = new DOMDocument();
 $doc->loadHTML($html);
 
-$html = RemoveTags($html, $doc);
-$html = RemoveAttributeByName('class', $doc);
-$html = RemoveAttributeByName('style', $doc);
-$html = FixLinks($doc);
-$html = FixImages($doc);
+RemoveTags($html, $doc);
+RemoveAttributes($doc);
+
+FixLinks($doc);
+FixImages($doc);
+
+$html = $doc->saveHTML();
 $html = RemoveHtmlAndBody($html);
 
 echo $html;
 
-function FixImages($doc){
-  $nodeList = $doc->getElementsByTagName('img');
-
-   for ($i = $nodeList->length; --$i >= 0; ) {
-    $node = $nodeList->item($i);
+function FixImages($doc) {
+  $nodes = $doc->getElementsByTagName('img');
+  foreach($nodes as $node) {
     $src = $node->getAttribute('src');
-    $filePath = basename($src);
-    $node->setAttribute('src', Url('img/tech/'.$filePath));
+    if (!empty($src)) {
+      $filePath = basename($src);
+      $node->setAttribute('src', Url('img/tech/'.$filePath));
+    }
   }
+}
 
-  return $doc->saveHTML();
+function RemoveAttributes($doc) {
+  RemoveAttributeByName('class', $doc);
+  RemoveAttributeByName('style', $doc);
 }
 
 function RemoveHtmlAndBody($html) {
@@ -40,55 +45,47 @@ function RemoveHtmlAndBody($html) {
 }
 
 function FixLinks($doc) {
-  $nodeList = $doc->getElementsByTagName('a');
-
-  for ($i = $nodeList->length; --$i >= 0; ) {
-    $node = $nodeList->item($i);
+  $nodes = $doc->getElementsByTagName('a');
+  foreach($nodes as $node) {
     $url = $node->getAttribute('href');
-
     if (StartsWith($url, 'file:')){
       $anchor = parse_url($url, PHP_URL_FRAGMENT);
       $node->setAttribute('href', '#'.$anchor);
     }
-  }
 
-  return $doc->saveHTML();
+    if (StartsWith($url, 'https://www.google.com/url?q=')) {
+      // getting direct link from generated link
+      $parts = parse_url($url);
+      parse_str($parts['query'], $query);
+      $link = $query['q'];
+
+      $node->setAttribute('href', $link);
+      $node->setAttribute('target', '_blank');
+    }
+  }
 }
 
 function RemoveTags($html, $doc) {
-  removeElementsByTagName('script', $doc);
-  removeElementsByTagName('style', $doc);
-  removeElementsByTagName('link', $doc);
-  removeElementsByTagName('head', $doc);
-  removeElementsByTagName('meta', $doc);
-
-  return $doc->saveHTML();
+  RemoveElementsByTagName('script', $doc);
+  RemoveElementsByTagName('style', $doc);
+  RemoveElementsByTagName('link', $doc);
+  RemoveElementsByTagName('head', $doc);
+  RemoveElementsByTagName('meta', $doc);
 }
 
 function RemoveAttributeByName($attributeName, $doc) {
   $xpath = new DOMXPath($doc);
-
   $nodes = $xpath->query('//*[@'.$attributeName.']');
   foreach ($nodes as $node) {
     $node->removeAttribute($attributeName);
   }
-
-  return $doc->saveHTML();
 }
 
 function RemoveElementsByTagName($tagName, $doc) {
-  $nodeList = $doc->getElementsByTagName($tagName);
-
-  for ($i = $nodeList->length; --$i >= 0; ) {
-    $node = $nodeList->item($i);
+  $nodes = $doc->getElementsByTagName($tagName);
+  foreach($nodes as $node) {
     $node->parentNode->removeChild($node);
   }
-}
-
-function StartsWith($haystack, $needle)
-{
-  $length = strlen($needle);
-  return (substr($haystack, 0, $length) === $needle);
 }
 
 ?>
