@@ -46,7 +46,7 @@ function FixLinks($doc) {
   $nodes = $doc->getElementsByTagName('a');
   foreach($nodes as $node) {
     $url = $node->getAttribute('href');
-    if (StartsWith($url, 'file:')){
+    if (StartsWith($url, 'file:')) {
       $anchor = parse_url($url, PHP_URL_FRAGMENT);
       $node->setAttribute('href', '#'.$anchor);
     }
