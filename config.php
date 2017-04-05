@@ -48,3 +48,4 @@ $PAGES = [
 require_once('include/globals.php');
 require_once('include/menuItem.php');
 require_once('include/strings.php');
+require_once('include/file_system.php');

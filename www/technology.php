@@ -13,7 +13,8 @@ HTML_HEAD([
   <section class="section technology">
     <div class="technology-content">
       <h1><?= T('titleTechnologyPage') ?></h1>
-      <?php require_once('technology-content.php')?>
+
+      <?php RenderGoogleDoc(dirname(__FILE__).'/../technology-source/') ?>
     </div>
   </section>
 </main>

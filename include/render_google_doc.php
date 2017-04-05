@@ -1,7 +1,5 @@
 <?php
-require_once(dirname(__FILE__).'/../config.php');
-
-$html = file_get_contents(dirname(__FILE__).'/../technology-source/VibroBox.html');
+$html = file_get_contents($sourceFile);
 
 $doc = new DOMDocument();
 $doc->loadHTML($html);

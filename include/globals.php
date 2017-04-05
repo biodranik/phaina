@@ -64,4 +64,10 @@ function BuildSiteMapXml() {
   return $siteMap;
 }
 
+function RenderGoogleDoc($sourceFolder) {
+  $sourceFile = FullPathTo($sourceFolder, 'VibroBox.html');
+
+  return require_once('render_google_doc.php');
+}
+
 ?>
