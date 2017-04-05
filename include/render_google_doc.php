@@ -1,10 +1,8 @@
 <?php
-$html = file_get_contents($sourceFile);
-
 $doc = new DOMDocument();
-$doc->loadHTML($html);
+$doc->loadHTML(file_get_contents($sourceFile));
 
-RemoveTags($html, $doc);
+RemoveTags($doc);
 RemoveAttributes($doc);
 
 FixLinks($doc);
@@ -52,7 +50,7 @@ function FixLinks($doc) {
     }
 
     if (StartsWith($url, 'https://www.google.com/url?q=')) {
-      // getting direct link from generated link
+      // Getting direct link from generated link.
       $parts = parse_url($url);
       parse_str($parts['query'], $query);
       $link = $query['q'];
@@ -63,7 +61,7 @@ function FixLinks($doc) {
   }
 }
 
-function RemoveTags($html, $doc) {
+function RemoveTags($doc) {
   RemoveElementsByTagName('script', $doc);
   RemoveElementsByTagName('style', $doc);
   RemoveElementsByTagName('link', $doc);
