@@ -23,5 +23,4 @@ function DirectoryCopy($src, $dst) {
 
   closedir($dir); 
 } 
-
 ?>

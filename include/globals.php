@@ -69,5 +69,4 @@ function RenderGoogleDoc($sourceFile, $imagesSource, $imagesDestination) {
 
   return require_once('render_google_doc.php');
 }
-
 ?>

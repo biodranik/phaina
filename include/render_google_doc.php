@@ -85,5 +85,4 @@ function RemoveElementsByTagName($tagName, $doc) {
     $node->parentNode->removeChild($node);
   }
 }
-
 ?>
