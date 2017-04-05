@@ -64,8 +64,8 @@ function BuildSiteMapXml() {
   return $siteMap;
 }
 
-function RenderGoogleDoc($sourceFolder) {
-  $sourceFile = FullPathTo($sourceFolder, 'VibroBox.html');
+function RenderGoogleDoc($sourceFile, $imagesSource, $imagesDestination) {
+  DirectoryCopy($imagesSource, $imagesDestination);
 
   return require_once('render_google_doc.php');
 }
