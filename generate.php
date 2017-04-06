@@ -52,7 +52,7 @@ function Generate($inDir, $outDir) {
   global $PAGES;
   $staticFilesCopied = 0;
   $processedPhpFiles = [];
-  
+
   if (file_exists($outDir)) RemoveFilesAndSubdirs($outDir);
   else mkdir($outDir, kNewDirPermissions, true);
 

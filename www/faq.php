@@ -15,7 +15,7 @@ $sections =[[
   [
     'question' => T("general_q2_question"),
     'anchor' => T('general_q2_anchor'),
-    'detailedAnswer' => T("general_q2_answer")], 
+    'detailedAnswer' => T("general_q2_answer")],
   [
     'question' => T("general_q3_question"),
     'anchor' => T('general_q3_anchor'),

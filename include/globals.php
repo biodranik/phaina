@@ -60,7 +60,7 @@ function BuildSiteMapXml() {
   }
 
   $siteMap = $siteMap.'</urlset>';
-  
+
   return $siteMap;
 }
 

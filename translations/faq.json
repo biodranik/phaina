@@ -9,13 +9,13 @@
   },
 
   "faqTitle": {
-    "ru": "Вопросы и ответы.", 
+    "ru": "Вопросы и ответы.",
     "en": "Frequently Asked Questions."
-  }, 
+  },
   "faqPreface": {
     "ru": "Есть вопросы? Присылайте их нам на <a href='mailto:info@vibrobox.com'>info@vibrobox.com</a>.",
     "en": "Any questions? Email us at <a href='mailto:info@vibrobox.com'>info@vibrobox.com</a>"
-  }, 
+  },
   "generalQuestionsTitle": {
     "ru": "Общие вопросы"
   },
@@ -48,7 +48,7 @@
   },
   "general_q3_answer": {
     "ru": "<strong>Автоматический экспертный анализ</strong>. Результаты диагностики, проведённые VibroBox, предоставляются в виде оценки технического состояния оборудования и набора рекомендуемых мероприятий. Данная информация доступна заказчику посредством SMS-оповещений, электронных писем, в онлайн режиме через аккаунт на портале VibroBox, через CMMS и SCADA системы, интегрированные с сервисом."
-  }, 
+  },
   "general_q4_question": {
     "ru": "Какую проблему решает VibroBox?"
   },

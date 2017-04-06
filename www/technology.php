@@ -14,11 +14,11 @@ HTML_HEAD([
     <div class="technology-content">
       <h1><?= T('titleTechnologyPage') ?></h1>
 
-      <?php 
+      <?php
         $sourceFolder = dirname(__FILE__).'/../technology-source/';
         $sourceFile = FullPathTo($sourceFolder, 'VibroBox.html');
         $imagesSource = FullPathTo($sourceFolder, 'images');
-        $imagesDestination = dirname(__FILE__).'/./img/tech/'; 
+        $imagesDestination = dirname(__FILE__).'/./img/tech/';
 
         RenderGoogleDoc($sourceFile, $imagesSource, $imagesDestination) ?>
     </div>

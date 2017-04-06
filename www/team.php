@@ -44,7 +44,7 @@ $team = [[
     'img' => 'img/team/Andrey_Aslamov.jpg',
     'name' => T('Andrey Aslamov'),
     'title' => T('aslamovTitle'),
-    'description' => T('aslamovDescription')], 
+    'description' => T('aslamovDescription')],
   [
     'img' => 'img/team/Mikita_Kasmach.jpg',
     'name' => T('Mikita Kasmach'),
