@@ -39,9 +39,7 @@ fi
 pushd "$OUT_DIR"
 # Clear all local changes to avoid pull merge conflicts.
 git reset --hard HEAD
-git checkout gh-pages > /dev/null 2>&1 && git pull || { git checkout --orphan gh-pages; git rm -rf .; }
-# Clean all untracked files.
-git clean -f
+git checkout gh-pages > /dev/null 2>&1 && git clean -f && git pull || { git checkout --orphan gh-pages; git rm -rf .; }
 popd
 
 # Rebuild everything before deployment.

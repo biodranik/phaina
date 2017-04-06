@@ -48,7 +48,7 @@ REM Initialize and switch to gh-pages branch in the docs/.git repo.
 PUSHD %out_dir% || ECHO ERROR with PUSHD %out_dir% && EXIT /B 1
 REM Clear all local changes to avoid pull merge conflicts.
 git reset --hard HEAD || ECHO ERROR with git reset && EXIT /B 1
-git checkout gh-pages > nul 2>&1 && git pull || (
+git checkout gh-pages > nul 2>&1 && git clean -f && git pull || (
   git checkout --orphan gh-pages || ECHO ERROR with git checkout --orphan gh-pages && EXIT /B 1
   git rm -rf . || ECHO ERROR with git rm && EXIT /B 1
 )
