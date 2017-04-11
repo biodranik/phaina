@@ -4,7 +4,7 @@ if (count($argv) < 3) {
   echo "This script cleans up and fixes html document exported from Google Docs.\n";
   echo "NOTE: you should have tidy-html5 installed in your PATH.\n";
   echo "See more details at https://github.com/htacg/tidy-html5\n\n";
-  echo "Usage: ${argv[0]} <html_from_google_docs> <out_clean_html>\n";
+  echo "Usage: ${argv[0]} <html_from_google_docs> <out_clean_html> [optional_path_to_tidy_binary]\n";
   exit(1);
 }
 
@@ -62,11 +62,16 @@ RunTidy("-q --show-body-only yes -w 0 -gdoc -output ${argv[2]}", $html);
 ///////////////////////////////////////////////////////////////////////////////
 
 function RunTidy($params, &$text) {
-  $ret = RunCmdStdinStdout("tidy " . $params, $text);
+  global $argv;
+  if (isset($argv[3])) $tidy = $argv[3];
+  else $tidy = 'tidy';
+  $ret = RunCmdStdinStdout($tidy . ' ' . $params, $text);
   switch ($ret) {
-    case 0: echo "* Done.\n\n"; break;
-    case 1: echo "* Done with some warnings.\n\n"; break;
-    case 2: echo "* Tidy has encountered errors while processing html.\n\n"; break;
+    case 0:  echo "* Done.\n\n"; break;
+    case 1:  echo "* Done with some warnings.\n\n"; break;
+    case 2:  echo "* Tidy has encountered errors while processing html.\n\n"; break;
+    case -1:
+    case 127: echo "* ERROR: `$tidy` has not been found.\n\n"; exit(-1);
     default: echo "* Unknown return code $ret.\n\n"; break;
   }
 }
@@ -76,7 +81,7 @@ function RunTidy($params, &$text) {
 function RunCmdStdinStdout($cmd, &$text) {
   $process = proc_open($cmd, [0 => ['pipe', 'r'], 1 => ['pipe', 'w']], $pipes);
   if (!is_resource($process))
-    die("ERROR launching `$cmd`. Do you have it installed in your PATH?\n");
+    die("ERROR launching `$cmd`.\n");
   fwrite($pipes[0], $text);
   fclose($pipes[0]);
   $text = stream_get_contents($pipes[1]);
