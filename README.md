@@ -122,9 +122,15 @@ git branch -d master
 To generate static pages in the docs folder:
 ```$ php generate.php www docs``` or better launch ```build``` script which also rebuilds CSS file from SCSS.
 
+#### Clean up Google Docs html
+There is an utility script in [tools/fix_google_doc.php](./tools/fix_google_doc.php) which cleans HTML exported from Google Docs and prepares it for publishing.
+```$ php tools/fix_google_doc.php input_gdoc.html clean_output.html [optional path to tidy binary]```
+Optional tidy path is useful if you don't have it in your PATH and would like to use *bin* repository submodule.
+
 #### Notes
 - Translations are stored in [strings.json](./strings.json). TODO: separate folder with mergeable translation files could be better.
 - php files in www directory can be either loaded/accessed directly or via [index.php](./www/index.php) routing.
 - Github permanently redirects /uri to /uri/ so it makes sense to always use /links/ instead of /links.
 - TODO: Sitemap.
 - TODO: Easy configuration.
+
