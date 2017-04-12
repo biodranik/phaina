@@ -52,6 +52,7 @@ table {
 
 a {
   color: $linkColor;
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;

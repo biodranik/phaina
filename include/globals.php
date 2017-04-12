@@ -60,8 +60,13 @@ function BuildSiteMapXml() {
   }
 
   $siteMap = $siteMap.'</urlset>';
-  
+
   return $siteMap;
 }
 
+function RenderGoogleDoc($sourceFile, $imagesSource, $imagesDestination) {
+  DirectoryCopy($imagesSource, $imagesDestination);
+
+  return require_once('render_google_doc.php');
+}
 ?>

@@ -52,7 +52,7 @@ function Generate($inDir, $outDir) {
   global $PAGES;
   $staticFilesCopied = 0;
   $processedPhpFiles = [];
-  
+
   if (file_exists($outDir)) RemoveFilesAndSubdirs($outDir);
   else mkdir($outDir, kNewDirPermissions, true);
 
@@ -111,23 +111,6 @@ function Generate($inDir, $outDir) {
 function Usage($self) {
   echo "Usage: php ".$self." <input www dir> <output www dir>\n";
   echo "WARNING: All files in <output www dir> will be deleted!\n";
-}
-
-function FullPathTo($outDir, $fileName) {
-  if (EndsWith($outDir, DIRECTORY_SEPARATOR)) 
-    return $outDir . $fileName;
-  
-  return $outDir . DIRECTORY_SEPARATOR . $fileName;
-}
-
-// $haystack - where to seacrh, $needle - what to seacrh. 
-// it seems that each PHP developer understands such declaration for endswith function.
-function EndsWith($haystack, $needle) {
-  $length = strlen($needle);
-  if ($length == 0) 
-    return true;
-
-  return (substr($haystack, -$length) === $needle);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
