@@ -6,7 +6,7 @@
   <label for="menu__trigger"><?= T('Menu') ?></label>
 
   <ul class="menu">
-    <?php foreach (MainMenu($currentMenuItem) as $m) : ?>
+    <?php foreach (MainMenu($currentPageFileName) as $m) : ?>
     <li class="menu__item">
       <a class="menu__link<?php if ($m->isCurrent) echo ' menu__link--selected'?>" href="<?= $m->url ?>"><?= $m->title ?></a>
     </li>
