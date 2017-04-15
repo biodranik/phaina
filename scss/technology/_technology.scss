@@ -1,0 +1,17 @@
+.technology__content {
+  @include hyphens-justify;
+  h2 {
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-bottom: 0.5rem;
+  }
+  h1 {
+    @include phablet {
+      font-size: 2rem;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+}
