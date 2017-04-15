@@ -2,6 +2,7 @@
 /* Must be included by inserting <?php require_once("../config.php"); ?> at the top of every page in www folder. */
 // Global PHP setting. We love UTF-8.
 ini_set('default_charset', 'UTF-8');
+ini_set('error_reporting', E_ALL);
 
 // Production base url, also used for static pages generation.
 // Please use BaseURL() function instead of direct access, it makes development easier.
