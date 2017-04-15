@@ -1,9 +1,8 @@
 <?php
 require_once(dirname(__FILE__).'/../config.php');
 HTML_HEAD([
-    'link' => 'technology',
-//    'menu' => 'menuTechnologyPage',
-    'title' => 'titleTechnologyPage']);
+  'link' => 'technology',
+  'title' => 'titleTechnologyPage']);
 ?>
 
 <body>
@@ -11,10 +10,14 @@ HTML_HEAD([
 <?php HTML_HEADER('technology.php'); ?>
 
 <main role="main">
-TODO: technology.php
+  <section class="section technology">
+    <h1><?= T('titleTechnologyPage') ?></h1>
+    <div class="technology__content">
+      <?php include(dirname(__FILE__).'/../technology-source/index.html'); ?>
+    </div>
+  </section>
 </main>
 
 <?php HTML_FOOTER(); ?>
-
 </body>
 </html>
