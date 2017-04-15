@@ -28,20 +28,20 @@ function HTML_HEAD($PARAMS = []) {
   return require_once('head.php');
 }
 
-function HTML_HEADER($currentMenuItem) {
+function HTML_HEADER($currentPageFileName = null) {
   return require_once('header.php');
 }
 
-function HTML_FOOTER($currentMenuItem = '') {
+function HTML_FOOTER($currentPageFileName = null) {
   return require_once('footer.php');
 }
 
-function MainMenu($currentMenuItem = '') {
+function MainMenu($currentPageFileName = null) {
   global $PAGES;
   // TODO: support empty menu?
   foreach ($PAGES as $page => $props) {
     if (array_key_exists('menu', $props)) {
-      $menu[] = new MenuItem(URL($props['link']), T($props['menu']), $currentMenuItem == $page);
+      $menu[] = new MenuItem(URL($props['link']), T($props['menu']), $currentPageFileName === $page);
     }
   }
 
@@ -60,7 +60,7 @@ function BuildSiteMapXml() {
   }
 
   $siteMap = $siteMap.'</urlset>';
-  
+
   return $siteMap;
 }
 
