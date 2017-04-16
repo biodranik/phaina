@@ -103,6 +103,7 @@ $team = [[
         </div>
       <?php endforeach; ?>
     </div>
+    <a href="<?= URL('publications.php') ?>"><?= T('publicationPageTitle') ?></a>
   </section>
 </main>
 
