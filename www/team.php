@@ -93,14 +93,14 @@ $team = [[
     <p class="preface"><?= T('teamPreface') ?></p>
     <div class="team-container">
       <?php foreach ($team as $m) : ?>
-        <div class="team-member">
-          <img class="team-member__img" src="<?= URL($m['img']) ?>" alt="<?= $m['name'] ?>" />
-      	  <div class="team-member__description">
-            <h3 class="team-member__name"><?= $m['name'] ?></h3>
-            <h4 class="team-member__title"><?= $m['title'] ?></h4>
-            <p><?= $m['description'] ?></p>
-          </div>
+      <div class="team-member">
+        <img class="team-member__img" src="<?= URL($m['img']) ?>" alt="<?= $m['name'] ?>" />
+        <div class="team-member__description">
+          <h3 class="team-member__name"><?= $m['name'] ?></h3>
+          <h4 class="team-member__title"><?= $m['title'] ?></h4>
+          <div><?= $m['description'] ?></div>
         </div>
+      </div>
       <?php endforeach; ?>
     </div>
     <a href="<?= URL('publications.php') ?>"><?= T('publicationPageTitle') ?></a>
