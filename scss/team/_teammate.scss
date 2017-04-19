@@ -1,11 +1,7 @@
 .team-member {
-  width: 50%;
+  width: 100%;
   padding: 0.5rem 1rem;
   margin-bottom: 1.5rem;
-
-  @include phablet {
-    width: 100%;
-  }
 
   @include smartphone {
     padding: 0;
@@ -13,16 +9,22 @@
 
   &__img {
     display: block;
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
     float: left;
     margin-right: 1rem;
     margin-bottom: 0.5rem;
+
+    @include phablet {
+      width: 140px;
+      height: 140px;
+    }
   }
 
   &__description {
     p {
       @include hyphens-justify;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -33,6 +35,6 @@
 
   &__title {
     margin-bottom: 0.5rem;
-    font-weight: bold;  
+    font-weight: bold;
   }
 }
