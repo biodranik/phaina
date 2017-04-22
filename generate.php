@@ -3,13 +3,10 @@
 
 require_once('config.php');
 
-define("kPhpExtension", ".php");
-define("kNewDirPermissions", 0755);
-define("kIndex", "index.php");
-define("k404", "404.php");
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+define('kPhpExtension', '.php');
+define('kNewDirPermissions', 0755);
+define('kIndex', 'index.php');
+define('k404', '404.php');
 
 function HtmlFromPhp($phpFile) {
   // TODO: Handle errors.
@@ -52,7 +49,7 @@ function Generate($inDir, $outDir) {
   global $PAGES;
   $staticFilesCopied = 0;
   $processedPhpFiles = [];
-  
+
   if (file_exists($outDir)) RemoveFilesAndSubdirs($outDir);
   else mkdir($outDir, kNewDirPermissions, true);
 
