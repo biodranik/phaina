@@ -1,47 +1,35 @@
-.faq-summary-section {
-  margin:2rem 0;
+.faq__content {
+  @include hyphens-justify;
 
-  &__h2 {
-    font-weight: 400;
-    margin-bottom: 1rem;
+  h1 {
+    @include phablet {
+      font-size: 2rem;
+    }
   }
 
-  &__list {
-    list-style: none;
+  h2 {
+    margin: 2rem 0;
+    border-top: 2px solid #eee;
+    padding-top: 2rem;
   }
 
-  &__question {
+  h3 {
     margin-bottom: 0.5rem;
   }
 
-  a {
-    text-decoration: none;
+  p {
+    margin-bottom: 1rem;
   }
 
-  a:hover{
-    text-decoration: underline;
-  }
-}
+  ul {
+    margin-bottom: 1rem;
 
-.faq-main {
-  &__h2 {
-    border-top: 2px solid #eee;
-    padding-top: 1rem;
-  }
-
-  &__block {
-    margin: 1rem 0;
-  }
-
-  &__answer {
-    margin-bottom: 1.5rem;
-
-    h3 {
-      margin-bottom: 0.5rem;
+    @include phablet {
+      padding-left: 1rem;
     }
+  }
 
-    p {
-      @include hyphens-justify;
-    }
+  img {
+    max-width: 100%;
   }
 }

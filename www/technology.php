@@ -13,7 +13,7 @@ HTML_HEAD([
   <section class="section technology">
     <h1><?= T('titleTechnologyPage') ?></h1>
     <div class="technology__content">
-      <?php include(dirname(__FILE__).'/../technology-source/index.html'); ?>
+      <?php IncludeContent('technology') ?>
     </div>
   </section>
 </main>

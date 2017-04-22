@@ -64,4 +64,20 @@ function BuildSiteMapXml() {
   return $siteMap;
 }
 
+// TODO: Add support of content files with '.php' extension.
+function IncludeContent($content) {
+  $contentFolder = FullPathTo(dirname(__FILE__).'/../content', $content);
+  $fileWithTranslationPath = FullPathTo($contentFolder, $content . '.' . LANG . '.' . 'html');
+
+  if (file_exists($fileWithTranslationPath)) {
+    return include_once($fileWithTranslationPath);
+  } else {
+    $defaultFilePath = FullPathTo($contentFolder, $content . '.' . 'html');
+
+    if (file_exists($defaultFilePath))
+      return include_once($defaultFilePath);
+    else
+      exit("Error loading content: $content");
+  }
+}
 ?>
