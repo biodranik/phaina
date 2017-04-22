@@ -6,7 +6,7 @@ ini_set('error_reporting', E_ALL);
 
 // Production base url, also used for static pages generation.
 // Please use BaseURL() function instead of direct access, it makes development easier.
-define('BASE_URL', 'https://deathbaba.github.io/landing-php/');
+define('BASE_URL', 'https://deathbaba.github.io/phaina/');
 
 // Site language which is used in <html lang="…"> attributes and for translations.
 // TODO(Alex): Generate all supported languages from one launch, without editing this constant.
