@@ -1,5 +1,8 @@
 <?php
 
+include(dirname(__FILE__).'/../include/strings.php');
+include('IRI.php');
+
 if (count($argv) < 3) {
   echo "This script cleans up and fixes html document exported from Google Docs.\n";
   echo "NOTE: you should have tidy-html5 installed in your PATH.\n";
@@ -29,6 +32,9 @@ $count = 0;
 $nodesToRemove = array();
 foreach ($doc->getElementsByTagName('a') as $a) {
   $href = $a->getAttribute('href');
+  // Some <a> from google gocs can have only id attributes.
+  if (empty($href))
+    continue;
   // Fix google redirects.
   if (0 === strpos($href, 'https://www.google.com/url?q=')) {
     $query = parse_url($href, PHP_URL_QUERY);
@@ -55,9 +61,26 @@ if ($count or $commentsAndRefs) {
   echo "* Done (no changes have been made).\n\n";
 }
 
-// Final document cleanup and extraction of <body>'s content.
+// Further document cleanup and extraction of <body>'s content.
 echo "* Launching tidy-html5 again to do all the dirty work...\n";
-RunTidy("-q --show-body-only yes -w 0 -gdoc -output ${argv[2]}", $html);
+RunTidy("-utf8 -q -indent --fix-uri no --show-body-only yes -w 0 -gdoc", $html);
+
+// Use international IRIs instead of URLs in the final document (HTML5 allows it).
+// It makes much easier to compare diffs and do code review.
+$count = ReplacePattern(
+    '/href="(.*)"/Ui',
+    $html,
+    // Ignore local document links like #h1.abcdef.
+    function ($uri) { return $uri[0] != '#'; },
+    function ($uri) { return (new SimplePie_IRI($uri))->get_iri(); });
+echo "* Replaced $count URIs to IRIs.\n\n";
+
+// Remove references to gdocs pages from contents.
+$html = preg_replace('| (&nbsp;)\1*<a href=".*">[0-9]+</a>|', '', $html, -1, $count);
+echo "* Removed $count references to pages from contents.\n\n";
+
+if (FALSE === file_put_contents($argv[2], $html))
+  echo "ERROR while saving processed html to ${argv[2]}\n";
 
 ///////////////////////////////////////////////////////////////////////////////
 
