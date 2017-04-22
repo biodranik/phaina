@@ -13,7 +13,7 @@ define('BASE_URL', 'https://deathbaba.github.io/phaina/');
 // TODO(Alex): Generate all supported languages from one launch, without editing this constant.
 define('LANG', 'ru');
 
-define('DEMO_URL', 'https://www.dev.vibrobox.com/site/login');
+define('DEMO_URL', 'https://www.demo.vibrobox.com/demo');
 define('GOOGLE_ANALYTICS_ID', 'UA-79782596-1');
 // Translation defines for meta keywords and description if they are not customized in $PAGES.
 define('DEFAULT_META_DESCRIPTION', 'metaDescriptionIndexPage');
