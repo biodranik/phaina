@@ -33,9 +33,9 @@ HTML_HEAD([
     <div class="contacts__social">
       <h2 class="contacts__h2"><?= T('contactsSocialNetworks') ?></h2>
       <ul class="contacts__social-networks">
-        <li><a class="contacts__icon contacts__icon--f" href="https://www.facebook.com/" target="_blank"></a></li>
-        <li><a class="contacts__icon contacts__icon--t" href="https://twitter.com/" target="_blank"></a></li>
-        <li><a class="contacts__icon contacts__icon--l" href="https://www.linkedin.com/" target="_blank"></a></li>
+        <li><a class="contacts__icon contacts__icon--f" href="https://www.facebook.com/VibroBox/" target="_blank"></a></li>
+        <li><a class="contacts__icon contacts__icon--t" href="https://twitter.com/VibroBox" target="_blank"></a></li>
+        <li><a class="contacts__icon contacts__icon--l" href="https://www.linkedin.com/company-beta/16209501/" target="_blank"></a></li>
       </ul>
     </div>
   </section>
