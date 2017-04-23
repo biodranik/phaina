@@ -64,11 +64,10 @@ function BuildSiteMapXml() {
   return $siteMap;
 }
 
-// TODO: Move base content folder path to web-site settings file.
-// Main purpose of this function is to include specific content to the page.
-// Function uses current language and pick necessary content using knowledge about it.
-// Function expects that there is folder with translations in content folder.
-// Function takes $baseName parameter, used for determining, what content package should be loaded.
+// Include and preprocess content (e.g. fix relative links and image sources).
+// Translated versions like content/baseName.ru.html have priority over content/baseName.html.
+// Subdirectories in content dir are also supported.
+// TODO: Move base content directory path to web-site settings file.
 function IncludeContent($baseName) {
   $basePath = dirname(__FILE__).'/../content/' . $baseName;
 
