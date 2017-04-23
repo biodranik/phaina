@@ -64,25 +64,34 @@ function BuildSiteMapXml() {
   return $siteMap;
 }
 
-// TODO: Add support of content files with '.php' extension.
 // TODO: Move base content folder path to web-site settings file.
 // Main purpose of this function is to include specific content to the page.
 // Function uses current language and pick necessary content using knowledge about it.
 // Function expects that there is folder with translations in content folder.
-// Function takes $baseNameOfContent parameter, used for determining, what content package should be loaded.
-function IncludeContent($baseNameOfContent) {
-  $contentFolder = FullPathTo(dirname(__FILE__).'/../content', $baseNameOfContent);
-  $fileWithTranslationPath = FullPathTo($contentFolder, $baseNameOfContent . '.' . LANG . '.' . 'html');
+// Function takes $baseName parameter, used for determining, what content package should be loaded.
+function IncludeContent($baseName) {
+  $basePath = dirname(__FILE__).'/../content/' . $baseName;
 
-  if (file_exists($fileWithTranslationPath)) {
-    include_once($fileWithTranslationPath);
-  } else {
-    $defaultFilePath = FullPathTo($contentFolder, $baseNameOfContent . '.' . 'html');
+  // Array of possible content paths.
+  // Should be ordered in the way, that path for translation appears first.
+  $pathsToCheck = [
+    $basePath . '.' . LANG . '.html',  // content/baseName.ru.html
+    $basePath . '.' . LANG . '.php',  // content/baseName.ru.php
+    $basePath . '/index.' . LANG . '.html',  // content/baseName/index.ru.html
+    $basePath . '/index.' . LANG . '.php',  // content/baseName/index.ru.php
+    $basePath . '.html',  // content/baseName.html
+    $basePath . '.php',  // content/baseName.php
+    $basePath . '/index.html',  // content/baseName/index.html
+    $basePath . '/index.php',  // content/baseName/index.php
+  ];
 
-    if (file_exists($defaultFilePath))
-      include_once($defaultFilePath);
-    else
-      exit("Error loading content with name: $baseNameOfContent");
+  foreach ($pathsToCheck as $file) {
+    if (file_exists($file)) {
+      include($file);
+      return;
+    }
   }
+
+  die("Error loading content with name: $baseName");
 }
 ?>
