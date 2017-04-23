@@ -72,26 +72,14 @@ function BuildSiteMapXml() {
 function IncludeContent($baseName) {
   $basePath = dirname(__FILE__).'/../content/' . $baseName;
 
-  // Array of possible content paths.
-  // Should be ordered in the way, that path for translation appears first.
-  $pathsToCheck = [
-    $basePath . '.' . LANG . '.html',  // content/baseName.ru.html
-    $basePath . '.' . LANG . '.php',  // content/baseName.ru.php
-    $basePath . '/index.' . LANG . '.html',  // content/baseName/index.ru.html
-    $basePath . '/index.' . LANG . '.php',  // content/baseName/index.ru.php
-    $basePath . '.html',  // content/baseName.html
-    $basePath . '.php',  // content/baseName.php
-    $basePath . '/index.html',  // content/baseName/index.html
-    $basePath . '/index.php',  // content/baseName/index.php
-  ];
+  // TODO: correctly process multiple matches.
+  $paths = glob($basePath . '.' . LANG . '*');
+  if (empty($paths))
+    $paths = glob($basePath . '.*');
 
-  foreach ($pathsToCheck as $file) {
-    if (file_exists($file)) {
-      include($file);
-      return;
-    }
-  }
+  if (empty($paths))
+    die("Error loading content from $basePath");
 
-  die("Error loading content with name: $baseName");
+  include($paths[0]);
 }
 ?>
