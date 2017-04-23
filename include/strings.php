@@ -15,7 +15,7 @@ function EndsWith($haystack, $needle) {
 
 // Returns number of replaced matches or 0 if nothing was changed.
 function ReplacePattern($regexPatternWithOneGroup, &$subject, $filterFn, $mapFn) {
-  if (FALSE === preg_match_all($regexPatternWithOneGroup, $subject, $matches)
+  if (false === preg_match_all($regexPatternWithOneGroup, $subject, $matches)
       or !array_key_exists(1, $matches))
     return 0;
 
