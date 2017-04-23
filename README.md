@@ -43,7 +43,7 @@ This entry describes team member with image path, name, title and description. L
 },
 ...
 ```
-As you can see it's not only content is defined, but it's also defined for two languages (hence `translations` folder name).
+As you can see it's not only content is defined, but it's also defined for two languages (hence `translations` directory name).
 
 This is the example for "team" page, for other pages data structure could be different (e.g. see [index.php](https://github.com/deathbaba/landing-php/blob/master/www/index.php) or absent at all: [404.php](https://github.com/deathbaba/landing-php/blob/master/www/404.php))
 "Team" page second part describes how the information should be presented (i.e. contains layout):
@@ -82,7 +82,7 @@ git clone <this repo url> --recursive
 #### Installation: Windows
 - Install [git for Windows](https://git-scm.com/download/win) or [GitHub Desktop](https://desktop.github.com/) and make sure that git.exe is available in your [PATH](http://stackoverflow.com/questions/31167181/adding-git-to-path-variable-cant-find-github-under-appdata-local).
 - Download PHP for your platform from [official repo](http://windows.php.net/download/) (Non Thread Safe version fits well).
-- ```git clone <this repo url> --recursive``` to use pre-compiled fswatch/sassc binaries in the bin folder/submodule.
+- ```git clone <this repo url> --recursive``` to use pre-compiled fswatch/sassc binaries in the bin directory/submodule.
 
 In case you will not be able to start php, because of the following error:
 >Unable to start the program as VCRUNTIME140.dll is missing on your computer. Try reinstalling the program to fix this problem.
@@ -90,7 +90,7 @@ In case you will not be able to start php, because of the following error:
 Try to use following thread [php-7-missing-vcruntime140-dll](http://stackoverflow.com/questions/30811668/php-7-missing-vcruntime140-dll) for troubleshooting.
 
 #### Installation: Linux
-You can install *php*, *fswatch* and *sassc* packages in any convenient way or use pre-compiled binaries from the *bin* folder (helper scripts are aware of binaries in the PATH). Don't forget about recursive repo checkout to use binaries from *bin*: ```git clone <this repo url> --recursive```
+You can install *php*, *fswatch* and *sassc* packages in any convenient way or use pre-compiled binaries from the *bin* directory (helper scripts are aware of binaries in the PATH). Don't forget about recursive repo checkout to use binaries from *bin*: ```git clone <this repo url> --recursive```
 
 ### Site configuration
 All important variables and menu should be set up at [config.php](./config.php) in the root.
@@ -101,10 +101,10 @@ I didn't found any static generators to simplify building sites with *different*
 ### Under the hood
 Proposed workflow uses gh-pages branch in the same repository to serve static pages.
 
-Alternative approach is to use *docs* folder from the *master* branch to publish web site. To do that you need to remove *docs* folder from *.gitignore* and change your GitHub Pages repository settings (and modify ```deploy``` script).
+Alternative approach is to use *docs* directory from the *master* branch to publish web site. To do that you need to remove *docs* directory from *.gitignore* and change your GitHub Pages repository settings (and modify ```deploy``` script).
 
 #### Manual initialization of gh-pages branch
-You need to create a copy of the same repository (but with gh-pages branch instead of master) in the docs folder:
+You need to create a copy of the same repository (but with gh-pages branch instead of master) in the docs directory:
 ```bash
 mkdir docs
 cd docs
@@ -119,7 +119,7 @@ git branch -d master
 ```
 
 #### Generate static pages
-To generate static pages in the docs folder:
+To generate static pages in the docs directory:
 ```$ php generate.php www docs``` or better launch ```build``` script which also rebuilds CSS file from SCSS.
 
 #### Clean up Google Docs html
@@ -128,7 +128,7 @@ There is an utility script in [tools/fix_google_doc.php](./tools/fix_google_doc.
 Optional tidy path is useful if you don't have it in your PATH and would like to use *bin* repository submodule.
 
 #### Notes
-- Translations are stored in [strings.json](./strings.json). TODO: separate folder with mergeable translation files could be better.
+- Translations are stored in [strings.json](./strings.json). TODO: separate directory with mergeable translation files could be better.
 - php files in www directory can be either loaded/accessed directly or via [index.php](./www/index.php) routing.
 - Github permanently redirects /uri to /uri/ so it makes sense to always use /links/ instead of /links.
 - TODO: Sitemap.

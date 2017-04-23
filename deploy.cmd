@@ -5,7 +5,7 @@ REM Created by Alexander Zolotarev <me@alex.bio> from Minsk, Belarus.
 
 SETLOCAL
 
-REM Publish folder where static html content is generated.
+REM Publish directory where static html content is generated.
 SET out_dir=docs
 
 REM Is git present in PATH?
@@ -16,11 +16,11 @@ IF NOT EXIST .git (
   ECHO ERROR: It is not a git repository.
   EXIT /B 1
 )
-REM Publish folder should be in .gitignore.
+REM Publish directory should be in .gitignore.
 git check-ignore -q %out_dir% || ECHO ERROR: Please git rm %out_dir%; git commit -a; and add %out_dir% to .gitignore. && EXIT /B 1
-REM Is it a root folder?
+REM Is it a root directory?
 IF NOT EXIST deploy.cmd (
-  ECHO ERROR: Please launch this script from the site root folder.
+  ECHO ERROR: Please launch this script from the site root directory.
   EXIT /B 1
 )
 
@@ -30,9 +30,9 @@ IF NOT EXIST .git (
   EXIT /B 1
 )
 
-REM Setup cloned git repo in the generated folder.
+REM Setup cloned git repo in the generated directory.
 IF NOT EXIST %out_dir%\.git (
-  ECHO Initializing %out_dir% folder and binding it to gh-pages branch of the same repository.
+  ECHO Initializing %out_dir% directory and binding it to gh-pages branch of the same repository.
   IF EXIST %out_dir% RMDIR /S /Q %out_dir%
   MKDIR %out_dir%
   REM Repo should be up-to-date before copying it.
@@ -57,7 +57,7 @@ git clean -f
 POPD
 
 REM Build/generate static web site.
-REM Build script can delete everything in %out_dir% so %out_dir%\.git folder should be backed up and restored.
+REM Build script can delete everything in %out_dir% so %out_dir%\.git directory should be backed up and restored.
 REM Move does not work with hidden directories.
 ATTRIB -h %out_dir%\.git
 MOVE %out_dir%\.git .git.backup || ECHO ERROR while move to .git.backup && EXIT /B 1

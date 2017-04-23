@@ -13,15 +13,15 @@ set -euo pipefail
 
 # Path to the directory which is monitored for changes by fswatch.
 SCSS_DIR="scss"
-# File which is rebuilt by sassc on any change in the folder above.
+# File which is rebuilt by sassc on any change in the directory above.
 SASSC_INPUT_SCSS="$SCSS_DIR/style.scss"
 # Automatically generated css file.
 SASSC_OUTPUT_CSS="www/css/style.css"
 # One of: nested, expanded, compact, compressed.
 OUTPUT_CSS_FORMAT="nested"
 
-# Binaries in bin folder are wrappers which finds correct ones in the system
-# or take version from the bin folder itself.
+# Binaries in bin directory are wrappers which finds correct ones in the system
+# or take version from the bin directory itself.
 SASSC_BINARY="bin/sassc"
 FSWATCH_BINARY="bin/fswatch"
 # Use PHP from the PATH.
