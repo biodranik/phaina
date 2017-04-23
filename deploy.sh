@@ -11,20 +11,20 @@
 # -o pipefail aborts if on any failed pipe operation.
 set -euo pipefail
 
-# Publish folder where static html content is generated.
+# Publish directory where static html content is generated.
 # TODO: Share it between scripts, or use one script with different commands.
 OUT_DIR=docs
 
 # Pre-requisites check.
-[ -f ./deploy.sh ] || { echo "ERROR: It is not the root repo folder."; exit 1; }
+[ -f ./deploy.sh ] || { echo "ERROR: It is not the root repo directory."; exit 1; }
 [ -d ./.git ] || { echo "ERROR: It is not a git repository."; exit 1; }
 git check-ignore -q $OUT_DIR || { echo "ERROR: Please git rm $OUT_DIR; git commit -a; and add $OUT_DIR to .gitignore."; exit 1; }
 # Sanity check.
 [[ "$OUT_DIR" != "/" ]] || { echo "Invalid OUT_DIR? $OUT_DIR"; exit 1; }
 
-# Setup cloned git repo in the generated folder.
+# Setup cloned git repo in the generated directory.
 if [ ! -d "$OUT_DIR/.git" ]; then
-  echo "Initializing $OUT_DIR folder and binding it to gh-pages branch of the same repository."
+  echo "Initializing $OUT_DIR directory and binding it to gh-pages branch of the same repository."
   if [ ! -d "$OUT_DIR"  ]; then
     mkdir "$OUT_DIR"
   else
@@ -43,7 +43,7 @@ git checkout gh-pages > /dev/null 2>&1 && git clean -f && git pull || { git chec
 popd
 
 # Rebuild everything before deployment.
-# Need to save and restore $OUT_DIR/.git folder because generator can delete everything in $OUT_DIR.
+# Need to save and restore $OUT_DIR/.git directory because generator can delete everything in $OUT_DIR.
 mv "$OUT_DIR/.git" .git.backup
 source build.sh
 mv .git.backup "$OUT_DIR/.git"

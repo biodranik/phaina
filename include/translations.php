@@ -1,5 +1,5 @@
 <?php
-// Loads strings from files in 'translations' folder. Each file is UTF-8 JSON like this:
+// Loads strings from files in 'translations' directory. Each file is UTF-8 JSON like this:
 // {
 //   "title":{
 //     "en":"Title in English",

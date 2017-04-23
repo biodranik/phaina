@@ -15,15 +15,15 @@ SET sassc_output=www/css/style.css
 REM One of: nested, expanded, compact, compressed
 SET sassc_style=nested
 
-SET watch_folder=scss
+SET watch_directory=scss
 
 REM Launch local php web server in background.
 START "" /B %php% -S localhost:8888 -t www || ECHO ERROR while launching %php% web server. && EXIT /B 1
 
-REM Rebuild scss on the launch once and watch for any scss folder changes indefinitely.
+REM Rebuild scss on the launch once and watch for any scss directory changes indefinitely.
 :loop
 ECHO Rebuilding %sassc_output%
 REM Do not stop after sassc returned error, because it can be caused by invalid scss syntax.
 %sassc% --style %sassc_style% %sassc_input% %sassc_output%
-%fswatch% --one-event %watch_folder% || ECHO ERROR while launching %fswatch%. && EXIT /B 1
+%fswatch% --one-event %watch_directory% || ECHO ERROR while launching %fswatch%. && EXIT /B 1
 GOTO loop

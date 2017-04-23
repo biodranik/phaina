@@ -18,8 +18,8 @@ function IsPhp($fileName) {
   return ($pos === false) ? false : strlen($fileName) - $pos == strlen(kPhpExtension);
 }
 
-// Does not delete $dir itself, only everything (except .git folder) inside. Does not stop execution on errors.
-// .git folder is used in deployment scripts. On Windows it can have read only attributes set on some files. As a result
+// Does not delete $dir itself, only everything (except .git directory) inside. Does not stop execution on errors.
+// .git directory is used in deployment scripts. On Windows it can have read only attributes set on some files. As a result
 // not all files will be deleted and deployment scripts go crazy.
 function RemoveFilesAndSubdirs($dir, $excludeDirs = array(".git")) {
   if (file_exists($dir) === false) return;
@@ -77,8 +77,8 @@ function Generate($inDir, $outDir) {
       // Remove .php extension.
       $outPath = substr($outPath, 0, -strlen(kPhpExtension));
       // Special cases:
-      // - index page does not need a folder
-      // - optional custom 404 page generates 404.html in the root folder.
+      // - index page does not need a directory
+      // - optional custom 404 page generates 404.html in the root directory.
       if ($fileName == kIndex or $fileName == k404) {
         $outPath .= ".html";
       } else {
