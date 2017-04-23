@@ -25,15 +25,15 @@ function URL($link) {
 require_once('translations.php');
 
 function HTML_HEAD($PARAMS = []) {
-  return require_once('head.php');
+  require_once('head.php');
 }
 
 function HTML_HEADER($currentPageFileName = null) {
-  return require_once('header.php');
+  require_once('header.php');
 }
 
 function HTML_FOOTER($currentPageFileName = null) {
-  return require_once('footer.php');
+  require_once('footer.php');
 }
 
 function MainMenu($currentPageFileName = null) {
@@ -65,19 +65,24 @@ function BuildSiteMapXml() {
 }
 
 // TODO: Add support of content files with '.php' extension.
-function IncludeContent($content) {
-  $contentFolder = FullPathTo(dirname(__FILE__).'/../content', $content);
-  $fileWithTranslationPath = FullPathTo($contentFolder, $content . '.' . LANG . '.' . 'html');
+// TODO: Move base content folder path to web-site settings file.
+// Main purpose of this function is to include specific content to the page.
+// Function uses current language and pick necessary content using knowledge about it.
+// Function expects that there is folder with translations in content folder.
+// Function takes $baseNameOfContent parameter, used for determining, what content package should be loaded.
+function IncludeContent($baseNameOfContent) {
+  $contentFolder = FullPathTo(dirname(__FILE__).'/../content', $baseNameOfContent);
+  $fileWithTranslationPath = FullPathTo($contentFolder, $baseNameOfContent . '.' . LANG . '.' . 'html');
 
   if (file_exists($fileWithTranslationPath)) {
-    return include_once($fileWithTranslationPath);
+    include_once($fileWithTranslationPath);
   } else {
-    $defaultFilePath = FullPathTo($contentFolder, $content . '.' . 'html');
+    $defaultFilePath = FullPathTo($contentFolder, $baseNameOfContent . '.' . 'html');
 
     if (file_exists($defaultFilePath))
-      return include_once($defaultFilePath);
+      include_once($defaultFilePath);
     else
-      exit("Error loading content: $content");
+      exit("Error loading content with name: $baseNameOfContent");
   }
 }
 ?>
