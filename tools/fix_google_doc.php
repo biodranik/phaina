@@ -14,7 +14,7 @@ if (count($argv) < 3) {
 // &nbsp; replacement, should be done before tidy as it removes <span>s.
 echo "* Replacing &nbsp; which are randomly inserted by Google Docs after <span> tags by normal space...\n";
 $html = '<!DOCTYPE html>' . file_get_contents($argv[1]);
-if ($html === FALSE)
+if ($html === false)
   die("ERROR: Can't open file $argv[1].");
 $html = str_replace('>&nbsp;', '> ', $html, $count);
 echo "* Done ($count replacements)\n\n";
@@ -73,7 +73,7 @@ $count = ReplacePattern(
     function ($uri) {
       // Ignore local document links like #h1.abcdef.
       if ($uri[0] == '#')
-        return FALSE;
+        return false;
       // Filter URIs which do not contain any non-ASCII characters.
       return $uri != (new SimplePie_IRI($uri))->get_iri();
     },
@@ -85,7 +85,7 @@ $html = preg_replace('| (&nbsp;)\1*<a href=".*">[0-9]+</a>|', '', $html, -1, $co
 if ($count)
   echo "* Removed $count references to pages from contents.\n\n";
 
-if (FALSE === file_put_contents($argv[2], $html))
+if (false === file_put_contents($argv[2], $html))
   echo "ERROR while saving processed html to ${argv[2]}\n";
 
 ///////////////////////////////////////////////////////////////////////////////
