@@ -70,14 +70,20 @@ RunTidy("-utf8 -q -indent --fix-uri no --show-body-only yes -w 0 -gdoc", $html);
 $count = ReplacePattern(
     '/href="(.*)"/Ui',
     $html,
-    // Ignore local document links like #h1.abcdef.
-    function ($uri) { return $uri[0] != '#'; },
+    function ($uri) {
+      // Ignore local document links like #h1.abcdef.
+      if ($uri[0] == '#')
+        return FALSE;
+      // Filter URIs which do not contain any non-ASCII characters.
+      return $uri != (new SimplePie_IRI($uri))->get_iri();
+    },
     function ($uri) { return (new SimplePie_IRI($uri))->get_iri(); });
-echo "* Replaced $count URIs to IRIs.\n\n";
+echo "* Replaced $count non-ASCII URIs to IRIs.\n\n";
 
 // Remove references to gdocs pages from contents.
 $html = preg_replace('| (&nbsp;)\1*<a href=".*">[0-9]+</a>|', '', $html, -1, $count);
-echo "* Removed $count references to pages from contents.\n\n";
+if ($count)
+  echo "* Removed $count references to pages from contents.\n\n";
 
 if (FALSE === file_put_contents($argv[2], $html))
   echo "ERROR while saving processed html to ${argv[2]}\n";
