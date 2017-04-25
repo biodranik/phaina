@@ -1,13 +1,15 @@
 <?php
+// Page properties.
+define('TITLE', 'titleTechnologyPage');
+define('FILE', __FILE__);
 require_once(dirname(__FILE__).'/../config.php');
-HTML_HEAD([
-  'link' => 'technology',
-  'title' => 'titleTechnologyPage']);
+
+HTML_HEAD();
 ?>
 
 <body>
 
-<?php HTML_HEADER('technology.php'); ?>
+<?php HTML_HEADER(); ?>
 
 <main role="main">
   <section class="section technology">
@@ -19,5 +21,6 @@ HTML_HEAD([
 </main>
 
 <?php HTML_FOOTER(); ?>
+
 </body>
 </html>

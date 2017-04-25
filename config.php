@@ -19,34 +19,6 @@ define('GOOGLE_ANALYTICS_ID', 'UA-79782596-1');
 define('DEFAULT_META_DESCRIPTION', 'metaDescriptionIndexPage');
 define('DEFAULT_META_KEYWORDS', 'metaKeywordsIndexPage');
 
-$PAGES = [
-  'index.php' => [
-    // Empty link means the root (index) page.
-    'link' => '',
-    'menu' => 'menuIndexPage',
-  ],
-  'technology.php' => [
-    'link' => 'technology',
-    'menu' => 'menuTechnologyPage',
-  ],
-  'team.php' => [
-    'link' => 'team',
-    'menu' => 'menuTeamPage',
-  ],
-  'faq.php' => [
-    'link' => 'faq',
-    'menu' => 'menuFaqPage',
-  ],
-  'contact.php' => [
-    'link' => 'contact',
-    'menu' => 'menuContactPage',
-  ],
-  '404.php' => [
-    // Page without a link key is 404 HTTP Not Found page.
-    // It's also (obviously) not present in the menu.
-  ]
-];
-
 require_once('include/globals.php');
 require_once('include/menuItem.php');
 require_once('include/strings.php');
