@@ -15,53 +15,47 @@ function BaseURL() {
   return BASE_URL;
 }
 
-// $link can be any absolute link without leading slash or .php page name from $PAGES.
+// $link can be any absolute link without leading slash or .php page name.
 function URL($link) {
-  global $PAGES;
-  if (strlen($link) > 4 and substr_compare($link, '.php', -4) == 0) $link = $PAGES[$link]['link'];
+  if (EndsWith($link, '.php'))
+    return BaseURL() . ExtractLinkFromPage($link);
+  if (!empty($link) and $link[0] == '#')
+    return BaseURL() . PageLink() . $link;
   return BaseURL() . $link;
 }
 
+// TODO: Move code here?
+require_once('page_params.php');
 require_once('translations.php');
 
-function HTML_HEAD($PARAMS = []) {
+function HTML_HEAD() {
   require_once('head.php');
 }
 
-function HTML_HEADER($currentPageFileName = null) {
+function HTML_HEADER() {
   require_once('header.php');
 }
 
-function HTML_FOOTER($currentPageFileName = null) {
+function HTML_FOOTER() {
   require_once('footer.php');
 }
 
-function MainMenu($currentPageFileName = null) {
-  global $PAGES;
-  // TODO: support empty menu?
-  foreach ($PAGES as $page => $props) {
-    if (array_key_exists('menu', $props)) {
-      $menu[] = new MenuItem(URL($props['link']), T($props['menu']), $currentPageFileName === $page);
-    }
-  }
+function MainMenu() {
+  $menuPages = [
+    'index.php' => 'menuIndexPage',
+    'technology.php' => 'menuTechnologyPage',
+    'team.php' => 'menuTeamPage',
+    'faq.php' => 'menuFaqPage',
+    'contact.php' => 'menuContactPage',
+  ];
 
+  foreach ($menuPages as $page => $menuTitle)
+    $menu[] = new MenuItem(URL(ExtractLinkFromPage($page)), T($menuTitle), $page == PageFile());
   return $menu;
 }
 
-function BuildSiteMapXml() {
-  global $PAGES;
-  $siteMap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-
-  foreach($PAGES as $page => $props) {
-    // Ignoring 404.php page or other pages without link property.
-    if (array_key_exists('link', $props)) {
-      $siteMap = $siteMap.'<url><loc>'.URL($props['link']).'</loc></url>';
-    }
-  }
-
-  $siteMap = $siteMap.'</urlset>';
-
-  return $siteMap;
+function IsRelativeIRI($iri) {
+  return empty(parse_url($iri, PHP_URL_SCHEME));
 }
 
 // Include and preprocess content (e.g. fix relative links and image sources).
@@ -79,6 +73,12 @@ function IncludeContent($baseName) {
   if (empty($paths))
     die("Error loading content from $basePath");
 
+  ob_start();
   include($paths[0]);
+  $html = ob_get_clean();
+
+  // Fix relative links.
+  ReplacePattern('/ (?:src|href)=[\'"]?([^\'" >]+)/', $html, 'IsRelativeIRI', 'URL');
+  echo $html;
 }
 ?>

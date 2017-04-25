@@ -13,17 +13,33 @@ function EndsWith($haystack, $needle) {
   return (substr($haystack, -$length) === $needle);
 }
 
+// Does global pattern match in the &$subject, then filters matches with $filterFn
+// and processes every filtered match with $mapFn.
 // Returns number of replaced matches or 0 if nothing was changed.
+// NOTE: Supports only one matching group (but can be upgraded for more).
 function ReplacePattern($regexPatternWithOneGroup, &$subject, $filterFn, $mapFn) {
   if (false === preg_match_all($regexPatternWithOneGroup, $subject, $matches)
-      or !array_key_exists(1, $matches))
+      or !array_key_exists(1, $matches) or empty($matches[1]))
     return 0;
 
-  $filtered = array_filter($matches[1], $filterFn);
+  // echo "UNFILTERED: ";
+  // var_dump($matches);
+
+  // Duplicates in $filtered cause wrong repeated replacements.
+  $filtered = array_unique(array_filter($matches[1], $filterFn));
   if (empty($filtered))
     return 0;
 
+  // echo "FILTERED: ";
+  // var_dump($filtered);
+
+
   $mapped = array_map($mapFn, $filtered);
+
+  // echo "MAPPED: ";
+  // var_dump($mapped);
+
+
   $subject = str_replace($filtered, $mapped, $subject, $replacementsCount);
   return $replacementsCount;
 }

@@ -1,9 +1,12 @@
 <?php
+// Page properties.
+define('TITLE', 'titleTeamPage');
+define('DESCRIPTION', 'metaDescriptionTeamPage');
+define('KEYWORDS', 'metaKeywordsTeamPage');
+define('FILE', __FILE__);
+
 require_once(dirname(__FILE__).'/../config.php');
-HTML_HEAD([
-    'title' => 'titleTeamPage',
-    'description' => 'metaDescriptionTeamPage',
-    'keywords' => 'metaKeywordsTeamPage']);
+HTML_HEAD();
 
 $team = [[
     'img' => 'img/team/Igor_Davydov.jpg',
@@ -85,7 +88,7 @@ $team = [[
 
 <body>
 
-<?php HTML_HEADER('team.php'); ?>
+<?php HTML_HEADER(); ?>
 
 <main role="main">
   <section class="section team">

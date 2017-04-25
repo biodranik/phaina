@@ -10,7 +10,12 @@ require_once(dirname(__FILE__).'/../config.php');
 // TODO: Probably it can be moved to the config.php.
 require(dirname(__FILE__).'/../include/uri_routing.php');
 
-HTML_HEAD(['title' => 'titleIndexPage']);
+// Page properties in the index file should be after the routing.
+define('LINK', '');  // Empty link is a root site page.
+define('TITLE', 'titleIndexPage');
+define('FILE', __FILE__);
+
+HTML_HEAD();
 
 // Initialization of page data models.
 $plusSectionItems = [[
@@ -60,7 +65,7 @@ $solutionSectionItems = [[
 ?>
 
 <body>
-<?php HTML_HEADER('index.php'); ?>
+<?php HTML_HEADER(); ?>
 
 <main role="main">
 

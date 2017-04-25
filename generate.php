@@ -22,7 +22,8 @@ function IsPhp($fileName) {
 // .git directory is used in deployment scripts. On Windows it can have read only attributes set on some files. As a result
 // not all files will be deleted and deployment scripts go crazy.
 function RemoveFilesAndSubdirs($dir, $excludeDirs = array(".git")) {
-  if (file_exists($dir) === false) return;
+  if (file_exists($dir) === false)
+    return;
   // Simple sanity check.
   if ($dir == "/" or substr($dir, -2) == ":\\") {
     echo "Do you really want to delete " . $dir . "?";
@@ -30,7 +31,8 @@ function RemoveFilesAndSubdirs($dir, $excludeDirs = array(".git")) {
   }
 
   $filter = function ($file, $key, $iterator) use ($excludeDirs) {
-    if ($iterator->hasChildren() && !in_array($file->getFilename(), $excludeDirs)) return true;
+    if ($iterator->hasChildren() && !in_array($file->getFilename(), $excludeDirs))
+      return true;
     return $file->isFile();
   };
   $innerIterator = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
@@ -38,23 +40,38 @@ function RemoveFilesAndSubdirs($dir, $excludeDirs = array(".git")) {
   foreach ($iterator as $fileInfo) {
     $realPath = $fileInfo->getRealPath();
     if ($fileInfo->isDir()) {
-      if (rmdir($realPath) === false) echo "Error while rmdir " . $realPath . "\n";
+      if (rmdir($realPath) === false)
+        echo "Error while rmdir " . $realPath . "\n";
     } else {
-      if (unlink($realPath) === false) echo "Error while unlink " . $realPath . "\n";
+      if (unlink($realPath) === false)
+        echo "Error while unlink " . $realPath . "\n";
     }
   }
 }
 
+function BuildSiteMapXml($phpFiles) {
+  $siteMap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+  foreach($phpFiles as $file) {
+    // Ignore special 404.php page.
+    if (EndsWith($file, k404))
+      continue;
+    $siteMap = $siteMap.'<url><loc>'.URL($file).'</loc></url>';
+  }
+
+  $siteMap = $siteMap.'</urlset>';
+
+  return $siteMap;
+}
+
 function Generate($inDir, $outDir) {
-  global $PAGES;
   $staticFilesCopied = 0;
   $processedPhpFiles = [];
 
-  if (file_exists($outDir)) RemoveFilesAndSubdirs($outDir);
-  else mkdir($outDir, kNewDirPermissions, true);
-
-  print("Generating sitemap:\n");
-  file_put_contents(FullPathTo($outDir, 'sitemap.xml'), BuildSiteMapXml());
+  if (file_exists($outDir))
+    RemoveFilesAndSubdirs($outDir);
+  else
+    mkdir($outDir, kNewDirPermissions, true);
 
   print("Generating pages from php files:\n");
   $iter = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($inDir),
@@ -62,7 +79,8 @@ function Generate($inDir, $outDir) {
   foreach($iter as $fileName => $fileInfo) {
     $fileName = $iter->getFilename();
     // Skip hidden files and directories, '.' and '..' directories.
-    if ($fileName[0] === '.') continue;
+    if ($fileName[0] === '.')
+      continue;
     // Generate html from .php files and simply copy everything else into the $outDir.
     $outPath = FullPathTo($outDir, $iter->getSubPathName());
     if ($fileInfo->isDir()) {
@@ -70,10 +88,6 @@ function Generate($inDir, $outDir) {
       continue;
     }
     if (IsPhp($fileName)) {
-      // Warn about not defined pages.
-      if (!array_key_exists($fileName, $PAGES)) {
-        print("WARNING: $fileName is NOT defined in config.php \$PAGES variable.\n");
-      }
       // Remove .php extension.
       $outPath = substr($outPath, 0, -strlen(kPhpExtension));
       // Special cases:
@@ -89,20 +103,23 @@ function Generate($inDir, $outDir) {
       // TODO: Handle errors.
       file_put_contents($outPath, HtmlFromPhp($fileInfo));
       print("+ ".$outPath."\n");
-      $processedPhpFiles[$fileName] = true;
+      $processedPhpFiles[] = $fileName;
     }
     else {
       copy($fileInfo, $outPath);
       $staticFilesCopied++;
     }
   }
-  if ($staticFilesCopied) print("Also copied ${staticFilesCopied} static resources.\n");
-  // Check for missing pages.
-  foreach($PAGES as $page => $props) {
-    if (!array_key_exists($page, $processedPhpFiles)) {
-      print("WARNING: ${page} is defined in config.php \$PAGES variable but is not found at ${inDir} directory.\n");
-    }
-  }
+  $count = count($processedPhpFiles);
+  print("Processed $count php files.\n");
+  if ($staticFilesCopied)
+    print("Also copied ${staticFilesCopied} static resources.\n\n");
+
+  $sitemapPath = FullPathTo($outDir, 'sitemap.xml');
+  if (file_put_contents($sitemapPath, BuildSiteMapXml($processedPhpFiles)))
+    print("Generated sitemap $sitemapPath.\n");
+  else
+    print("ERROR creating sitemap $sitemapPath.\n");
 }
 
 function Usage($self) {

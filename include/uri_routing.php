@@ -10,12 +10,12 @@ function FileByRequestUri() {
   global $PAGES;
   // urldecode helps to support localized URLs.
   $urlPath = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-  foreach ($PAGES as $page => $props) {
-    if (array_key_exists('link', $props) and strrpos($urlPath, $props['link']) !== false) {
-      return $page;
-    }
-    // TODO: Treat page without a link as 404 or is it better to hard-code it?
-  }
+  // TODO: Support custom links to pages.
+  $file = substr($urlPath, 1);
+  if (!EndsWith($file, '.php'))
+    $file .= '.php';
+  if (file_exists(dirname(__FILE__).'/../www/'.$file))
+    return $file;
   return '404.php';
 }
 
