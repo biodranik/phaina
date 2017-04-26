@@ -1,6 +1,4 @@
 <?php
-// TODO: Think about beautiful global object/class instead of $GLOBALS[].
-
 function PageFile() {
   if (!defined('FILE'))
     die("Please add `define('FILE', __FILE__);` in your rendered page.\n");
@@ -19,6 +17,7 @@ function ExtractLinkFromPage($pageFile) {
   // Use page file without extension as a link.
   if (EndsWith($pageFile, '.php'))
     return substr($pageFile, 0, -4);
+
   return $pageFile;
 }
 
