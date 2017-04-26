@@ -2,10 +2,15 @@
 // TODO: Think about beautiful global object/class instead of $GLOBALS[].
 
 function PageFile() {
-  return FILE;
+  if (!defined('FILE'))
+    die("Please add `define('FILE', __FILE__);` in your rendered page.\n");
+  // TODO: Add support for php files in subdirectories.
+  return basename(FILE);
 }
 
 function ExtractLinkFromPage($pageFile) {
+  if ($pageFile == 'index.php')
+    return '';  // Empty link means a root index page.
   // Retrieve link directly from specified php file.
   $regex = '|[^/][^/] *define *\([\'"]LINK[\'"] *, *[\'"](.*)[\'"]\)|U';
   $content = file_get_contents(dirname(__FILE__).'/../www/'.$pageFile);
@@ -22,9 +27,13 @@ function PageLink() {
   if (defined('LINK'))
     return LINK;
   // TODO: Create correct IRI from file name.
-  if (defined('FILE'))
-    return basename(FILE, '.php');  // TODO: Will not work for subdirectories.
-  die("Please set page's LINK.\n");
+  $file = PageFile();
+  if ($file == 'index.php')
+    return '';  // Empty link means a root index page.
+
+  // Use file name without extension as a link.
+  // TODO: Filter out IRI-incompatible symbols out of the file name and beautify IRI.
+  return substr($file, 0, strrpos($file, '.'));
 }
 
 function PageTitle() {
