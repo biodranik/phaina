@@ -8,6 +8,10 @@ The main idea is to have very simple but flexible development workflow and deplo
 4. SCSS support is also included (```watch``` script automatically rebuilds your CSS from SCSS after any changes).
 5. Multiple languages are supported, see [strings.json](./strings.json).
 
+## Why Phaina?
+
+**Файна** (pronounced as *ˈfaina*) in Belarusian means *very good*. **Ph** stays for PHP, **aina** stays for the *land* in Hawaiian, so *PHP landing* is another good interpretation.
+
 ## How it works
 Let's pick "team" page for example to see how it works. Pages of your site are defined in [config.php](https://github.com/deathbaba/landing-php/blob/master/config.php) `$PAGES` array. There is an entry `team.php` in `$PAGES` that defines "team" page:
 
