@@ -11,7 +11,6 @@ require_once(dirname(__FILE__).'/../config.php');
 require(dirname(__FILE__).'/../include/uri_routing.php');
 
 // Page properties in the index file should be after the routing.
-define('LINK', '');  // Empty link is a root site page.
 define('TITLE', 'titleIndexPage');
 define('FILE', __FILE__);
 

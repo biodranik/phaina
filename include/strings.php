@@ -1,4 +1,5 @@
 <?php
+
 // $haystack - where to search, $needle - what to search.
 function StartsWith($haystack, $needle) {
   return strpos($haystack, $needle) === 0;
@@ -22,24 +23,12 @@ function ReplacePattern($regexPatternWithOneGroup, &$subject, $filterFn, $mapFn)
       or !array_key_exists(1, $matches) or empty($matches[1]))
     return 0;
 
-  // echo "UNFILTERED: ";
-  // var_dump($matches);
-
   // Duplicates in $filtered cause wrong repeated replacements.
   $filtered = array_unique(array_filter($matches[1], $filterFn));
   if (empty($filtered))
     return 0;
 
-  // echo "FILTERED: ";
-  // var_dump($filtered);
-
-
   $mapped = array_map($mapFn, $filtered);
-
-  // echo "MAPPED: ";
-  // var_dump($mapped);
-
-
   $subject = str_replace($filtered, $mapped, $subject, $replacementsCount);
   return $replacementsCount;
 }
