@@ -23,11 +23,16 @@ echo "* Done ($count replacements)\n\n";
 echo "* Launching tidy-html5 to fix non-closed <p> tags...\n";
 RunTidy("-utf8 -q --preserve-entities yes --logical-emphasis yes --anchor-as-name no -w 0", $html);
 
-// Fix google links and remove document comments, should be done on complete <html><head><body> doc.
-echo "* Removing intermediate google redirect for all external links and strip comments...\n";
 $doc = new DOMDocument();
 $doc->preserveWhiteSpace = false;
 $doc->loadHTML($html);
+
+$count = StripAttributes($doc, 'img', 'style');
+if ($count)
+  echo "* Stripped $count `style` attributes from `img` tags.\n\n";
+
+// Fix google links and remove document comments, should be done on complete <html><head><body> doc.
+echo "* Removing intermediate google redirect for all external links and strip comments...\n";
 $count = 0;
 $nodesToRemove = array();
 foreach ($doc->getElementsByTagName('a') as $a) {
@@ -89,6 +94,19 @@ if (false === file_put_contents($argv[2], $html))
   echo "ERROR while saving processed html to ${argv[2]}\n";
 
 ///////////////////////////////////////////////////////////////////////////////
+
+function StripAttributes(&$domDocument, $tags, $attributes) {
+  $strippedCount = 0;
+  foreach (is_array($tags) ? $tags : array($tags) as $tag) {
+    foreach (is_array($attributes) ? $attributes : array($attributes) as $attr) {
+      foreach ($domDocument->getElementsByTagName($tag) as $t) {
+        if ($t->removeAttribute($attr))
+          ++$strippedCount;
+      }
+    }
+  }
+  return $strippedCount;
+}
 
 function RunTidy($params, &$text) {
   global $argv;
