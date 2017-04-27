@@ -11,13 +11,14 @@ if (count($argv) < 3) {
   exit(1);
 }
 
-// &nbsp; replacement, should be done before tidy as it removes <span>s.
-echo "* Replacing &nbsp; which are randomly inserted by Google Docs after <span> tags by normal space...\n";
-$html = '<!DOCTYPE html>' . file_get_contents($argv[1]);
+$html = file_get_contents($argv[1]);
 if ($html === false)
   die("ERROR: Can't open file $argv[1].");
-$html = str_replace('>&nbsp;', '> ', $html, $count);
-echo "* Done ($count replacements)\n\n";
+
+// Tidy removes empty <span>s, so &nbsp; replacement should be done before tidy.
+$count = ReplaceInvalidNbsp($html);
+if ($count)
+  echo "* Replaced $count incorrect &nbsp; randomly inserted by Google Docs after <span> tags.\n\n";
 
 // Html exported from GDocs can be malformed. Fix it before processing with DOMDocument.
 echo "* Launching tidy-html5 to fix non-closed <p> tags...\n";
@@ -98,10 +99,37 @@ $html = preg_replace('| (&nbsp;)\1*<a href=".*">[0-9]+</a>|', '', $html, -1, $co
 if ($count)
   echo "* Removed $count references to pages from contents.\n\n";
 
+foreach(ImprovePunctuation($html) as $result) {
+  echo $result;
+}
+
 if (false === file_put_contents($argv[2], $html))
   echo "ERROR while saving processed html to ${argv[2]}\n";
 
 ///////////////////////////////////////////////////////////////////////////////
+
+function ReplaceInvalidNbsp(&$html) {
+  $html = str_replace('>&nbsp;', '> ', $html, $count);
+  return $count;
+}
+
+// Replaces space with &nbsp; before em dash.
+function ImprovePunctuation(&$html) {
+  $results = [];
+  // Use UTF-8 em dash.
+  $html = str_ireplace('&mdash;', '—', $html, $count);
+  if ($count)
+    $results[] = "* Replaced $count &mdash; with `—`.\n";
+  // Use UTF-8 non-breaking space.
+  $html = str_ireplace('&nbsp;', ' ', $html, $count);
+  if ($count)
+    $results[] = "* Replaced $count &nbsp; with ` ` (non-breaking space in UTF-8).\n";
+  // Insert non-breaking space before em dash.
+  $html = str_replace(' —', ' —', $html, $count);
+  if ($count)
+    $results[] = "* Replaced $count spaces before em-dash to non-breaking spaces.\n";
+  return $results;
+}
 
 function ReplaceParentByChild(&$domDocument, $parentTag, $childTag) {
   $replacedCount = 0;
