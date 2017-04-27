@@ -31,6 +31,12 @@ $count = StripAttributes($doc, 'img', 'style');
 if ($count)
   echo "* Stripped $count `style` attributes from `img` tags.\n\n";
 
+// In the original GDoc html images are inside <p><span><img></span></p>.
+ReplaceParentByChild($doc, 'span', 'img');
+$count = ReplaceParentByChild($doc, 'p', 'img');
+if ($count)
+  echo "* $count replacements of <p><img></p> to <img>.\n\n";
+
 // Fix google links and remove document comments, should be done on complete <html><head><body> doc.
 echo "* Removing intermediate google redirect for all external links and strip comments...\n";
 $count = 0;
@@ -96,6 +102,19 @@ if (false === file_put_contents($argv[2], $html))
   echo "ERROR while saving processed html to ${argv[2]}\n";
 
 ///////////////////////////////////////////////////////////////////////////////
+
+function ReplaceParentByChild(&$domDocument, $parentTag, $childTag) {
+  $replacedCount = 0;
+  foreach ($domDocument->getElementsByTagName($childTag) as $ct) {
+    $p = $ct->parentNode;
+    if ($p->nodeName == $parentTag) {
+      $gp = $p->parentNode;
+      $gp->replaceChild($p->removeChild($ct), $p);
+      ++$replacedCount;
+    }
+  }
+  return $replacedCount;
+}
 
 function StripAttributes(&$domDocument, $tags, $attributes) {
   $strippedCount = 0;
