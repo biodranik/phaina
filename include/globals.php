@@ -78,7 +78,7 @@ function IncludeContent($baseName) {
   $html = ob_get_clean();
 
   // Fix relative links.
-  ReplacePattern('/ (?:src|href)=[\'"]?([^\'" >]+)/', $html, 'IsRelativeIRI', 'URL');
+  ReplacePattern('/ (?:src|href)=[\'"]?([^\'" >]+)/', $html, 'URL', 'IsRelativeIRI');
   echo $html;
 }
 ?>

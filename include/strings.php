@@ -16,20 +16,29 @@ function EndsWith($haystack, $needle) {
 
 // Does global pattern match in the &$subject, then filters matches with $filterFn
 // and processes every filtered match with $mapFn.
+// Matches are not filtered if $filterFn is `true`.
 // Returns number of replaced matches or 0 if nothing was changed.
-// NOTE: Supports only one matching group (but can be upgraded for more).
-function ReplacePattern($regexPatternWithOneGroup, &$subject, $filterFn, $mapFn) {
-  if (false === preg_match_all($regexPatternWithOneGroup, $subject, $matches)
-      or !array_key_exists(1, $matches) or empty($matches[1]))
-    return 0;
+// NOTE: Works with zero or one matching group.
+// TODO: Use matches[0] for final replacements when using matching group to avoid incorrect replaces.
+function ReplacePattern($regexPatternWithOneGroup, &$subject, $mapFn, $filterFn = true) {
+  if (false === preg_match_all($regexPatternWithOneGroup, $subject, $matches))
+    die("ERROR: invalid pattern `$regexPatternWithOneGroup`\n");
 
-  // Duplicates in $filtered cause wrong repeated replacements.
-  $filtered = array_unique(array_filter($matches[1], $filterFn));
-  if (empty($filtered))
-    return 0;
+  switch (count($matches)) {
+    // No matches.
+    case 0: return 0;
+    // Duplicates cause wrong repeated replacements.
+    case 1: $values = array_unique($matches[0]); break;
+    case 2: $values = array_unique($matches[1]); break;
+    default: die("ERROR: More than one matching groups are not supported yet.\n");
+  }
 
-  $mapped = array_map($mapFn, $filtered);
-  $subject = str_replace($filtered, $mapped, $subject, $replacementsCount);
+  if (is_callable($filterFn))
+    $values = array_filter($values, $filterFn);
+
+  $mapped = array_map($mapFn, $values);
+
+  $subject = str_replace($values, $mapped, $subject, $replacementsCount);
   return $replacementsCount;
 }
 
