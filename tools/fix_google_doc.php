@@ -76,13 +76,15 @@ $count = ReplacePattern(
     '/href="(.*)"/Ui',
     $html,
     function ($uri) {
+      return (new SimplePie_IRI($uri))->get_iri();
+    },
+    function ($uri) {
       // Ignore local document links like #h1.abcdef.
       if ($uri[0] == '#')
         return false;
       // Filter URIs which do not contain any non-ASCII characters.
       return $uri != (new SimplePie_IRI($uri))->get_iri();
-    },
-    function ($uri) { return (new SimplePie_IRI($uri))->get_iri(); });
+    });
 echo "* Replaced $count non-ASCII URIs to IRIs.\n\n";
 
 // Remove references to gdocs pages from contents.
