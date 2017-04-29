@@ -22,7 +22,7 @@ if ($count)
 
 // Html exported from GDocs can be malformed. Fix it before processing with DOMDocument.
 echo "* Launching tidy-html5 to fix non-closed <p> tags...\n";
-RunTidy("-utf8 -q --preserve-entities yes --logical-emphasis yes --anchor-as-name no -w 0", $html);
+RunTidy("-utf8 -q --preserve-entities yes --logical-emphasis yes --anchor-as-name no -w 0 -gdoc", $html);
 
 $doc = new DOMDocument();
 $doc->preserveWhiteSpace = false;
@@ -75,7 +75,8 @@ if ($count or $commentsAndRefs) {
 
 // Further document cleanup and extraction of <body>'s content.
 echo "* Launching tidy-html5 again to do all the dirty work...\n";
-RunTidy("-utf8 -q -indent --fix-uri no --show-body-only yes -w 0 -gdoc", $html);
+// After this call $html has only <body> content.
+RunTidy("-utf8 -q -indent --fix-uri no --show-body-only yes -w 0", $html);
 
 // Use international IRIs instead of URLs in the final document (HTML5 allows it).
 // It makes much easier to compare diffs and do code review.
