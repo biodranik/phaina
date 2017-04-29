@@ -1,5 +1,8 @@
 <?php
 
+require_once('page_params.php');
+require_once('translations.php');
+
 // Returns true if site is running on localhost.
 function IsLocalhostDevelopmentMode() {
   return array_key_exists('REMOTE_ADDR', $_SERVER) and ($_SERVER['REMOTE_ADDR'] == '127.0.0.1'
@@ -23,10 +26,6 @@ function URL($link) {
     return BaseURL() . PageLink() . $link;
   return BaseURL() . $link;
 }
-
-// TODO: Move code here?
-require_once('page_params.php');
-require_once('translations.php');
 
 function HTML_HEAD() {
   require_once('head.php');
