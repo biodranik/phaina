@@ -49,7 +49,7 @@ function MainMenu() {
   ];
 
   foreach ($menuPages as $page => $menuTitle)
-    $menu[] = new MenuItem(URL(ExtractLinkFromPage($page)), T($menuTitle), $page == PageFile());
+    $menu[] = new MenuItem(URL($page), T($menuTitle), $page == PageFile());
   return $menu;
 }
 
