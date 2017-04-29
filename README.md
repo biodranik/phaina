@@ -102,6 +102,9 @@ All important variables and menu should be set up at [config.php](./config.php) 
 ### Why another static generator?
 I didn't found any static generators to simplify building sites with *different* and *unique* pages. Most of them are focused on templated blogs or any other cases when you don't need custom layout for each page (e.g. you mostly edit *content only*, not *layout and content together*).
 
+### Unit Tests
+All [PHPUnit](https://phpunit.de/) tests are located in the [tests](./tests) directory. All tests should end with `Test.php` in their file name. Tests are launched by `phpunit tests` command from the repo's root.
+
 ### Under the hood
 Proposed workflow uses gh-pages branch in the same repository to serve static pages.
 
