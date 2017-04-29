@@ -38,11 +38,8 @@ function PageLink() {
 function PageTitle() {
   if (defined('TITLE'))
     return T(TITLE);
-  // TODO: Better default title naming strategy (my-cool_title.php => My Cool Title).
-  if (defined('FILE'))
-    return T(basename(FILE));
 
-  die("Please set page's TITLE.\n");
+  die("Please define page's TITLE.\n");
 }
 
 function PageDescription() {
