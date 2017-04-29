@@ -9,19 +9,19 @@ class StringsTest extends TestCase {
 
 const ORIGINAL = <<<EOD
 <a href="#href1" id="1">
-  <img src="images/test.jpg">
+  <img src="pics/test.jpg">
 </a>
 EOD;
 
 const WHOLE_MATCH_result = <<<EOD
 <a href="replaced" id="1">
-  <img src="images/test.jpg">
+  <img src="pics/test.jpg">
 </a>
 EOD;
 
 const SRC_AND_HREF_result = <<<EOD
 <a href="http://localhost/#href1" id="1">
-  <img src="http://localhost/images/test.jpg">
+  <img src="http://localhost/pics/test.jpg">
 </a>
 EOD;
 
