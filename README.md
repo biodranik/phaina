@@ -2,10 +2,10 @@
 
 The main idea is to have very simple but flexible development workflow and deployment strategy:
 
-1. Develop site locally using built-in PHP web server (launch ```watch``` script and go to <http://localhost:8888> in your browser).
-2. Generate static web site content (run ```build``` script) and publish it to [GitHub Pages](https://pages.github.com/) using ```deploy``` script (or use any other static content delivery service if you wish).
+1. Develop site locally using built-in PHP web server (launch `watch` script and go to <http://localhost:8888> in your browser).
+2. Generate static web site content (run `build` script) and publish it to [GitHub Pages](https://pages.github.com/) using `deploy` script (or use any other static content delivery service if you wish).
 3. Deploy PHP site as is and use it with Nginx, Apache or any other web server which works with PHP.
-4. SCSS support is also included (```watch``` script automatically rebuilds your CSS from SCSS after any changes).
+4. SCSS support is also included (`watch` script automatically rebuilds your CSS from SCSS after any changes).
 5. Multiple languages are supported, see [strings.json](./strings.json).
 
 ## Why Phaina?
@@ -70,7 +70,7 @@ For more complex example with several sections and different layouts of each sec
 
 ### Requirements
 *PHP* should be installed and available in the PATH.
-- Optional *git* in the PATH is used by ```deploy``` script.
+- Optional *git* in the PATH is used by `deploy` script.
 - Optional [sassc](https://github.com/sass/sassc) to compile SCSS files into CSS and [fswatch](http://emcrisostomo.github.io/fswatch/) to monitor SCSS modifications and launch ```sassc``` compiler when necessary.
 
 #### Installation: Mac OS X
@@ -108,7 +108,7 @@ All [PHPUnit](https://phpunit.de/) tests are located in the [tests](./tests) dir
 ### Under the hood
 Proposed workflow uses gh-pages branch in the same repository to serve static pages.
 
-Alternative approach is to use *docs* directory from the *master* branch to publish web site. To do that you need to remove *docs* directory from *.gitignore* and change your GitHub Pages repository settings (and modify ```deploy``` script).
+Alternative approach is to use *docs* directory from the *master* branch to publish web site. To do that you need to remove *docs* directory from *.gitignore* and change your GitHub Pages repository settings (and modify `deploy` script).
 
 #### Manual initialization of gh-pages branch
 You need to create a copy of the same repository (but with gh-pages branch instead of master) in the docs directory:
@@ -127,7 +127,7 @@ git branch -d master
 
 #### Generate static pages
 To generate static pages in the docs directory:
-```$ php generate.php www docs``` or better launch ```build``` script which also rebuilds CSS file from SCSS.
+```$ php generate.php www docs``` or better launch `build` script which also rebuilds CSS file from SCSS.
 
 #### Clean up Google Docs html
 There is an utility script in [tools/fix_google_doc.php](./tools/fix_google_doc.php) which cleans HTML exported from Google Docs and prepares it for publishing.
