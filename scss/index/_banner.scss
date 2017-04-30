@@ -22,6 +22,7 @@
   color: $whiteColor;
   display: inline-block;
   text-decoration: none;
+  border: 1px solid $linkColor;
 
   &:hover {
     background-color: $whiteColor;

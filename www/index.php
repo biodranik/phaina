@@ -106,6 +106,12 @@ $solutionSectionItems = [[
     </div>
   </section>
 
+  <section class="preface">
+    <a class="action-button" href="<?= URL('technology.php') ?>">
+      <?= T('bottomIndexTechButton') ?>
+    </a>
+  </section>
+
 </main>
 
 <?php HTML_FOOTER(); ?>
