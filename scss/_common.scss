@@ -44,7 +44,7 @@ h1 {
   margin: 1rem;
 
    @include phablet {
-      font-size: 2 * $baseFontSize;
+      font-size: 1.8 * $baseFontSize;
   }
 }
 
