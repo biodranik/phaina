@@ -28,12 +28,12 @@ function URL($link) {
   $optionalSlash = IsLocalhostDevelopmentMode() ? '' : '/';
   // Extract page link directly from the page's file.
   if (EndsWith($link, '.php'))
-    return BaseURL() . ExtractLinkFromPage($link) . $optionalSlash;
+    return JoinIRI(BaseURL(), ExtractLinkFromPage($link)) . $optionalSlash;
   // Correctly replace relative links with absolute ones.
   if ($link[0] == '#')
-    return BaseURL() . PageLink() . $optionalSlash . $link;
+    return JoinIRI(BaseURL(), PageLink()) . $optionalSlash . $link;
 
-  return BaseURL() . $link;
+  return JoinIRI(BaseURL(), $link);
 }
 
 function HTML_HEAD() {
