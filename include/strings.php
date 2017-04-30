@@ -19,7 +19,6 @@ function EndsWith($haystack, $needle) {
 // Matches are not filtered if $filterFn is `true`.
 // Returns number of replaced matches or 0 if nothing was changed.
 // NOTE: Works with zero or one matching group.
-// TODO: Use matches[0] for final replacements when using matching group to avoid incorrect replaces.
 function ReplacePattern($regexPatternWithOneGroup, &$subject, $mapFn, $filterFn = true) {
   if (false === preg_match_all($regexPatternWithOneGroup, $subject, $matches))
     die("ERROR: invalid pattern `$regexPatternWithOneGroup`\n");
@@ -37,6 +36,15 @@ function ReplacePattern($regexPatternWithOneGroup, &$subject, $mapFn, $filterFn 
     $values = array_filter($values, $filterFn);
 
   $mapped = array_map($mapFn, $values);
+
+  // Use matches[0] for final replacements when using matching group to avoid incorrect replaces.
+  if (count($matches) >= 2) {
+    foreach ($mapped as $key => $value) {
+      $mapped[$key] = str_replace($values[$key], $mapped[$key], $matches[0][$key]);
+      $newValues[$key] = $matches[0][$key];
+    }
+    $values = $newValues;
+  }
 
   $subject = str_replace($values, $mapped, $subject, $replacementsCount);
   return $replacementsCount;
