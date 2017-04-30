@@ -2,11 +2,16 @@
 require_once('strings.php');
 
 // TODO(AlexZ): Rename to JoinPath and refactor to join any files and directories combinations.
-function FullPathTo($outDir, $objectName) {
-  if (EndsWith($outDir, DIRECTORY_SEPARATOR))
-    return $outDir . $objectName;
-
-  return $outDir . DIRECTORY_SEPARATOR . $objectName;
+function FullPathTo($outDir, $objectName, $separator = DIRECTORY_SEPARATOR) {
+  if (EndsWith($outDir, $separator)) {
+    if (StartsWith($objectName, $separator))
+      return $outDir . $objectName.substr(1);   // 'path/', '/to'
+    return $outDir . $objectName;               // 'path/', 'to'
+  } else {
+    if (StartsWith($objectName, $separator))
+      return $outDir . $objectName;             // 'path', '/to'
+    return $outDir . $separator . $objectName;  // 'path', 'to'
+  }
 }
 
 function DirectoryCopy($src, $dst) {
