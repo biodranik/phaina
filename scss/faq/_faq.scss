@@ -1,38 +1,6 @@
-.faq__content {
-  @include hyphens-justify;
-
-  h1 {
-    @include phablet {
-      font-size: 2rem;
-    }
-  }
-
+.content__faq {
   h2 {
-    margin: 2rem 0;
     border-top: 2px solid #eee;
     padding-top: 2rem;
-    text-indent: 2rem;
-  }
-
-  h3 {
-    margin-bottom: 0.5rem;
-    text-indent: 2rem;
-  }
-
-  p {
-    margin-bottom: 0.5rem;
-    text-indent: 2rem;
-  }
-
-  ul {
-    margin-bottom: 1rem;
-
-    @include phablet {
-      padding-left: 1rem;
-    }
-  }
-
-  img {
-    max-width: 100%;
   }
 }

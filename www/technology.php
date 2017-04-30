@@ -14,7 +14,7 @@ HTML_HEAD();
 <main role="main">
   <section class="section technology">
     <h1><?= T('titleTechnologyPage') ?></h1>
-    <div class="technology__content">
+    <div class="content content__technology">
       <?php IncludeContent('technology') ?>
     </div>
   </section>

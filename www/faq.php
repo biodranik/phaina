@@ -17,7 +17,7 @@ HTML_HEAD();
   <section class="section">
     <h1><?= T('faqTitle') ?></h1>
     <p class="preface"><?= T('faqPreface') ?></p>
-    <div class="faq__content">
+    <div class="content content__faq">
       <?php IncludeContent('faq') ?>
     </div>
   </section>
