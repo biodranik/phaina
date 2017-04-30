@@ -20,10 +20,19 @@ function BaseURL() {
 
 // $link can be any absolute link without leading slash or .php page name.
 function URL($link) {
+  // Root/home/index page.
+  if (empty($link) or $link == '/')
+    return BaseURL();
+  // Generated pages should use directory/index.html structure.
+  // Guthub Pages require '/' at the end of IRI.
+  $optionalSlash = IsLocalhostDevelopmentMode() ? '' : '/';
+  // Extract page link directly from the page's file.
   if (EndsWith($link, '.php'))
-    return BaseURL() . ExtractLinkFromPage($link);
-  if (!empty($link) and $link[0] == '#')
-    return BaseURL() . PageLink() . $link;
+    return BaseURL() . ExtractLinkFromPage($link) . $optionalSlash;
+  // Correctly replace relative links with absolute ones.
+  if ($link[0] == '#')
+    return BaseURL() . PageLink() . $optionalSlash . $link;
+
   return BaseURL() . $link;
 }
 
@@ -77,6 +86,8 @@ function IncludeContent($baseName) {
   $html = ob_get_clean();
 
   // Fix relative links.
+  // TODO: Fix all relative links automatically everywhere, not only in the included content
+  // to make URL() calls unnecessary.
   ReplacePattern('/ (?:src|href)=[\'"]?([^\'" >]+)/', $html, 'URL', 'IsRelativeIRI');
   echo $html;
 }
