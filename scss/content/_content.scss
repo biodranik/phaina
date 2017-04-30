@@ -1,0 +1,38 @@
+.content {
+  @include hyphens-justify;
+
+  h2 {
+    margin: 2rem 0;
+    text-indent: 2rem;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    text-indent: 2rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+    text-indent: 2rem;
+  }
+
+  ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+
+    @include phablet {
+      padding-left: 1rem;
+    }
+  }
+
+  img {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 90%;
+    max-height: 80vh;
+    min-height: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}

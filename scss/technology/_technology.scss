@@ -1,50 +1,16 @@
-.technology {
-  font-family: 'Trebuchet MS', 'Helvetica', 'Arial Unicode MS', 'Arial';
-  font-weight: normal;
-}
-
-.technology__content {
-  p {
-    @include hyphens-justify;
-    margin-bottom: 0.3rem;
-    text-indent: 1.5rem;
-  }
+.content__technology {
   td p {
     text-indent: 0;
     text-align: left;
   }
-  ul {
-    margin-bottom: 0.3rem;
-    padding-left: 1.5rem;
-  }
-  h1 {
-    @include phablet {
-      font-size: 2rem;
-    }
-  }
-  h2 {
-    @include hyphens-justify;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  img {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    max-width: 100%;
-    max-height: 80vh;
-    min-height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
+
   table {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 1px solid $tableRowColor;
     border-collapse: collapse;
   }
+
   tbody tr:nth-child(odd) {
     background-color: $tableRowColor;
   }
