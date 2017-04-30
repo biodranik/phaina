@@ -14,6 +14,8 @@ function FullPathTo($outDir, $objectName, $separator = DIRECTORY_SEPARATOR) {
   }
 }
 
+function JoinIRI($pathLeft, $pathRight) { return FullPathTo($pathLeft, $pathRight, '/'); }
+
 function DirectoryCopy($src, $dst) {
   $dir = opendir($src);
   if (!file_exists($dst) and !is_dir($dst))
