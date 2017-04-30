@@ -11,7 +11,6 @@
 
   &__title {
     color: #6b6e70;
-    font-size: 20px;
     font-weight: 700;
     line-height: 24px;
     padding-bottom: 16px;
@@ -42,7 +41,7 @@
   @media (max-width: 543px) {
     .plus-container {
       padding-top: 52px;
-      
+
       &__item {
         width: 100%;
       }
