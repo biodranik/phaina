@@ -121,5 +121,9 @@
   },
   "systemUReportDescription": {
     "ru": "Результаты работы сервиса достаточны для принятия решений по техническому обслуживанию оборудования и могут быть интегрированы через ERP, MES, CMMS и SCADA системы."
+  },
+  "bottomIndexTechButton": {
+    "en": "The Science behind our technology",
+    "ru": "Как именно работает VibroBox?"
   }
 }
