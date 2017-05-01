@@ -26,6 +26,12 @@ $smartphoneWidth:       425px;
   }
 }
 
+@mixin notPhablet {
+  @media (min-width: #{$phabletWidth} + 1) {
+    @content;
+  }
+}
+
 @mixin hyphens-justify {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;

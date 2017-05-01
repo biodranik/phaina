@@ -3,11 +3,9 @@
 .title-index {
   &__main {
     margin-top: 2rem;
-    font-size: 3 * $baseFontSize;
     text-transform: uppercase;
 
     @include phablet {
-      font-size: 1.6 * $baseFontSize;
       max-width: 460px;
       margin: 0 auto;
     }

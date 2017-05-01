@@ -1,22 +1,35 @@
-$contentTextIndent: 2rem;
-
 .content {
-  @include hyphens-justify;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+
+  @include notSmartphone {
+    @include hyphens-justify;
+  }
 
   h2 {
     margin: 2rem 0;
-    text-indent: $contentTextIndent;
+    text-align: center;
+    @include phablet {
+      text-align: left;
+    }
   }
 
   h3 {
     margin-bottom: 0.5rem;
     margin-top: 1rem;
-    text-indent: $contentTextIndent;
+    text-align: center;
+    @include phablet {
+      text-align: left;
+    }
   }
 
   p {
     margin-bottom: 0.5rem;
-    text-indent: $contentTextIndent;
+    text-indent: 2rem;
+    @include phablet {
+      text-indent: 0;
+      text-align: left;
+    }
   }
 
   ul, ol {
@@ -29,10 +42,13 @@ $contentTextIndent: 2rem;
   }
 
   img {
-    max-width: 90%;
-    max-height: 80vh;
-    min-height: 100%;
-    margin: 0.5rem auto;
-    display: block;
+    @include notPhablet {
+      max-width: 60vw;
+      height: auto;
+    }
+    @include phablet {
+      width: 100%;
+      height: auto;
+    }
   }
 }
