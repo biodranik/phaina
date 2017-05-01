@@ -3,6 +3,15 @@
     "en":"Contact Us",
     "ru":"Наши контакты"
   },
+  "metaDescriptionContactPage":{
+    "en":"Our HQ is in Tallin, Estonia. Development and scientific team is located in Minsk, Belarus. We respond to every email.",
+    "ru":"Наш главный офис в Таллине, разработка и исследования ведутся в Минске. Пишите на почту, мы отвечаем на каждое письмо."
+  },
+  "metaKeywordsContactPage":{
+    "en":"contact, us, address, hq, office, development, location, Minsk, Belarus, Tallinn",
+    "ru":"контакты, адрес, адреса, офис, разработка, где находится, Минск, Беларусь, Таллин"
+  },
+
   "menuContactPage":{
     "en":"Contact",
     "ru":"Контакты"
