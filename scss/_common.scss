@@ -1,5 +1,5 @@
 
-/* Apply a natural box layout model to all elements, but allowing components to change. */
+// Apply a natural box layout model to all elements, but allowing components to change.
 html {
   box-sizing: border-box;
   height: 100%;
@@ -7,12 +7,14 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
+  // Fixes disables automatic portrait -> landscape font zoom.
+  -webkit-text-size-adjust: 100%;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
 }
-/* Special exception to images to avoid unnecessary resizing when they have a border. */
+// Special exception to images to avoid unnecessary resizing when they have a border.
 img { box-sizing: content-box; }
 
 body {
