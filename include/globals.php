@@ -4,14 +4,14 @@ require_once('page_params.php');
 require_once('translations.php');
 
 // Returns true if site is running on localhost.
-function IsLocalhostDevelopmentMode() {
-  return array_key_exists('REMOTE_ADDR', $_SERVER) and ($_SERVER['REMOTE_ADDR'] == '127.0.0.1'
-      or $_SERVER['REMOTE_ADDR'] == '::1');
+function IsDevelopmentMode() {
+  return array_key_exists('SERVER_SOFTWARE', $_SERVER) and
+      1 === preg_match('/PHP.+Development Server/', $_SERVER['SERVER_SOFTWARE']);
 }
 
 function BaseURL() {
   // Replace BaseURL when developing on localhost.
-  if (IsLocalhostDevelopmentMode()) {
+  if (IsDevelopmentMode()) {
     $scheme = (isset($_SERVER['HTTPS']) and !empty($_SERVER['HTTPS'])) ? 'https' : 'http';
     return "${scheme}://${_SERVER['HTTP_HOST']}/";
   }
@@ -27,7 +27,7 @@ function URL($link) {
     return BaseURL();
   // Generated pages should use directory/index.html structure.
   // Github Pages require '/' at the end of IRI.
-  $optionalSlash = IsLocalhostDevelopmentMode() ? '' : '/';
+  $optionalSlash = IsDevelopmentMode() ? '' : '/';
   // Extract page link directly from the page's file.
   if (EndsWith($link, '.php'))
     return JoinIRI(BaseURL(), ExtractLinkFromPage($link)) . $optionalSlash;

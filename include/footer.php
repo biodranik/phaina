@@ -20,7 +20,7 @@
 </footer>
 
 <?php // Do not load Google Analytics when developing on a localhost machine.
-if (!IsLocalhostDevelopmentMode()): ?>
+if (!IsDevelopmentMode()): ?>
 <script>
 (function(i, s, o, g, r, a, m) {
   i['GoogleAnalyticsObject'] = r;
