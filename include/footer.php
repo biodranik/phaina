@@ -5,6 +5,13 @@
       <a class="footer__link" href="<?= $m->url ?>"><?= $m->title ?></a>
     </li>
     <?php endforeach; ?>
+    <?php foreach (GetCurrentPageTranslations() as $key => $t) : ?>
+    <li class="footer__nav-item">
+      <a class="footer__link" hreflang="<?= $key ?>" href="<?= $t['url'] ?>" rel="alternate">
+        <?= $t['title'] ?>
+      </a>
+    </li>
+    <?php endforeach; ?>
     <li class="footer__nav-item footer__nav-item--login">
       <a class="footer__link footer__link--login" href="<?= DEMO_URL ?>"><?= T('loginButton') ?></a>
     </li>
