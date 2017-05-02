@@ -11,6 +11,13 @@
       <a class="menu__link<?php if ($m->isCurrent) echo ' menu__link--selected'?>" href="<?= $m->url ?>"><?= $m->title ?></a>
     </li>
     <?php endforeach; ?>
+    <?php foreach (GetCurrentPageTranslations() as $key => $t) : ?>
+    <li class="menu__item">
+      <a class="menu__link" hreflang="<?= $key ?>" href="<?= $t['url'] ?>" rel="alternate">
+        <?= $t['title'] ?>
+      </a>
+    </li>
+    <?php endforeach; ?>
     <li class="menu__item menu__item--login">
       <a class="menu__link menu__link--login" href="<?= DEMO_URL ?>"><?= T('loginButton') ?></a>
     </li>

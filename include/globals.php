@@ -15,7 +15,9 @@ function BaseURL() {
     $scheme = (isset($_SERVER['HTTPS']) and !empty($_SERVER['HTTPS'])) ? 'https' : 'http';
     return "${scheme}://${_SERVER['HTTP_HOST']}/";
   }
-  return BASE_URL;
+
+  // Get base url from list of available translations.
+  return LANG_SITES[LANG];
 }
 
 // $link can be any absolute link without leading slash or .php page name.
@@ -24,7 +26,7 @@ function URL($link) {
   if (empty($link) or $link == '/')
     return BaseURL();
   // Generated pages should use directory/index.html structure.
-  // Guthub Pages require '/' at the end of IRI.
+  // Github Pages require '/' at the end of IRI.
   $optionalSlash = IsLocalhostDevelopmentMode() ? '' : '/';
   // Extract page link directly from the page's file.
   if (EndsWith($link, '.php'))
@@ -90,5 +92,16 @@ function IncludeContent($baseName) {
   // to make URL() calls unnecessary.
   ReplacePattern('/ (?:src|href)=[\'"]?([^\'" >]+)/', $html, 'URL', 'IsRelativeIRI');
   echo $html;
+}
+
+function GetCurrentPageTranslations() {
+  $translations = [];
+  foreach(LANG_SITES as $key=>$url) {
+    if (LANG !== $key) {
+      $translations[$key] = ['url' => JoinIRI($url, PageLink()), 'title' => T('language', $key)];
+    }
+  }
+
+  return $translations;
 }
 ?>

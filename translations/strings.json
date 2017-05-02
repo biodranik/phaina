@@ -125,5 +125,9 @@
   "bottomIndexTechButton": {
     "en": "The Science behind our technology",
     "ru": "Как именно работает VibroBox?"
+  },
+  "language": {
+    "en": "English",
+    "ru": "Русский"
   }
 }
