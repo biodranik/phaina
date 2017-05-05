@@ -36,9 +36,6 @@ $count = FixImages($doc);
 if ($count)
   echo "* Fixed $count images.\n\n";
 
-foreach (DowngradeHeadings($doc) as $result)
-  echo $result;
-
 // Fix google links and remove document comments, should be done on complete <html><head><body> doc.
 echo "* Removing intermediate google redirect for all external links and strip comments...\n";
 $count = 0;
@@ -164,17 +161,6 @@ function ImgToFigures(&$html) {
     $results[] = "* Created $count <figcaption> from <p> following <figure>.\n";
 
   $html = $fixed;
-  return $results;
-}
-
-// Replaces <h1> with <h2>, <h2> with <h3> etc.
-// NOTE: It should not be necessary if original document is made in a right way.
-function DowngradeHeadings(&$domDocument) {
-  foreach (['h5'=>'h6', 'h4'=>'h5', 'h3'=>'h4', 'h2'=>'h3', 'h1'=>'h2'] as $old => $new) {
-    $count = RenameTags($domDocument, $old, $new);
-    if ($count)
-      $results[] = "* Replaced $count <$old> to <$new>\n";
-  }
   return $results;
 }
 
