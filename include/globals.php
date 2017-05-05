@@ -25,6 +25,9 @@ function URL($link) {
   // Root/home/index page.
   if (empty($link) or $link == '/' or $link == 'index.php')
     return BaseURL();
+  // Ignore full IRIs.
+  if (!IsRelativeIRI($link))
+    return $link;
   // Generated pages should use directory/index.html structure.
   // Github Pages require '/' at the end of IRI.
   $optionalSlash = IsDevelopmentMode() ? '' : '/';
