@@ -42,6 +42,12 @@
   }
 
   img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  figure {
     @include notPhablet {
       max-width: 60vw;
       height: auto;
@@ -49,6 +55,12 @@
     @include phablet {
       width: 100%;
       height: auto;
+      margin: 0;
     }
+  }
+
+  figcaption {
+    text-align: center;
+    font-style: italic;
   }
 }

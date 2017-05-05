@@ -3,6 +3,10 @@
 include(dirname(__FILE__).'/../include/strings.php');
 include('IRI.php');
 
+// Check if script is included by unit tests.
+if (!isset($argv))
+  return;
+
 if (count($argv) < 3) {
   echo "This script cleans up and fixes html document exported from Google Docs.\n";
   echo "NOTE: you should have tidy-html5 installed in your PATH.\n";
@@ -28,15 +32,12 @@ $doc = new DOMDocument();
 $doc->preserveWhiteSpace = false;
 $doc->loadHTML($html);
 
-$count = StripAttributes($doc, 'img', 'style');
+$count = FixImages($doc);
 if ($count)
-  echo "* Stripped $count `style` attributes from `img` tags.\n\n";
+  echo "* Fixed $count images.\n\n";
 
-// In the original GDoc html images are inside <p><span><img></span></p>.
-ReplaceParentByChild($doc, 'span', 'img');
-$count = ReplaceParentByChild($doc, 'p', 'img');
-if ($count)
-  echo "* $count replacements of <p><img></p> to <img>.\n\n";
+foreach (DowngradeHeadings($doc) as $result)
+  echo $result;
 
 // Fix google links and remove document comments, should be done on complete <html><head><body> doc.
 echo "* Removing intermediate google redirect for all external links and strip comments...\n";
@@ -100,9 +101,11 @@ $html = preg_replace('| (&nbsp;)\1*<a href=".*">[0-9]+</a>|', '', $html, -1, $co
 if ($count)
   echo "* Removed $count references to pages from contents.\n\n";
 
-foreach(ImprovePunctuation($html) as $result) {
+foreach (ImprovePunctuation($html) as $result)
   echo $result;
-}
+
+foreach (ImgToFigures($html) as $result)
+  echo $result;
 
 if (false === file_put_contents($argv[2], $html))
   echo "ERROR while saving processed html to ${argv[2]}\n";
@@ -116,7 +119,6 @@ function ReplaceInvalidNbsp(&$html) {
 
 // Replaces space with &nbsp; before em dash.
 function ImprovePunctuation(&$html) {
-  $results = [];
   // Use UTF-8 em dash.
   $html = str_ireplace('&mdash;', '—', $html, $count);
   if ($count)
@@ -132,17 +134,69 @@ function ImprovePunctuation(&$html) {
   return $results;
 }
 
-function ReplaceParentByChild(&$domDocument, $parentTag, $childTag) {
-  $replacedCount = 0;
-  foreach ($domDocument->getElementsByTagName($childTag) as $ct) {
-    $p = $ct->parentNode;
-    if ($p->nodeName == $parentTag) {
-      $gp = $p->parentNode;
-      $gp->replaceChild($p->removeChild($ct), $p);
-      ++$replacedCount;
+function FixImages(&$domDocument) {
+  // Remove hardcoded css styles for each <img> tag.
+  $count = StripAttributes($domDocument, 'img', 'style');
+  if ($count)
+    echo "* Stripped $count `style` attributes from <img> tags.\n";
+
+  // Copy <img> `title` attribute to the `alt` attribute if it is empty.
+  foreach ($domDocument->getElementsByTagName('img') as $img) {
+    if (empty($img->getAttribute('alt'))) {
+      $img->setAttribute('alt', $img->getAttribute('title'));
     }
   }
-  return $replacedCount;
+}
+
+function ImgToFigures(&$html) {
+  // Change <p> to <figure> for <img> tags.
+  $fixed = preg_replace('|<p><img (.+)></p>|U', '<figure><img $1></figure>', $html, -1, $count);
+  if ($count == 0)
+    return [];
+  $results[] = "* Converted $count <img> to <figure>.\n";
+
+  // Replaces <figure><img></figure><p>Image Caption</p>
+  // to <figure><img><figcaption>Image Caption</figcaption></figure>
+  // NOTE: The code below is useful only if after every image there is a paragraph describing it.
+  // NOTE: `s` (PCRE_DOTALL) modifier should be added to match \n with a dot.
+  $fixed = preg_replace('|</figure>\s*<p>(.+)</p>|Us', '<figcaption>$1</figcaption></figure>', $fixed, -1, $count);
+  if ($count)
+    $results[] = "* Created $count <figcaption> from <p> following <figure>.\n";
+
+  $html = $fixed;
+  return $results;
+}
+
+// Replaces <h1> with <h2>, <h2> with <h3> etc.
+// NOTE: It should not be necessary if original document is made in a right way.
+function DowngradeHeadings(&$domDocument) {
+  foreach (['h5'=>'h6', 'h4'=>'h5', 'h3'=>'h4', 'h2'=>'h3', 'h1'=>'h2'] as $old => $new) {
+    $count = RenameTags($domDocument, $old, $new);
+    if ($count)
+      $results[] = "* Replaced $count <$old> to <$new>\n";
+  }
+  return $results;
+}
+
+function RenameTags(&$domDocument, $tag, $newTagName) {
+  $count = 0;
+  $tagsToRename = $domDocument->getElementsByTagName($tag);
+  while ($tagsToRename->length) {
+    $old = $tagsToRename->item(0);
+    $new = $domDocument->createElement($newTagName);
+
+    while ($old->hasChildNodes()) {
+      $child = $old->childNodes->item(0);
+      $child = $domDocument->importNode($child, true);
+      $new->appendChild($child);
+    }
+    foreach ($old->attributes as $attr)
+      $new->setAttribute($attr->nodeName, $attr->nodeValue);
+
+    $old->parentNode->replaceChild($new, $old);
+    ++$count;
+  }
+  return $count;
 }
 
 function StripAttributes(&$domDocument, $tags, $attributes) {

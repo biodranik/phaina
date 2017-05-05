@@ -21,13 +21,13 @@ $smartphoneWidth:       425px;
 }
 
 @mixin notSmartphone {
-  @media (min-width: #{$smartphoneWidth} + 1) {
+  @media (min-width: #{$smartphoneWidth + 1}) {
     @content;
   }
 }
 
 @mixin notPhablet {
-  @media (min-width: #{$phabletWidth} + 1) {
+  @media (min-width: #{$phabletWidth + 1}) {
     @content;
   }
 }

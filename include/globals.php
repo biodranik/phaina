@@ -23,7 +23,7 @@ function BaseURL() {
 // $link can be any absolute link without leading slash or .php page name.
 function URL($link) {
   // Root/home/index page.
-  if (empty($link) or $link == '/')
+  if (empty($link) or $link == '/' or $link == 'index.php')
     return BaseURL();
   // Generated pages should use directory/index.html structure.
   // Github Pages require '/' at the end of IRI.
