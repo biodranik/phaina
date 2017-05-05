@@ -19,7 +19,7 @@
     "ru": "Главная"
   },
   "titleIndexPage":{
-    "comment": "Main site page title. Google displays first 70 chars in search results (Yandex - 60). VERY important.",
+    "comment": "Main site page title. Google displays first 70 chars in search results (Yandex - 60, FB - 135). VERY important.",
     "en":"VibroBox: Automatic vibration diagnostics and condition monitoring for industrial equipment.",
     "ru":"VibroBox — вибрационная диагностика и мониторинг состояния оборудования. Полностью автоматические рекомендации по техническому обслуживанию механизмов на основе анализа вибрации и кинематической схемы."
   },
