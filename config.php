@@ -11,7 +11,7 @@ define('LANG', 'ru');
 // Url for current active language will be treated as base url.
 define('LANG_SITES', [
 //  'en' => 'https://www.vibrobox.com/',
-  'ru' => 'https://deathbaba.github.io/phaina/']);
+  'ru' => 'https://www.vibrobox.ru/']);
 define('DEMO_URL', 'https://www.demo.vibrobox.com/demo');
 define('GOOGLE_ANALYTICS_ID', 'UA-79782596-1');
 
