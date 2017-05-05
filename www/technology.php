@@ -1,8 +1,13 @@
 <?php
+require_once(dirname(__FILE__).'/../config.php');
 // Page properties.
 define('TITLE', 'titleTechnologyPage');
 define('FILE', __FILE__);
-require_once(dirname(__FILE__).'/../config.php');
+define('META', [
+  ['property' => 'og:image', 'content' => URL('img/meta/Algorithms_Scheme.jpg')],
+  ['property' => 'og:image:width', 'content' => '1200'],
+  ['property' => 'og:image:height', 'content' => '627'],
+]);
 
 HTML_HEAD();
 ?>

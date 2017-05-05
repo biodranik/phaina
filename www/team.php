@@ -1,11 +1,11 @@
 <?php
+require_once(dirname(__FILE__).'/../config.php');
 // Page properties.
 define('TITLE', 'titleTeamPage');
 define('DESCRIPTION', 'metaDescriptionTeamPage');
 define('KEYWORDS', 'metaKeywordsTeamPage');
 define('FILE', __FILE__);
 
-require_once(dirname(__FILE__).'/../config.php');
 HTML_HEAD();
 
 $team = [[

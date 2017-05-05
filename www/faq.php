@@ -1,11 +1,16 @@
 <?php
+require_once(dirname(__FILE__).'/../config.php');
 // Page properties.
 define('TITLE', 'titleFaqPage');
 define('DESCRIPTION', 'metaDescriptionFaqPage');
 define('KEYWORDS', 'metaKeywordsFaqPage');
 define('FILE', __FILE__);
+define('META', [
+  ['property' => 'og:image', 'content' => URL('img/meta/Diagnostics_Report_Example.png')],
+  ['property' => 'og:image:width', 'content' => '1200'],
+  ['property' => 'og:image:height', 'content' => '600'],
+]);
 
-require_once(dirname(__FILE__).'/../config.php');
 HTML_HEAD();
 ?>
 
