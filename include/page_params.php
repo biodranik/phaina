@@ -76,4 +76,10 @@ function PageJS() {
   return [JS];
 }
 
+function PageCustomMeta() {
+  if (!defined('META'))
+    return [];
+  return META;
+}
+
 ?>

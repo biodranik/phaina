@@ -13,6 +13,11 @@ require(dirname(__FILE__).'/../include/uri_routing.php');
 // Page properties in the index file should be after the routing.
 define('TITLE', 'titleIndexPage');
 define('FILE', __FILE__);
+define('META', [
+  ['property' => 'og:image', 'content' => URL('img/meta/VibroBox_and_vibration_sensor.jpg')],
+  ['property' => 'og:image:width', 'content' => '1200'],
+  ['property' => 'og:image:height', 'content' => '700'],
+]);
 
 HTML_HEAD();
 

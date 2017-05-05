@@ -9,6 +9,10 @@
   <meta name="description" content="<?= PageDescription() ?>">
   <meta name="keywords" content="<?= PageKeywords() ?>">
 
+  <?php foreach (PageCustomMeta() as $meta) : ?>
+  <meta <?php foreach ($meta as $attr => $val) echo "$attr=\"$val\" "; ?>>
+  <?php endforeach; ?>
+
   <link rel="icon" type="image/x-icon" href="<?= URL('favicon.ico') ?>?">
   <link rel="stylesheet" type="text/css" href="<?= URL('css/style.css') ?>">
   <!-- TODO: Generate hreflang links for every language. -->
