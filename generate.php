@@ -89,17 +89,7 @@ function Generate($inDir, $outDir) {
     }
     if (IsPhp($fileName)) {
       // Remove .php extension.
-      $outPath = substr($outPath, 0, -strlen(kPhpExtension));
-      // Special cases:
-      // - index page does not need a directory
-      // - optional custom 404 page generates 404.html in the root directory.
-      if ($fileName == kIndex or $fileName == k404) {
-        $outPath .= ".html";
-      } else {
-        // Create directory with index.html inside.
-        mkdir($outPath, kNewDirPermissions);
-        $outPath = FullPathTo($outPath, "index.html");
-      }
+      $outPath = substr($outPath, 0, -strlen(kPhpExtension)) . ".html";
       // TODO: Handle errors.
       file_put_contents($outPath, HtmlFromPhp($fileInfo));
       print("+ ".$outPath."\n");
