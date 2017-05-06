@@ -28,15 +28,12 @@ function URL($link) {
   // Ignore full IRIs.
   if (!IsRelativeIRI($link))
     return $link;
-  // Generated pages should use directory/index.html structure.
-  // Github Pages require '/' at the end of IRI.
-  $optionalSlash = IsDevelopmentMode() ? '' : '/';
   // Extract page link directly from the page's file.
   if (EndsWith($link, '.php'))
-    return JoinIRI(BaseURL(), ExtractLinkFromPage($link)) . $optionalSlash;
+    return JoinIRI(BaseURL(), ExtractLinkFromPage($link));
   // Correctly replace relative links with absolute ones.
   if ($link[0] == '#')
-    return JoinIRI(BaseURL(), PageLink()) . $optionalSlash . $link;
+    return JoinIRI(BaseURL(), PageLink()) . $link;
 
   return JoinIRI(BaseURL(), $link);
 }
