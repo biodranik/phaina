@@ -49,24 +49,25 @@ function RemoveFilesAndSubdirs($dir, $excludeDirs = array(".git")) {
   }
 }
 
+// $phpFiles is an array of filename => full/file/path/filename.
 function BuildSiteMapXml($phpFiles) {
   $siteMap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
-  foreach($phpFiles as $file) {
+  foreach ($phpFiles as $file => $fullPath) {
     // Ignore special 404.php page.
     if (EndsWith($file, k404))
       continue;
-    $siteMap = $siteMap.'<url><loc>'.URL($file).'</loc></url>';
+    $url = URL($file);
+    // TODO: Lastmod should take into an account the modified date of page's included content.
+    $lastmod = date(DATE_W3C, filemtime($fullPath));
+    $siteMap = "$siteMap\n<url>\n  <loc>$url</loc>\n  <lastmod>$lastmod</lastmod>\n</url>";
   }
 
-  $siteMap = $siteMap.'</urlset>';
-
-  return $siteMap;
+  return "$siteMap\n</urlset>";
 }
 
 function Generate($inDir, $outDir) {
   $staticFilesCopied = 0;
-  $processedPhpFiles = [];
 
   if (file_exists($outDir))
     RemoveFilesAndSubdirs($outDir);
@@ -93,7 +94,7 @@ function Generate($inDir, $outDir) {
       // TODO: Handle errors.
       file_put_contents($outPath, HtmlFromPhp($fileInfo));
       print("+ ".$outPath."\n");
-      $processedPhpFiles[] = $fileName;
+      $processedPhpFiles[$fileName] = $fileInfo;
     }
     else {
       copy($fileInfo, $outPath);
