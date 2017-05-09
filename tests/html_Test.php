@@ -1,6 +1,6 @@
 <?php
 
-include dirname(__FILE__).'/../tools/fix_google_doc.php';
+include_once dirname(__FILE__).'/../tools/fix_google_doc.php';
 
 use PHPUnit\Framework\TestCase;
 

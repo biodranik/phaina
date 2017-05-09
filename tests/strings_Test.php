@@ -1,6 +1,6 @@
 <?php
 
-include dirname(__FILE__).'/../include/strings.php';
+include_once dirname(__FILE__).'/../include/strings.php';
 
 use PHPUnit\Framework\TestCase;
 
