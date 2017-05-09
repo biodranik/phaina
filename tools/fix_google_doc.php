@@ -36,40 +36,10 @@ $count = FixImages($doc);
 if ($count)
   echo "* Fixed $count images.\n\n";
 
-// Fix google links and remove document comments, should be done on complete <html><head><body> doc.
-echo "* Removing intermediate google redirect for all external links and strip comments...\n";
-$count = 0;
-$nodesToRemove = array();
-foreach ($doc->getElementsByTagName('a') as $a) {
-  $href = $a->getAttribute('href');
-  // Some <a> from google gocs can have only id attributes.
-  if (empty($href))
-    continue;
-  // Fix google redirects.
-  if (0 === strpos($href, 'https://www.google.com/url?q=')) {
-    $query = parse_url($href, PHP_URL_QUERY);
-    parse_str($query, $query);
-    $a->setAttribute('href', $query['q']);
-    $a->setAttribute('target', '_blank');
-    ++$count;
-  } else if (0 === strpos($href, '#cmnt_ref')) {
-    // Strip comments <div><p><a>.
-    $nodesToRemove[] = $a->parentNode->parentNode;
-  } else if (0 === strpos($href, '#cmnt')) {
-    // Strip references to comments <sup><a>.
-    $nodesToRemove[] = $a->parentNode;
-  }
-}
-// Remove nodes in the separate foreach to avoid undefined behavior if we do it in above foreach.
-foreach ($nodesToRemove as $node)
-  $node->parentNode->removeChild($node);
-$commentsAndRefs = count($nodesToRemove);
-if ($count or $commentsAndRefs) {
-  $html = $doc->SaveHTML();
-  echo "* Done (replaced $count links, removed $commentsAndRefs comments and references)\n\n";
-} else {
-  echo "* Done (no changes have been made).\n\n";
-}
+foreach (StripCommentsAndFixLinks($doc) as $result)
+  echo $result;
+
+$html = $doc->SaveHTML();
 
 // Further document cleanup and extraction of <body>'s content.
 echo "* Launching tidy-html5 again to do all the dirty work...\n";
@@ -143,6 +113,42 @@ function FixImages(&$domDocument) {
       $img->setAttribute('alt', $img->getAttribute('title'));
     }
   }
+}
+
+function StripCommentsAndFixLinks(&$domDocument) {
+  $redirects = 0;
+  $nodesToRemove = array();
+  foreach ($domDocument->getElementsByTagName('a') as $a) {
+    $href = $a->getAttribute('href');
+    // Some <a> from google gocs can have only id attributes.
+    if (empty($href))
+      continue;
+    // Fix google redirects.
+    if (0 === strpos($href, 'https://www.google.com/url?q=')) {
+      $query = parse_url($href, PHP_URL_QUERY);
+      parse_str($query, $query);
+      $a->setAttribute('href', $query['q']);
+      $a->setAttribute('target', '_blank');
+      ++$redirects;
+    } else if (0 === strpos($href, '#cmnt_ref')) {
+      // Strip comments <div><p><a>.
+      $nodesToRemove[] = $a->parentNode->parentNode;
+    } else if (0 === strpos($href, '#cmnt')) {
+      // Strip references to comments <sup><a>.
+      $nodesToRemove[] = $a->parentNode;
+    }
+  }
+  // Remove nodes in the separate foreach to avoid undefined behavior if we do it in above foreach.
+  foreach ($nodesToRemove as $node)
+    $node->parentNode->removeChild($node);
+
+  $results = [];
+  if ($redirects)
+    $results[] = "* $redirects google redirects were fixed.\n";
+  $commentsAndRefs = count($nodesToRemove);
+  if ($commentsAndRefs)
+    $results[] = "* $commentsAndRefs comments and references were removed\n";
+  return $results;
 }
 
 function ImgToFigures(&$html) {
