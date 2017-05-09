@@ -50,4 +50,30 @@ function ReplacePattern($regexPatternWithOneGroup, &$subject, $mapFn, $filterFn 
   return $replacementsCount;
 }
 
+function MakePrettyLink($text) {
+  // Replace/remove leading arabic or roman numerals if they are present:
+  // '1. Text' => 'Text', 'XI Text' => 'Text' etc.
+  $num = strstr($text, ' ', true);
+  if (!empty($num) and
+      false !== mb_eregi('([XVI\.\)]+|[\d\.\)]+)', $num) and
+      strrpos($text, ' ') + 1 < strlen($text))
+    $text = strstr($text, ' ');
+  // Replace em and en dashes with hyphen.
+  $pretty = str_replace(['–', '—'], ['-', '-'], $text);
+  $pretty = mb_ereg_replace('[^\w\-]', '_', $pretty);
+  // Lowercase everything.
+  $pretty = mb_strtolower($pretty);
+  // Merge 2+ sequential underscores to a single underscore.
+  $pretty = mb_ereg_replace('_+', '_', $pretty);
+  // Remove redundant underscores in `_-_`, `_-` or `-_`.
+  $pretty = mb_ereg_replace('_*-_*', '-', $pretty);
+  // Merge 2+ sequential hyphens to a single hyphen.
+  $pretty = mb_ereg_replace('-+', '-', $pretty);
+  $pretty = trim($pretty, '_');
+  // Return `_` if original string did not contain any characters.
+  if (empty($pretty) and !empty($text))
+    return '_';
+  return $pretty;
+}
+
 ?>
