@@ -8,10 +8,13 @@ $contactsBlockMargin: 1rem;
 
 .contacts {
   display: flex;
+  display: -webkit-flex;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
 
   @include notSmartphone {
     justify-content: center;
+    -webkit-justify-content: center;
   }
 }
 

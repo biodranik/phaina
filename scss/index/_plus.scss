@@ -1,8 +1,11 @@
 .plus-container {
   margin-top: 3rem;
   display: flex;
+  display: -webkit-flex;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
 
   &__item {
     width: 23.7%;
