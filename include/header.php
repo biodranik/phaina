@@ -1,9 +1,9 @@
 <header class="header">
   <a href="<?= BaseURL() ?>" class="logo"></a>
 
-  <?php if (count(GetCurrentPageTranslations()) > 0) : ?>
+  <?php if (count(GetPageTranslationsExcludingCurrentLang()) > 0) : ?>
   <ul class="languages">
-    <?php foreach (GetCurrentPageTranslations() as $key => $t) : ?>
+    <?php foreach (GetPageTranslationsExcludingCurrentLang() as $key => $t) : ?>
     <li>
       <a hreflang="<?= $key ?>" href="<?= $t['url'] ?>" rel="alternate">
         <?= $t['title'] ?>
