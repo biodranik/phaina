@@ -94,7 +94,7 @@ function IncludeContent($baseName) {
   echo $html;
 }
 
-function GetCurrentPageTranslations() {
+function GetPageTranslationsExcludingCurrentLang() {
   $translations = [];
   foreach(LANG_SITES as $key=>$url) {
     if (LANG !== $key) {
