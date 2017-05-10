@@ -1,5 +1,7 @@
 <header class="header">
   <a href="<?= BaseURL() ?>" class="logo"></a>
+
+  <?php if (count(GetCurrentPageTranslations()) > 0) : ?>
   <ul class="languages">
     <?php foreach (GetCurrentPageTranslations() as $key => $t) : ?>
     <li>
@@ -9,6 +11,7 @@
     </li>
     <?php endforeach; ?>
   </ul>
+  <?php endif; ?>
 
   <!-- Hidden checkbox is used for pure CSS toggle menu. -->
   <input type="checkbox" id="menu__trigger" class="menu__trigger" />
