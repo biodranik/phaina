@@ -50,6 +50,14 @@ $headerPadding: 10px;
   padding: $headerPadding;
 }
 
+.languages {
+  margin-right: auto;
+  margin-left: 0;
+  padding-right: 1rem;
+  padding-left: 0;
+  list-style: none;
+}
+
 .menu {
   display: flex;
   display: -webkit-flex;
@@ -65,7 +73,7 @@ $headerPadding: 10px;
     // Stretch/shrink all menu items proportionally.
     flex: 1 1 auto;
     -webkit-flex: 1 1 auto;
-    margin-left: 35px;
+    margin-left: 20px;
 
     &:first-child {
       margin-left: 0;
