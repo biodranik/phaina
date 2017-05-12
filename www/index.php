@@ -1,13 +1,18 @@
 <?php
+// This include should be the first one in every site's php page.
 require_once(dirname(__FILE__).'/../config.php');
+
 // This include should be used only if you want pretty urls and only if web server
 // routes all requests to index.php.
+//
+// Built-in PHP server (which is used for development) routes all requests to index.php by default.
+//
 // Possible implementation for nginx:
 // location / {
 //    # Serve static content first, use php as a last resort.
 //    try_files $uri $uri/ /index.php$is_args$args;
 //  }
-// TODO: Probably it can be moved to the config.php.
+// TODO: Move this include to the config.php.
 require(dirname(__FILE__).'/../include/uri_routing.php');
 
 // Page properties in the index file should be after the routing.
