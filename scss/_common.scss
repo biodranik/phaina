@@ -9,6 +9,13 @@ html {
   padding: 0;
   // Fixes disables automatic portrait -> landscape font zoom.
   -webkit-text-size-adjust: 100%;
+
+  // Customize your perfect background here.
+  //background: url(../img/full_screen_background.jpg) no-repeat center center fixed;
+  //-webkit-background-size: cover;
+  //-moz-background-size: cover;
+  //-o-background-size: cover;
+  //background-size: cover;
 }
 
 *, *:before, *:after {
