@@ -12,8 +12,8 @@
   <p class="footer__copyright"><?= T('copyright') ?></p>
 </footer>
 
-<?php // Do not load Google Analytics when developing on a localhost machine.
-if (!IsDevelopmentMode()): ?>
+<?php
+if (defined('GOOGLE_ANALYTICS_ID') and !IsDevelopmentMode()): ?>
 <script>
 (function(i, s, o, g, r, a, m) {
   i['GoogleAnalyticsObject'] = r;
