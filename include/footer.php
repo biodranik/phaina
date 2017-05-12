@@ -25,7 +25,7 @@ if (defined('GOOGLE_ANALYTICS_ID') and !IsDevelopmentMode()): ?>
   a.src = g;
   m.parentNode.insertBefore(a, m)
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-ga('create', '<?= GOOGLE_ANALYTICS_ID ?>', 'auto');
+ga('create', '<?= T(GOOGLE_ANALYTICS_ID) ?>', 'auto');
 ga('send', 'pageview');
 </script>
 <?php endif ?>
