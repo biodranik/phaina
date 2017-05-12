@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>VibroBox — вибрационная диагностика и мониторинг состояния оборудования. Полностью автоматические рекомендации по техническому обслуживанию механизмов на основе анализа вибрации и кинематической схемы.</title>
+  <title>Файна (PHaina): генератор мультиязычных статических сайтов на PHP.</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="copyright" content="© 2017 VibroBox">
-  <meta name="description" content="Алгоритмы анализа вибрации VibroBox автоматически рекомендуют техобслуживание и сообщают, какой именно узел оборудования нуждается в ремонте.">
-  <meta name="keywords" content="Оценка состояния, мониторинг, оборудование, вибрация, вибродиагностика, диагностика, техническое обслуживание">
+  <meta name="copyright" content="© 2017 Сделано в Беларуси.">
+  <meta name="description" content="Файна (PHaina) — это генератор мультиязычных статических сайтов на PHP.">
+  <meta name="keywords" content="Файна, PHaina, PHP, генератор, сайт, статический">
 
+    <meta property="og:image" content="https://deathbaba.github.io/phaina/img/logo.png" >
+  
   <link rel="icon" type="image/x-icon" href="https://deathbaba.github.io/phaina/favicon.ico?">
   <link rel="stylesheet" type="text/css" href="https://deathbaba.github.io/phaina/css/style.css">
   <!-- TODO: Generate hreflang links for every language. -->
@@ -21,6 +23,7 @@
 <header class="header">
   <a href="https://deathbaba.github.io/phaina/" class="logo"></a>
 
+  
   <!-- Hidden checkbox is used for pure CSS toggle menu. -->
   <input type="checkbox" id="menu__trigger" class="menu__trigger" />
   <label for="menu__trigger">Меню</label>
@@ -29,101 +32,34 @@
         <li class="menu__item">
       <a class="menu__link menu__link--selected" href="https://deathbaba.github.io/phaina/">Главная</a>
     </li>
-        <li class="menu__item">
-      <a class="menu__link" href="https://deathbaba.github.io/phaina/technology/">Технология</a>
-    </li>
-        <li class="menu__item">
-      <a class="menu__link" href="https://deathbaba.github.io/phaina/team/">Команда</a>
-    </li>
-        <li class="menu__item">
-      <a class="menu__link" href="https://deathbaba.github.io/phaina/faq/">Вопросы и ответы</a>
-    </li>
-        <li class="menu__item">
-      <a class="menu__link" href="https://deathbaba.github.io/phaina/contact/">Контакты</a>
-    </li>
-            <li class="menu__item menu__item--login">
-      <a class="menu__link menu__link--login" href="https://www.demo.vibrobox.com/demo">Личный кабинет</a>
+        <li class="menu__item menu__item--login">
+      <a class="menu__link menu__link--login" href="https://github.com/deathbaba/phaina">Код и документация</a>
     </li>
   </ul>
 </header>
 
-<main role="main">
+<main role="main" class="index">
 
-  <section class="banner">
-    <div class="section">
-      <h1 class="title-index__main">Онлайн вибродиагностика для Индустрии 4.0 и промышленного интернета вещей</h1>
-      <p class="preface">Полностью автоматический сервис диагностики, оценки технического состояния и детальных рекомендаций по обслуживанию производственного и технологического оборудования. Никакой магии: алгоритмы VibroBox извлекают всю нужную информацию из вибрации и кинематической схемы (при её наличии).</p>
-      <a class="action-button" href="https://deathbaba.github.io/phaina/technology/">Подробнее о технологии</a>
-      <a class="action-button" href="https://www.demo.vibrobox.com/demo">Демонстрация</a>
-    </div>
+  <section class="index__banner">
+    <h1 class="index__title">Файна (PHaina): генератор мультиязычных статических сайтов на PHP.</h1>
+    <p class="preface">Быстро и удобно сделать себе сайт и бесплатно захостить его на GitHub.</p>
   </section>
 
-  <section class="section system separator">
-    <h2 class="title-index__second">Принцип работы VibroBox</h2>
-    <p class="preface">Готовый к эксплуатации, полностью автоматический, не требующий обслуживания на предприятии сервис мониторинга и диагностики промышленного оборудования.</p>
-    <div class="system-container">
-            <div class="system-container__item  system-container__equipment ">
-        <h3 class="system-container__title system-icon system-icon__equipment">
-          Оборудование        </h3>
-        <p class="system-container__text">На контролируемое оборудование устанавливаются датчики вибрации и телеметрическая система VibroBox, либо, по необходимости, используется оборудование партнёров.</p>
-      </div>
-            <div class="system-container__item  system-container__transfer ">
-        <h3 class="system-container__title system-icon system-icon__transfer">
-          Сбор и передача данных        </h3>
-        <p class="system-container__text">Снятые с оборудования данные передаются через мобильную сеть, WiFi или кабель в надёжное серверное хранилище для последующего анализа.</p>
-      </div>
-            <div class="system-container__item  system-container__processing ">
-        <h3 class="system-container__title system-icon system-icon__processing">
-          Обработка данных        </h3>
-        <p class="system-container__text">Система обработки данных основана на открытых стандартах, использует как собственные, так и традиционные алгоритмы выделения наборов информативных признаков из телеметрической информации. Оценка технического состояния оборудования выполняется в полностью автоматическом режиме.</p>
-      </div>
-            <div class="system-container__item  system-container__g-report ">
-        <h3 class="system-container__title system-icon system-icon__g-report">
-          Состояние оборудования        </h3>
-        <p class="system-container__text">Результаты диагностики представляются в виде краткой и развёрнутой оценки технического состояния оборудования и набора рекомендуемых мероприятий.</p>
-      </div>
-            <div class="system-container__item  system-container__u-report ">
-        <h3 class="system-container__title system-icon system-icon__u-report">
-          Техническое обслуживание        </h3>
-        <p class="system-container__text">Результаты работы сервиса достаточны для принятия решений по техническому обслуживанию оборудования и могут быть интегрированы через ERP, MES, CMMS и SCADA системы.</p>
-      </div>
-          </div>
+  <section class="index__content">
+    <h2>В чём фишка?</h2>
+<p>PHaina — генератор статических сайтов с кастомными страницами, который умеет:</p>
+<ul>
+  <li>Добавлять и кастомизировать страницы на чистом HTML или с примесью PHP</li>
+  <li>Удобно разрабатывать сайт и отлаживаться локально</li>
+  <li>Мультиязычность</li>
+  <li>Генерировать статический html и ресурсы, готовые для любого хостинга</li>
+  <li>Бесплатно хоститься на GitHub</li>
+  <li>…И многое другое</li>
+</ul>
+    <a class="index__button" href="https://github.com/deathbaba/phaina" title=Код и документация>Код и документация</a>
+
   </section>
 
-  <section class="section plus">
-    <h2 class="title-index__second">Теперь автоматическая высокотехнологичная вибродиагностика доступна как онлайн-сервис!</h2>
-    <div class="plus-container">
-            <div class="plus-container__item">
-        <h3 class="plus-container__title plus-icon plus-icon__automatic">
-          <span>Полностью автоматическая система</span>
-        </h3>
-        <p class="plus-container__text"> Сервис VibroBox не требует наличия на предприятии специально обученного персонала или эксперта по диагностике.</p>
-      </div>
-            <div class="plus-container__item">
-        <h3 class="plus-container__title plus-icon plus-icon__economy">
-          <span>Экономия на оборудовании</span>
-        </h3>
-        <p class="plus-container__text">Используйте имеющееся на предприятии виброизмерительное оборудование или получите вместе с сервисом наше.</p>
-      </div>
-            <div class="plus-container__item">
-        <h3 class="plus-container__title plus-icon plus-icon__availability">
-          <span>Удобно и доступно</span>
-        </h3>
-        <p class="plus-container__text"> Результаты оценки технического состояния вашего оборудования всегда доступны онлайн, а также посредством SMS или E-mail, где бы вы ни находились.</p>
-      </div>
-            <div class="plus-container__item">
-        <h3 class="plus-container__title plus-icon plus-icon__simplicity">
-          <span>Простота интеграции</span>
-        </h3>
-        <p class="plus-container__text">VibroBox легко интегрируется с системами управления предприятием, производственными процессами и техническим обслуживанием (ERP, MES, CMMS, SCADA).</p>
-      </div>
-          </div>
-  </section>
-
-  <section class="preface">
-    <a class="action-button" href="https://deathbaba.github.io/phaina/technology/">
-      Как именно работает VibroBox?    </a>
-  </section>
 
 </main>
 
@@ -132,39 +68,13 @@
         <li class="footer__nav-item">
       <a class="footer__link" href="https://deathbaba.github.io/phaina/">Главная</a>
     </li>
-        <li class="footer__nav-item">
-      <a class="footer__link" href="https://deathbaba.github.io/phaina/technology/">Технология</a>
-    </li>
-        <li class="footer__nav-item">
-      <a class="footer__link" href="https://deathbaba.github.io/phaina/team/">Команда</a>
-    </li>
-        <li class="footer__nav-item">
-      <a class="footer__link" href="https://deathbaba.github.io/phaina/faq/">Вопросы и ответы</a>
-    </li>
-        <li class="footer__nav-item">
-      <a class="footer__link" href="https://deathbaba.github.io/phaina/contact/">Контакты</a>
-    </li>
-            <li class="footer__nav-item footer__nav-item--login">
-      <a class="footer__link footer__link--login" href="https://www.demo.vibrobox.com/demo">Личный кабинет</a>
+        <li class="footer__nav-item footer__nav-item--login">
+      <a class="footer__link footer__link--login" href="https://github.com/deathbaba/phaina">Код и документация</a>
     </li>
   </ul>
-  <p class="footer__copyright">© 2017 VibroBox</p>
+  <p class="footer__copyright">© 2017 Сделано в Беларуси.</p>
 </footer>
 
-<script>
-(function(i, s, o, g, r, a, m) {
-  i['GoogleAnalyticsObject'] = r;
-  i[r] = i[r] || function() {
-    (i[r].q = i[r].q || []).push(arguments)
-  }, i[r].l = 1 * new Date();
-  a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-  a.async = 1;
-  a.src = g;
-  m.parentNode.insertBefore(a, m)
-})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-ga('create', 'UA-79782596-1', 'auto');
-ga('send', 'pageview');
-</script>
 
 
 </body>
