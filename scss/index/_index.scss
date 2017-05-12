@@ -1,6 +1,6 @@
 // This file holds "global" page rules, not related to any specific block.
 
-.title-index {
+.index__title {
   &__main {
     margin-top: 2rem;
     text-transform: uppercase;
@@ -25,4 +25,54 @@
 
 .separator {
   @include separatorOnTheBottom;
+}
+
+.preface {
+  margin: 1rem;
+}
+
+.index {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.index__banner {
+  max-width: 70%;
+}
+
+.index__button {
+  margin: 1rem;
+  font-size: $baseFontSize;
+  font-weight: normal;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  background-color: $linkColor;
+  color: $whiteColor;
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid $linkColor;
+
+  &:hover {
+    background-color: $whiteColor;
+    color: $linkColor;
+  }
+}
+
+.index__content {
+  margin: 1rem auto;
+  max-width: 25rem;
+  @include phablet {
+    max-width: 100%;
+  }
+  ul {
+    padding-left: 1.2rem;
+  }
 }

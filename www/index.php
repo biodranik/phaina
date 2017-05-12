@@ -19,108 +19,29 @@ require(dirname(__FILE__).'/../include/uri_routing.php');
 define('TITLE', 'titleIndexPage');
 define('FILE', __FILE__);
 define('META', [
-  ['property' => 'og:image', 'content' => URL('img/meta/VibroBox_and_vibration_sensor.jpg')],
-  ['property' => 'og:image:width', 'content' => '1200'],
-  ['property' => 'og:image:height', 'content' => '700'],
+  ['property' => 'og:image', 'content' => URL('img/logo.png')]
 ]);
 
 HTML_HEAD();
 
-// Initialization of page data models.
-$plusSectionItems = [[
-    'title' => T('plusAutomaticSystemTitle'),
-    'description' => T('plusAutomaticSystemDescription'),
-    'icon' => 'plus-icon__automatic'],
-  [
-    'title' => T('plusEconomyTitle'),
-    'description' => T('plusEconomyDescription'),
-    'icon' => 'plus-icon__economy'],
-  [
-    'title' => T('plusAvailabilityTitle'),
-    'description' => T('plusAvailabilityDescription'),
-    'icon' => 'plus-icon__availability'],
-  [
-    'title' => T('plusSimplicityTitle'),
-    'description' => T('plusSimplicityDescription'),
-    'icon' => 'plus-icon__simplicity']
-];
-
-$solutionSectionItems = [[
-    'title' => T('systemEquipmentTitle'),
-    'description' => T('systemEquipmentDescription'),
-    'css' => 'system-container__equipment',
-    'icon' => 'system-icon__equipment'],
-  [
-    'title' => T('systemTransferTitle'),
-    'description' => T('systemTransferDescription'),
-    'css' => 'system-container__transfer',
-    'icon' => 'system-icon__transfer'],
-  [
-    'title' => T('systemProcessingTitle'),
-    'description' => T('systemProcessingDescription'),
-    'css' => 'system-container__processing',
-    'icon' => 'system-icon__processing'],
-  [
-    'title' => T('systemGReportTitle'),
-    'description' => T('systemGReportDescription'),
-    'css' => 'system-container__g-report',
-    'icon' => 'system-icon__g-report'],
-  [
-    'title' => T('systemUReportTitle'),
-    'description' => T('systemUReportDescription'),
-    'css' => 'system-container__u-report',
-    'icon' => 'system-icon__u-report']
-];
 ?>
 
 <body>
 <?php HTML_HEADER(); ?>
 
-<main role="main">
+<main role="main" class="index">
 
-  <section class="banner">
-    <div class="section">
-      <h1 class="title-index__main"><?= T('indexMainTitle') ?></h1>
-      <p class="preface"><?= T('indexPreface') ?></p>
-      <a class="action-button" href="<?= URL('technology.php') ?>"><?= T('moreAboutTechnology') ?></a>
-      <a class="action-button" href="<?= DEMO_URL ?>"><?= T('viewDemo') ?></a>
-    </div>
+  <section class="index__banner">
+    <h1 class="index__title"><?= T('indexH1') ?></h1>
+    <p class="preface"><?= T('indexPreface') ?></p>
   </section>
 
-  <section class="section system separator">
-    <h2 class="title-index__second"><?= T("systemItem") ?></h2>
-    <p class="preface"><?= T("systemPreface") ?></p>
-    <div class="system-container">
-      <?php foreach ($solutionSectionItems as $item) : ?>
-      <div class="system-container__item  <?= $item['css'] ?> ">
-        <h3 class="system-container__title system-icon <?= $item['icon'] ?>">
-          <?= $item['title'] ?>
-        </h3>
-        <p class="system-container__text"><?= $item['description'] ?></p>
-      </div>
-      <?php endforeach; ?>
-    </div>
+  <section class="index__content">
+    <?= IncludeContent('index') ?>
+    <a class="index__button" href="https://github.com/deathbaba/phaina" title=<?= T('codeAndDocs') ?>><?= T('codeAndDocs') ?></a>
+
   </section>
 
-  <section class="section plus">
-    <h2 class="title-index__second"><?= T("plusTitle") ?></h2>
-    <div class="plus-container">
-      <?php foreach ($plusSectionItems as $item) : ?>
-      <div class="plus-container__item">
-        <h3 class="plus-container__title plus-icon <?= $item['icon'] ?>">
-          <span><?= $item['title'] ?></span>
-        </h3>
-        <p class="plus-container__text"><?= $item['description'] ?></p>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-
-  <section class="preface">
-    <a class="action-button" href="<?= URL('technology.php') ?>">
-      <?= T('bottomIndexTechButton') ?>
-    </a>
-  </section>
 
 </main>
 
