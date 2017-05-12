@@ -38,7 +38,7 @@ $headerPadding: 10px;
 }
 
 .logo {
-  background-image: url(#{$bg}blue-logo.svg);
+  background-image: url(#{$img}logo.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center;
@@ -47,7 +47,6 @@ $headerPadding: 10px;
 
   height: $headerAndLogoHeight;
   width: 180px;
-  padding: $headerPadding;
 }
 
 .languages {

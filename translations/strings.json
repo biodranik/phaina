@@ -1,18 +1,23 @@
 {
   "metaDescriptionIndexPage": {
-    "comment":"Page description displayed by search engines in the results list. Visible part is around 260 chars.",
-    "default":"Fully automatic vibration-based diagnostics, condition monitoring and mechanical breakdown prediction service aimed to save on industrial equipment’s maintenance costs.",
-    "ru":"Алгоритмы анализа вибрации VibroBox автоматически рекомендуют техобслуживание и сообщают, какой именно узел оборудования нуждается в ремонте."
+    "comment": "Page description displayed by search engines in the results list. Visible part is around 260 chars.",
+    "default": "PHaina is a multilanguage PHP static web site generator.",
+    "ru":"Файна (PHaina) — это генератор мультиязычных статических сайтов на PHP."
   },
   "metaKeywordsIndexPage": {
-    "comment":"These keywords are used by Yandex in some cases.",
-    "default":"Estimation, condition, monitoring, equipment, vibro, diagnostics, vibrodiagnostics, vibration, prediction",
-    "ru":"Оценка состояния, мониторинг, оборудование, вибрация, вибродиагностика, диагностика, техническое обслуживание"
+    "comment": "These keywords are used by Yandex in some cases.",
+    "default": "PHaina, PHP, static, web, site, generator",
+    "ru": "Файна, PHaina, PHP, генератор, сайт, статический"
+  },
+
+  "logoAltText":{
+    "en": "PHaina",
+    "ru": "PHaina (Файна)"
   },
 
   "Menu":{
-    "en":"Menu",
-    "ru":"Меню"
+    "en": "Menu",
+    "ru": "Меню"
   },
   "menuIndexPage": {
     "en": "Home",
@@ -20,109 +25,35 @@
   },
   "titleIndexPage":{
     "comment": "Main site page title. Google displays first 70 chars in search results (Yandex - 60, FB - 135). VERY important.",
-    "en":"VibroBox: Automatic vibration diagnostics and condition monitoring for industrial equipment.",
-    "ru":"VibroBox — вибрационная диагностика и мониторинг состояния оборудования. Полностью автоматические рекомендации по техническому обслуживанию механизмов на основе анализа вибрации и кинематической схемы."
+    "en": "PHaina: multilanguage static web site generator in PHP.",
+    "ru": "Файна (PHaina): генератор мультиязычных статических сайтов на PHP."
   },
+
   "404pageTitle":{
-    "en":"VibroBox: Error 404 Page Not Found.",
-    "ru":"VibroBox: Ошибка 404 Страница не найдена."
+    "en": "PHaina: Error 404 Page Not Found.",
+    "ru": "Файна: Ошибка 404 Страница не найдена."
   },
   "404pageH1":{
-    "en":"Error 404:",
-    "ru":"Ошибка 404:"
+    "en": "Error 404:",
+    "ru": "Ошибка 404:"
   },
   "404pageText":{
-    "en":"The page you are looking for is not here.",
-    "ru":"Страница, которую вы ищете, не найдена."
-  },
-  "moreAboutTechnology":{
-    "en":"Technology Details",
-    "ru":"Подробнее о технологии"
-  },
-  "loginButton":{
-    "en":"View Demo",
-    "ru":"Личный кабинет"
-  },
-  "viewDemo":{
-    "en":"View Demo",
-    "ru":"Демонстрация"
+    "en": "The page you are looking for is not here.",
+    "ru": "Страница, которую вы ищете, не найдена."
   },
 
-  "indexMainTitle":{
-    "en": "Vibration diagnostics service for Industry 4.0 and IIoT",
-    "ru": "Онлайн вибродиагностика для Индустрии 4.0 и промышленного интернета вещей"
+  "codeAndDocs": {
+    "en": "Code and Documentation",
+    "ru": "Код и документация"
+  },
+  "indexH1": {
+    "en": "PHaina: PHP multilanguage static web site generator",
+    "ru": "PHaina — генератор мультиязычных статических сайтов на PHP"
   },
   "indexPreface": {
-    "ru": "Полностью автоматический сервис диагностики, оценки технического состояния и детальных рекомендаций по обслуживанию производственного и технологического оборудования. Никакой магии: алгоритмы VibroBox извлекают всю нужную информацию из вибрации и кинематической схемы (при её наличии)."
+    "ru": "Быстро и удобно сделать себе сайт и бесплатно захостить его на GitHub."
   },
 
-  "plusTitle": {
-    "ru": "Теперь автоматическая высокотехнологичная вибродиагностика доступна как онлайн-сервис!"
-  },
-  "plusAutomaticSystemTitle": {
-    "ru": "Полностью автоматическая система"
-  },
-  "plusAutomaticSystemDescription": {
-    "ru": " Сервис VibroBox не требует наличия на предприятии специально обученного персонала или эксперта по диагностике."
-  },
-  "plusEconomyTitle": {
-    "ru" : "Экономия на оборудовании"
-  },
-  "plusEconomyDescription": {
-    "ru" : "Используйте имеющееся на предприятии виброизмерительное оборудование или получите вместе с сервисом наше."
-  },
-  "plusAvailabilityTitle" :{
-    "ru" : "Удобно и доступно"
-  },
-  "plusAvailabilityDescription" :{
-    "ru" : " Результаты оценки технического состояния вашего оборудования всегда доступны онлайн, а также посредством SMS или E-mail, где бы вы ни находились."
-  },
-  "plusSimplicityTitle" :{
-    "ru" : "Простота интеграции"
-  },
-  "plusSimplicityDescription" :{
-    "ru" : "VibroBox легко интегрируется с системами управления предприятием, производственными процессами и техническим обслуживанием (ERP, MES, CMMS, SCADA)."
-  },
-  "systemItem": {
-    "ru": "Принцип работы VibroBox"
-  },
-  "systemPreface": {
-    "ru": "Готовый к эксплуатации, полностью автоматический, не требующий обслуживания на предприятии сервис мониторинга и диагностики промышленного оборудования."
-  },
-  "systemEquipmentTitle": {
-    "ru": "Оборудование"
-  },
-  "systemEquipmentDescription": {
-    "ru": "На контролируемое оборудование устанавливаются датчики вибрации и телеметрическая система VibroBox, либо, по необходимости, используется оборудование партнёров."
-  },
-  "systemTransferTitle": {
-    "ru": "Сбор и передача данных"
-  },
-  "systemTransferDescription": {
-    "ru": "Снятые с оборудования данные передаются через мобильную сеть, WiFi или кабель в надёжное серверное хранилище для последующего анализа."
-  },
-  "systemProcessingTitle": {
-    "ru": "Обработка данных"
-  },
-  "systemProcessingDescription": {
-    "ru": "Система обработки данных основана на открытых стандартах, использует как собственные, так и традиционные алгоритмы выделения наборов информативных признаков из телеметрической информации. Оценка технического состояния оборудования выполняется в полностью автоматическом режиме."
-  },
-  "systemGReportTitle": {
-    "ru": "Состояние оборудования"
-  },
-  "systemGReportDescription": {
-    "ru": "Результаты диагностики представляются в виде краткой и развёрнутой оценки технического состояния оборудования и набора рекомендуемых мероприятий."
-  },
-  "systemUReportTitle": {
-    "ru": "Техническое обслуживание"
-  },
-  "systemUReportDescription": {
-    "ru": "Результаты работы сервиса достаточны для принятия решений по техническому обслуживанию оборудования и могут быть интегрированы через ERP, MES, CMMS и SCADA системы."
-  },
-  "bottomIndexTechButton": {
-    "en": "The Science behind our technology",
-    "ru": "Как именно работает VibroBox?"
-  },
   "language": {
     "en": "English",
     "ru": "Русский"
