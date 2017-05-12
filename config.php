@@ -12,7 +12,11 @@ define('LANG', 'ru');
 define('LANG_SITES', [
 //  'en' => 'https://www.vibrobox.com/',
   'ru' => 'https://deathbaba.github.io/phaina/']);
-//define('GOOGLE_ANALYTICS_ID', 'UA-79782596-1');
+
+// If translated sites are in different domains you can set unique GA ID for every
+// language in translations/variables.json file.
+// If you have only one GA ID, you can set it here directly.
+define('GOOGLE_ANALYTICS_ID', 'googleAnalyticsIDFromTranslations');
 
 // Translation defines for meta keywords and meta description if they are not customized in $PAGES.
 define('DEFAULT_META_DESCRIPTION', 'metaDescriptionIndexPage');
