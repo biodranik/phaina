@@ -25,11 +25,25 @@ function ReplacePattern($regexPatternWithOneGroup, &$subject, $mapFn, $filterFn 
 
   switch (count($matches)) {
     // No matches.
-    case 0: return 0;
-    // Duplicates cause wrong repeated replacements.
-    case 1: $values = array_unique($matches[0]); break;
-    case 2: $values = array_unique($matches[1]); break;
-    default: die("ERROR: More than one matching groups are not supported yet.\n");
+    case 0:
+      return 0;
+
+    case 1:
+      if (empty($matches[0]))
+        return 0;
+      // Duplicates cause wrong repeated replacements.
+      $values = array_unique($matches[0]);
+      break;
+
+    case 2:
+      if (empty($matches[1]))
+        return 0;
+      // Duplicates cause wrong repeated replacements.
+      $values = array_unique($matches[1]);
+      break;
+
+    default:
+      die("ERROR: More than one matching groups are not supported yet.\n");
   }
 
   if (is_callable($filterFn))
