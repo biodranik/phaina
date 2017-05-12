@@ -50,16 +50,20 @@ function HTML_FOOTER() {
   require_once('footer.php');
 }
 
-function MainMenu() {
-  $menuPages = [
-    'index.php' => 'menuIndexPage',
-    'technology.php' => 'menuTechnologyPage',
-    'team.php' => 'menuTeamPage',
-    'faq.php' => 'menuFaqPage',
-    'contact.php' => 'menuContactPage',
-  ];
+class MenuItem {
+  public $url;
+  public $title;
+  public $isCurrent;
 
-  foreach ($menuPages as $page => $menuTitle)
+  function __construct($url, $title, $isCurrent) {
+    $this->url = $url;
+    $this->title = $title;
+    $this->isCurrent = $isCurrent;
+  }
+}
+
+function MainMenu() {
+  foreach (MENU as $page => $menuTitle)
     $menu[] = new MenuItem(URL($page), T($menuTitle), $page == PageFile());
   return $menu;
 }

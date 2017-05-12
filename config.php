@@ -15,11 +15,21 @@ define('LANG_SITES', [
 define('DEMO_URL', 'https://www.demo.vibrobox.com/demo');
 define('GOOGLE_ANALYTICS_ID', 'UA-79782596-1');
 
-// Translation defines for meta keywords and description if they are not customized in $PAGES.
+// Translation defines for meta keywords and meta description if they are not customized in $PAGES.
 define('DEFAULT_META_DESCRIPTION', 'metaDescriptionIndexPage');
 define('DEFAULT_META_KEYWORDS', 'metaKeywordsIndexPage');
 
 require_once('include/globals.php');
-require_once('include/menuItem.php');
 require_once('include/strings.php');
 require_once('include/file_system.php');
+
+// TODO: Support direct html links in the menu.
+define('MENU', [
+    'index.php' => 'menuIndexPage',
+    'technology.php' => 'menuTechnologyPage',
+    'team.php' => 'menuTeamPage',
+    'faq.php' => 'menuFaqPage',
+    'contact.php' => 'menuContactPage',
+  ]);
+
+?>
