@@ -74,7 +74,7 @@ function Generate($inDir, $outDir) {
   else
     mkdir($outDir, kNewDirPermissions, true);
 
-  print("Generating pages from php files:\n");
+  print("Generating static html pages from php files:\n");
   $iter = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($inDir),
       RecursiveIteratorIterator::SELF_FIRST);
   foreach($iter as $fileName => $fileInfo) {
