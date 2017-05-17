@@ -89,8 +89,26 @@ function Generate($inDir, $outDir) {
       continue;
     }
     if (IsPhp($fileName)) {
-      // Remove .php extension.
-      $outPath = substr($outPath, 0, -strlen(kPhpExtension)) . ".html";
+      $phpFileWithoutExtension = substr($outPath, 0, -strlen(kPhpExtension));
+      // Create folders with index.html files to redirect visitors to the same url without a slash.
+      if ($fileName != kIndex and $fileName != k404) {
+        mkdir($phpFileWithoutExtension, kNewDirPermissions);
+        $pageUrl = URL($fileName);
+        $redirectHtmlTemplate = <<<RHTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>$pageUrl</title>
+    <link rel="canonical" href="$pageUrl"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="refresh" content="0; url=$pageUrl"/>
+  </head>
+</html>
+RHTML;
+        file_put_contents(FullPathTo($phpFileWithoutExtension, 'index.html'), $redirectHtmlTemplate);
+      }
+
+      $outPath = $phpFileWithoutExtension . '.html';
       // TODO: Handle errors.
       file_put_contents($outPath, HtmlFromPhp($fileInfo));
       print("+ ".$outPath."\n");
