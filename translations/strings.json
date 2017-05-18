@@ -57,5 +57,9 @@
   "language": {
     "en": "English",
     "ru": "Русский"
+  },
+  "feedback": {
+    "en": "Feedback",
+    "ru": "Обратная связь"
   }
 }

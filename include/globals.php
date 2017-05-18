@@ -42,6 +42,10 @@ function HTML_HEAD() {
   require_once('head.php');
 }
 
+function HTML_ASIDE() {
+  require_once('aside.php');
+}
+
 function HTML_HEADER() {
   require_once('header.php');
 }
