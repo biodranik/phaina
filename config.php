@@ -16,7 +16,7 @@ define('LANG_SITES', [
 // If translated sites are in different domains you can set unique GA ID for every
 // language in translations/variables.json file.
 // If you have only one GA ID, you can set it here directly.
-define('GOOGLE_ANALYTICS_ID', 'googleAnalyticsIDFromTranslations');
+define('GOOGLE_ANALYTICS_ID', ['en' => 'UA-71329020-3', 'ru' => 'UA-71329020-2']);
 
 // Translation defines for meta keywords and meta description if they are not customized in $PAGES.
 define('DEFAULT_META_DESCRIPTION', 'metaDescriptionIndexPage');
