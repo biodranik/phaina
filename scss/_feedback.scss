@@ -1,0 +1,32 @@
+.feedback {
+  display: none;
+  padding: 0 5px;
+  height: 40px;
+  width: 160px;
+  border: solid 3px $borderColor;
+  background: $blackColor;
+  line-height: 32px;
+  font-weight: 600;
+  color: $whiteColor;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  text-align: center;
+  font-size: $baseFontSize + 1;
+  position: fixed;
+  right: -65px;
+  top: 60%;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  z-index: 999;
+
+  &:hover {
+    text-decoration: none;
+    color: $whiteColor;
+  }
+
+  // make visible on diviсes with width > 992px
+  @include largerThanMediumDevices {
+    display: block;
+  }
+}

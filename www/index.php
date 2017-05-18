@@ -23,28 +23,23 @@ define('META', [
 ]);
 
 HTML_HEAD();
-
 ?>
 
 <body>
 <?php HTML_HEADER(); ?>
 
 <main role="main" class="index">
-
   <section class="index__banner">
     <h1 class="index__title"><?= T('indexH1') ?></h1>
     <p class="preface"><?= T('indexPreface') ?></p>
   </section>
-
   <section class="index__content">
     <?= IncludeContent('index') ?>
     <a class="index__button" href="https://github.com/deathbaba/phaina" title=<?= T('codeAndDocs') ?>><?= T('codeAndDocs') ?></a>
-
   </section>
-
-
 </main>
 
+<?php HTML_ASIDE(); ?>
 <?php HTML_FOOTER(); ?>
 
 </body>
