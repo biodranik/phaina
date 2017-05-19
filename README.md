@@ -4,7 +4,7 @@ The main idea is to have very simple but flexible development workflow and deplo
 
 1. Develop site locally using built-in PHP web server (launch `watch` script and go to <http://localhost:8888> in your browser).
 2. Generate static web site content (run `build` script) and publish it to [GitHub Pages](https://pages.github.com/) using `deploy` script (or use any other static content delivery service if you wish).
-3. Deploy PHP site as is and use it with Nginx, Apache or any other web server which works with PHP.
+3. Or deploy dynamic PHP site as is and use it with Nginx, Apache or any other web server which works with PHP.
 4. SCSS support is also included (`watch` script automatically rebuilds your CSS from SCSS after any changes).
 5. Multiple languages are supported, see [strings.json](./strings.json).
 
@@ -13,61 +13,48 @@ The main idea is to have very simple but flexible development workflow and deplo
 **Файна** (pronounced as *ˈfaina*) in Belarusian means *very good*. **PH** stays for PHP, **aina** stays for the *land* in Hawaiian, so *PHP landing* is another good interpretation.
 
 ## How it works
-*TODO: Update this section*
-Let's pick "team" page for example to see how it works. Pages of your site are defined in [config.php](https://github.com/deathbaba/landing-php/blob/master/config.php) `$PAGES` array. There is an entry `team.php` in `$PAGES` that defines "team" page:
+Start with reading comments in [config.php](https://github.com/deathbaba/phaina/blob/master/config.php) file and modifying it for your needs.
+Custom pages should be added into *www* directory and contain the following code:
 
+```php
+<?php require_once(dirname(__FILE__).'/../config.php');
+// Required property.
+define('TITLE', 'titleTeamPage');
+// Optional, to override value from the config.
+define('DESCRIPTION', 'metaDescriptionTeamPage');
+// Optional, to override value from the config.
+define('KEYWORDS', 'metaKeywordsTeamPage');
+// Required property.
+define('FILE', __FILE__);
+// Includes <head> template.
+HTML_HEAD(); ?>
+<body>
+<?php HTML_HEADER() // Menu and logo template in the <header>. ?>
+<main role="main">
+  <!-- Your page custom content goes below. -->
+  <h1><?= T('translatedTitleKey') ?></h1>
+  <?php IncludeContent('file_name_in_content_folder') ?>
+</main>
+<?php HTML_ASIDE() // <aside> template. ?>
+<?php HTML_FOOTER() // <footer> template. ?>
+</body>
+</html>
 ```
-'team.php' => [
-  'link' => 'team',
-  'menu' => 'menuTeamPage',
-  'title' => 'titleTeamPage',
-  'description' => 'metaDescriptionTeamPage',
-  'keywords' => 'metaKeywordsTeamPage'
-],
-```
-Such configuration indicates that "team" page will have url `yoursite.com/team`, menu `menuTeamPage`, title `titleTeamPage` and also description and keywords. `menuTeamPage`, `titleTeamPage` and other properties are defined in [translations/team.json](https://github.com/deathbaba/landing-php/blob/master/translations/team.json).
-The "team" page itself is located at [www/team.php](https://github.com/deathbaba/landing-php/blob/master/www/team.php) and its first part contains all the data that page displays:
 
-```
-[
-  'img' => 'img/team/Igor_Davydov.jpg',
-  'name' => T('Igor Davydov'),
-  'title' => T('idavydovTitle'),
-  'description' => T('idavydovDescription')
-]
-```
-This entry describes team member with image path, name, title and description. Last three properties' content is defined also in [translations/team.json](https://github.com/deathbaba/landing-php/blob/master/translations/team.json). Let's take a closer look at these properties:
-```
-"titleTeamPage":{
-  "en":"VibroBox Team: Scientists and engineers from Minsk, Belarus.",
-  "ru":"Команда VibroBox: Учёные и инженеры из Минска."
-},
-"menuTeamPage":{
-  "en":"Team",
-  "ru":"Команда"
-},
-...
-```
-As you can see it's not only content is defined, but it's also defined for two languages (hence `translations` directory name).
+Customized headers, footers and other templates are located at *includes* directory.
 
-This is the example for "team" page, for other pages data structure could be different (e.g. see [index.php](https://github.com/deathbaba/landing-php/blob/master/www/index.php) or absent at all: [404.php](https://github.com/deathbaba/landing-php/blob/master/www/404.php))
-"Team" page second part describes how the information should be presented (i.e. contains layout):
+Example: [index.php](https://github.com/deathbaba/phaina/blob/master/www/index.php).
 
-```
-<div class="team-container">
-  <?php foreach ($team as $m) : ?>
-    <div class="team-member">
-      <img class="team-member__img" src="<?= URL($m['img']) ?>" alt="<?= $m['name'] ?>" />
-      <div class="team-member__description">
-        <h3 class="team-member__name"><?= $m['name'] ?></h3>
-        <h4 class="team-member__title"><?= $m['title'] ?></h4>
-        <p><?= $m['description'] ?></p>
-      </div>
-    </div>
-  <?php endforeach; ?>
-</div>
-```
-For more complex example with several sections and different layouts of each section please take a look at [index.php](https://github.com/deathbaba/landing-php/blob/master/www/index.php).
+### Development/production workflow
+It's very easy (and free) to use GitHub for development and GitHub Pages for hosting/production. Please keep in mind that:
+- If you use the same repo for development (store site's sources) and for GH Pages hosting your source code should be public. If by any reason you don't want to open your source code, you can always create a separate public GH repo just for the hosting purposes and deploy your static pages there.
+- If you want a custom domain for your site then it won't be accessible by HTTPS. The easy (and free) solution here is to [use Cloudflare as a HTTPS proxy](https://blog.cloudflare.com/secure-and-fast-github-pages-with-cloudflare/) or use your own custom hosting.
+
+The same single GitHub repo [can be used](https://help.github.com/articles/user-organization-and-project-pages/) for code development and for publishing/hosting.
+- Static html pages can be generated/stored either at the *docs* folder of the *master* branch or at the root of *gh-pages* branch.
+- Of course you can always create another separate GitHub Pages repo for hosting purposes only and deploy your site there.
+
+If your site is multilingual and different language versions should be deployed to different domains or subdomains then it's much easier to use a separate GH Pages hosting repo for each subdomain. In this case the main code repo can be used to test your site before going live.
 
 ### Requirements
 *PHP* should be installed and available in the PATH.
@@ -97,8 +84,33 @@ Try to use following thread [php-7-missing-vcruntime140-dll](http://stackoverflo
 #### Installation: Linux
 You can install *php*, *fswatch* and *sassc* packages in any convenient way or use pre-compiled binaries from the *bin* directory (helper scripts are aware of binaries in the PATH). Don't forget about recursive repo checkout to use binaries from *bin*: ```git clone <this repo url> --recursive```
 
-### Site configuration
+### Site(s) configuration
 All important variables and menu should be set up at [config.php](./config.php) in the root.
+
+### Translations
+When you use `T('key')` in your code, localized string is taken from any json file in *translations* folder. If it's absent, the key itself is used. This allows flexible approach when you use English string as a key and only add translations for languages other than English.
+
+Example of json translations:
+```json
+{
+  "yourCustomTranslationKeyForTFunction": {
+    "comment": "This is a comment for this translation. It is ignored during generation/rendering.",
+    "default": "Default translation which is used if language is missing.",
+    "en":"English Translation",
+    "be":"Тэкст на мове (text in Belarusian)"
+  },
+  "Menu": {
+    "comment": "Неre the key itself (`Menu`) is a default English translation.",
+    "ru": "Меню"
+  }
+}
+```
+
+If you prefer in-place translations, that's easy:
+```php
+// First translation ('en') is used as a default one if language is missing.
+T(['en'=>'English', 'ru'=>'Русский', 'de'=>'Deutch']);
+```
 
 ### Why another static generator?
 I didn't found any static generators to simplify building sites with *different* and *unique* pages. Most of them are focused on templated blogs or any other cases when you don't need custom layout for each page (e.g. you mostly edit *content only*, not *layout and content together*).
@@ -136,7 +148,6 @@ There is an utility script in [tools/fix_google_doc.php](./tools/fix_google_doc.
 Optional tidy path is useful if you don't have it in your PATH and would like to use *bin* repository submodule.
 
 #### Notes
-- Translations are stored in [strings.json](./strings.json). TODO: separate directory with mergeable translation files could be better.
 - php files in www directory can be either loaded/accessed directly or via [index.php](./www/index.php) routing.
 - Github permanently redirects /uri to /uri/ so it makes sense to always use /links/ instead of /links.
 - TODO: Sitemap.
