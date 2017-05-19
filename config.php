@@ -1,7 +1,9 @@
 <?php
-/* Must be included by inserting <?php require_once("../config.php"); ?>
-   at the top of every page in www directory.
+/*
+   This file must be included by inserting <?php require_once("../config.php"); ?>
+   at the top of every php page in www directory.
 */
+
 // Site language which is used in <html lang="…"> attributes and for translations.
 // TODO(Alex): Generate all supported languages from one launch, without editing this constant.
 define('LANG', 'ru');
