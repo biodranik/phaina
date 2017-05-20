@@ -25,6 +25,7 @@ function RemoveFilesAndSubdirs($dir, $excludeDirs = array(".git")) {
   if (file_exists($dir) === false)
     return;
   // Simple sanity check.
+  $dir = realpath($dir);
   if ($dir == "/" or substr($dir, -2) == ":\\") {
     echo "Do you really want to delete " . $dir . "?";
     return;
