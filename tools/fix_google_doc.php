@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 
 include(dirname(__FILE__).'/../include/strings.php');
