@@ -78,7 +78,7 @@ function StrPosN($haystack, $needle, $n) {
   return mb_strpos($haystack, $needle, $offset);
 }
 
-function MakePrettyLink($text) {
+function MakePrettyLink($text, $maxWords = 15, $maxChars = 120) {
   // Replace/remove leading arabic or roman numerals if they are present:
   // '1. Text' => 'Text', 'XI Text' => 'Text' etc.
   $num = strstr($text, ' ', true);
@@ -101,6 +101,14 @@ function MakePrettyLink($text) {
   // Return `_` if original string did not contain any characters.
   if (empty($pretty) and !empty($text))
     return '_';
+
+  // Shorten link if necessary.
+  $underscorePos = StrPosN($pretty, '_', $maxWords /* Cut the link after this number of words. */);
+  if ($underscorePos !== false)
+    $pretty = mb_substr($pretty, 0, $underscorePos);
+  if (mb_strlen($pretty) > $maxChars /* Maximum number of characters in the link. */)
+    $pretty = mb_substr($pretty, 0, $maxChars);
+
   return $pretty;
 }
 
