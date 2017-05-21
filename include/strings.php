@@ -64,6 +64,20 @@ function ReplacePattern($regexPatternWithOneGroup, &$subject, $mapFn, $filterFn 
   return $replacementsCount;
 }
 
+// Returns the position of the $n'th occurrence of a $needle in a $haystack or
+// returns FALSE if the $n'th $needle was not found.
+function StrPosN($haystack, $needle, $n) {
+  if (empty($haystack))
+    return false;
+  if ($n < 2)
+    return mb_strpos($haystack, $needle);
+  $res = StrPosN($haystack, $needle, $n - 1);
+  if ($res === false)
+    return false;
+  $offset = $res + mb_strlen($needle);
+  return mb_strpos($haystack, $needle, $offset);
+}
+
 function MakePrettyLink($text) {
   // Replace/remove leading arabic or roman numerals if they are present:
   // '1. Text' => 'Text', 'XI Text' => 'Text' etc.
