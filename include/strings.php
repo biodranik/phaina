@@ -81,11 +81,11 @@ function StrPosN($haystack, $needle, $n) {
 function MakePrettyLink($text, $maxWords = 15, $maxChars = 120) {
   // Replace/remove leading arabic or roman numerals if they are present:
   // '1. Text' => 'Text', 'XI Text' => 'Text' etc.
-  $num = strstr($text, ' ', true);
+  $num = mb_strstr($text, ' ', true);
   if (!empty($num) and
       false !== mb_eregi('[XVI\d][XVI\d\.\)]*$', $num) and
-      strrpos($text, ' ') + 1 < strlen($text))
-    $text = strstr($text, ' ');
+      mb_strrpos($text, ' ') + 1 < mb_strlen($text))
+    $text = mb_strstr($text, ' ');
   // Replace em and en dashes with hyphen.
   $pretty = str_replace(['–', '—'], ['-', '-'], $text);
   $pretty = mb_ereg_replace('[^\w\-]', '_', $pretty);
