@@ -37,5 +37,23 @@ function testPretty() {
     $this->assertEquals($result, MakePrettyLink($original), $original);
 }
 
+const TESTS_SHORT = [
+  '1_2_3' => [2 /* Max words */, 100 /* Max chars */, '1_2' /* Result */],
+  '1_2_3' => [3, 100, '1_2_3'],
+  '1_2_3' => [3, 1, '1'],
+  '1_2_3' => [3, 4, '1_2_'],
+  'смачна_есьцi' => [1, 12, 'смачна'],
+  'смачна_есьцi' => [2, 12, 'смачна_есьцi'],
+  'смачна_есьцi' => [1, 4, 'смач'],
+  '' => [1, 10, ''],
+  '__' => [1, 10, '_'],
+  null => [1, 10, null],
+];
+
+function testPrettyShort() {
+  foreach (self::TESTS_SHORT as $str => $wordsCharsRes)
+    $this->assertEquals($wordsCharsRes[2], MakePrettyLink($str, $wordsCharsRes[0], $wordsCharsRes[1]), $str);
+}
+
 }
 ?>
