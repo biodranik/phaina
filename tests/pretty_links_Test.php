@@ -29,6 +29,7 @@ const TESTS = [
   '«Индустрия 4.0»' => 'индустрия_4_0',
   "12. Text: \"comma\", &semi#colon; em — '20–30' И-dash!\nAnd\ttab, dot. And многоточие…" =>
       'text_comma_semi_colon_em-20-30_и-dash_and_tab_dot_and_многоточие',
+  'In 2008, his work' => 'in_2008_his_work',
 ];
 
 function testPretty() {

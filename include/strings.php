@@ -69,7 +69,7 @@ function MakePrettyLink($text) {
   // '1. Text' => 'Text', 'XI Text' => 'Text' etc.
   $num = strstr($text, ' ', true);
   if (!empty($num) and
-      false !== mb_eregi('([XVI\.\)]+|[\d\.\)]+)', $num) and
+      false !== mb_eregi('[XVI\d][XVI\d\.\)]*$', $num) and
       strrpos($text, ' ') + 1 < strlen($text))
     $text = strstr($text, ' ');
   // Replace em and en dashes with hyphen.
