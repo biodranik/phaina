@@ -5,8 +5,9 @@
 */
 
 // Site language which is used in <html lang="…"> attributes and for translations.
+// PHAINA_LANG environment variable can override site's language.
 // TODO(Alex): Generate all supported languages from one launch, without editing this constant.
-define('LANG', 'ru');
+define('LANG', getenv('PHAINA_LANG') ?: 'ru');
 
 // Production base urls, also used for static pages generation.
 // Please use BaseURL() function instead of direct access, it makes development easier.
