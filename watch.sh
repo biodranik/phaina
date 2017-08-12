@@ -2,7 +2,7 @@
 #
 # Watches for scss files changes and automatically recompiles them.
 #
-# by Alexander Zolotarev <me@alex.bio> from Minsk, Belarus.
+# by Alexander Borsuk <me@alex.bio> from Minsk, Belarus.
 #
 # Useful debug options:
 # -e aborts if any command has failed.

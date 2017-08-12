@@ -13,7 +13,7 @@ The main idea is to have very simple but flexible development workflow and deplo
 **Файна** (pronounced as *ˈfaina*) in Belarusian means *very good*. **PH** stays for PHP, **aina** stays for the *land* in Hawaiian, so *PHP landing* is another good interpretation.
 
 ## How it works
-Start with reading comments in [config.php](https://github.com/deathbaba/phaina/blob/master/config.php) file and modifying it for your needs.
+Start with reading comments in [config.php](https://github.com/biodranik/phaina/blob/master/config.php) file and modifying it for your needs.
 Custom pages should be added into *www* directory and contain the following code:
 
 ```php
@@ -43,7 +43,7 @@ HTML_HEAD(); ?>
 
 Customized headers, footers and other templates are located at *includes* directory.
 
-Example: [index.php](https://github.com/deathbaba/phaina/blob/master/www/index.php).
+Example: [index.php](https://github.com/biodranik/phaina/blob/master/www/index.php).
 
 ### Development/production workflow
 It's very easy (and free) to use GitHub for development and GitHub Pages for hosting/production. Please keep in mind that:

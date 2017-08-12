@@ -1,7 +1,7 @@
 @ECHO OFF
 REM Builds css files by sassc, generates static html site and uploads it into gh-pages repo branch.
 REM
-REM Created by Alexander Zolotarev <me@alex.bio> from Minsk, Belarus.
+REM Created by Alexander Borsuk <me@alex.bio> from Minsk, Belarus.
 
 SETLOCAL
 

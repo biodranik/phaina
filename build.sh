@@ -2,7 +2,7 @@
 #
 # Builds css files by sassc and generates static html site.
 #
-# by Alexander Zolotarev <me@alex.bio> from Minsk, Belarus.
+# by Alexander Borsuk <me@alex.bio> from Minsk, Belarus.
 #
 # Useful debug options:
 # -e aborts if any command has failed.

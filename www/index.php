@@ -35,7 +35,7 @@ HTML_HEAD();
   </section>
   <section class="index__content">
     <?= IncludeContent('index') ?>
-    <a class="index__button" href="https://github.com/deathbaba/phaina" title=<?= T('codeAndDocs') ?>><?= T('codeAndDocs') ?></a>
+    <a class="index__button" href="https://github.com/biodranik/phaina" title=<?= T('codeAndDocs') ?>><?= T('codeAndDocs') ?></a>
   </section>
 </main>
 

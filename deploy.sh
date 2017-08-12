@@ -2,7 +2,7 @@
 #
 # Builds html static pages and deploys them into gh-pages github repo branch.
 #
-# by Alexander Zolotarev <me@alex.bio> from Minsk, Belarus.
+# by Alexander Borsuk <me@alex.bio> from Minsk, Belarus.
 #
 # Useful debug options:
 # -e aborts if any command has failed.

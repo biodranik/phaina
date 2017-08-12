@@ -14,7 +14,7 @@ define('LANG', getenv('PHAINA_LANG') ?: 'ru');
 // Url for current active language will be treated as base url.
 define('LANG_SITES', [
 //  'en' => 'https://www.vibrobox.com/',
-  'ru' => 'https://deathbaba.github.io/phaina/']);
+  'ru' => 'https://biodranik.github.io/phaina/']);
 
 // If translated sites are in different domains you can set unique GA ID for every
 // language in translations/variables.json file.
@@ -26,7 +26,7 @@ define('DEFAULT_META_DESCRIPTION', 'metaDescriptionIndexPage');
 define('DEFAULT_META_KEYWORDS', 'metaKeywordsIndexPage');
 
 // Any custom constants can be defined here too.
-define('CODE_AND_DOCS_URL', 'https://github.com/deathbaba/phaina');
+define('CODE_AND_DOCS_URL', 'https://github.com/biodranik/phaina');
 
 require_once('include/globals.php');
 require_once('include/strings.php');
